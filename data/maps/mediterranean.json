@@ -1,0 +1,32 @@
+{
+  "id": "mediterranean",
+  "name": "地中海世界",
+  "cols": 44,
+  "rows": 24,
+  "comment": "使徒行傳與宣教旅程的舞台:羅馬—希臘—小亞細亞—猶太。",
+  "terrain": [
+    { "type": "sea",      "rect": [0, 0, 43, 23] },
+    { "type": "hill",     "rect": [3, 0, 7, 10] },
+    { "type": "plain",    "rect": [12, 0, 18, 9] },
+    { "type": "hill",     "rect": [20, 0, 32, 9] },
+    { "type": "plain",    "rect": [33, 0, 43, 7] },
+    { "type": "hill",     "rect": [33, 8, 36, 16] },
+    { "type": "plain",    "rect": [37, 8, 43, 16] },
+    { "type": "desert",   "rect": [0, 19, 43, 23] },
+    { "type": "plain",    "rect": [28, 11, 30, 12] },
+    { "type": "plain",    "rect": [15, 13, 19, 14] }
+  ],
+  "cities": {
+    "rome":        { "name": "羅馬",     "c": 5,  "r": 4 },
+    "philippi":    { "name": "腓立比",   "c": 16, "r": 1 },
+    "thessalonica":{ "name": "帖撒羅尼迦","c": 13, "r": 2 },
+    "athens":      { "name": "雅典",     "c": 16, "r": 7 },
+    "corinth":     { "name": "哥林多",   "c": 13, "r": 8 },
+    "ephesus":     { "name": "以弗所",   "c": 21, "r": 8 },
+    "tarsus":      { "name": "大數",     "c": 30, "r": 7 },
+    "antioch":     { "name": "安提阿",   "c": 33, "r": 7 },
+    "salamis":     { "name": "撒拉米(居比路)", "c": 29, "r": 12 },
+    "caesarea":    { "name": "該撒利亞", "c": 34, "r": 12 },
+    "jerusalem":   { "name": "耶路撒冷", "c": 35, "r": 14 }
+  }
+}

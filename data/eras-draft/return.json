@@ -1,0 +1,21 @@
+{
+  "id": "return", "mapId": "neareast", "order": 130,
+  "title": "歸回重建", "years": "主前 538–430 年",
+  "desc": "波斯王古列元年頒詔,准許被擄的猶大人返鄉。三波歸回:所羅巴伯率首批奠基重建聖殿,哈該、撒迦利亞激勵民心;以斯拉攜律法書重整信仰;尼希米以酒政之職請命,五十二天築竣城牆。此後先知之聲漸息,舊約歷史落幕,神的子民在沉默中等候彌賽亞。",
+  "intro": "古列詔令開門,流亡者踏上歸回錫安之路。",
+  "territory": [ { "faction": "empire", "rect": [6, 3, 42, 22] } ],
+  "routes": [ { "name": "歸回之路", "color": "#e8c574", "points": ["babylon", "haran", "damascus", "jerusalem"] } ],
+  "cities": ["babylon", "susa", "damascus", "jerusalem"],
+  "capitals": ["susa"],
+  "people": [
+    { "name": "所羅巴伯", "tag": "省長", "tagClass": "south", "desc": "大衛後裔,領首批歸回重建聖殿", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441" } },
+    { "name": "以斯拉", "tag": "文士", "tagClass": "prophet", "desc": "祭司兼文士,攜律法書歸回整頓信仰", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } },
+    { "name": "尼希米", "tag": "省長", "tagClass": "south", "desc": "王室酒政出身,五十二天重建城牆", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#a08850" } }
+  ],
+  "events": [
+    { "city": "jerusalem", "text": "所羅巴伯主持的第二聖殿重建完工(主前516),被擄七十年的應許應驗。", "ref": "以斯拉記 6;哈該書;撒迦利亞書" },
+    { "city": "susa", "text": "尼希米在書珊聽聞城牆毀壞、民受凌辱,禁食禱告後求王差遣返鄉。", "ref": "尼希米記 1–2" },
+    { "city": "jerusalem", "text": "城牆五十二天竣工,敵對者喪膽;以斯拉在水門廣場宣讀律法,百姓痛哭復興。", "ref": "尼希米記 6;8" }
+  ],
+  "books": ["以斯拉記", "尼希米記", "哈該書", "撒迦利亞書", "瑪拉基書"]
+}

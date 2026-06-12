@@ -1,0 +1,24 @@
+{
+  "id": "patriarchs", "mapId": "neareast", "order": 10,
+  "title": "族長時期", "years": "約主前 2000–1800 年",
+  "desc": "亞伯拉罕蒙神呼召,棄吾珥繁華,途經哈蘭南下迦南,落腳示劍、希伯崙。神以約立誓:後裔如繁星,此地終歸他們所有。以撒繼承應許,雅各十二子奠定以色列十二支派之基。饑荒中約瑟先被賣下埃及,反登宰相之位,接引全家七十人定居歌珊。應許已立,子民卻寄居異邦——出埃及的伏筆就此埋下。",
+  "intro": "從吾珥到迦南,亞伯拉罕一族在應許與寄居之間跋涉四代。",
+  "territory": [],
+  "routes": [
+    { "name": "亞伯拉罕之路", "color": "#e8c574", "points": ["ur", "haran", "damascus", "shechem", "hebron"] },
+    { "name": "全家下埃及", "color": "#8fc3e8", "points": ["hebron", "goshen"] }
+  ],
+  "cities": ["ur", "haran", "damascus", "shechem", "hebron", "goshen"],
+  "capitals": [],
+  "people": [
+    { "name": "亞伯拉罕", "tag": "族長", "tagClass": "other", "desc": "信心之父,應許之約的起始者", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#a08850" } },
+    { "name": "雅各(以色列)", "tag": "族長", "tagClass": "other", "desc": "與神角力後改名以色列,十二支派之祖", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } },
+    { "name": "約瑟", "tag": "埃及宰相", "tagClass": "other", "desc": "雅各愛子,由奴隸躍升埃及宰相,救族於饑荒", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#a83a5a" } }
+  ],
+  "events": [
+    { "city": "haran", "text": "神呼召亞伯拉罕:「離開本地本族父家,往我所指示的地去。」他時年七十五,帶妻撒萊、姪兒羅得從哈蘭啟程南下。", "ref": "創世記 12:1-5" },
+    { "city": "hebron", "text": "撒拉逝於希伯崙,亞伯拉罕以四百舍客勒銀子向赫人以弗崙購買麥比拉洞,成為族長世代安葬之地。", "ref": "創世記 23" },
+    { "city": "goshen", "text": "迦南饑荒,雅各遣子下埃及買糧,得知約瑟仍活。全家七十人遷居歌珊,寄居埃及的歲月從此展開。", "ref": "創世記 46–47" }
+  ],
+  "books": ["創世記 12–50", "約伯記(背景近族長時期)"]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "divided", "mapId": "canaan", "order": 90,
+  "title": "南北國並立", "years": "主前 931–722 年",
+  "desc": "王國分裂後,北國以色列與南國猶大對峙約二百年。北國歷九個王朝,君王皆偏行惡道;暗利建都撒馬利亞,亞哈迎娶耶洗別引入巴力崇拜,先知以利亞、以利沙奮起對抗。南國大衛王朝延續,善惡王交替,約沙法等敬虔王推行律法改革。兩國夾縫中,先知時代正式開啟。",
+  "intro": "北都撒馬利亞拜巴力,南都耶路撒冷守大衛盟約。",
+  "territory": [
+    { "faction": "north", "rect": [6, 2, 23, 16] },
+    { "faction": "south", "rect": [6, 17, 17, 27] }
+  ],
+  "cities": ["samaria", "carmel", "dan", "bethel", "jerusalem", "lachish", "beersheba"],
+  "capitals": ["samaria", "jerusalem"],
+  "people": [
+    { "name": "亞哈", "tag": "北國王", "tagClass": "north", "desc": "迎娶西頓公主耶洗別,引巴力崇拜入北國的惡王", "avatar": { "skin": "#c89868", "hair": "#1a0a0a", "beard": "#1a0a0a", "robe": "#3fa7a0", "crown": true } },
+    { "name": "以利亞", "tag": "先知", "tagClass": "prophet", "desc": "提斯比人,與巴力先知正面交鋒的烈火先知", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } },
+    { "name": "約沙法", "tag": "南國王", "tagClass": "south", "desc": "南國猶大敬虔君王,全境推行律法教育", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } }
+  ],
+  "events": [
+    { "city": "samaria", "text": "暗利以二他連得銀子買下撒馬利亞山,建造新都,北國政治中心自此確立。", "ref": "列王紀上 16:24" },
+    { "city": "carmel", "text": "以利亞獨戰四百五十名巴力先知,呼求耶和華降火燒盡燔祭,百姓俯伏:「耶和華是神!」", "ref": "列王紀上 18:20-40" },
+    { "city": "jerusalem", "text": "約沙法差遣官長與利未人帶律法書巡行猶大各城教導百姓,重整司法秩序。", "ref": "歷代志下 17:7-9;19–20" }
+  ],
+  "books": ["列王紀上 12–22", "列王紀下 1–16", "歷代志下 10–28", "阿摩司書", "何西阿書", "約拿書"]
+}

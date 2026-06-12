@@ -1,0 +1,25 @@
+{
+  "id": "saul",
+  "mapId": "canaan",
+  "order": 50,
+  "title": "掃羅時代",
+  "years": "約主前 1050–1010 年",
+  "desc": "以色列從士師制度走向王國。百姓要求「像列國一樣」立王,撒母耳膏立便雅憫人掃羅。王國初成形,疆域有限,腹背受非利士人威脅;掃羅因不順服被神厭棄,王朝一代而終。",
+  "intro": "士師時代落幕,以色列立國。京城:基比亞。",
+  "territory": [
+    { "faction": "united", "rect": [6, 10, 17, 26] }
+  ],
+  "cities": ["gibeah", "mizpah", "shiloh", "bethlehem", "elah", "gilboa"],
+  "capitals": ["gibeah"],
+  "people": [
+    { "name": "撒母耳", "tag": "先知", "tagClass": "prophet", "desc": "最後一位士師,膏立掃羅與大衛", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } },
+    { "name": "掃羅", "tag": "統一王國", "tagClass": "united", "desc": "以色列第一位王,後被神厭棄", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#9b6fd1", "crown": true } },
+    { "name": "大衛(少年)", "tag": "受膏者", "tagClass": "prophet", "desc": "伯利恆牧童,擊倒巨人歌利亞", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "robe": "#a08850" } }
+  ],
+  "events": [
+    { "city": "mizpah", "text": "掃羅在米斯巴被公開立為王,以色列正式進入王國時期。", "ref": "撒母耳記上 10:17-24" },
+    { "city": "elah", "text": "少年大衛在以拉谷以機弦甩石擊倒非利士巨人歌利亞,一戰成名。", "ref": "撒母耳記上 17" },
+    { "city": "gilboa", "text": "掃羅與約拿單在基利波山之戰陣亡,掃羅王朝終結。", "ref": "撒母耳記上 31;歷代志上 10" }
+  ],
+  "books": ["撒母耳記上 9–31", "歷代志上 10"]
+}

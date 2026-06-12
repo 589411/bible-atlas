@@ -1,0 +1,24 @@
+{
+  "id": "exodus", "mapId": "exodus", "order": 20,
+  "title": "出埃及與曠野", "years": "約主前 1446–1406 年",
+  "desc": "摩西奉神命降十災迫使法老釋放以色列人,大軍從蘭塞出發,過紅海脫離追兵。西奈山立約,神頒十誡,百姓成為聖約子民。然探子惡報引發信心危機,一代人被罰曠野漂流四十年。摩西終於尼波山遠眺應許之地,完成使命,接力棒交至約書亞手中。",
+  "intro": "從蘭塞出走,過紅海、歷西奈,四十年後抵尼波山。",
+  "territory": [],
+  "routes": [
+    { "name": "出埃及路線", "color": "#e8c574", "points": ["rameses", "succoth", "yamsuph", "sinai", "kadesh", "nebo"] }
+  ],
+  "cities": ["rameses", "succoth", "yamsuph", "sinai", "kadesh", "nebo", "jericho"],
+  "capitals": [],
+  "people": [
+    { "name": "摩西", "tag": "領袖", "tagClass": "prophet", "desc": "帶領以色列出埃及、頒布律法的先知與立法者", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } },
+    { "name": "亞倫", "tag": "大祭司", "tagClass": "prophet", "desc": "摩西之兄,以色列首任大祭司,主持會幕禮儀", "avatar": { "skin": "#d8a878", "hair": "#aaaaaa", "beard": "#aaaaaa", "robe": "#c9a24b" } },
+    { "name": "約書亞", "tag": "接班人", "tagClass": "united", "desc": "摩西的副手與繼承人,帶領以色列進迦南", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "robe": "#7a4a3a" } }
+  ],
+  "events": [
+    { "city": "yamsuph", "text": "摩西伸杖,海水分開如牆,以色列人踏乾地而過,法老追兵盡沒於海中。", "ref": "出埃及記 14" },
+    { "city": "sinai", "text": "神在西奈山與以色列立約,頒布十誡與律例,百姓成為「祭司的國度」。", "ref": "出埃及記 19–20" },
+    { "city": "kadesh", "text": "十二探子中十人散布惡信,百姓哀號不信,神宣判那一代人在曠野漂流四十年。", "ref": "民數記 13–14" },
+    { "city": "nebo", "text": "摩西登尼波山俯瞰迦南全地,在此離世,由神親手安葬,葬處至今無人知曉。", "ref": "申命記 34" }
+  ],
+  "books": ["出埃及記", "利未記", "民數記", "申命記"]
+}

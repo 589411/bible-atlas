@@ -1,0 +1,255 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bible Atlas Era(聖經歷史時代)",
+  "description": "每個時代一個 JSON 檔。所有地名只能引用所屬舞台地圖 cities 中的 key,不得自創座標。",
+  "type": "object",
+  "required": [
+    "id",
+    "mapId",
+    "order",
+    "title",
+    "years",
+    "desc",
+    "intro",
+    "territory",
+    "cities",
+    "capitals",
+    "people",
+    "events",
+    "books"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "英文小寫識別碼,必須與檔名一致(例:split → split.json)"
+    },
+    "mapId": {
+      "type": "string",
+      "description": "所屬舞台地圖 id,必須存在於 data/maps/"
+    },
+    "order": {
+      "type": "integer",
+      "description": "時間軸排序,數字越小越早"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 12,
+      "description": "時代名稱,例:王國分裂(南北國)"
+    },
+    "years": {
+      "type": "string",
+      "maxLength": 24,
+      "description": "年代範圍,例:主前 931 年起"
+    },
+    "desc": {
+      "type": "string",
+      "minLength": 60,
+      "maxLength": 160,
+      "description": "時代概覽。交代:起因→關鍵轉折→屬靈意義,60–160字"
+    },
+    "intro": {
+      "type": "string",
+      "maxLength": 60,
+      "description": "切換到此時代時戰報框顯示的一句話,需點出京城或地理重點"
+    },
+    "territory": {
+      "type": "array",
+      "minItems": 0,
+      "description": "疆域著色區塊,可為空(旅程型時代);territory 與 routes 至少一者非空",
+      "items": {
+        "type": "object",
+        "required": [
+          "faction",
+          "rect"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "faction": {
+            "enum": [
+              "united",
+              "north",
+              "south",
+              "empire",
+              "foreign"
+            ]
+          },
+          "rect": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minItems": 4,
+            "maxItems": 4,
+            "description": "[起始欄, 起始列, 結束欄, 結束列](含端點),不得超出地圖範圍"
+          }
+        }
+      }
+    },
+    "cities": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 8,
+      "items": {
+        "type": "string"
+      },
+      "description": "本時代顯示的地名 key,4–8 個,避免地圖過擠"
+    },
+    "capitals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "京城地名 key(顯示★),必須包含在 cities 內"
+    },
+    "people": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "tag",
+          "tagClass",
+          "desc",
+          "avatar"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 14
+          },
+          "tag": {
+            "type": "string",
+            "maxLength": 8,
+            "description": "陣營或身份,例:南國猶大、先知"
+          },
+          "tagClass": {
+            "enum": [
+              "united",
+              "north",
+              "south",
+              "prophet",
+              "other"
+            ]
+          },
+          "desc": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 30,
+            "description": "一句話身份卡,讓讀者能區分同名人物"
+          },
+          "avatar": {
+            "type": "object",
+            "required": [
+              "skin",
+              "hair",
+              "robe"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "skin": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "hair": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "beard": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "robe": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$",
+                "description": "袍色建議呼應陣營色"
+              },
+              "crown": {
+                "type": "boolean",
+                "description": "君王才有冠冕"
+              }
+            }
+          }
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "city",
+          "text",
+          "ref"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "city": {
+            "type": "string",
+            "description": "事件地點,必須是地圖 cities 的 key"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 90,
+            "description": "事件敘述,20–90字,敘事語氣"
+          },
+          "ref": {
+            "type": "string",
+            "maxLength": 50,
+            "description": "經文出處;有平行記載必須並列,以「;」分隔"
+          }
+        }
+      }
+    },
+    "books": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "maxLength": 20
+      },
+      "description": "本時代相關書卷(含寫於本時代的智慧書/先知書)"
+    },
+    "routes": {
+      "type": "array",
+      "description": "旅程路線(族長遷徙、出埃及、宣教旅程等),以虛線繪於地圖",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "points"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 14,
+            "description": "路線名稱,顯示於圖例"
+          },
+          "color": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$",
+            "description": "路線顏色,預設米白"
+          },
+          "points": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 10,
+            "items": {
+              "type": "string"
+            },
+            "description": "途經地名 key,依序連線;必須存在於地圖 cities"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "split",
+  "mapId": "canaan",
+  "order": 80,
+  "title": "王國分裂",
+  "years": "主前 931 年起",
+  "desc": "所羅門死後,兒子羅波安在示劍拒絕減輕勞役,十個支派擁立耶羅波安,北國「以色列」成立;南方猶大與便雅憫支派仍歸羅波安,稱南國「猶大」。耶羅波安在但與伯特利鑄造金牛犢,成為北國的「國罪」。",
+  "intro": "一國裂為兩國:北國以色列(示劍)vs 南國猶大(耶路撒冷)。",
+  "territory": [
+    { "faction": "north", "rect": [6, 2, 23, 16] },
+    { "faction": "south", "rect": [6, 17, 17, 27] }
+  ],
+  "cities": ["shechem", "dan", "bethel", "jericho", "jerusalem", "bethlehem", "hebron"],
+  "capitals": ["shechem", "jerusalem"],
+  "people": [
+    { "name": "羅波安", "tag": "南國猶大", "tagClass": "south", "desc": "所羅門之子,南國第一任王", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } },
+    { "name": "耶羅波安", "tag": "北國以色列", "tagClass": "north", "desc": "原所羅門臣僕,北國第一任王", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#3fa7a0", "crown": true } },
+    { "name": "示瑪雅", "tag": "先知", "tagClass": "prophet", "desc": "奉神之命阻止羅波安出兵內戰", "avatar": { "skin": "#d8a878", "hair": "#aaaaaa", "beard": "#aaaaaa", "robe": "#5a7a9a" } }
+  ],
+  "events": [
+    { "city": "shechem", "text": "羅波安在示劍談判破裂,十支派背叛:「我們與大衛有什麼份呢?」北國誕生,京城設於示劍。", "ref": "列王紀上 12;歷代志下 10" },
+    { "city": "bethel", "text": "耶羅波安在但與伯特利設立金牛犢,自立祭司與節期,防止民心回歸耶路撒冷。", "ref": "列王紀上 12:25-33" },
+    { "city": "hebron", "text": "羅波安在猶大遍地修築十五座防禦城(含伯利恆、希伯崙),鞏固南國防線。", "ref": "歷代志下 11:5-12" }
+  ],
+  "books": ["列王紀上 12", "歷代志下 10–11"]
+}

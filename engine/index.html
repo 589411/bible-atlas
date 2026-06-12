@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#181320">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="聖經地圖">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+<title>聖經像素地圖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#181320; --panel:#241b2f; --panel2:#2e2240;
+    --gold:#c9a24b; --gold-bright:#e8c574;
+    --text:#e8e0d0; --dim:#9a8fa8;
+    --united:#9b6fd1; --north:#3fa7a0; --south:#d9a441;
+    --empire:#b04a4a; --foreign:#888888;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:"Microsoft JhengHei","PingFang TC",sans-serif;
+    font-size:15px; line-height:1.7;
+    background-image:radial-gradient(circle at 50% 0%, #241b33 0%, #181320 70%);
+    min-height:100vh;
+  }
+  header{text-align:center; padding:20px 16px 12px;}
+  header h1{
+    font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
+    font-size:26px; letter-spacing:4px; color:var(--gold-bright);
+    text-shadow:2px 2px 0 #3a2a10;
+  }
+  header p{color:var(--dim); font-size:13px; margin-top:4px; letter-spacing:1px;}
+
+  .era-nav{
+    display:flex; align-items:stretch; gap:6px;
+    max-width:1100px; margin:0 auto; padding:0 10px;
+  }
+  .nav-btn{
+    flex:0 0 auto; align-self:center; background:var(--panel); color:var(--gold-bright);
+    border:2px solid #4a3a5c; width:34px; height:48px; cursor:pointer;
+    font-size:14px; box-shadow:inset 0 0 0 2px #181320, 3px 3px 0 #0d0a12;
+  }
+  .nav-btn:hover{border-color:var(--gold);}
+  .nav-btn:focus-visible{outline:2px solid var(--gold-bright); outline-offset:2px;}
+  .era-bar{
+    display:flex; gap:8px; overflow-x:auto; flex:1 1 auto;
+    padding:10px 6px 14px;
+    scrollbar-width:thin;
+  }
+  .today-badge{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    max-width:1100px; margin:0 auto 4px; padding:0 16px;
+    font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
+    font-size:13px; color:#a8c8e8; letter-spacing:1px; flex-wrap:wrap;
+  }
+  .today-badge button{
+    background:#1d2a3a; color:var(--gold-bright); border:2px solid #3f5a78;
+    padding:4px 12px; cursor:pointer; font-family:inherit; font-size:13px;
+    letter-spacing:1px; box-shadow:2px 2px 0 #0d0a12;
+  }
+  .today-badge button:hover{border-color:var(--gold);}
+  .today-badge a{color:#8fc3e8;}
+  .era-btn{
+    flex:0 0 auto; background:var(--panel); color:var(--text);
+    border:2px solid #4a3a5c; padding:8px 14px; cursor:pointer;
+    font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
+    font-size:14px; letter-spacing:1px;
+    box-shadow:inset 0 0 0 2px #181320, 3px 3px 0 #0d0a12;
+    transition:transform .08s;
+  }
+  .era-btn .yr{display:block; font-size:11px; color:var(--dim); letter-spacing:0;}
+  .era-btn:hover{transform:translate(-1px,-1px);}
+  .era-btn:focus-visible{outline:2px solid var(--gold-bright); outline-offset:2px;}
+  .era-btn.active{
+    border-color:var(--gold); color:var(--gold-bright); background:var(--panel2);
+    box-shadow:inset 0 0 0 2px #181320, 3px 3px 0 #0d0a12, 0 0 12px rgba(201,162,75,.35);
+  }
+
+  .layout{
+    display:grid; grid-template-columns:minmax(300px,460px) 1fr;
+    gap:16px; max-width:1100px; margin:0 auto; padding:0 16px 40px;
+  }
+  @media (max-width:760px){ .layout{grid-template-columns:1fr;} }
+
+  .map-frame{
+    border:3px solid var(--gold);
+    box-shadow:inset 0 0 0 3px #181320, 6px 6px 0 #0d0a12;
+    background:#0e1a2b; position:relative; align-self:start;
+  }
+  .map-wrap{position:relative; width:100%;}
+  canvas#map{width:100%; display:block; image-rendering:pixelated; image-rendering:crisp-edges;}
+
+  /* 世界視角定位圖 */
+  .ov-wrap{position:relative; width:100%; background:#0e1a2b;}
+  canvas#ovw{width:100%; display:block; image-rendering:pixelated; image-rendering:crisp-edges;}
+  .ov-link{position:relative; height:28px; background:#0d0a12; border-bottom:3px solid var(--gold);}
+  canvas#ovLink{position:absolute; inset:0; width:100%; height:100%; display:block;}
+  .ov-link-text{
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
+    font-size:11px; color:var(--gold-bright); letter-spacing:1px;
+    text-shadow:1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000;
+    pointer-events:none; white-space:nowrap;
+  }
+  .ov-caption{
+    position:absolute; left:8px; bottom:5px;
+    font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
+    font-size:11px; color:var(--gold-bright); letter-spacing:1px;
+    text-shadow:1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000;
+    pointer-events:none;
+  }
+  .ov-label{
+    position:absolute; transform:translate(-50%,-50%);
+    font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
+    font-size:10px; color:#cbd8e8; white-space:nowrap;
+    text-shadow:1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000;
+    pointer-events:none; letter-spacing:1px;
+  }
+  .city-label{
+    position:absolute; transform:translate(-50%,-130%);
+    font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
+    font-size:11px; color:#fff; white-space:nowrap;
+    text-shadow:1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000;
+    pointer-events:none; letter-spacing:1px;
+  }
+  .city-label.capital{color:var(--gold-bright); font-size:12px;}
+  .legend{
+    display:flex; gap:14px; flex-wrap:wrap; padding:8px 10px;
+    font-size:12px; color:var(--dim);
+    border-top:2px solid #3a2a50; background:var(--panel);
+  }
+  .legend span{display:inline-flex; align-items:center; gap:5px;}
+  .swatch{width:12px; height:12px; display:inline-block; border:1px solid #000;}
+
+  .dialog{
+    padding:12px 14px; min-height:84px; background:#11202e;
+    border-top:3px solid var(--gold);
+    font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
+    font-size:14px; line-height:1.8; color:#cfe3f0; position:relative;
+  }
+  .dialog::before{
+    content:"▼ 戰報"; position:absolute; top:-13px; left:12px;
+    background:var(--gold); color:#181320; font-size:11px;
+    padding:0 8px; letter-spacing:2px;
+  }
+  .dialog .ref{color:var(--gold-bright); font-size:12px; display:block; margin-top:6px;}
+
+  .panel{display:flex; flex-direction:column; gap:14px;}
+  .card{
+    background:var(--panel); border:2px solid #4a3a5c;
+    box-shadow:inset 0 0 0 2px #181320, 4px 4px 0 #0d0a12;
+    padding:14px 16px;
+  }
+  .card h2{
+    font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
+    font-size:15px; color:var(--gold-bright); letter-spacing:3px;
+    margin-bottom:10px; padding-bottom:6px; border-bottom:1px dashed #4a3a5c;
+  }
+  .era-title{font-size:20px; color:var(--gold-bright); letter-spacing:2px;
+    font-family:"DotGothic16","Microsoft JhengHei",sans-serif;}
+  .era-years{color:var(--dim); font-size:12px; margin-bottom:8px;}
+  .era-desc{font-size:14px;}
+
+  .people{display:flex; flex-direction:column; gap:10px;}
+  .person{
+    display:flex; gap:12px; align-items:center;
+    background:var(--panel2); padding:8px 10px; border:1px solid #4a3a5c;
+  }
+  .person canvas{width:48px; height:48px; flex:0 0 48px;
+    image-rendering:pixelated; border:2px solid #181320;}
+  .person .info b{font-size:15px; letter-spacing:1px;}
+  .person .info .tag{display:inline-block; font-size:11px; padding:0 6px;
+    margin-left:6px; border:1px solid currentColor;}
+  .tag.south{color:var(--south);} .tag.north{color:var(--north);}
+  .tag.united{color:var(--united);} .tag.prophet{color:#8fc3e8;}
+  .tag.empire{color:var(--empire);} .tag.other{color:var(--foreign);}
+  .person .info p{font-size:12.5px; color:var(--dim); margin-top:2px;}
+
+  .events{display:flex; flex-direction:column; gap:8px;}
+  .event-btn{
+    text-align:left; background:var(--panel2); color:var(--text);
+    border:1px solid #4a3a5c; padding:8px 10px; cursor:pointer;
+    font-size:13.5px; font-family:inherit; line-height:1.5;
+  }
+  .event-btn:hover{border-color:var(--gold); color:var(--gold-bright);}
+  .event-btn:focus-visible{outline:2px solid var(--gold-bright);}
+  .event-btn .loc{color:var(--dim); font-size:12px;}
+  .event-btn.active{border-color:var(--gold); background:#3a2c1a; color:var(--gold-bright);}
+
+  .books{display:flex; flex-wrap:wrap; gap:8px;}
+  .book{font-size:12.5px; padding:3px 10px;
+    background:#1d2a3a; border:1px solid #3f5a78; color:#a8c8e8;}
+  .books-note{font-size:12px; color:var(--dim); margin-top:8px;}
+
+  .error-box{max-width:600px; margin:40px auto; padding:20px;
+    border:2px solid var(--empire); background:var(--panel); font-size:14px;}
+
+  footer{text-align:center; color:#6a5f78; font-size:12px; padding:20px;}
+  @media (prefers-reduced-motion: reduce){ .era-btn{transition:none;} }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 id="siteTitle">聖經像素地圖</h1>
+  <p id="siteSubtitle"></p>
+</header>
+
+<div class="today-badge" id="todayBadge" hidden></div>
+
+<div class="era-nav">
+  <button class="nav-btn" id="prevEra" aria-label="上一個時代" title="上一個時代(←)">◀</button>
+  <nav class="era-bar" id="eraBar" aria-label="選擇時代"></nav>
+  <button class="nav-btn" id="nextEra" aria-label="下一個時代" title="下一個時代(→)">▶</button>
+</div>
+
+<div class="layout" id="layout" hidden>
+  <div class="map-frame">
+    <div class="ov-wrap" id="ovWrap">
+      <canvas id="ovw"></canvas>
+      <div class="ov-caption" id="ovCaption"></div>
+    </div>
+    <div class="ov-link">
+      <canvas id="ovLink"></canvas>
+      <span class="ov-link-text" id="ovLinkText"></span>
+    </div>
+    <div class="map-wrap" id="mapWrap">
+      <canvas id="map"></canvas>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div class="dialog" id="dialog" aria-live="polite"></div>
+  </div>
+  <div class="panel">
+    <div class="card">
+      <div class="era-title" id="eraTitle"></div>
+      <div class="era-years" id="eraYears"></div>
+      <div class="era-desc" id="eraDesc"></div>
+    </div>
+    <div class="card"><h2>人物</h2><div class="people" id="people"></div></div>
+    <div class="card"><h2>大事記(點擊定位)</h2><div class="events" id="events"></div></div>
+    <div class="card"><h2>相關書卷</h2><div class="books" id="books"></div>
+      <div class="books-note">※ 同一段歷史常由不同書卷平行記載,視角不同、重點不同。</div>
+    </div>
+  </div>
+</div>
+
+<div id="errorBox" class="error-box" hidden></div>
+<footer>引擎 v1.2 — 內容與程式分離;新增時代只需提交 data/eras/*.json</footer>
+
+<script>
+/* ═══════════ 引擎:不含任何聖經內容,全部由 data/ 載入 ═══════════ */
+const T = 12;
+const TERRAIN_COLORS = {
+  sea:['#27517d','#2e5d8f'], plain:['#9aa85e','#a7b56a'],
+  hill:['#8f7a4a','#9c8755'], mountain:['#6e5c3a','#7a6845'],
+  desert:['#cdb482','#d7c08a'], valley:['#7a9a52','#86a65e'],
+  water:['#2e6d99','#3579a8']
+};
+const FACTION = {
+  united:{name:'統一王國',          color:'#9b6fd1'},
+  north: {name:'北國以色列(10支派)', color:'#3fa7a0'},
+  south: {name:'南國猶大(猶大+便雅憫)', color:'#d9a441'},
+  empire:{name:'外邦帝國',          color:'#b04a4a'},
+  foreign:{name:'外邦',             color:'#888888'}
+};
+const hexA=(h,a)=>{const n=parseInt(h.slice(1),16);
+  return `rgba(${n>>16&255},${n>>8&255},${n&255},${a})`;};
+
+/* 世界視角:固定廣域圖(羅馬→波斯,含埃及與紅海),標出各舞台地圖的位置 */
+const OVERVIEW = {
+  cols:48, rows:20,
+  terrain:[                                  // 底色為海,依序蓋上陸地與水系
+    {type:'plain',  rect:[0,0,47,2]},        // 歐洲北緣
+    {type:'plain',  rect:[5,2,7,7]},         // 義大利半島
+    {type:'plain',  rect:[12,2,15,6]},       // 希臘
+    {type:'plain',  rect:[18,1,31,5]},       // 小亞細亞
+    {type:'plain',  rect:[30,5,34,13]},      // 迦南/黎凡特走廊
+    {type:'plain',  rect:[32,1,47,13]},      // 美索不達米亞與波斯
+    {type:'plain',  rect:[0,13,47,19]},      // 北非與阿拉伯
+    {type:'desert', rect:[0,14,26,19]},      // 撒哈拉
+    {type:'desert', rect:[33,14,47,19]},     // 阿拉伯沙漠
+    {type:'water',  rect:[26,13,28,13]},     // 尼羅河三角洲
+    {type:'water',  rect:[27,14,27,19]},     // 尼羅河
+    {type:'water',  rect:[30,15,32,19]},     // 紅海
+    {type:'water',  rect:[37,3,37,12]},      // 幼發拉底河
+    {type:'water',  rect:[40,2,40,11]},      // 底格里斯河
+    {type:'water',  rect:[43,11,46,14]}      // 波斯灣
+  ],
+  regions:{                                  // 各舞台地圖在廣域圖上的範圍
+    canaan:        [29,6,33,12],
+    exodus:        [25,11,33,19],
+    neareast:      [26,3,47,15],
+    mediterranean: [4,1,34,14]
+  },
+  labels:[
+    // 地理標籤:跨時代恆定
+    {n:'地中海',c:16,r:9}, {n:'迦南',c:32,r:6},
+    {n:'埃及',c:23,r:16},  {n:'紅海',c:31,r:17},
+    // 政權/族群標籤:只在存在的時代顯示(from/to 為 era order)
+    {n:'美索不達米亞',c:40,r:4,from:10,to:80},   // 兩河流域(中性地理名)
+    {n:'非利士',c:28,r:12,from:30,to:100},        // 沿海平原,士師至王國時代的宿敵
+    {n:'亞述',c:41,r:3,from:90,to:100},           // 主前900–612年的霸權,先於南國滅亡
+    {n:'巴比倫',c:39,r:9,from:110,to:120},        // 主前626–539年
+    {n:'波斯',c:45,r:6,from:120,to:130},          // 主前550年崛起
+    {n:'希臘',c:13,r:3,from:140,to:150},
+    {n:'羅馬',c:6,r:3,from:140,to:150},
+    {n:'小亞細亞',c:23,r:2,from:140,to:150}
+  ],
+  anchor:{c:31,r:10}                         // 耶路撒冷:恆定錨點
+};
+
+const state = { manifest:null, maps:{}, eras:{}, current:null, highlight:null };
+const cv=document.getElementById('map'), ctx=cv.getContext('2d');
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let typeTimer=null;
+
+async function loadJSON(path){
+  const res=await fetch(path);
+  if(!res.ok) throw new Error(path+' 載入失敗 ('+res.status+')');
+  return res.json();
+}
+
+const DATA_BASE='../data/';   // 相對於 engine/index.html;根目錄起伺服器或子路徑部署皆可
+async function boot(){
+  try{
+    state.manifest = await loadJSON(DATA_BASE+'manifest.json');
+    document.getElementById('siteTitle').textContent = state.manifest.title;
+    document.getElementById('siteSubtitle').textContent = state.manifest.subtitle;
+
+    const eras = await Promise.all(
+      state.manifest.eras.map(e => loadJSON(DATA_BASE+e.file)));
+    eras.sort((a,b)=>a.order-b.order)
+        .forEach(e => state.eras[e.id]=e);
+
+    const mapIds=[...new Set(eras.map(e=>e.mapId))];
+    for(const m of mapIds) state.maps[m]=await loadJSON(DATA_BASE+'maps/'+m+'.json');
+
+    try{ state.bookEras=await loadJSON(DATA_BASE+'book_eras.json'); }
+    catch(e){ state.bookEras=null; }
+
+    document.getElementById('layout').hidden=false;
+
+    // 深連結:?era=id、#era=id 或 ?ref=代下12(經文參照自動定位時代)
+    const qp=new URLSearchParams(location.search);
+    const hashEra=(location.hash.match(/era=([a-z_]+)/)||[])[1];
+    let target=state.eras[qp.get('era')]||state.eras[hashEra]||null;
+    if(!target&&qp.get('ref')){
+      const id=resolveRef(qp.get('ref'));
+      if(id)target=state.eras[id];
+    }
+    setEra(target||state.eras[state.manifest.defaultEra]||eras[0]);
+
+    document.getElementById('prevEra').onclick=()=>stepEra(-1);
+    document.getElementById('nextEra').onclick=()=>stepEra(1);
+    window.addEventListener('keydown',e=>{
+      if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+      if(e.key==='ArrowLeft')stepEra(-1);
+      if(e.key==='ArrowRight')stepEra(1);
+    });
+    loadTodayBadge();
+  }catch(err){
+    const box=document.getElementById('errorBox');
+    box.hidden=false;
+    box.textContent='資料載入失敗:'+err.message+
+      '。請以本地伺服器開啟(例:python3 -m http.server),或部署到 Cloudflare Pages;直接雙擊 HTML 檔無法讀取 JSON。';
+  }
+}
+
+function setEra(era){
+  state.current=era; state.highlight=null;
+  try{history.replaceState(null,'','#era='+era.id);}catch(e){}
+  renderAll();
+  typewrite(era.intro);
+}
+
+function eraList(){
+  return Object.values(state.eras).sort((a,b)=>a.order-b.order);
+}
+function stepEra(d){
+  const list=eraList(), i=list.indexOf(state.current);
+  if(list[i+d])setEra(list[i+d]);
+}
+
+/* 解析經文參照(例:代下12、歷代志下 33)→ 時代 id;書名取最長匹配 */
+function resolveRef(str){
+  if(!state.bookEras||!str)return null;
+  str=String(str).trim();
+  const be=state.bookEras;
+  const names=Object.keys(be.books).concat(Object.keys(be.aliases))
+    .sort((a,b)=>b.length-a.length);
+  const name=names.find(n=>str.startsWith(n));
+  if(!name)return null;
+  const key=be.books[name]?name:be.aliases[name];
+  const m=str.slice(name.length).match(/\d+/);
+  const ch=m?parseInt(m[0],10):1;
+  const rule=(be.books[key]||[]).find(r=>(r.from??1)<=ch&&ch<=(r.to??999));
+  return rule?rule.era:null;
+}
+
+/* 今日讀經徽章:跨域讀取 daily-bread 的每日進度,定位到所屬時代 */
+const DAILY_BREAD='https://daily-bread.launchdock.app/';
+async function loadTodayBadge(){
+  try{
+    const sch=await loadJSON(DAILY_BREAD+'data/schedule.json');
+    const today=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Taipei'});
+    const item=sch[today];
+    if(!item||!item.d)return;
+    const eraId=resolveRef(item.d), era=state.eras[eraId];
+    const box=document.getElementById('todayBadge');
+    box.innerHTML='';
+    const label=document.createElement('span');
+    label.textContent='📖 今日讀經:'+item.d;
+    box.appendChild(label);
+    if(era){
+      const btn=document.createElement('button');
+      btn.textContent='📍 '+era.title+' — 看這段歷史的地圖';
+      btn.onclick=()=>{setEra(era); window.scrollTo({top:0,behavior:'smooth'});};
+      box.appendChild(btn);
+    }
+    const link=document.createElement('a');
+    link.href=DAILY_BREAD; link.target='_blank'; link.rel='noopener';
+    link.textContent='去讀經 ↗';
+    box.appendChild(link);
+    box.hidden=false;
+  }catch(e){/* 離線或讀不到時安靜略過 */}
+}
+
+function renderAll(){
+  renderEraBar(); drawOverview(); drawMap(); renderLabels(); renderLegend(); renderPanel();
+}
+
+function drawOverview(){
+  const era=state.current, stage=state.maps[era.mapId];
+  const cvo=document.getElementById('ovw'), c=cvo.getContext('2d');
+  const T2=8;
+  cvo.width=OVERVIEW.cols*T2; cvo.height=OVERVIEW.rows*T2;
+  const grid=[];
+  for(let r=0;r<OVERVIEW.rows;r++){grid[r]=[];
+    for(let cc=0;cc<OVERVIEW.cols;cc++)grid[r][cc]='sea';}
+  OVERVIEW.terrain.forEach(L=>{
+    const[c1,r1,c2,r2]=L.rect;
+    for(let r=r1;r<=r2&&r<OVERVIEW.rows;r++)
+      for(let cc=c1;cc<=c2&&cc<OVERVIEW.cols;cc++)grid[r][cc]=L.type;
+  });
+  for(let r=0;r<OVERVIEW.rows;r++)for(let cc=0;cc<OVERVIEW.cols;cc++){
+    const tc=TERRAIN_COLORS[grid[r][cc]]||TERRAIN_COLORS.plain;
+    c.fillStyle=tc[0]; c.fillRect(cc*T2,r*T2,T2,T2);
+    c.fillStyle=tc[1];
+    if((cc+r)%2===0){c.fillRect(cc*T2+1,r*T2+1,3,3);c.fillRect(cc*T2+5,r*T2+5,2,2);}
+    else{c.fillRect(cc*T2+5,r*T2+1,2,2);c.fillRect(cc*T2+1,r*T2+5,3,3);}
+  }
+  // 目前舞台的金框:框外全部壓暗(聚光燈),框內保持明亮
+  const reg=OVERVIEW.regions[era.mapId];
+  const W=cvo.width, H=cvo.height;
+  if(reg){
+    const[c1,r1,c2,r2]=reg;
+    const x=c1*T2, y=r1*T2, w=(c2-c1+1)*T2, h=(r2-r1+1)*T2;
+    c.fillStyle='rgba(8,10,20,.62)';
+    c.fillRect(0,0,W,y); c.fillRect(0,y+h,W,H-y-h);
+    c.fillRect(0,y,x,h); c.fillRect(x+w,y,W-x-w,h);
+    c.strokeStyle='#e8c574'; c.lineWidth=2;
+    c.strokeRect(x+1,y+1,w-2,h-2);
+    c.fillStyle='#e8c574';                  // 四角加粗,像選取框
+    [[x,y],[x+w-5,y],[x,y+h-5],[x+w-5,y+h-5]].forEach(([px,py])=>
+      c.fillRect(px,py,5,5));
+    drawOvLink(x,x+w,W,stage);
+  }
+  // 耶路撒冷錨點(恆定參考座標)
+  const a=OVERVIEW.anchor;
+  c.fillStyle='#000'; c.fillRect(a.c*T2,a.r*T2,8,8);
+  c.fillStyle='#ffd866'; c.fillRect(a.c*T2+2,a.r*T2+2,4,4);
+  document.getElementById('ovCaption').textContent=
+    '🔍 世界視角(★=耶路撒冷)';
+  renderOvLabels();
+}
+
+/* 縮放錐:從金框兩角拉虛線連到下方大地圖左右緣,明示「下圖=金框放大」 */
+function drawOvLink(x1,x2,W,stage){
+  const cvl=document.getElementById('ovLink'), c=cvl.getContext('2d');
+  const H=28; cvl.width=W; cvl.height=H;
+  c.clearRect(0,0,W,H);
+  c.fillStyle=hexA('#e8c574',.10);          // 漸開的光錐
+  c.beginPath();
+  c.moveTo(x1,0); c.lineTo(x2,0); c.lineTo(W,H); c.lineTo(0,H);
+  c.closePath(); c.fill();
+  c.strokeStyle='#e8c574'; c.lineWidth=1.5; c.setLineDash([4,4]);
+  c.beginPath(); c.moveTo(x1,0); c.lineTo(0,H); c.stroke();
+  c.beginPath(); c.moveTo(x2,0); c.lineTo(W,H); c.stroke();
+  c.setLineDash([]);
+  document.getElementById('ovLinkText').textContent=
+    '▼ 金框放大 — '+(stage.name||'');
+}
+
+function renderOvLabels(){
+  const wrap=document.getElementById('ovWrap');
+  if(!wrap.querySelector('.ov-label')){        // 標籤只建一次
+    OVERVIEW.labels.forEach(L=>{
+      const div=document.createElement('div');
+      div.className='ov-label'; div.textContent=L.n;
+      div.dataset.c=L.c; div.dataset.r=L.r;
+      div.dataset.from=L.from??-Infinity; div.dataset.to=L.to??Infinity;
+      div.style.left=((L.c+0.5)/OVERVIEW.cols*100)+'%';
+      div.style.top=((L.r+0.5)/OVERVIEW.rows*100)+'%';
+      wrap.appendChild(div);
+    });
+  }
+  const reg=OVERVIEW.regions[state.current.mapId];
+  const order=state.current.order;
+  wrap.querySelectorAll('.ov-label').forEach(div=>{
+    // 政權標籤只在其存在的時代顯示(地理標籤恆顯)
+    if(order<+div.dataset.from||order>+div.dataset.to){
+      div.style.display='none'; return;
+    }
+    div.style.display='';
+    if(!reg){div.style.opacity=1; return;}     // 框外標籤跟著壓暗
+    const[c1,r1,c2,r2]=reg, lc=+div.dataset.c, lr=+div.dataset.r;
+    div.style.opacity=(lc>=c1&&lc<=c2&&lr>=r1&&lr<=r2)?1:.4;
+  });
+}
+
+function drawMap(){
+  const era=state.current, map=state.maps[era.mapId];
+  cv.width=map.cols*T; cv.height=map.rows*T;
+  const grid=[];
+  for(let r=0;r<map.rows;r++){grid[r]=[];for(let c=0;c<map.cols;c++)grid[r][c]='plain';}
+  map.terrain.forEach(L=>{
+    const[c1,r1,c2,r2]=L.rect;
+    for(let r=r1;r<=r2&&r<map.rows;r++)for(let c=c1;c<=c2&&c<map.cols;c++)grid[r][c]=L.type;
+  });
+  for(let r=0;r<map.rows;r++)for(let c=0;c<map.cols;c++){
+    const tc=TERRAIN_COLORS[grid[r][c]]||TERRAIN_COLORS.plain;
+    ctx.fillStyle=tc[0]; ctx.fillRect(c*T,r*T,T,T);
+    ctx.fillStyle=tc[1];
+    if((c+r)%2===0){ctx.fillRect(c*T+2,r*T+2,4,4);ctx.fillRect(c*T+7,r*T+7,4,4);}
+    else{ctx.fillRect(c*T+7,r*T+2,4,4);ctx.fillRect(c*T+2,r*T+7,4,4);}
+  }
+  era.territory.forEach(tt=>{
+    const col=FACTION[tt.faction].color, [c1,r1,c2,r2]=tt.rect;
+    for(let r=r1;r<=r2&&r<map.rows;r++)for(let c=c1;c<=c2&&c<map.cols;c++){
+      const g=grid[r][c]; if(g==='sea'||g==='water')continue;
+      ctx.fillStyle=hexA(col,.30); ctx.fillRect(c*T,r*T,T,T);
+      if((c+r)%2===0){ctx.fillStyle=hexA(col,.25); ctx.fillRect(c*T+3,r*T+3,6,6);}
+    }
+  });
+  (era.routes||[]).forEach(rt=>{
+    const col=rt.color||'#f0e8d8';
+    const pts=rt.points.map(k=>map.cities[k]).filter(Boolean)
+      .map(ct=>[(ct.c+0.5)*T,(ct.r+0.5)*T]);
+    for(let i=0;i<pts.length-1;i++){
+      const[x1,y1]=pts[i],[x2,y2]=pts[i+1];
+      const dist=Math.hypot(x2-x1,y2-y1), steps=Math.max(1,Math.floor(dist/6));
+      for(let s=0;s<=steps;s++){
+        if(s%2)continue;
+        const x=x1+(x2-x1)*s/steps, y=y1+(y2-y1)*s/steps;
+        ctx.fillStyle='#000'; ctx.fillRect(Math.round(x)-2,Math.round(y)-2,4,4);
+        ctx.fillStyle=col; ctx.fillRect(Math.round(x)-1,Math.round(y)-1,2,2);
+      }
+    }
+    if(pts.length>1){ // 終點箭頭
+      const[x,y]=pts[pts.length-1];
+      ctx.fillStyle=col;
+      ctx.fillRect(x-1,y-5,2,2); ctx.fillRect(x-3,y-3,6,2); ctx.fillRect(x-1,y-1,2,2);
+    }
+  });
+  era.cities.forEach(k=>{
+    const ct=map.cities[k]; if(!ct)return;
+    const x=ct.c*T,y=ct.r*T;
+    ctx.fillStyle='#000'; ctx.fillRect(x+2,y+2,8,8);
+    ctx.fillStyle = era.capitals.includes(k) ? '#ffd866' : '#f0e8d8';
+    ctx.fillRect(x+3,y+3,6,6);
+    if(state.highlight===k){ctx.strokeStyle='#ff5544';ctx.lineWidth=2;
+      ctx.strokeRect(x-1,y-1,14,14);}
+  });
+}
+
+function renderLabels(){
+  const era=state.current, map=state.maps[era.mapId];
+  const wrap=document.getElementById('mapWrap');
+  wrap.querySelectorAll('.city-label').forEach(n=>n.remove());
+  era.cities.forEach(k=>{
+    const ct=map.cities[k]; if(!ct)return;
+    const div=document.createElement('div');
+    const isCap=era.capitals.includes(k);
+    div.className='city-label'+(isCap?' capital':'');
+    div.textContent=(isCap?'★':'')+ct.name;
+    div.style.left=((ct.c+0.5)/map.cols*100)+'%';
+    div.style.top=((ct.r+0.5)/map.rows*100)+'%';
+    wrap.appendChild(div);
+  });
+}
+
+function renderLegend(){
+  const lg=document.getElementById('legend'); lg.innerHTML='';
+  [...new Set(state.current.territory.map(t=>t.faction))].forEach(f=>{
+    const s=document.createElement('span');
+    s.innerHTML='<i class="swatch" style="background:'+FACTION[f].color+'"></i>';
+    s.appendChild(document.createTextNode(FACTION[f].name));
+    lg.appendChild(s);
+  });
+  (state.current.routes||[]).forEach(rt=>{
+    const s=document.createElement('span');
+    const sw=document.createElement('i'); sw.className='swatch';
+    sw.style.background=rt.color||'#f0e8d8'; sw.style.height='4px';
+    s.appendChild(sw);
+    s.appendChild(document.createTextNode('⋯ '+rt.name));
+    lg.appendChild(s);
+  });
+  const c=document.createElement('span');
+  c.innerHTML='<i class="swatch" style="background:#f0e8d8"></i>城市';
+  lg.appendChild(c);
+  const cap=document.createElement('span');
+  cap.style.color='var(--gold-bright)'; cap.textContent='★ 京城';
+  lg.appendChild(cap);
+}
+
+function renderEraBar(){
+  const bar=document.getElementById('eraBar'); bar.innerHTML='';
+  Object.values(state.eras).sort((a,b)=>a.order-b.order).forEach(e=>{
+    const b=document.createElement('button');
+    b.className='era-btn'+(e===state.current?' active':'');
+    b.appendChild(document.createTextNode(e.title));
+    const yr=document.createElement('span'); yr.className='yr'; yr.textContent=e.years;
+    b.appendChild(yr);
+    b.onclick=()=>setEra(e);
+    bar.appendChild(b);
+  });
+  const act=bar.querySelector('.era-btn.active');
+  if(act)act.scrollIntoView({inline:'center',block:'nearest',
+    behavior:reduceMotion?'auto':'smooth'});
+}
+
+function drawAvatar(canvas,av){
+  const c=canvas.getContext('2d'); canvas.width=16; canvas.height=16;
+  c.fillStyle='#181320'; c.fillRect(0,0,16,16);
+  c.fillStyle=av.robe; c.fillRect(3,11,10,5);
+  c.fillStyle=av.skin; c.fillRect(5,4,6,7);
+  c.fillStyle=av.hair||av.skin;
+  c.fillRect(4,3,8,2); c.fillRect(4,4,1,4); c.fillRect(11,4,1,4);
+  if(av.beard){c.fillStyle=av.beard; c.fillRect(5,9,6,2); c.fillRect(6,11,4,1);}
+  c.fillStyle='#181320'; c.fillRect(6,6,1,1); c.fillRect(9,6,1,1);
+  if(av.crown){c.fillStyle='#ffd866'; c.fillRect(4,1,8,2);
+    c.fillRect(4,0,1,1); c.fillRect(7,0,2,1); c.fillRect(11,0,1,1);}
+}
+
+function renderPanel(){
+  const era=state.current, map=state.maps[era.mapId];
+  document.getElementById('eraTitle').textContent=era.title;
+  document.getElementById('eraYears').textContent=era.years;
+  document.getElementById('eraDesc').textContent=era.desc;
+
+  const pp=document.getElementById('people'); pp.innerHTML='';
+  era.people.forEach(p=>{
+    const div=document.createElement('div'); div.className='person';
+    const cnv=document.createElement('canvas'); drawAvatar(cnv,p.avatar);
+    const info=document.createElement('div'); info.className='info';
+    const b=document.createElement('b'); b.textContent=p.name;
+    const tag=document.createElement('span'); tag.className='tag '+p.tagClass;
+    tag.textContent=p.tag;
+    const d=document.createElement('p'); d.textContent=p.desc;
+    info.append(b,tag,d); div.append(cnv,info); pp.appendChild(div);
+  });
+
+  const ev=document.getElementById('events'); ev.innerHTML='';
+  era.events.forEach(e=>{
+    const btn=document.createElement('button'); btn.className='event-btn';
+    btn.textContent=e.text.slice(0,22)+'…';
+    const loc=document.createElement('span'); loc.className='loc';
+    loc.textContent='📍 '+(map.cities[e.city]?map.cities[e.city].name:e.city);
+    btn.appendChild(document.createElement('br')); btn.appendChild(loc);
+    btn.onclick=()=>{
+      state.highlight=e.city; drawMap();
+      typewrite(e.text,e.ref);
+      ev.querySelectorAll('.event-btn').forEach(x=>x.classList.remove('active'));
+      btn.classList.add('active');
+    };
+    ev.appendChild(btn);
+  });
+
+  const bk=document.getElementById('books'); bk.innerHTML='';
+  era.books.forEach(b=>{
+    const s=document.createElement('span'); s.className='book'; s.textContent=b;
+    bk.appendChild(s);
+  });
+}
+
+function typewrite(text,ref){
+  const d=document.getElementById('dialog');
+  clearInterval(typeTimer); d.innerHTML='';
+  const span=document.createElement('span'); d.appendChild(span);
+  const addRef=()=>{ if(ref){const r=document.createElement('span');
+    r.className='ref'; r.textContent='📖 '+ref; d.appendChild(r);} };
+  if(reduceMotion){ span.textContent=text; addRef(); return; }
+  let i=0;
+  typeTimer=setInterval(()=>{
+    span.textContent=text.slice(0,++i);
+    if(i>=text.length){clearInterval(typeTimer); addRef();}
+  },28);
+}
+
+boot();
+
+if('serviceWorker' in navigator)
+  navigator.serviceWorker.register('../sw.js').catch(()=>{});
+</script>
+</body>
+</html>

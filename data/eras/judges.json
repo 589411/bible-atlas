@@ -1,0 +1,21 @@
+{
+  "id": "judges", "mapId": "canaan", "order": 40,
+  "title": "士師時代", "years": "約主前 1380–1050 年",
+  "desc": "以色列入迦南後,無王治理,「各人任意而行」。百姓反覆背道敬拜偶像,遭外族壓制,呼求後神興起士師拯救。底波拉以智謀破迦南,基甸以三百人敗米甸,參孫以神力抗非利士。循環持續近四百年,百姓最終渴望一位世上的王,埋下王國時代的伏筆。",
+  "intro": "背道與拯救的循環,士師一再興起,王權渴望悄然成形。",
+  "territory": [ { "faction": "united", "rect": [6, 8, 18, 26] } ],
+  "cities": ["shiloh", "shechem", "megiddo", "gibeah", "bethlehem", "hebron"],
+  "capitals": ["shiloh"],
+  "people": [
+    { "name": "底波拉", "tag": "女士師", "tagClass": "prophet", "desc": "女先知兼士師,坐棕樹下為以色列斷案", "avatar": { "skin": "#d8a878", "hair": "#1a0a0a", "robe": "#5a7a9a" } },
+    { "name": "基甸", "tag": "士師", "tagClass": "united", "desc": "以三百勇士持火把瓦器夜襲,大敗米甸聯軍", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } },
+    { "name": "參孫", "tag": "士師", "tagClass": "united", "desc": "拿細耳人,以神賜力量獨力抗擊非利士人", "avatar": { "skin": "#c89868", "hair": "#1a0a0a", "robe": "#7a4a3a" } },
+    { "name": "路得", "tag": "摩押女子", "tagClass": "other", "desc": "忠心歸附婆婆的摩押女子,大衛的曾祖母", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#a08850" } }
+  ],
+  "events": [
+    { "city": "megiddo", "text": "底波拉命巴拉集結他泊山,基順河水暴漲,迦南將軍西西拉全軍潰敗,逃逸後被雅億帳中刺殺。", "ref": "士師記 4–5" },
+    { "city": "gibeah", "text": "基比亞暴行致利未人之妾死,以色列各支派征討便雅憫,該支派幾近滅絕。", "ref": "士師記 19–21" },
+    { "city": "bethlehem", "text": "路得隨拿俄米歸回伯利恆,在波阿斯田間拾穗,蒙其以至近親身分娶為妻。", "ref": "路得記 1–4" }
+  ],
+  "books": ["士師記", "路得記"]
+}

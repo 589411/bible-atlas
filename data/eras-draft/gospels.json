@@ -1,0 +1,21 @@
+{
+  "id": "gospels", "mapId": "canaan", "order": 140,
+  "title": "福音書時代", "years": "主前 4 – 主後 30 年",
+  "desc": "羅馬行省統治下,耶穌降生於大衛之城伯利恆,成長於拿撒勒。受施洗約翰的洗後,以迦百農為加利利事工基地,呼召門徒、醫病趕鬼、宣講天國。最終上耶路撒冷,受難於十字架,第三日復活——舊約一切應許在此交匯成就,新約時代開啟。",
+  "intro": "道成肉身,行走加利利與猶太,天國降臨人間。",
+  "territory": [ { "faction": "empire", "rect": [6, 2, 23, 27] } ],
+  "cities": ["nazareth", "capernaum", "caesarea", "jerusalem", "bethlehem", "jericho"],
+  "capitals": [],
+  "people": [
+    { "name": "耶穌", "tag": "彌賽亞", "tagClass": "prophet", "desc": "拿撒勒木匠之子,宣講天國,受死復活的救主", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+    { "name": "施洗約翰", "tag": "先鋒", "tagClass": "prophet", "desc": "在約旦河為人施洗的先鋒,非使徒約翰", "avatar": { "skin": "#c89868", "hair": "#1a0a0a", "beard": "#1a0a0a", "robe": "#7a6845" } },
+    { "name": "使徒約翰", "tag": "使徒", "tagClass": "other", "desc": "西庇太之子,十二使徒之一,非施洗約翰", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#5a7a9a" } },
+    { "name": "彼得", "tag": "使徒", "tagClass": "other", "desc": "迦百農漁夫,十二使徒之首,原名西門", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } }
+  ],
+  "events": [
+    { "city": "bethlehem", "text": "耶穌降生於大衛之城伯利恆,天使報喜,博士來朝,應驗彌迦書的預言。", "ref": "路加福音 2;馬太福音 1–2" },
+    { "city": "capernaum", "text": "耶穌以迦百農為基地,呼召彼得等漁夫,在會堂醫病趕鬼,天國信息傳遍加利利。", "ref": "馬可福音 1–2;馬太福音 4;路加福音 4–5" },
+    { "city": "jerusalem", "text": "耶穌進城受難,被釘十字架,第三日從死裡復活,向門徒顯現,救贖大功告成。", "ref": "馬太福音 26–28;馬可福音 14–16;路加福音 22–24;約翰福音 18–21" }
+  ],
+  "books": ["馬太福音", "馬可福音", "路加福音", "約翰福音"]
+}

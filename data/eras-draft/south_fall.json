@@ -1,0 +1,20 @@
+{
+  "id": "south_fall", "mapId": "canaan", "order": 110,
+  "title": "南國滅亡", "years": "主前 586 年",
+  "desc": "巴比倫崛起取代亞述,主宰近東。約西亞改革後南國短暫振興,卻因繼位諸王反覆投降又背叛而三度遭擄。西底家背棄與巴比倫的盟約,耶路撒冷被圍兩年,城牆破裂,聖殿付之一炬,耶利米在廢墟中作哀歌——大衛王朝的燈火看似徹底熄滅。",
+  "intro": "聖殿被焚,猶大亡國,百姓擄至巴比倫。",
+  "territory": [ { "faction": "empire", "rect": [6, 2, 23, 27] } ],
+  "cities": ["jerusalem", "lachish", "jericho", "bethlehem", "hebron"],
+  "capitals": [],
+  "people": [
+    { "name": "西底家", "tag": "南國末王", "tagClass": "south", "desc": "猶大末代君王,背約招致亡國", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } },
+    { "name": "耶利米", "tag": "先知", "tagClass": "prophet", "desc": "流淚的先知,親歷聖城傾覆仍傳盼望", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } },
+    { "name": "尼布甲尼撒", "tag": "巴比倫王", "tagClass": "empire", "desc": "巴比倫霸主,三度兵臨耶路撒冷", "avatar": { "skin": "#c89868", "hair": "#1a0a0a", "beard": "#1a0a0a", "robe": "#b04a4a", "crown": true } }
+  ],
+  "events": [
+    { "city": "lachish", "text": "巴比倫橫掃猶大,堅城相繼淪陷,僅剩拉吉與亞西加仍在抵抗(拉吉書信見證最後烽火)。", "ref": "耶利米書 34:7" },
+    { "city": "jerusalem", "text": "耶路撒冷被圍兩年後陷落,聖殿焚毀,王室與百姓被擄至巴比倫,耶利米為此作哀歌。", "ref": "列王紀下 25;歷代志下 36;耶利米哀歌" },
+    { "city": "jericho", "text": "西底家趁夜突圍,行至耶利哥平原被巴比倫軍追擒,諸子被殺,雙眼被剜。", "ref": "列王紀下 25:4-7;耶利米書 52:7-11" }
+  ],
+  "books": ["列王紀下 21–25", "歷代志下 33–36", "耶利米書", "耶利米哀歌", "西番雅書", "哈巴谷書"]
+}

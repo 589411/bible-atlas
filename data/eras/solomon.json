@@ -1,0 +1,25 @@
+{
+  "id": "solomon",
+  "mapId": "canaan",
+  "order": 70,
+  "title": "所羅門時代",
+  "years": "約主前 970–931 年",
+  "desc": "王國的黃金時代:疆域最大、貿易繁盛、智慧名聞列國,並建造聖殿。但所羅門晚年隨外邦妃嬪敬拜偶像,神宣告國度將從他兒子手中撕裂——分裂的伏筆已埋下。",
+  "intro": "黃金時代:從但到別是巴。列王紀與歷代志平行記載。",
+  "territory": [
+    { "faction": "united", "rect": [5, 1, 25, 28] }
+  ],
+  "cities": ["jerusalem", "megiddo", "hazor", "dan", "beersheba"],
+  "capitals": ["jerusalem"],
+  "people": [
+    { "name": "所羅門", "tag": "統一王國", "tagClass": "united", "desc": "以智慧著稱,建造耶路撒冷聖殿", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#c9a24b", "crown": true } },
+    { "name": "示巴女王", "tag": "外邦", "tagClass": "other", "desc": "遠道而來考驗所羅門的智慧", "avatar": { "skin": "#a87858", "hair": "#1a0a0a", "robe": "#a83a5a", "crown": true } },
+    { "name": "耶羅波安(臣僕)", "tag": "伏筆", "tagClass": "north", "desc": "所羅門能臣,先知預言他將得十支派", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "robe": "#3fa7a0" } }
+  ],
+  "events": [
+    { "city": "jerusalem", "text": "所羅門用七年建造聖殿,神的榮光充滿殿宇。", "ref": "列王紀上 6–8;歷代志下 2–7" },
+    { "city": "jerusalem", "text": "示巴女王來訪,「從但到別是巴」國泰民安、富甲一方。", "ref": "列王紀上 10;歷代志下 9" },
+    { "city": "dan", "text": "晚年離棄神,先知亞希雅預言國度將分裂,耶羅波安逃往埃及避禍。", "ref": "列王紀上 11" }
+  ],
+  "books": ["列王紀上 1–11", "歷代志下 1–9", "箴言", "傳道書", "雅歌"]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "neareast",
+  "name": "古代近東",
+  "cols": 44,
+  "rows": 26,
+  "comment": "族長旅程、被擄與歸回的舞台:兩河流域—迦南—埃及。",
+  "terrain": [
+    { "type": "plain",    "rect": [0, 0, 43, 25] },
+    { "type": "hill",     "rect": [20, 0, 43, 4] },
+    { "type": "hill",     "rect": [36, 5, 43, 14] },
+    { "type": "desert",   "rect": [10, 11, 32, 23] },
+    { "type": "desert",   "rect": [0, 20, 9, 25] },
+    { "type": "hill",     "rect": [7, 9, 11, 18] },
+    { "type": "water",    "rect": [17, 4, 18, 7] },
+    { "type": "water",    "rect": [19, 7, 21, 9] },
+    { "type": "water",    "rect": [22, 9, 25, 12] },
+    { "type": "water",    "rect": [26, 12, 29, 15] },
+    { "type": "water",    "rect": [30, 15, 32, 18] },
+    { "type": "water",    "rect": [26, 3, 27, 6] },
+    { "type": "water",    "rect": [28, 6, 30, 9] },
+    { "type": "water",    "rect": [31, 9, 33, 13] },
+    { "type": "water",    "rect": [2, 16, 3, 24] },
+    { "type": "sea",      "rect": [0, 6, 5, 19] },
+    { "type": "sea",      "rect": [34, 19, 43, 25] }
+  ],
+  "cities": {
+    "ur":        { "name": "吾珥",     "c": 33, "r": 18 },
+    "babylon":   { "name": "巴比倫",   "c": 29, "r": 15 },
+    "nineveh":   { "name": "尼尼微",   "c": 28, "r": 6 },
+    "susa":      { "name": "書珊",     "c": 38, "r": 15 },
+    "haran":     { "name": "哈蘭",     "c": 18, "r": 4 },
+    "damascus":  { "name": "大馬士革", "c": 12, "r": 9 },
+    "shechem":   { "name": "示劍",     "c": 8,  "r": 12 },
+    "jerusalem": { "name": "耶路撒冷", "c": 8,  "r": 15 },
+    "hebron":    { "name": "希伯崙",   "c": 8,  "r": 17 },
+    "goshen":    { "name": "歌珊(埃及)", "c": 4, "r": 20 }
+  }
+}

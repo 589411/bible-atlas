@@ -1,0 +1,30 @@
+{
+  "id": "exodus",
+  "name": "出埃及之路",
+  "cols": 30,
+  "rows": 30,
+  "comment": "埃及—西奈半島—迦南南境。北方在上。",
+  "terrain": [
+    { "type": "plain",    "rect": [0, 0, 29, 29] },
+    { "type": "desert",   "rect": [8, 3, 20, 11] },
+    { "type": "desert",   "rect": [11, 12, 16, 24] },
+    { "type": "mountain", "rect": [12, 18, 15, 23] },
+    { "type": "hill",     "rect": [21, 3, 29, 9] },
+    { "type": "desert",   "rect": [19, 9, 29, 16] },
+    { "type": "water",    "rect": [2, 3, 2, 12] },
+    { "type": "water",    "rect": [9, 10, 10, 22] },
+    { "type": "water",    "rect": [17, 12, 18, 24] },
+    { "type": "sea",      "rect": [0, 0, 29, 2] },
+    { "type": "sea",      "rect": [8, 25, 22, 29] }
+  ],
+  "cities": {
+    "rameses":  { "name": "蘭塞",       "c": 4,  "r": 5 },
+    "succoth":  { "name": "疏割",       "c": 7,  "r": 7 },
+    "yamsuph":  { "name": "過紅海處",   "c": 9,  "r": 14 },
+    "sinai":    { "name": "西奈山",     "c": 13, "r": 21 },
+    "kadesh":   { "name": "加低斯巴尼亞", "c": 19, "r": 8 },
+    "beersheba":{ "name": "別是巴",     "c": 22, "r": 7 },
+    "nebo":     { "name": "尼波山",     "c": 25, "r": 5 },
+    "jericho":  { "name": "耶利哥",     "c": 27, "r": 4 }
+  }
+}

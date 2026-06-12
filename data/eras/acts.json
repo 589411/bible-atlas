@@ -1,0 +1,22 @@
+{
+  "id": "acts", "mapId": "mediterranean", "order": 150,
+  "title": "使徒行傳", "years": "主後 30–62 年",
+  "desc": "五旬節聖靈降臨,門徒在耶路撒冷一日添三千人。福音沿「耶路撒冷→猶太→撒馬利亞→地極」的軸線擴展:彼得開啟外邦門戶,保羅三次宣教旅程橫貫地中海,福音踏入歐洲,最終以囚身抵羅馬。教會從聖城走向帝都,宣教格局徹底改變。",
+  "intro": "聖靈降臨,福音從耶路撒冷衝破帝國邊界直抵羅馬。",
+  "territory": [ { "faction": "empire", "rect": [0, 0, 43, 23] } ],
+  "routes": [ { "name": "保羅宣教(綜合)", "color": "#e8c574", "points": ["jerusalem", "antioch", "salamis", "tarsus", "ephesus", "philippi", "athens", "corinth", "rome"] } ],
+  "cities": ["jerusalem", "antioch", "salamis", "ephesus", "philippi", "athens", "corinth", "rome"],
+  "capitals": ["rome"],
+  "people": [
+    { "name": "保羅", "tag": "外邦使徒", "tagClass": "other", "desc": "大數人,原名掃羅(非掃羅王),外邦人的使徒", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#5a7a9a" } },
+    { "name": "彼得", "tag": "使徒", "tagClass": "other", "desc": "十二使徒之首,五旬節講道,首向外邦傳道", "avatar": { "skin": "#c89868", "hair": "#888888", "beard": "#888888", "robe": "#7a4a3a" } },
+    { "name": "巴拿巴", "tag": "宣教同工", "tagClass": "other", "desc": "居比路利未人,意「勸慰子」,保羅首程同工", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#a08850" } }
+  ],
+  "events": [
+    { "city": "jerusalem", "text": "五旬節聖靈如火降臨,彼得講道,一日三千人歸主,教會誕生。", "ref": "使徒行傳 2" },
+    { "city": "antioch", "text": "門徒首次被稱「基督徒」;聖靈呼召,教會差派保羅與巴拿巴出發宣教。", "ref": "使徒行傳 11:26;13:1-3" },
+    { "city": "philippi", "text": "保羅夜見馬其頓異象,渡海西行,福音首次踏上歐洲土地。", "ref": "使徒行傳 16:9-12" },
+    { "city": "rome", "text": "保羅以囚犯身分抵羅馬,在租屋處放膽傳道兩年,直到地極。", "ref": "使徒行傳 28:16;28:30-31" }
+  ],
+  "books": ["使徒行傳", "保羅書信", "普通書信", "啟示錄(稍後)"]
+}

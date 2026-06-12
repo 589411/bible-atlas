@@ -1,0 +1,21 @@
+{
+  "id": "exile", "mapId": "neareast", "order": 120,
+  "title": "被擄時期", "years": "主前 586–538 年",
+  "desc": "尼布甲尼撒攻破耶路撒冷後,猶大百姓被擄巴比倫七十年。但以理在王宮持守信仰,以西結在迦巴魯河邊見異象,稍後以斯帖在書珊憑智勇扭轉滅族之禍。流亡之苦反成煉爐,拜偶像之罪在異鄉被徹底剪除,民族信仰由此淬鍊重生。",
+  "intro": "聖殿傾頹,百姓被擄,從耶路撒冷到巴比倫。",
+  "territory": [ { "faction": "empire", "rect": [6, 3, 42, 22] } ],
+  "routes": [ { "name": "被擄之路", "color": "#b04a4a", "points": ["jerusalem", "damascus", "haran", "babylon"] } ],
+  "cities": ["jerusalem", "damascus", "haran", "babylon", "susa", "ur"],
+  "capitals": ["babylon"],
+  "people": [
+    { "name": "但以理", "tag": "先知", "tagClass": "prophet", "desc": "被擄猶大青年,在外邦王宮持守信仰解夢預言", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#5a7a9a" } },
+    { "name": "以西結", "tag": "先知", "tagClass": "prophet", "desc": "迦巴魯河畔的祭司先知,傳異象與復興盼望", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#5a7a9a" } },
+    { "name": "以斯帖", "tag": "波斯王后", "tagClass": "other", "desc": "流亡猶大女子,在書珊宮廷捨命救族", "avatar": { "skin": "#d8a878", "hair": "#1a0a0a", "robe": "#a83a5a", "crown": true } }
+  ],
+  "events": [
+    { "city": "babylon", "text": "但以理為尼布甲尼撒解夢得高升;三友拒拜金像被扔火窯,火中有第四者同行得保全。", "ref": "但以理書 2–3" },
+    { "city": "babylon", "text": "伯沙撒王設宴,牆上忽現指頭寫字,但以理解讀:「你被稱在天平裡,顯出你的虧欠。」當夜巴比倫亡於瑪代波斯。", "ref": "但以理書 5" },
+    { "city": "susa", "text": "以斯帖冒死晉見波斯王,揭發哈曼滅族陰謀,全族得救,普珥節由此而來。", "ref": "以斯帖記 4–9" }
+  ],
+  "books": ["但以理書", "以西結書", "以斯帖記", "詩篇 137"]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "north_fall", "mapId": "canaan", "order": 100,
+  "title": "北國滅亡", "years": "主前 722 年",
+  "desc": "亞述帝國崛起,撒馬利亞被圍三年,主前 722 年城陷,末王何細亞被廢,十支派被擄分散至亞述各地。北國自金牛犢以來二百年的背道積罪,終以亡國收場。南國希西家推行改革,主前 701 年西拿基立兵臨城下,以賽亞力勸倚靠耶和華,亞述大軍一夜潰退,神的主權越過人的刀兵。",
+  "intro": "亞述鐵騎踏平撒馬利亞,北國十支派就此消散。",
+  "territory": [
+    { "faction": "empire", "rect": [6, 2, 23, 16] },
+    { "faction": "south", "rect": [6, 17, 17, 27] }
+  ],
+  "cities": ["samaria", "megiddo", "dan", "jerusalem", "lachish"],
+  "capitals": ["jerusalem"],
+  "people": [
+    { "name": "何細亞", "tag": "北國末王", "tagClass": "north", "desc": "北國末代王,向亞述納貢又暗通埃及,被廢囚禁", "avatar": { "skin": "#c89868", "hair": "#1a0a0a", "beard": "#1a0a0a", "robe": "#3fa7a0", "crown": true } },
+    { "name": "希西家", "tag": "南國王", "tagClass": "south", "desc": "猶大中興之君,除偶像、修殿守節,危難中禱告", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } },
+    { "name": "以賽亞", "tag": "先知", "tagClass": "prophet", "desc": "耶路撒冷先知,亞述危機中宣告神必拯救", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
+  ],
+  "events": [
+    { "city": "samaria", "text": "撒馬利亞被亞述攻陷,北國覆滅,十支派被擄至亞述各省,異族遷入混居。", "ref": "列王紀下 17" },
+    { "city": "lachish", "text": "西拿基立主前 701 年親征,拉吉首當其衝陷落,大軍隨即北上逼近耶路撒冷。", "ref": "列王紀下 18:13-17;歷代志下 32:1-8" },
+    { "city": "jerusalem", "text": "希西家展開書信禱告,耶和華的使者一夜擊殺亞述軍十八萬五千,西拿基立退回尼尼微。", "ref": "列王紀下 19:35-37;歷代志下 32:20-22;以賽亞書 37:36-38" }
+  ],
+  "books": ["列王紀下 17–20", "歷代志下 29–32", "以賽亞書 1–39", "彌迦書"]
+}

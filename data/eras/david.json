@@ -1,0 +1,25 @@
+{
+  "id": "david",
+  "mapId": "canaan",
+  "order": 60,
+  "title": "大衛時代",
+  "years": "約主前 1010–970 年",
+  "desc": "大衛先在希伯崙作猶大王七年,後統一全以色列,攻取耶布斯人的耶路撒冷立為京城,將約櫃運入,奠定「大衛之城」的屬靈與政治地位。神與大衛立約:他的家室王位必永遠堅立。",
+  "intro": "王國統一,定都耶路撒冷。撒母耳記下與歷代志上平行記載。",
+  "territory": [
+    { "faction": "united", "rect": [6, 4, 23, 27] }
+  ],
+  "cities": ["hebron", "jerusalem", "bethlehem", "mahanaim", "megiddo", "dan"],
+  "capitals": ["jerusalem"],
+  "people": [
+    { "name": "大衛", "tag": "統一王國", "tagClass": "united", "desc": "合神心意的王,在位四十年", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } },
+    { "name": "約押", "tag": "元帥", "tagClass": "united", "desc": "大衛的軍事統帥,功高而手段狠辣", "avatar": { "skin": "#c89868", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#7a4a3a" } },
+    { "name": "拿單", "tag": "先知", "tagClass": "prophet", "desc": "敢於指出大衛罪行的宮廷先知", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
+  ],
+  "events": [
+    { "city": "hebron", "text": "大衛在希伯崙受膏作猶大王,在此治理七年六個月。", "ref": "撒母耳記下 2:1-4" },
+    { "city": "jerusalem", "text": "大衛攻取耶布斯,定都耶路撒冷,後將約櫃迎入城中。", "ref": "撒母耳記下 5–6;歷代志上 11、13–16" },
+    { "city": "mahanaim", "text": "押沙龍叛變,大衛渡約旦河逃往瑪哈念,後平定叛亂。", "ref": "撒母耳記下 15–18" }
+  ],
+  "books": ["撒母耳記下", "列王紀上 1–2", "歷代志上 11–29", "詩篇(部分)"]
+}
