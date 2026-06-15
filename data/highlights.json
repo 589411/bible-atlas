@@ -179,6 +179,99 @@
         { "who": "jonah", "text": "我發怒以至於死,都合乎理!" },
         { "who": "耶和華", "text": "這蓖麻你尚且愛惜;何況這尼尼微大城呢?" }
       ]
+    },
+    "約3": {
+      "era": "gospels", "type": "對話", "city": "jerusalem",
+      "title": "夜訪的官與重生",
+      "quote": "神愛世人,甚至將他的獨生子賜給他們,叫一切信他的,不至滅亡,反得永生。",
+      "ref": "約翰福音 3:2-3,16",
+      "hook": "一個猶太人的官,夜裡偷偷來找耶穌,想弄懂他到底是誰。耶穌沒談神蹟,反而把話題轉到一件他想不到的事:重新出生。一個老人,還能重生嗎?",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "nico": { "name": "尼哥底母", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#6a6a6a", "beard": "#6a6a6a", "robe": "#7a5a8a" } }
+      },
+      "script": [
+        { "who": "nico", "text": "拉比,我們知道你是由神那裡來作師傅的。" },
+        { "who": "jesus", "text": "我實實在在地告訴你,人若不重生,就不能見神的國。" },
+        { "who": "jesus", "text": "神愛世人,甚至將他的獨生子賜給他們,叫一切信他的,不至滅亡,反得永生。", "key": true }
+      ]
+    },
+    "太5": {
+      "era": "gospels", "type": "教導", "city": "capernaum",
+      "title": "山上的八福",
+      "quote": "虛心的人有福了!因為天國是他們的。",
+      "ref": "馬太福音 5:3-5",
+      "hook": "耶穌看見一大群人,就上了山坐下,開口教導。他一連說八個「有福了」,把世人對幸福的排序整個翻過來——誰才是真正蒙福的人?",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
+      },
+      "script": [
+        { "who": "jesus", "text": "虛心的人有福了!因為天國是他們的。", "key": true },
+        { "who": "jesus", "text": "哀慟的人有福了!因為他們必得安慰。" },
+        { "who": "jesus", "text": "溫柔的人有福了!因為他們必承受地土。" }
+      ]
+    },
+    "約14": {
+      "era": "gospels", "type": "對話", "city": "jerusalem",
+      "title": "我就是道路真理生命",
+      "quote": "我就是道路、真理、生命;若不藉著我,沒有人能到父那裡去。",
+      "ref": "約翰福音 14:5-6",
+      "hook": "最後的晚餐桌上,耶穌說他要走了。門徒慌了:不知道你去哪,怎麼知道路?耶穌的回答,把「路」從一個地點,變成了一個人。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "thomas": { "name": "多馬", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#5a7a9a" } }
+      },
+      "script": [
+        { "who": "thomas", "text": "主阿,我們不知道你往那裡去,怎麼知道那條路呢?" },
+        { "who": "jesus", "text": "我就是道路、真理、生命;若不藉著我,沒有人能到父那裡去。", "key": true }
+      ]
+    },
+    "太11": {
+      "era": "gospels", "type": "教導", "city": "capernaum",
+      "title": "勞苦者的安息之邀",
+      "quote": "凡勞苦擔重擔的人可以到我這裡來,我就使你們得安息。",
+      "ref": "馬太福音 11:28-29",
+      "hook": "宗教重擔壓得人喘不過氣,律法越守越累。耶穌向所有累垮的人發出一個邀請——不是再加一條規條,而是換一種軛。安息,究竟從哪裡來?",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
+      },
+      "script": [
+        { "who": "jesus", "text": "凡勞苦擔重擔的人可以到我這裡來,我就使你們得安息。", "key": true },
+        { "who": "jesus", "text": "我心裡柔和謙卑,你們當負我的軛,學我的樣式;這樣,你們心裡就必得享安息。" }
+      ]
+    },
+    "路15": {
+      "era": "gospels", "type": "教導", "city": null,
+      "title": "浪子與奔跑的父親",
+      "quote": "因為我這個兒子是死而復活,失而又得的。",
+      "ref": "路加福音 15:20,24",
+      "hook": "一個小兒子要光家產、遠走他鄉、把錢揮霍精光。耶穌講這故事時,法利賽人正嫌他和罪人吃飯。故事的重點,其實不在浪子,而在那位父親。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "兒子淪落到與豬搶食,終於醒悟,起來往父親那裡去——" },
+        { "who": "jesus", "text": "相離還遠,他父親看見,就動了慈心,跑去抱著他的頸項,連連與他親嘴。" },
+        { "who": "jesus", "text": "因為我這個兒子是死而復活,失而又得的。", "key": true }
+      ]
+    },
+    "太8": {
+      "era": "gospels", "type": "對話", "city": null,
+      "title": "平靜風浪",
+      "quote": "你們這小信的人哪,為甚麼膽怯呢?",
+      "ref": "馬太福音 8:25-27;馬可福音 4:38-41;路加福音 8:24-25",
+      "parallels": ["可4", "路8"],
+      "hook": "船在加利利海上遇到狂風,浪幾乎把船打翻,門徒嚇得喪膽——而耶穌竟在船尾睡著。他們搖醒他。一個人,能對風浪說話嗎?",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "disciples": { "name": "門徒", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } }
+      },
+      "script": [
+        { "who": "disciples", "text": "主阿,救我們,我們喪命啦!" },
+        { "who": "jesus", "text": "你們這小信的人哪,為甚麼膽怯呢?", "key": true },
+        { "who": "旁白", "text": "耶穌起來,斥責風和海,風和海就大大地平靜了。" },
+        { "who": "disciples", "text": "這是怎樣的人?連風和海也聽從他了!" }
+      ]
     }
   }
 }

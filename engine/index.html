@@ -221,6 +221,10 @@
     background:var(--gold); color:#181320; font-size:11px; padding:1px 8px; letter-spacing:2px;}
   .scene-box.voice{border-color:var(--gold-bright);
     box-shadow:0 0 0 2px rgba(232,197,116,.25), 6px 6px 0 #0d0a12;}
+  .scene-box.holy{border-color:#e8c574;
+    box-shadow:0 0 0 2px rgba(232,197,116,.3), 6px 6px 0 #0d0a12;}
+  .scene-portrait.glow{border-color:#e8c574;
+    box-shadow:0 0 0 2px #e8c574, 0 0 14px 3px rgba(232,197,116,.55);}
   .scene-head{display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin-bottom:10px;}
   .scene-title{font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
     font-size:15px; color:var(--gold-bright); letter-spacing:1px;}
@@ -236,6 +240,7 @@
   .scene-text.key{color:var(--gold-bright);}
   .scene-text.narrator{color:#b8c6d2; font-style:italic;}
   .scene-text.voice{color:var(--gold-bright);}
+  .scene-text.redletter{color:#ff9d76;}
   .scene-foot{display:flex; justify-content:space-between; align-items:center; margin-top:12px;}
   .scene-dots{display:flex; gap:5px;}
   .scene-dots i{width:7px; height:7px; background:#3f5a78; display:block;}
@@ -435,10 +440,9 @@ async function boot(){
     }
     setEra(target||state.eras[state.manifest.defaultEra]||eras[0]);
 
-    // 從 daily-bread 帶章節過來時(?ref=代下20),若該章有關鍵時刻,自動演出
+    // 從 daily-bread 帶章節過來時(?ref=代下20 或平行章如 ?ref=可4),若有對應關鍵時刻,自動演出
     if(refStr){
-      const hk=resolveHlKey(refStr);
-      const h=hk&&state.highlights&&state.highlights[hk];
+      const h=findHighlight(refStr);
       if(h){ if(state.eras[h.era])setEra(state.eras[h.era]); openScene(h); }
     }
 
@@ -501,6 +505,17 @@ function resolveHlKey(str){
   const key=be.books[name]?name:be.aliases[name];
   const m=str.slice(name.length).match(/\d+/);
   return key+(m?parseInt(m[0],10):1);
+}
+
+/* 由經文參照找關鍵時刻:先找本尊 key,找不到再比對各幕的 parallels(平行章) */
+function findHighlight(refStr){
+  const hk=resolveHlKey(refStr);
+  if(!hk||!state.highlights) return null;
+  if(state.highlights[hk]) return state.highlights[hk];
+  for(const k in state.highlights){
+    if((state.highlights[k].parallels||[]).includes(hk)) return state.highlights[k];
+  }
+  return null;
 }
 
 /* 今日讀經徽章:跨域讀取 daily-bread 的每日進度,定位到所屬時代 */
@@ -838,7 +853,8 @@ function sceneAdvance(){
   const port=document.getElementById('scenePortrait');
   const nameEl=document.getElementById('sceneName');
   const textEl=document.getElementById('sceneText');
-  box.classList.remove('voice'); textEl.className='scene-text'; nameEl.style.color='';
+  box.classList.remove('voice','holy'); port.classList.remove('glow');
+  textEl.className='scene-text'; nameEl.style.color='';
   if(line.who==='旁白'){
     port.hidden=true; nameEl.textContent=''; textEl.classList.add('narrator');
   } else if(line.who==='耶和華'){
@@ -848,7 +864,12 @@ function sceneAdvance(){
     const actor=(h.cast||{})[line.who]||{name:line.who};
     port.hidden=false; if(actor.avatar) drawAvatar(port,actor.avatar);
     nameEl.textContent=actor.name||line.who;
-    nameEl.style.color=SPEAKER_COLOR[actor.faction]||'var(--text)';
+    if(actor.faction==='messiah'){          // 耶穌:沿用頭像+柔和光暈+紅字
+      port.classList.add('glow'); box.classList.add('holy');
+      nameEl.style.color='#e8c574'; textEl.classList.add('redletter');
+    } else {
+      nameEl.style.color=SPEAKER_COLOR[actor.faction]||'var(--text)';
+    }
   }
   if(line.key) textEl.classList.add('key');
   renderDots();

@@ -31,9 +31,58 @@
 - [ ] 語氣是策略遊戲圖鑑:精煉、有畫面感、不說教
 - [ ] `node scripts/validate.js` 通過,無任何 ✗
 
+## 關鍵時刻(data/highlights.json)— RPG 對話導讀
+
+章節級的「值得停下來的時刻」,以 RPG 對話框重現重要對話/教導/禱告/人物刻畫,
+吸引讀者去讀該章。資料與 engine 分離;**新增內容只動 `data/highlights.json`**。
+(本功能的 engine 程式與 messiah 樣式、parallels 路由屬架構階段,已獲使用者明確授權;
+日後若需改 engine 行為,仍須再次取得授權。)
+
+### 鐵則(不可違背)
+
+1. **金句(`quote`)與 `script` 中說話者的台詞一律和合本 CUV 逐字**,用
+   `https://bolls.life/get-text/CUV/{書卷編號}/{章}/` 核對;要截短只取**連續**原文片段,**絕不改寫**。
+   旁白(`旁白`)可自行撰寫導引文字,但不可放進角色口中。
+2. **不描繪神的臉**:`耶和華` 用保留字,渲染為無頭像的金色「聲音框」。
+3. **耶穌**用 cast 的 `faction: "messiah"`:沿用既有像素頭像 + 柔和光暈 + **紅字台詞**
+   (`#ff9d76`);耶穌親口的話即「紅字」,務必逐字。
+4. **平行經文一幕只寫一次**:同一事件被多卷記載(四福音、列王紀‖歷代志…)時,
+   用**最完整的那卷**當本尊 key,`ref` 並列各卷出處(以 `;` 分隔),
+   並於 `parallels` 列出其餘平行章 key(例 本尊 `太8`,`parallels:["可4","路8"]`)。
+   嚴禁同一幕做兩遍。
+5. **hook 不爆雷**:鋪張力與懸念,把結局留在章裡;金句本身可作為引子。
+
+### 資料格式
+
+key = daily-bread 書卷縮寫 + 章號(同 `book_eras.json` 規則,最長匹配)。每筆:
+
+- `era`(時代 id)、`type`(對話/教導/禱告/人物)、`city`(選配;**只能用該時代地圖既有 key**,無則 `null`)
+- `title`、`quote`(金句 ≤60)、`ref`、`hook`(40–90)、選配 `parallels`(平行章 key 陣列)
+- `cast`:`{ key: { name, faction, avatar:{skin,hair,beard,robe,crown?} } }`;
+  `faction` ∈ prophet/south/north/empire/folk/messiah(決定名牌色與耶穌特效)
+- `script`:`[{ who, text, key? }]`;`who` 為 cast key 或保留字 `旁白`/`耶和華`;
+  每行 `text` ≤80;**恰好一行** `key:true`(金句強調行);半形標點、繁體字。
+
+### 深連結(對接 daily-bread)
+
+`engine/?ref=代下20`(或平行章如 `?ref=可4`)進站時,`findHighlight()` 先找本尊 key、
+找不到再比對各幕 `parallels`,命中就落到該時代並**自動演出**那一幕。
+daily-bread「🗺️ 看歷史地圖」鈕送的就是 `?ref=` + 當天靈修章,格式一致,免改 daily-bread。
+
+### 工作流程(每批場景)
+
+1. 先用 bolls API 抓該章原文,逐字核對金句與台詞。
+2. 依上述格式寫進 `data/highlights.json`(平行幕記得設 `parallels`)。
+3. `node validate_highlights.js` → 必須 `✅ 驗證通過`(格式/字數/標點/city/parallels)。
+4. `node scripts/validate.js` → 確認時代資料未被破壞(仍 `驗證通過`)。
+5. 若新增需離線快取的檔案才動 `sw.js`(加入 SHELL 並升 `CACHE` 版本);
+   一般只改 `data/highlights.json` 不必動 sw.js(network-first 會更新)。
+6. commit & push;atlas.launchdock.app 自動部署。
+
 ## 本地預覽
 
 ```bash
 python3 -m http.server 8000
 # 開啟 http://localhost:8000/engine/
+# 關鍵時刻測試:http://localhost:8000/engine/?ref=代下20  或  ?ref=約3
 ```
