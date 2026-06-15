@@ -13,10 +13,10 @@ for (const e of manifest.eras) {
   eraCities[era.id] = new Set(era.cities || []);
 }
 const TYPES = new Set(['對話', '教導', '禱告', '人物']);
-const FACTIONS = new Set(['prophet', 'south', 'north', 'empire', 'folk', 'messiah']);
+const FACTIONS = new Set(['united', 'prophet', 'south', 'north', 'empire', 'folk', 'messiah']);
 const RESERVED = new Set(['旁白', '耶和華']);            // 無頭像:旁白敘述 / 耶和華金色聲音框
 const FW = /[，；：（）！？]/;                              // 禁止全形標點(頓號、與句號。除外)
-const SIMP = /[这为对说话过电别让点见们来时国后实发声银历将这]/;  // 常見簡體掃描
+const SIMP = /[这为对说话过电别让点见们来时国实发声银历将这]/;  // 常見簡體掃描(不含「后」:王后為正體)
 const len = s => [...s].length;
 let errs = 0, n = 0;
 const primaryKeys = new Set(Object.keys(H.highlights));

@@ -463,6 +463,183 @@
         { "who": "paul", "text": "創造宇宙和其中萬物的神,既是天地的主,就不住人手所造的殿。" },
         { "who": "paul", "text": "我們生活、動作、存留,都在乎他。", "key": true }
       ]
+    },
+    "撒上3": {
+      "era": "saul", "type": "對話", "city": "shiloh",
+      "title": "撒母耳蒙召",
+      "quote": "請說,僕人敬聽!",
+      "ref": "撒母耳記上 3:4-10",
+      "hook": "那些日子,耶和華的言語稀少。少年撒母耳睡在聖殿裡,夜裡聽見有人呼喚他的名,一連三次。以利這才明白,是神在召喚這孩子——",
+      "cast": {
+        "samuel": { "name": "童子撒母耳", "faction": "prophet", "avatar": { "skin": "#e8c098", "hair": "#3a2a1a", "robe": "#cccccc" } }
+      },
+      "script": [
+        { "who": "耶和華", "text": "撒母耳啊!撒母耳啊!" },
+        { "who": "samuel", "text": "請說,僕人敬聽!", "key": true }
+      ]
+    },
+    "撒上16": {
+      "era": "saul", "type": "教導", "city": "bethlehem",
+      "title": "膏立少年大衛",
+      "quote": "耶和華不像人看人:人是看外貌;耶和華是看內心。",
+      "ref": "撒母耳記上 16:7",
+      "hook": "撒母耳奉命到伯利恆膏立新王。耶西的兒子一個個經過,個個高大俊美。撒母耳看中了長子,神卻攔住他,把揀選的標準整個翻轉。",
+      "cast": {
+        "samuel": { "name": "先知撒母耳", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
+      },
+      "script": [
+        { "who": "耶和華", "text": "不要看他的外貌和他身材高大,我不揀選他。" },
+        { "who": "耶和華", "text": "耶和華不像人看人:人是看外貌;耶和華是看內心。", "key": true }
+      ]
+    },
+    "撒上17": {
+      "era": "saul", "type": "對話", "city": "elah",
+      "title": "大衛與歌利亞",
+      "quote": "你來攻擊我,是靠著刀槍和銅戟;我來攻擊你,是靠著萬軍之耶和華的名。",
+      "ref": "撒母耳記上 17:43-45",
+      "hook": "非利士巨人歌利亞,身高六肘,披甲叫陣四十天,以色列全軍喪膽。沒有人敢應戰。一個來送飯的牧羊少年,卻撿起了五塊石子。",
+      "cast": {
+        "david": { "name": "少年大衛", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "robe": "#a08850" } },
+        "goliath": { "name": "歌利亞", "faction": "empire", "avatar": { "skin": "#b89060", "hair": "#1a1a1a", "beard": "#1a1a1a", "robe": "#7a3a3a" } }
+      },
+      "script": [
+        { "who": "goliath", "text": "你拿杖到我這裡來,我豈是狗呢?" },
+        { "who": "david", "text": "你來攻擊我,是靠著刀槍和銅戟;我來攻擊你,是靠著萬軍之耶和華的名。", "key": true }
+      ]
+    },
+    "撒上24": {
+      "era": "saul", "type": "人物", "city": null,
+      "title": "大衛饒了掃羅",
+      "quote": "我在耶和華面前萬不敢伸手害他,因他是耶和華的受膏者。",
+      "ref": "撒母耳記上 24:6,16",
+      "hook": "掃羅追殺大衛,偏偏進了大衛藏身的洞裡歇息。隨從低聲說:機會來了!大衛悄悄逼近,手裡有刀——他會動手嗎?",
+      "cast": {
+        "david": { "name": "大衛", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#a08850" } },
+        "saul": { "name": "掃羅王", "faction": "united", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#9b6fd1", "crown": true } }
+      },
+      "script": [
+        { "who": "david", "text": "我在耶和華面前萬不敢伸手害他,因他是耶和華的受膏者。", "key": true },
+        { "who": "saul", "text": "我兒大衛,這是你的聲音麼?" }
+      ]
+    },
+    "撒下7": {
+      "era": "david", "type": "教導", "city": "jerusalem",
+      "title": "永遠堅立的家",
+      "quote": "你的家和你的國必在我面前永遠堅立。你的國位也必堅定,直到永遠。",
+      "ref": "撒母耳記下 7:16,18",
+      "hook": "大衛住進香柏木宮殿,過意不去,想為神建一座殿。神卻藉先知拿單回話:不是你為我建殿——是我要為你建立一個永不傾倒的家。",
+      "cast": {
+        "david": { "name": "大衛王", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } }
+      },
+      "script": [
+        { "who": "耶和華", "text": "你的家和你的國必在我面前永遠堅立。你的國位也必堅定,直到永遠。", "key": true },
+        { "who": "david", "text": "主耶和華啊,我是誰?我的家算甚麼?你竟使我到這地步呢?" }
+      ]
+    },
+    "撒下12": {
+      "era": "david", "type": "對話", "city": "jerusalem",
+      "title": "你就是那人",
+      "quote": "你就是那人!",
+      "ref": "撒母耳記下 12:7,13",
+      "hook": "大衛奪人之妻、借刀殺人,自以為遮掩得天衣無縫。先知拿單來見他,只講了一個富人搶窮人小羊羔的故事。大衛聽了拍案大怒——",
+      "cast": {
+        "nathan": { "name": "先知拿單", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } },
+        "david": { "name": "大衛王", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } }
+      },
+      "script": [
+        { "who": "nathan", "text": "你就是那人!", "key": true },
+        { "who": "david", "text": "我得罪耶和華了!" }
+      ]
+    },
+    "王上3": {
+      "era": "solomon", "type": "教導", "city": null,
+      "title": "所羅門求智慧",
+      "quote": "求你賜我智慧,可以判斷你的民,能辨別是非。",
+      "ref": "列王紀上 3:5,9",
+      "hook": "神在夜間夢中向所羅門顯現,要把他所求的賜給他。一個年輕的王,大可求長壽、求財富、求勝過仇敵——他卻只求一樣。",
+      "cast": {
+        "solomon": { "name": "所羅門王", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#c9a24b", "crown": true } }
+      },
+      "script": [
+        { "who": "耶和華", "text": "你願我賜你甚麼?你可以求。" },
+        { "who": "solomon", "text": "求你賜我智慧,可以判斷你的民,能辨別是非。", "key": true }
+      ]
+    },
+    "王上10": {
+      "era": "solomon", "type": "對話", "city": "jerusalem",
+      "title": "示巴女王來訪",
+      "quote": "耶和華你的神是應當稱頌的!",
+      "ref": "列王紀上 10:7,9",
+      "hook": "示巴女王聽見所羅門的名聲,千里迢迢帶著難題來考問他。所羅門對答如流,宮室、筵席、智慧讓她詫異得神不守舍——",
+      "cast": {
+        "sheba": { "name": "示巴女王", "faction": "folk", "avatar": { "skin": "#a87858", "hair": "#1a0a0a", "robe": "#a83a5a", "crown": true } },
+        "solomon": { "name": "所羅門王", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#c9a24b", "crown": true } }
+      },
+      "script": [
+        { "who": "sheba", "text": "我先不信那些話,及至我來親眼見了才知道,人所告訴我的還不到一半。" },
+        { "who": "sheba", "text": "耶和華你的神是應當稱頌的!", "key": true }
+      ]
+    },
+    "但3": {
+      "era": "exile", "type": "人物", "city": "babylon",
+      "title": "烈火窯中第四人",
+      "quote": "即或不然,王啊,你當知道我們決不事奉你的神,也不敬拜你所立的金像。",
+      "ref": "但以理書 3:15,18,25",
+      "hook": "王立了金像,下令一聽見樂器聲,全國都要俯伏敬拜,不拜的立刻扔進烈火窯。三個被擄的猶大青年,偏偏不跪——",
+      "cast": {
+        "three": { "name": "三個希伯來青年", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#7a6a4a" } },
+        "neb": { "name": "尼布甲尼撒王", "faction": "empire", "avatar": { "skin": "#c89060", "hair": "#1a1a1a", "beard": "#1a1a1a", "robe": "#7a3a3a", "crown": true } }
+      },
+      "script": [
+        { "who": "neb", "text": "你們若不敬拜,必立時扔在烈火的窯中,有何神能救你們脫離我手呢?" },
+        { "who": "three", "text": "即或不然,王啊,你當知道我們決不事奉你的神,也不敬拜你所立的金像。", "key": true },
+        { "who": "旁白", "text": "三人被扔進七倍猛烈的火裡。王卻驚見火中有四個人遊行,那第四個相貌好像神子。" }
+      ]
+    },
+    "但5": {
+      "era": "exile", "type": "對話", "city": "babylon",
+      "title": "牆上的指頭",
+      "quote": "你被稱在天平裡,顯出你的虧欠。",
+      "ref": "但以理書 5:25,27",
+      "hook": "伯沙撒王設盛筵,竟用聖殿擄來的金器飲酒、讚美偶像。忽然,一隻手指在牆上寫字。王嚇得臉色發白、雙膝相碰,哲士無人能解。但以理被召來——",
+      "cast": {
+        "daniel": { "name": "但以理", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#5a7a9a" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "牆上寫著:彌尼,彌尼,提客勒,烏法珥新。但以理為王解明——" },
+        { "who": "daniel", "text": "提客勒,就是你被稱在天平裡,顯出你的虧欠。", "key": true }
+      ]
+    },
+    "但6": {
+      "era": "exile", "type": "人物", "city": "babylon",
+      "title": "獅子坑中的但以理",
+      "quote": "我的神差遣使者,封住獅子的口,叫獅子不傷我。",
+      "ref": "但以理書 6:16,22",
+      "hook": "但以理位高權重,政敵設局:三十天內只准向王祈求,違者扔進獅子坑。但以理知道後,照常一日三次開窗向耶路撒冷禱告——",
+      "cast": {
+        "daniel": { "name": "但以理", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#5a7a9a" } },
+        "darius": { "name": "大利烏王", "faction": "empire", "avatar": { "skin": "#c89060", "hair": "#888888", "beard": "#888888", "robe": "#7a3a3a", "crown": true } }
+      },
+      "script": [
+        { "who": "darius", "text": "你所常事奉的神,他必救你。" },
+        { "who": "旁白", "text": "次日黎明,王禁食一夜,急忙跑到坑邊,哀聲呼叫但以理——" },
+        { "who": "daniel", "text": "我的神差遣使者,封住獅子的口,叫獅子不傷我。", "key": true }
+      ]
+    },
+    "斯4": {
+      "era": "exile", "type": "人物", "city": "susa",
+      "title": "以斯帖的抉擇",
+      "quote": "我若死就死罷!",
+      "ref": "以斯帖記 4:14,16",
+      "hook": "滅族的詔令已下,書珊城的猶大人哀哭。末底改捎信給王后以斯帖,要她冒死進宮為同胞求情——擅入內院見王,是死罪。",
+      "cast": {
+        "mordecai": { "name": "末底改", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#6a5a4a" } },
+        "esther": { "name": "王后以斯帖", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#1a0a0a", "robe": "#a83a5a", "crown": true } }
+      },
+      "script": [
+        { "who": "mordecai", "text": "焉知你得了王后的位分不是為現今的機會麼?" },
+        { "who": "esther", "text": "我若死就死罷!", "key": true }
+      ]
     }
   }
 }
