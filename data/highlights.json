@@ -342,7 +342,7 @@
       "title": "空墳與大使命",
       "quote": "我就常與你們同在,直到世界的末了。",
       "ref": "馬太福音 28:6,18-20;馬可福音 16:6,15;路加福音 24:6",
-      "parallels": ["可16", "路24"],
+      "parallels": ["可16"],
       "hook": "七日的頭一日清晨,幾個婦女帶著香膏來到墳墓,要膏耶穌的身體。卻見石頭已經滾開,墳墓是空的。死亡,真的是故事的結局嗎?",
       "cast": {
         "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
@@ -1531,6 +1531,197 @@
         { "who": "david", "text": "耶和華啊,你已經鑒察我,認識我。", "key": true },
         { "who": "david", "text": "我往哪裡去躲避你的靈?我往哪裡逃、躲避你的面?" },
         { "who": "david", "text": "神啊,求你鑒察我,知道我的心思,試煉我,知道我的意念,引導我走永生的道路。" }
+      ]
+    },
+    "路2": {
+      "era": "gospels", "type": "對話", "city": "jerusalem",
+      "title": "十二歲的耶穌在聖殿",
+      "quote": "豈不知我應當以我父的事為念麼?",
+      "ref": "路加福音 2:48-49",
+      "hook": "十二歲的耶穌獨留聖殿,父母遍尋三天,才在教師中間找到他——他卻給了一個讓人費解的回答。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "mary": { "name": "馬利亞", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "過了節期,父母回去,孩童耶穌仍留在耶路撒冷。他們找了三天,才在殿裏教師中間找到他。" },
+        { "who": "mary", "text": "我兒!為甚麼向我們這樣行呢?看哪,你父親和我傷心來找你!" },
+        { "who": "jesus", "text": "豈不知我應當以我父的事為念麼?", "key": true }
+      ]
+    },
+    "太4": {
+      "era": "gospels", "type": "對話", "city": null,
+      "title": "曠野的三重試探",
+      "quote": "當拜主你的神,單要事奉他。",
+      "ref": "馬太福音 4:4,7,10",
+      "hook": "禁食四十晝夜後,魔鬼接連端出三個誘惑:餅、神蹟、世上的萬國榮華。耶穌憑甚麼一一回絕?",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "耶穌被聖靈引到曠野,禁食四十晝夜後就餓了。魔鬼前來,說:你若是神的兒子,可以叫石頭變成食物。" },
+        { "who": "jesus", "text": "人活著,不是單靠食物,乃是靠神口裏所出的一切話。" },
+        { "who": "旁白", "text": "魔鬼又帶他上聖殿頂,說:你若是神的兒子,可以跳下去,因經上記著神必用使者托住你。" },
+        { "who": "jesus", "text": "經上又記著說:不可試探主你的神。" },
+        { "who": "旁白", "text": "魔鬼又指萬國的榮華說:你若俯伏拜我,我就把這一切都賜給你。" },
+        { "who": "jesus", "text": "撒但,退去罷!因為經上記著說:當拜主你的神,單要事奉他。", "key": true }
+      ]
+    },
+    "約4": {
+      "era": "gospels", "type": "對話", "city": null,
+      "title": "井旁的活水",
+      "quote": "人若喝我所賜的水就永遠不渴。",
+      "ref": "約翰福音 4:10,13-14,26",
+      "hook": "正午,一個撒馬利亞婦人獨自來到雅各井邊打水,遇見一位向她要水喝、卻看透她一切過往的旅人。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "woman": { "name": "撒馬利亞婦人", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "耶穌走路困乏,就坐在井旁,那時約有午正。一個撒馬利亞婦人來打水,耶穌向她要水喝。" },
+        { "who": "woman", "text": "你既是猶太人,怎麼向我一個撒馬利亞婦人要水喝呢?" },
+        { "who": "jesus", "text": "人若喝我所賜的水就永遠不渴。我所賜的水要在他裏頭成為泉源,直湧到永生。", "key": true },
+        { "who": "woman", "text": "先生,沒有打水的器具,井又深,你從哪裏得活水呢?" },
+        { "who": "jesus", "text": "這和你說話的就是他!" }
+      ]
+    },
+    "約8": {
+      "era": "gospels", "type": "對話", "city": "jerusalem",
+      "title": "誰是沒有罪的",
+      "quote": "我也不定你的罪。去罷,從此不要再犯罪了!",
+      "ref": "約翰福音 8:7,10-11",
+      "hook": "文士和法利賽人帶著一個行淫時被拿的婦人,要用她試探耶穌,眾人手裏已握著石頭——他卻彎下腰在地上畫字。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "woman": { "name": "被拿的婦人", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "他們帶來一個行淫時被拿的婦人,引摩西的律法逼問耶穌該不該用石頭打死她。" },
+        { "who": "jesus", "text": "你們中間誰是沒有罪的,誰就可以先拿石頭打他。" },
+        { "who": "旁白", "text": "他們聽見這話,從老到少一個一個都出去了,只剩下耶穌和那婦人。" },
+        { "who": "woman", "text": "主阿,沒有。" },
+        { "who": "jesus", "text": "我也不定你的罪。去罷,從此不要再犯罪了!", "key": true }
+      ]
+    },
+    "約9": {
+      "era": "gospels", "type": "對話", "city": "jerusalem",
+      "title": "生來瞎眼的得見",
+      "quote": "也不是這人犯了罪,是要在他身上顯出神的作為來。",
+      "ref": "約翰福音 9:2-3",
+      "hook": "門徒問:這人生來瞎眼,是誰犯了罪?耶穌的回答,從根本翻轉了世人對苦難與報應的假設。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "disciple": { "name": "門徒", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } },
+        "blind": { "name": "生來瞎眼的人", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#7a6845" } }
+      },
+      "script": [
+        { "who": "disciple", "text": "拉比,這人生來是瞎眼的,是誰犯了罪?是這人呢?是他父母呢?" },
+        { "who": "jesus", "text": "也不是這人犯了罪,也不是他父母犯了罪,是要在他身上顯出神的作為來。", "key": true },
+        { "who": "旁白", "text": "耶穌用唾沫和泥抹他的眼,叫他去西羅亞池子洗。他去一洗,回頭就看見了。" },
+        { "who": "blind", "text": "主阿,我信!" }
+      ]
+    },
+    "約10": {
+      "era": "gospels", "type": "教導", "city": "jerusalem",
+      "title": "好牧人為羊捨命",
+      "quote": "我是好牧人;好牧人為羊捨命。",
+      "ref": "約翰福音 10:11,28-30",
+      "hook": "賊來,無非要偷竊、殺害、毀壞;好牧人來,卻是為了另一件事。耶穌在聖殿廊下,說出一個永恆的自白。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "在耶路撒冷有修殿節,是冬天的時候;耶穌在殿裏所羅門的廊下行走。" },
+        { "who": "jesus", "text": "我是好牧人;好牧人為羊捨命。", "key": true },
+        { "who": "jesus", "text": "我又賜給他們永生;他們永不滅亡,誰也不能從我手裏把他們奪去。" },
+        { "who": "jesus", "text": "我與父原為一。" }
+      ]
+    },
+    "太14": {
+      "era": "gospels", "type": "對話", "city": "galilee",
+      "title": "海面上行走",
+      "quote": "你這小信的人哪,為甚麼疑惑呢?",
+      "ref": "馬太福音 14:27-31",
+      "hook": "四更天,門徒在浪中掙扎,忽見一個身影踏水而來。彼得竟開口:主,如果是你,請叫我也走到你那裏去。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "peter": { "name": "彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } }
+      },
+      "script": [
+        { "who": "jesus", "text": "你們放心!是我,不要怕!" },
+        { "who": "peter", "text": "主,如果是你,請叫我從水面上走到你那裏去。" },
+        { "who": "jesus", "text": "你來罷。" },
+        { "who": "旁白", "text": "彼得下了船,在水面上走;只因見風甚大,就害怕,將要沉下去,便喊:主阿,救我!" },
+        { "who": "jesus", "text": "你這小信的人哪,為甚麼疑惑呢?", "key": true }
+      ]
+    },
+    "太17": {
+      "era": "gospels", "type": "人物", "city": null,
+      "title": "登山變像",
+      "quote": "這是我的愛子,我所喜悅的。你們要聽他!",
+      "ref": "馬太福音 17:2,5",
+      "hook": "耶穌帶著三個門徒上了高山,忽然在他們面前變了形像,臉面明亮如日頭;摩西與以利亞同時顯現,雲彩裏更有聲音。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "peter": { "name": "彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "耶穌在高山上變了形像,臉面明亮如日頭,衣裳潔白如光;摩西、以利亞向他們顯現,同耶穌說話。" },
+        { "who": "peter", "text": "主阿,我們在這裏真好!你若願意,我就在這裏搭三座棚。" },
+        { "who": "耶和華", "text": "這是我的愛子,我所喜悅的。你們要聽他!", "key": true },
+        { "who": "旁白", "text": "門徒聽見就俯伏在地,極其害怕。耶穌進前來摸他們說:起來,不要害怕!" }
+      ]
+    },
+    "路19": {
+      "era": "gospels", "type": "對話", "city": "jericho",
+      "title": "撒該快下來",
+      "quote": "今天救恩到了這家,因為他也是亞伯拉罕的子孫。",
+      "ref": "路加福音 19:5,8-10",
+      "hook": "稅吏長撒該爬上桑樹,只想遠遠看耶穌一眼;耶穌卻抬頭點他的名,說要住進這個眾人唾棄的人家中。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "zacchaeus": { "name": "撒該", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
+      },
+      "script": [
+        { "who": "jesus", "text": "撒該,快下來!今天我必住在你家裏。" },
+        { "who": "旁白", "text": "他就急忙下來,歡歡喜喜地接待耶穌。眾人看見,都私下議論:他竟到罪人家裏去住宿。" },
+        { "who": "zacchaeus", "text": "主阿,我把所有的一半給窮人;我若訛詐了誰,就還他四倍。" },
+        { "who": "jesus", "text": "今天救恩到了這家,因為他也是亞伯拉罕的子孫。", "key": true }
+      ]
+    },
+    "約13": {
+      "era": "gospels", "type": "教導", "city": "jerusalem",
+      "title": "洗腳與新命令",
+      "quote": "我賜給你們一條新命令,乃是叫你們彼此相愛。",
+      "ref": "約翰福音 13:8,14,34",
+      "hook": "最後的晚餐,夜色已深,身為主的耶穌竟脫下外衣,蹲下去為門徒洗腳,然後留下一條他稱為「新」的命令。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "peter": { "name": "彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "晚餐時,耶穌離席,脫了衣服,拿手巾束腰,把水倒在盆裏,就洗門徒的腳。" },
+        { "who": "peter", "text": "主阿,你洗我的腳麼?" },
+        { "who": "jesus", "text": "我是你們的主,你們的夫子,尚且洗你們的腳,你們也當彼此洗腳。" },
+        { "who": "jesus", "text": "我賜給你們一條新命令,乃是叫你們彼此相愛;我怎樣愛你們,你們也要怎樣相愛。", "key": true }
+      ]
+    },
+    "路24": {
+      "era": "gospels", "type": "對話", "city": null,
+      "title": "以馬忤斯路上",
+      "quote": "基督這樣受害,又進入他的榮耀,豈不是應當的麼?",
+      "ref": "路加福音 24:17,26,30-31",
+      "hook": "兩個門徒垂頭喪氣走向以馬忤斯,一個陌生人加入同行,一路講解聖經;直到擘餅那一刻,他們才認出他來。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "cleopas": { "name": "革流巴", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "那日,兩個門徒往以馬忤斯去;耶穌親自就近他們同行,只是他們的眼睛迷糊了,不認得他。" },
+        { "who": "jesus", "text": "你們走路彼此談論的是甚麼事呢?" },
+        { "who": "cleopas", "text": "你在耶路撒冷作客,還不知道這幾天在那裏所出的事麼?" },
+        { "who": "jesus", "text": "基督這樣受害,又進入他的榮耀,豈不是應當的麼?", "key": true },
+        { "who": "旁白", "text": "坐席時,耶穌拿起餅來祝謝、擘開遞給他們,他們的眼睛就明亮了,這才認出他來。" }
       ]
     }
   }
