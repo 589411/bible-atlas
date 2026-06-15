@@ -8,7 +8,7 @@
     { "name": "亞伯拉罕之路", "color": "#e8c574", "points": ["ur", "haran", "damascus", "shechem", "hebron"] },
     { "name": "全家下埃及", "color": "#8fc3e8", "points": ["hebron", "goshen"] }
   ],
-  "cities": ["ur", "haran", "damascus", "shechem", "hebron", "goshen", "bethel"],
+  "cities": ["ur", "haran", "damascus", "shechem", "hebron", "goshen", "bethel", "babylon"],
   "capitals": [],
   "people": [
     { "name": "亞伯拉罕", "tag": "族長", "tagClass": "other", "desc": "信心之父,應許之約的起始者", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#a08850" } },
