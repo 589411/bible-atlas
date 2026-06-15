@@ -748,6 +748,136 @@
         { "who": "joshua", "text": "至於我和我家,我們必定事奉耶和華。", "key": true },
         { "who": "旁白", "text": "百姓回答:我們斷不敢離棄耶和華去事奉別神!" }
       ]
+    },
+    "士6": {
+      "era": "judges", "type": "對話", "city": null,
+      "title": "基甸蒙召",
+      "quote": "大能的勇士啊,耶和華與你同在!",
+      "ref": "士師記 6:12,15-16",
+      "hook": "米甸人連年劫掠,以色列人躲進山洞。基甸正偷偷在酒醡裡打麥子,怕被搶走。耶和華的使者忽然向這個膽怯的人顯現——",
+      "cast": {
+        "gideon": { "name": "基甸", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
+      },
+      "script": [
+        { "who": "耶和華", "text": "大能的勇士啊,耶和華與你同在!", "key": true },
+        { "who": "gideon", "text": "主啊,我有何能拯救以色列人呢?我家在瑪拿西支派中是至貧窮的。" },
+        { "who": "耶和華", "text": "我與你同在,你就必擊打米甸人,如擊打一人一樣。" }
+      ]
+    },
+    "得1": {
+      "era": "judges", "type": "人物", "city": "bethlehem",
+      "title": "路得的選擇",
+      "quote": "你的國就是我的國,你的神就是我的神。",
+      "ref": "路得記 1:15-16",
+      "hook": "拿俄米在摩押失去丈夫和兩個兒子,決定獨自回伯利恆,勸兩個外邦媳婦留下改嫁。一個哭著走了,路得卻緊緊跟隨——",
+      "cast": {
+        "naomi": { "name": "拿俄米", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#888888", "robe": "#7a6845" } },
+        "ruth": { "name": "路得", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#a08850" } }
+      },
+      "script": [
+        { "who": "naomi", "text": "看哪,你嫂子已經回他本國和他所拜的神那裡去了,你也跟著你嫂子回去罷!" },
+        { "who": "ruth", "text": "你的國就是我的國,你的神就是我的神。", "key": true }
+      ]
+    },
+    "賽6": {
+      "era": "north_fall", "type": "對話", "city": "jerusalem",
+      "title": "以賽亞蒙召",
+      "quote": "我在這裡,請差遣我!",
+      "ref": "以賽亞書 6:3,8",
+      "hook": "烏西雅王崩的那年,以賽亞看見主坐在高高的寶座上,撒拉弗環繞呼喊聖哉,聖殿震動、煙雲瀰漫。他自覺嘴唇不潔、必死——",
+      "cast": {
+        "isaiah": { "name": "以賽亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
+      },
+      "script": [
+        { "who": "耶和華", "text": "我可以差遣誰呢?誰肯為我們去呢?" },
+        { "who": "isaiah", "text": "我在這裡,請差遣我!", "key": true }
+      ]
+    },
+    "王下19": {
+      "era": "north_fall", "type": "禱告", "city": "jerusalem",
+      "title": "希西家展開的信",
+      "quote": "求你救我們脫離亞述王的手,使天下萬國都知道惟獨你耶和華是神!",
+      "ref": "列王紀下 19:19,35",
+      "hook": "亞述大軍壓境,使者當眾辱罵耶和華。希西家王沒有回罵,他把那封恐嚇的信拿到聖殿,在耶和華面前展開——",
+      "cast": {
+        "hezekiah": { "name": "希西家王", "faction": "south", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } }
+      },
+      "script": [
+        { "who": "hezekiah", "text": "求你救我們脫離亞述王的手,使天下萬國都知道惟獨你耶和華是神!", "key": true },
+        { "who": "旁白", "text": "當夜,耶和華的使者出去,在亞述營中殺了十八萬五千人。清早有人起來,看見都是死屍。" }
+      ]
+    },
+    "耶1": {
+      "era": "south_fall", "type": "對話", "city": "jerusalem",
+      "title": "耶利米蒙召",
+      "quote": "我未將你造在腹中,我已曉得你;你未出母胎,我已分別你為聖。",
+      "ref": "耶利米書 1:5-8",
+      "hook": "神揀選耶利米作列國的先知。少年耶利米自覺口拙、年幼,連連推辭。神卻說,早在他出生以前,這事就定了——",
+      "cast": {
+        "jeremiah": { "name": "耶利米", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
+      },
+      "script": [
+        { "who": "耶和華", "text": "我未將你造在腹中,我已曉得你;你未出母胎,我已分別你為聖。", "key": true },
+        { "who": "jeremiah", "text": "主耶和華啊,我不知怎樣說,因為我是年幼的。" },
+        { "who": "耶和華", "text": "你不要懼怕他們,因為我與你同在,要拯救你。" }
+      ]
+    },
+    "哀3": {
+      "era": "south_fall", "type": "禱告", "city": "jerusalem",
+      "title": "每早晨都是新的",
+      "quote": "每早晨,這都是新的;你的誠實極其廣大!",
+      "ref": "耶利米哀歌 3:22-23",
+      "hook": "耶路撒冷淪陷、聖殿被焚,耶利米為廢墟日夜痛哭。哀歌寫到最深的黑暗,筆鋒卻忽然一轉——",
+      "cast": {
+        "jeremiah": { "name": "耶利米", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
+      },
+      "script": [
+        { "who": "jeremiah", "text": "我們不至消滅,是出於耶和華諸般的慈愛;是因他的憐憫不致斷絕。" },
+        { "who": "jeremiah", "text": "每早晨,這都是新的;你的誠實極其廣大!", "key": true }
+      ]
+    },
+    "尼8": {
+      "era": "return", "type": "教導", "city": "jerusalem",
+      "title": "喜樂是你們的力量",
+      "quote": "因靠耶和華而得的喜樂是你們的力量。",
+      "ref": "尼希米記 8:9-10",
+      "hook": "歸回的百姓聚集在水門前,文士以斯拉從清早到晌午宣讀律法書。眾人一聽,都哭了——這眼淚,該怎麼擦?",
+      "cast": {
+        "nehemiah": { "name": "省長尼希米", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#a08850" } }
+      },
+      "script": [
+        { "who": "nehemiah", "text": "今日是耶和華你們神的聖日,不要悲哀哭泣。" },
+        { "who": "nehemiah", "text": "你們不要憂愁,因靠耶和華而得的喜樂是你們的力量。", "key": true }
+      ]
+    },
+    "拉3": {
+      "era": "return", "type": "人物", "city": "jerusalem",
+      "title": "重立聖殿根基",
+      "quote": "他本為善,他向以色列人永發慈愛!",
+      "ref": "以斯拉記 3:11-13",
+      "hook": "被擄七十年後,殘存的百姓回到耶路撒冷,在聖殿的廢墟上重新立定根基。祭司吹號、利未人敲鈸,全城放聲——",
+      "cast": {
+        "people": { "name": "歸回的眾民", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#7a6a4a" } }
+      },
+      "script": [
+        { "who": "people", "text": "他本為善,他向以色列人永發慈愛!", "key": true },
+        { "who": "旁白", "text": "立殿根基時,許多見過舊殿的老年人放聲大哭,也有許多人歡呼;哭聲與歡呼聲,百姓竟分辨不出。" }
+      ]
+    },
+    "王上12": {
+      "era": "split", "type": "對話", "city": "shechem",
+      "title": "王國一分為二",
+      "quote": "我們與大衛有甚麼分兒呢?",
+      "ref": "列王紀上 12:14,16",
+      "hook": "所羅門死後,百姓到示劍求新王羅波安減輕父親加的重軛。羅波安不聽老臣的勸告,反聽少年人的話,把話說得更硬——",
+      "cast": {
+        "rehoboam": { "name": "羅波安王", "faction": "south", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } },
+        "people": { "name": "以色列眾民", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#7a6a4a" } }
+      },
+      "script": [
+        { "who": "rehoboam", "text": "我父親使你們負重軛,我必使你們負更重的軛!" },
+        { "who": "people", "text": "我們與大衛有甚麼分兒呢?與耶西的兒子並沒有關涉。以色列人哪,各回各家去罷!", "key": true }
+      ]
     }
   }
 }
