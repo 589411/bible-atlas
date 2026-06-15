@@ -1,1805 +1,4650 @@
 {
-  "_comment": "章節導讀／關鍵時刻(RPG 對話)。key = daily-bread 書卷縮寫 + 章號(同 book_eras 規則,最長匹配優先)。欄位:era(時代 id)、type(對話/教導/禱告/人物)、city(選配;只能用該時代地圖既有 city key,無對應填 null)、title(場景標題)、quote(金句;和合本 CUV 原文,逐字核對)、ref(出處;半形標點,平行記載以 ; 並列)、hook(導讀旁白;鋪張力、不爆雷)、cast(出場人物;key→{name,faction,avatar})、script(對話腳本;每行 {who,text,key?})。who 可為 cast 的 key、或保留字「旁白」(無頭像敘述)、「耶和華」(無頭像金色聲音框,不以像素人像描繪神)。faction 用於名牌顏色:prophet/south/north/empire/folk。avatar 沿用 era people 的像素頭像格式 {skin,hair,beard,robe,crown}。規範:quote ≤ 60、hook 40–90、script 每行 text ≤ 80、半形標點、繁體字。",
-  "highlights": {
-    "代下15": {
-      "era": "divided", "type": "教導", "city": "jerusalem",
-      "title": "先知攔住凱旋的王",
-      "quote": "你們若尋求他,就必尋見;你們若離棄他,他必離棄你們。",
-      "ref": "歷代志下 15:2,7",
-      "hook": "亞撒剛以寡敵眾打了勝仗,凱旋途中卻被一位先知攔下。對方只給一句條件句:神與你的遠近,全看你往哪裡走。這位王聽得進去嗎?",
-      "cast": {
-        "azariah": { "name": "先知亞撒利雅", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#aaaaaa", "beard": "#aaaaaa", "robe": "#5a7a9a" } },
-        "asa": { "name": "亞撒王", "faction": "south", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } }
-      },
-      "script": [
-        { "who": "azariah", "text": "亞撒和猶大、便雅憫眾人哪,要聽我說:" },
-        { "who": "azariah", "text": "你們若尋求他,就必尋見;你們若離棄他,他必離棄你們。", "key": true },
-        { "who": "azariah", "text": "現在你們要剛強,不要手軟,因你們所行的必得賞賜。" }
-      ]
-    },
-    "代下20": {
-      "era": "divided", "type": "禱告", "city": "jerusalem",
-      "title": "大軍壓境前的禱告",
-      "quote": "我們也不知道怎樣行,我們的眼目單仰望你。",
-      "ref": "歷代志下 20:12,15",
-      "hook": "大軍壓境,猶大王不點兵也不結盟,反而把全國老小帶到聖殿前。他坦承自己毫無辦法,只把結局交了出去。這一仗,究竟該怎麼打?",
-      "cast": {
-        "jehoshaphat": { "name": "約沙法王", "faction": "south", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } }
-      },
-      "script": [
-        { "who": "jehoshaphat", "text": "我們的神啊,我們無力抵擋這來攻擊我們的大軍。" },
-        { "who": "jehoshaphat", "text": "我們也不知道怎樣行,我們的眼目單仰望你。", "key": true },
-        { "who": "耶和華", "text": "不要因這大軍恐懼驚惶,因為勝敗不在乎你們,乃在乎神。" }
-      ]
-    },
-    "王上18": {
-      "era": "divided", "type": "對話", "city": "carmel",
-      "title": "迦密山上的攤牌",
-      "quote": "你們心持兩意要到幾時呢?若耶和華是神,就當順從耶和華;若巴力是神,就當順從巴力。",
-      "ref": "列王紀上 18:21",
-      "hook": "全國在巴力與耶和華之間搖擺已久。以利亞獨自面對四百五十名先知,把選擇權丟回群眾:腳踏兩條船的日子,還要過多久?山上即將見真章。",
-      "cast": {
-        "elijah": { "name": "先知以利亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "elijah", "text": "你們心持兩意要到幾時呢?", "key": true },
-        { "who": "elijah", "text": "若耶和華是神,就當順從耶和華;若巴力是神,就當順從巴力。" },
-        { "who": "旁白", "text": "眾民一言不答。" }
-      ]
-    },
-    "王上19": {
-      "era": "divided", "type": "對話", "city": null,
-      "title": "火後的微小聲音",
-      "quote": "以利亞啊,你在這裡做甚麼?",
-      "ref": "列王紀上 19:10-13",
-      "hook": "剛在迦密山大獲全勝的先知,轉眼逃進曠野,躲進山洞,只求一死。神要怎麼面對一個心力交瘁、想放棄的人?",
-      "cast": {
-        "elijah": { "name": "先知以利亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "elijah", "text": "我為耶和華萬軍之神大發熱心;只剩下我一個人,他們還要尋索我的命。" },
-        { "who": "旁白", "text": "烈風、地震、烈火接連經過,耶和華都不在其中。火後,有微小的聲音——" },
-        { "who": "耶和華", "text": "以利亞啊,你在這裡做甚麼?", "key": true }
-      ]
-    },
-    "王上17": {
-      "era": "divided", "type": "人物", "city": "zarephath",
-      "title": "寡婦最後一把麵",
-      "quote": "罈內的麵必不減少,瓶裡的油必不缺短,直到耶和華使雨降在地上的日子。",
-      "ref": "列王紀上 17:12-14",
-      "hook": "大饑荒中,一個外邦寡婦正打算用最後一把麵,為自己和兒子做最後一餐等死。先知卻先向她要餅。她若先給出去,還會剩下什麼?",
-      "cast": {
-        "elijah": { "name": "先知以利亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } },
-        "widow": { "name": "撒勒法寡婦", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
-      },
-      "script": [
-        { "who": "widow", "text": "我罈內只有一把麵,瓶裡只有一點油;做好了我們吃了,死就死罷!" },
-        { "who": "elijah", "text": "不要懼怕!只要先為我做一個小餅拿來給我,然後為你和你的兒子做。" },
-        { "who": "elijah", "text": "罈內的麵必不減少,瓶裡的油必不缺短,直到耶和華使雨降在地上的日子。", "key": true }
-      ]
-    },
-    "王上21": {
-      "era": "divided", "type": "人物", "city": "samaria",
-      "title": "拿伯不賣的葡萄園",
-      "quote": "我敬畏耶和華,萬不敢將我先人留下的產業給你。",
-      "ref": "列王紀上 21:2-3",
-      "hook": "王看上一座葡萄園,出價也算公道,卻被園主一句話頂了回來:有些產業不是錢的問題。拿伯守住了祖業與底線——而這座王宮,並不習慣聽見一個不字。",
-      "cast": {
-        "ahab": { "name": "亞哈王", "faction": "north", "avatar": { "skin": "#c89868", "hair": "#1a0a0a", "beard": "#1a0a0a", "robe": "#3fa7a0", "crown": true } },
-        "naboth": { "name": "拿伯", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a8a5a" } }
-      },
-      "script": [
-        { "who": "ahab", "text": "你將葡萄園給我作菜園罷,我用更好的換給你,或是給你價銀。" },
-        { "who": "naboth", "text": "我敬畏耶和華,萬不敢將我先人留下的產業給你。", "key": true }
-      ]
-    },
-    "王下5": {
-      "era": "divided", "type": "對話", "city": "samaria",
-      "title": "小女僕指出的活路",
-      "quote": "巴不得我主人去見撒瑪利亞的先知,必能治好他的大痲瘋。",
-      "ref": "列王紀下 5:3",
-      "hook": "亞蘭元帥戰功彪炳,卻染上痲瘋。指出活路的,竟是他擄來的一個以色列小女僕。一句越過敵我界線的話,把大將軍引向一條他絕不願走的路。他肯走嗎?",
-      "cast": {
-        "naaman": { "name": "亞蘭元帥乃縵", "faction": "empire", "avatar": { "skin": "#c99060", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#b04a4a" } },
-        "maid": { "name": "以色列小女子", "faction": "folk", "avatar": { "skin": "#e8c098", "hair": "#5a3a1a", "robe": "#b08850" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "亞蘭元帥乃縵戰功彪炳,卻長了大痲瘋。家中有個從以色列擄來的小女子。" },
-        { "who": "maid", "text": "巴不得我主人去見撒瑪利亞的先知,必能治好他的大痲瘋。", "key": true }
-      ]
-    },
-    "王下6": {
-      "era": "divided", "type": "教導", "city": "dothan",
-      "title": "滿山的火車火馬",
-      "quote": "不要懼怕!與我們同在的比與他們同在的更多。",
-      "ref": "列王紀下 6:15-16",
-      "hook": "清晨醒來,僕人看見敵軍車馬把全城團團圍住,嚇得手足無措。先知卻說了一句完全不合眼前情勢的話,然後為他求一件事:讓他看見另一個現場。",
-      "cast": {
-        "elisha": { "name": "先知以利沙", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#5a4a2a", "beard": "#5a4a2a", "robe": "#5a7a9a" } },
-        "servant": { "name": "以利沙的僕人", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#8a7a5a" } }
-      },
-      "script": [
-        { "who": "servant", "text": "哀哉!我主啊,我們怎樣行才好呢?" },
-        { "who": "elisha", "text": "不要懼怕!與我們同在的比與他們同在的更多。", "key": true }
-      ]
-    },
-    "摩5": {
-      "era": "divided", "type": "教導", "city": "bethel",
-      "title": "神要的不是祭物",
-      "quote": "惟願公平如大水滾滾,使公義如江河滔滔。",
-      "ref": "阿摩司書 5:21,24",
-      "hook": "節期照辦、獻祭照舊,北國表面一片虔誠。先知卻說神厭惡這些聚會。問題不在敬拜的形式,而在祭壇外那些被踐踏的窮人。神真正要的,究竟是什麼?",
-      "cast": {
-        "amos": { "name": "先知阿摩司", "faction": "prophet", "avatar": { "skin": "#cda06e", "hair": "#6a4a2a", "beard": "#6a4a2a", "robe": "#7a6a4a" } }
-      },
-      "script": [
-        { "who": "amos", "text": "我厭惡你們的節期,也不喜悅你們的嚴肅會。" },
-        { "who": "amos", "text": "惟願公平如大水滾滾,使公義如江河滔滔。", "key": true }
-      ]
-    },
-    "何11": {
-      "era": "divided", "type": "人物", "city": null,
-      "title": "下不了手的父親",
-      "quote": "以法蓮哪,我怎能捨棄你?以色列啊,我怎能棄絕你?",
-      "ref": "何西阿書 11:8",
-      "hook": "北國背約拜偶像,審判本該毫無懸念。但先知筆下的神,卻像一個面對叛逆孩子下不了手的父親。公義與慈愛在祂心裡拉扯——這一章讓你看見神的為難。",
-      "cast": {},
-      "script": [
-        { "who": "旁白", "text": "北國背約、拜偶像,審判本該毫無懸念。但神開口了——" },
-        { "who": "耶和華", "text": "以法蓮哪,我怎能捨棄你?以色列啊,我怎能棄絕你?", "key": true },
-        { "who": "耶和華", "text": "我回心轉意,我的憐愛大大發動。" }
-      ]
-    },
-    "拿2": {
-      "era": "divided", "type": "禱告", "city": null,
-      "title": "海底最深處的禱告",
-      "quote": "我遭遇患難求告耶和華,你就應允我。",
-      "ref": "約拿書 2:2,9",
-      "hook": "一個抗命潛逃的先知,被大魚吞下,沉到海的最深處。就在生命的最底部,他開口禱告。人跌到最低點時,還能向誰呼求?",
-      "cast": {
-        "jonah": { "name": "先知約拿", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#6a8a6a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "抗命潛逃的約拿被大魚吞下,沉到海的最深處。就在生命最底部,他開口——" },
-        { "who": "jonah", "text": "我遭遇患難求告耶和華,你就應允我。", "key": true },
-        { "who": "jonah", "text": "救恩出於耶和華。" }
-      ]
-    },
-    "拿4": {
-      "era": "divided", "type": "對話", "city": null,
-      "title": "一棵蓖麻與一個問題",
-      "quote": "你這樣發怒合乎理嗎?",
-      "ref": "約拿書 4:4,11",
-      "hook": "尼尼微全城悔改,先知非但不喜,反而氣到求死。神安排一棵蓖麻又使它枯乾,然後只問了一個問題。這本書沒有給答案,而是把問題留給了你。",
-      "cast": {
-        "jonah": { "name": "先知約拿", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#6a8a6a" } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "你這樣發怒合乎理嗎?", "key": true },
-        { "who": "jonah", "text": "我發怒以至於死,都合乎理!" },
-        { "who": "耶和華", "text": "這蓖麻你尚且愛惜;何況這尼尼微大城呢?" }
-      ]
-    },
-    "約3": {
-      "era": "gospels", "type": "對話", "city": "jerusalem",
-      "title": "夜訪的官與重生",
-      "quote": "神愛世人,甚至將他的獨生子賜給他們,叫一切信他的,不至滅亡,反得永生。",
-      "ref": "約翰福音 3:2-3,16",
-      "hook": "一個猶太人的官,夜裡偷偷來找耶穌,想弄懂他到底是誰。耶穌沒談神蹟,反而把話題轉到一件他想不到的事:重新出生。一個老人,還能重生嗎?",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "nico": { "name": "尼哥底母", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#6a6a6a", "beard": "#6a6a6a", "robe": "#7a5a8a" } }
-      },
-      "script": [
-        { "who": "nico", "text": "拉比,我們知道你是由神那裡來作師傅的。" },
-        { "who": "jesus", "text": "我實實在在地告訴你,人若不重生,就不能見神的國。" },
-        { "who": "jesus", "text": "神愛世人,甚至將他的獨生子賜給他們,叫一切信他的,不至滅亡,反得永生。", "key": true }
-      ]
-    },
-    "太5": {
-      "era": "gospels", "type": "教導", "city": "capernaum",
-      "title": "山上的八福",
-      "quote": "虛心的人有福了!因為天國是他們的。",
-      "ref": "馬太福音 5:3-5",
-      "hook": "耶穌看見一大群人,就上了山坐下,開口教導。他一連說八個「有福了」,把世人對幸福的排序整個翻過來——誰才是真正蒙福的人?",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
-      },
-      "script": [
-        { "who": "jesus", "text": "虛心的人有福了!因為天國是他們的。", "key": true },
-        { "who": "jesus", "text": "哀慟的人有福了!因為他們必得安慰。" },
-        { "who": "jesus", "text": "溫柔的人有福了!因為他們必承受地土。" }
-      ]
-    },
-    "約14": {
-      "era": "gospels", "type": "對話", "city": "jerusalem",
-      "title": "我就是道路真理生命",
-      "quote": "我就是道路、真理、生命;若不藉著我,沒有人能到父那裡去。",
-      "ref": "約翰福音 14:5-6",
-      "hook": "最後的晚餐桌上,耶穌說他要走了。門徒慌了:不知道你去哪,怎麼知道路?耶穌的回答,把「路」從一個地點,變成了一個人。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "thomas": { "name": "多馬", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "thomas", "text": "主阿,我們不知道你往那裡去,怎麼知道那條路呢?" },
-        { "who": "jesus", "text": "我就是道路、真理、生命;若不藉著我,沒有人能到父那裡去。", "key": true }
-      ]
-    },
-    "太11": {
-      "era": "gospels", "type": "教導", "city": "capernaum",
-      "title": "勞苦者的安息之邀",
-      "quote": "凡勞苦擔重擔的人可以到我這裡來,我就使你們得安息。",
-      "ref": "馬太福音 11:28-29",
-      "hook": "宗教重擔壓得人喘不過氣,律法越守越累。耶穌向所有累垮的人發出一個邀請——不是再加一條規條,而是換一種軛。安息,究竟從哪裡來?",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
-      },
-      "script": [
-        { "who": "jesus", "text": "凡勞苦擔重擔的人可以到我這裡來,我就使你們得安息。", "key": true },
-        { "who": "jesus", "text": "我心裡柔和謙卑,你們當負我的軛,學我的樣式;這樣,你們心裡就必得享安息。" }
-      ]
-    },
-    "路15": {
-      "era": "gospels", "type": "教導", "city": null,
-      "title": "浪子與奔跑的父親",
-      "quote": "因為我這個兒子是死而復活,失而又得的。",
-      "ref": "路加福音 15:20,24",
-      "hook": "一個小兒子要光家產、遠走他鄉、把錢揮霍精光。耶穌講這故事時,法利賽人正嫌他和罪人吃飯。故事的重點,其實不在浪子,而在那位父親。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "兒子淪落到與豬搶食,終於醒悟,起來往父親那裡去——" },
-        { "who": "jesus", "text": "相離還遠,他父親看見,就動了慈心,跑去抱著他的頸項,連連與他親嘴。" },
-        { "who": "jesus", "text": "因為我這個兒子是死而復活,失而又得的。", "key": true }
-      ]
-    },
-    "太8": {
-      "era": "gospels", "type": "對話", "city": "galilee",
-      "title": "平靜風浪",
-      "quote": "你們這小信的人哪,為甚麼膽怯呢?",
-      "ref": "馬太福音 8:25-27;馬可福音 4:38-41;路加福音 8:24-25",
-      "parallels": ["可4", "路8"],
-      "hook": "船在加利利海上遇到狂風,浪幾乎把船打翻,門徒嚇得喪膽——而耶穌竟在船尾睡著。他們搖醒他。一個人,能對風浪說話嗎?",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "disciples": { "name": "門徒", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } }
-      },
-      "script": [
-        { "who": "disciples", "text": "主阿,救我們,我們喪命啦!" },
-        { "who": "jesus", "text": "你們這小信的人哪,為甚麼膽怯呢?", "key": true },
-        { "who": "旁白", "text": "耶穌起來,斥責風和海,風和海就大大地平靜了。" },
-        { "who": "disciples", "text": "這是怎樣的人?連風和海也聽從他了!" }
-      ]
-    },
-    "太16": {
-      "era": "gospels", "type": "對話", "city": "caesarea",
-      "title": "你說我是誰",
-      "quote": "你是基督,是永生神的兒子。",
-      "ref": "馬太福音 16:15-18;馬可福音 8:29;路加福音 9:20",
-      "parallels": ["可8", "路9"],
-      "hook": "走到該撒利亞腓立比,耶穌問門徒:別人說我是誰?眾說紛紜。然後他把問題轉向他們自己——你們說我是誰?彼得的回答,將定下教會的根基。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "peter": { "name": "西門彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } }
-      },
-      "script": [
-        { "who": "jesus", "text": "你們說我是誰?" },
-        { "who": "peter", "text": "你是基督,是永生神的兒子。", "key": true },
-        { "who": "jesus", "text": "你是彼得,我要把我的教會建造在這磐石上;陰間的權柄,不能勝過他。" }
-      ]
-    },
-    "路10": {
-      "era": "gospels", "type": "教導", "city": null,
-      "title": "好撒馬利亞人",
-      "quote": "你去照樣行罷。",
-      "ref": "路加福音 10:29-37",
-      "hook": "一個律法師想為難耶穌:誰是我的鄰舍?耶穌沒給定義,反而講了個故事——被打個半死的人,身邊走過祭司、利未人,最後停下的卻是最不被待見的那種人。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "lawyer": { "name": "律法師", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#6a6a8a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "祭司和利未人都從那受傷的人旁邊繞了過去,惟有一個被人看不起的撒瑪利亞人停下來,包紮、照顧他。耶穌問:這三人哪一個是鄰舍?" },
-        { "who": "lawyer", "text": "是憐憫他的。" },
-        { "who": "jesus", "text": "你去照樣行罷。", "key": true }
-      ]
-    },
-    "約11": {
-      "era": "gospels", "type": "對話", "city": "bethany",
-      "title": "復活在我",
-      "quote": "復活在我,生命也在我。信我的人雖然死了,也必復活。",
-      "ref": "約翰福音 11:21-26",
-      "hook": "拉撒路死了四天,墳墓都封住了,耶穌才趕到。馬大迎上來,話裡有信、也有遺憾。面對親人的死,耶穌把自己擺在一個驚人的位置上。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "martha": { "name": "馬大", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a6a7a" } }
-      },
-      "script": [
-        { "who": "martha", "text": "主阿,你若早在這裡,我兄弟必不死。" },
-        { "who": "jesus", "text": "復活在我,生命也在我。信我的人雖然死了,也必復活。", "key": true },
-        { "who": "jesus", "text": "你信這話麼?" }
-      ]
-    },
-    "路23": {
-      "era": "gospels", "type": "禱告", "city": "jerusalem",
-      "title": "十架上的赦免",
-      "quote": "父阿!赦免他們;因為他們所做的,他們不曉得。",
-      "ref": "路加福音 23:34;馬太福音 27:33-44;馬可福音 15:22-32;約翰福音 19:18",
-      "parallels": ["太27", "可15", "約19"],
-      "hook": "兵丁把耶穌釘上十字架,在他衣服上拈鬮。眼前是嘲笑、是釘痕、是不公的死刑。受刑的人通常咒罵。耶穌開口的第一句,卻是為加害者向天父求情。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "到了髑髏地,他們把耶穌釘在十字架上,左右各釘一個犯人。兵丁拈鬮分他的衣服。" },
-        { "who": "jesus", "text": "父阿!赦免他們;因為他們所做的,他們不曉得。", "key": true }
-      ]
-    },
-    "太28": {
-      "era": "gospels", "type": "對話", "city": "jerusalem",
-      "title": "空墳與大使命",
-      "quote": "我就常與你們同在,直到世界的末了。",
-      "ref": "馬太福音 28:6,18-20;馬可福音 16:6,15;路加福音 24:6",
-      "parallels": ["可16"],
-      "hook": "七日的頭一日清晨,幾個婦女帶著香膏來到墳墓,要膏耶穌的身體。卻見石頭已經滾開,墳墓是空的。死亡,真的是故事的結局嗎?",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "angel": { "name": "天使", "faction": "folk", "avatar": { "skin": "#f0e8d8", "hair": "#e8e0d0", "robe": "#f0e8d8" } }
-      },
-      "script": [
-        { "who": "angel", "text": "他不在這裡,照他所說的,已經復活了。" },
-        { "who": "旁白", "text": "婦女又驚又喜跑去報信。十一個門徒上了加利利的山,耶穌向他們顯現——" },
-        { "who": "jesus", "text": "天上地下所有的權柄都賜給我了。" },
-        { "who": "jesus", "text": "所以,你們要去,使萬民作我的門徒,奉父、子、聖靈的名給他們施洗。" },
-        { "who": "jesus", "text": "我就常與你們同在,直到世界的末了。", "key": true }
-      ]
-    },
-    "約20": {
-      "era": "gospels", "type": "對話", "city": "jerusalem",
-      "title": "多馬摸釘痕",
-      "quote": "那沒有看見就信的有福了。",
-      "ref": "約翰福音 20:27-29",
-      "hook": "多馬沒趕上復活的主顯現,放話:非親眼看見釘痕、親手探入肋旁,我總不信。八日後,門明明關著,耶穌卻站在他們當中。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "thomas": { "name": "多馬", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "jesus", "text": "伸過你的指頭來,摸我的手;伸出你的手來,探入我的肋旁。不要疑惑,總要信。" },
-        { "who": "thomas", "text": "我的主!我的神!" },
-        { "who": "jesus", "text": "你因看見了我才信;那沒有看見就信的有福了。", "key": true }
-      ]
-    },
-    "徒2": {
-      "era": "acts", "type": "教導", "city": "jerusalem",
-      "title": "五旬節的講道",
-      "quote": "你們釘在十字架上的這位耶穌,神已經立他為主,為基督了。",
-      "ref": "使徒行傳 2:36-38",
-      "hook": "五旬節,聖靈如火降臨,門徒忽然說起各國的鄉談,滿城驚訝議論。彼得站起來高聲講道,把矛頭指向一個眾人不願面對的事實。",
-      "cast": {
-        "peter": { "name": "彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#888888", "beard": "#888888", "robe": "#7a4a3a" } }
-      },
-      "script": [
-        { "who": "peter", "text": "你們釘在十字架上的這位耶穌,神已經立他為主,為基督了。", "key": true },
-        { "who": "旁白", "text": "眾人聽了覺得扎心,就問:弟兄們,我們當怎樣行?" },
-        { "who": "peter", "text": "你們各人要悔改,奉耶穌基督的名受洗,叫你們的罪得赦。" }
-      ]
-    },
-    "徒3": {
-      "era": "acts", "type": "對話", "city": "jerusalem",
-      "title": "美門口的瘸腿者",
-      "quote": "金銀我都沒有,只把我所有的給你:我奉拿撒勒人耶穌基督的名,叫你起來行走!",
-      "ref": "使徒行傳 3:6-8",
-      "hook": "美門口有個生來瘸腿的人,天天被人抬來討飯。彼得、約翰上聖殿,他伸手求錢。彼得卻定睛看他,說沒有錢——然後給了他更想不到的東西。",
-      "cast": {
-        "peter": { "name": "彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#888888", "beard": "#888888", "robe": "#7a4a3a" } }
-      },
-      "script": [
-        { "who": "peter", "text": "金銀我都沒有,只把我所有的給你:我奉拿撒勒人耶穌基督的名,叫你起來行走!", "key": true },
-        { "who": "旁白", "text": "那人的腳和踝子骨立刻健壯,就跳起來站著,又行走、跳躍、讚美神。" }
-      ]
-    },
-    "徒7": {
-      "era": "acts", "type": "禱告", "city": "jerusalem",
-      "title": "司提反殉道",
-      "quote": "主阿,不要將這罪歸於他們!",
-      "ref": "使徒行傳 7:56,59-60",
-      "hook": "司提反被誣告拉到公會,他不替自己脫罪,反而把以色列的歷史從頭講到底,句句扎心。眾人咬牙切齒,他卻定睛望天,看見了一幅景象。",
-      "cast": {
-        "stephen": { "name": "司提反", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#9a8a6a" } }
-      },
-      "script": [
-        { "who": "stephen", "text": "我看見天開了,人子站在神的右邊。" },
-        { "who": "旁白", "text": "眾人摀著耳朵,齊心擁上前,把他推到城外,用石頭打他。司提反跪下——" },
-        { "who": "stephen", "text": "主阿,不要將這罪歸於他們!", "key": true }
-      ]
-    },
-    "徒16": {
-      "era": "acts", "type": "對話", "city": "philippi",
-      "title": "腓立比獄卒",
-      "quote": "當信主耶穌,你和你一家都必得救。",
-      "ref": "使徒行傳 16:30-31",
-      "hook": "保羅、西拉因趕鬼被打、下在內監,腳上了木狗。換作別人早該哀號,他們卻在半夜唱詩讚美神。然後,地動了。",
-      "cast": {
-        "paul": { "name": "保羅", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#5a7a9a" } },
-        "jailer": { "name": "獄卒", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#6a5a4a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "半夜地大震動,監門全開、鎖鍊鬆脫。獄卒驚醒,以為囚犯都逃了,拔刀要自盡。保羅大喊:我們都在這裡!" },
-        { "who": "jailer", "text": "二位先生,我當怎樣行才可以得救?" },
-        { "who": "paul", "text": "當信主耶穌,你和你一家都必得救。", "key": true }
-      ]
-    },
-    "徒9": {
-      "era": "acts", "type": "對話", "city": "damascus",
-      "title": "大馬士革路上的光",
-      "quote": "掃羅!掃羅!你為甚麼逼迫我?",
-      "ref": "使徒行傳 9:3-5",
-      "hook": "掃羅一路追捕信耶穌的人,氣勢洶洶往大馬士革去,要把信徒綑綁帶回。將到城時,忽然從天上發光,四面照著他,他就仆倒在地——",
-      "cast": {
-        "jesus": { "name": "主耶穌", "faction": "messiah" },
-        "saul": { "name": "掃羅", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#8a3a3a" } }
-      },
-      "script": [
-        { "who": "jesus", "text": "掃羅!掃羅!你為甚麼逼迫我?", "key": true },
-        { "who": "saul", "text": "主阿!你是誰?" },
-        { "who": "jesus", "text": "我就是你所逼迫的耶穌。" },
-        { "who": "旁白", "text": "掃羅站起來,眼睛卻瞎了。那位他極力逼迫的耶穌,要如何翻轉這個逼迫者的一生?" }
-      ]
-    },
-    "徒17": {
-      "era": "acts", "type": "教導", "city": "athens",
-      "title": "雅典的未識之神",
-      "quote": "我們生活、動作、存留,都在乎他。",
-      "ref": "使徒行傳 17:23-28",
-      "hook": "保羅獨自在雅典等候同工,看見滿城都是偶像,心裡著急。哲士們把他帶到亞略巴古,想聽聽這新鮮的道理。他卻指著一座祭壇開口——",
-      "cast": {
-        "paul": { "name": "保羅", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "城裡有一座壇,上面寫著「未識之神」。保羅說:你們不認識卻敬拜的那位,我要告訴你們——" },
-        { "who": "paul", "text": "創造宇宙和其中萬物的神,既是天地的主,就不住人手所造的殿。" },
-        { "who": "paul", "text": "我們生活、動作、存留,都在乎他。", "key": true }
-      ]
-    },
-    "撒上3": {
-      "era": "saul", "type": "對話", "city": "shiloh",
-      "title": "撒母耳蒙召",
-      "quote": "請說,僕人敬聽!",
-      "ref": "撒母耳記上 3:4-10",
-      "hook": "那些日子,耶和華的言語稀少。少年撒母耳睡在聖殿裡,夜裡聽見有人呼喚他的名,一連三次。以利這才明白,是神在召喚這孩子——",
-      "cast": {
-        "samuel": { "name": "童子撒母耳", "faction": "prophet", "avatar": { "skin": "#e8c098", "hair": "#3a2a1a", "robe": "#cccccc" } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "撒母耳啊!撒母耳啊!" },
-        { "who": "samuel", "text": "請說,僕人敬聽!", "key": true }
-      ]
-    },
-    "撒上16": {
-      "era": "saul", "type": "教導", "city": "bethlehem",
-      "title": "膏立少年大衛",
-      "quote": "耶和華不像人看人:人是看外貌;耶和華是看內心。",
-      "ref": "撒母耳記上 16:7",
-      "hook": "撒母耳奉命到伯利恆膏立新王。耶西的兒子一個個經過,個個高大俊美。撒母耳看中了長子,神卻攔住他,把揀選的標準整個翻轉。",
-      "cast": {
-        "samuel": { "name": "先知撒母耳", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "不要看他的外貌和他身材高大,我不揀選他。" },
-        { "who": "耶和華", "text": "耶和華不像人看人:人是看外貌;耶和華是看內心。", "key": true }
-      ]
-    },
-    "撒上17": {
-      "era": "saul", "type": "對話", "city": "elah",
-      "title": "大衛與歌利亞",
-      "quote": "你來攻擊我,是靠著刀槍和銅戟;我來攻擊你,是靠著萬軍之耶和華的名。",
-      "ref": "撒母耳記上 17:43-45",
-      "hook": "非利士巨人歌利亞,身高六肘,披甲叫陣四十天,以色列全軍喪膽。沒有人敢應戰。一個來送飯的牧羊少年,卻撿起了五塊石子。",
-      "cast": {
-        "david": { "name": "少年大衛", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "robe": "#a08850" } },
-        "goliath": { "name": "歌利亞", "faction": "empire", "avatar": { "skin": "#b89060", "hair": "#1a1a1a", "beard": "#1a1a1a", "robe": "#7a3a3a" } }
-      },
-      "script": [
-        { "who": "goliath", "text": "你拿杖到我這裡來,我豈是狗呢?" },
-        { "who": "david", "text": "你來攻擊我,是靠著刀槍和銅戟;我來攻擊你,是靠著萬軍之耶和華的名。", "key": true }
-      ]
-    },
-    "撒上24": {
-      "era": "saul", "type": "人物", "city": "engedi",
-      "title": "大衛饒了掃羅",
-      "quote": "我在耶和華面前萬不敢伸手害他,因他是耶和華的受膏者。",
-      "ref": "撒母耳記上 24:6,16",
-      "hook": "掃羅追殺大衛,偏偏進了大衛藏身的洞裡歇息。隨從低聲說:機會來了!大衛悄悄逼近,手裡有刀——他會動手嗎?",
-      "cast": {
-        "david": { "name": "大衛", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#a08850" } },
-        "saul": { "name": "掃羅王", "faction": "united", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#9b6fd1", "crown": true } }
-      },
-      "script": [
-        { "who": "david", "text": "我在耶和華面前萬不敢伸手害他,因他是耶和華的受膏者。", "key": true },
-        { "who": "saul", "text": "我兒大衛,這是你的聲音麼?" }
-      ]
-    },
-    "撒下7": {
-      "era": "david", "type": "教導", "city": "jerusalem",
-      "title": "永遠堅立的家",
-      "quote": "你的家和你的國必在我面前永遠堅立。你的國位也必堅定,直到永遠。",
-      "ref": "撒母耳記下 7:16,18",
-      "hook": "大衛住進香柏木宮殿,過意不去,想為神建一座殿。神卻藉先知拿單回話:不是你為我建殿——是我要為你建立一個永不傾倒的家。",
-      "cast": {
-        "david": { "name": "大衛王", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "你的家和你的國必在我面前永遠堅立。你的國位也必堅定,直到永遠。", "key": true },
-        { "who": "david", "text": "主耶和華啊,我是誰?我的家算甚麼?你竟使我到這地步呢?" }
-      ]
-    },
-    "撒下12": {
-      "era": "david", "type": "對話", "city": "jerusalem",
-      "title": "你就是那人",
-      "quote": "你就是那人!",
-      "ref": "撒母耳記下 12:7,13",
-      "hook": "大衛奪人之妻、借刀殺人,自以為遮掩得天衣無縫。先知拿單來見他,只講了一個富人搶窮人小羊羔的故事。大衛聽了拍案大怒——",
-      "cast": {
-        "nathan": { "name": "先知拿單", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } },
-        "david": { "name": "大衛王", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } }
-      },
-      "script": [
-        { "who": "nathan", "text": "你就是那人!", "key": true },
-        { "who": "david", "text": "我得罪耶和華了!" }
-      ]
-    },
-    "王上3": {
-      "era": "solomon", "type": "教導", "city": "gibeon",
-      "title": "所羅門求智慧",
-      "quote": "求你賜我智慧,可以判斷你的民,能辨別是非。",
-      "ref": "列王紀上 3:5,9",
-      "hook": "神在夜間夢中向所羅門顯現,要把他所求的賜給他。一個年輕的王,大可求長壽、求財富、求勝過仇敵——他卻只求一樣。",
-      "cast": {
-        "solomon": { "name": "所羅門王", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#c9a24b", "crown": true } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "你願我賜你甚麼?你可以求。" },
-        { "who": "solomon", "text": "求你賜我智慧,可以判斷你的民,能辨別是非。", "key": true }
-      ]
-    },
-    "王上10": {
-      "era": "solomon", "type": "對話", "city": "jerusalem",
-      "title": "示巴女王來訪",
-      "quote": "耶和華你的神是應當稱頌的!",
-      "ref": "列王紀上 10:7,9",
-      "hook": "示巴女王聽見所羅門的名聲,千里迢迢帶著難題來考問他。所羅門對答如流,宮室、筵席、智慧讓她詫異得神不守舍——",
-      "cast": {
-        "sheba": { "name": "示巴女王", "faction": "folk", "avatar": { "skin": "#a87858", "hair": "#1a0a0a", "robe": "#a83a5a", "crown": true } },
-        "solomon": { "name": "所羅門王", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#c9a24b", "crown": true } }
-      },
-      "script": [
-        { "who": "sheba", "text": "我先不信那些話,及至我來親眼見了才知道,人所告訴我的還不到一半。" },
-        { "who": "sheba", "text": "耶和華你的神是應當稱頌的!", "key": true }
-      ]
-    },
-    "但3": {
-      "era": "exile", "type": "人物", "city": "babylon",
-      "title": "烈火窯中第四人",
-      "quote": "即或不然,王啊,你當知道我們決不事奉你的神,也不敬拜你所立的金像。",
-      "ref": "但以理書 3:15,18,25",
-      "hook": "王立了金像,下令一聽見樂器聲,全國都要俯伏敬拜,不拜的立刻扔進烈火窯。三個被擄的猶大青年,偏偏不跪——",
-      "cast": {
-        "three": { "name": "三個希伯來青年", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#7a6a4a" } },
-        "neb": { "name": "尼布甲尼撒王", "faction": "empire", "avatar": { "skin": "#c89060", "hair": "#1a1a1a", "beard": "#1a1a1a", "robe": "#7a3a3a", "crown": true } }
-      },
-      "script": [
-        { "who": "neb", "text": "你們若不敬拜,必立時扔在烈火的窯中,有何神能救你們脫離我手呢?" },
-        { "who": "three", "text": "即或不然,王啊,你當知道我們決不事奉你的神,也不敬拜你所立的金像。", "key": true },
-        { "who": "旁白", "text": "三人被扔進七倍猛烈的火裡。王卻驚見火中有四個人遊行,那第四個相貌好像神子。" }
-      ]
-    },
-    "但5": {
-      "era": "exile", "type": "對話", "city": "babylon",
-      "title": "牆上的指頭",
-      "quote": "你被稱在天平裡,顯出你的虧欠。",
-      "ref": "但以理書 5:25,27",
-      "hook": "伯沙撒王設盛筵,竟用聖殿擄來的金器飲酒、讚美偶像。忽然,一隻手指在牆上寫字。王嚇得臉色發白、雙膝相碰,哲士無人能解。但以理被召來——",
-      "cast": {
-        "daniel": { "name": "但以理", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "牆上寫著:彌尼,彌尼,提客勒,烏法珥新。但以理為王解明——" },
-        { "who": "daniel", "text": "提客勒,就是你被稱在天平裡,顯出你的虧欠。", "key": true }
-      ]
-    },
-    "但6": {
-      "era": "exile", "type": "人物", "city": "babylon",
-      "title": "獅子坑中的但以理",
-      "quote": "我的神差遣使者,封住獅子的口,叫獅子不傷我。",
-      "ref": "但以理書 6:16,22",
-      "hook": "但以理位高權重,政敵設局:三十天內只准向王祈求,違者扔進獅子坑。但以理知道後,照常一日三次開窗向耶路撒冷禱告——",
-      "cast": {
-        "daniel": { "name": "但以理", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#5a7a9a" } },
-        "darius": { "name": "大利烏王", "faction": "empire", "avatar": { "skin": "#c89060", "hair": "#888888", "beard": "#888888", "robe": "#7a3a3a", "crown": true } }
-      },
-      "script": [
-        { "who": "darius", "text": "你所常事奉的神,他必救你。" },
-        { "who": "旁白", "text": "次日黎明,王禁食一夜,急忙跑到坑邊,哀聲呼叫但以理——" },
-        { "who": "daniel", "text": "我的神差遣使者,封住獅子的口,叫獅子不傷我。", "key": true }
-      ]
-    },
-    "斯4": {
-      "era": "exile", "type": "人物", "city": "susa",
-      "title": "以斯帖的抉擇",
-      "quote": "我若死就死罷!",
-      "ref": "以斯帖記 4:14,16",
-      "hook": "滅族的詔令已下,書珊城的猶大人哀哭。末底改捎信給王后以斯帖,要她冒死進宮為同胞求情——擅入內院見王,是死罪。",
-      "cast": {
-        "mordecai": { "name": "末底改", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#6a5a4a" } },
-        "esther": { "name": "王后以斯帖", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#1a0a0a", "robe": "#a83a5a", "crown": true } }
-      },
-      "script": [
-        { "who": "mordecai", "text": "焉知你得了王后的位分不是為現今的機會麼?" },
-        { "who": "esther", "text": "我若死就死罷!", "key": true }
-      ]
-    },
-    "創12": {
-      "era": "patriarchs", "type": "教導", "city": "haran",
-      "title": "亞伯蘭蒙召",
-      "quote": "你要離開本地、本族、父家,往我所要指示你的地去。",
-      "ref": "創世記 12:1-4",
-      "hook": "亞伯蘭住過繁華的吾珥,後來遷到哈蘭。七十五歲那年,神對他說了一句話,要他離開一切熟悉的,去一個還沒說明的地方。",
-      "cast": {},
-      "script": [
-        { "who": "耶和華", "text": "你要離開本地、本族、父家,往我所要指示你的地去。", "key": true },
-        { "who": "耶和華", "text": "我必叫你成為大國,地上的萬族都要因你得福。" },
-        { "who": "旁白", "text": "亞伯蘭就照著耶和華的吩咐去了。那年,他七十五歲。" }
-      ]
-    },
-    "創22": {
-      "era": "patriarchs", "type": "人物", "city": null,
-      "title": "獻以撒",
-      "quote": "我兒,神必自己預備作燔祭的羊羔。",
-      "ref": "創世記 22:7-8",
-      "hook": "神要試驗亞伯拉罕,叫他把獨生、所愛的以撒獻為燔祭。父子默默上山,以撒背著柴,卻發現少了一樣東西——",
-      "cast": {
-        "abraham": { "name": "亞伯拉罕", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#a08850" } },
-        "isaac": { "name": "以撒", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#a08850" } }
-      },
-      "script": [
-        { "who": "isaac", "text": "請看,火與柴都有了,但燔祭的羊羔在那裡呢?" },
-        { "who": "abraham", "text": "我兒,神必自己預備作燔祭的羊羔。", "key": true }
-      ]
-    },
-    "創28": {
-      "era": "patriarchs", "type": "對話", "city": "bethel",
-      "title": "雅各的天梯",
-      "quote": "耶和華真在這裡,我竟不知道!",
-      "ref": "創世記 28:13-16",
-      "hook": "雅各騙了哥哥、逃離家門,露宿曠野,以石頭為枕。夜裡他夢見一個梯子立在地上、直通到天,神的使者在梯上上去下來——",
-      "cast": {
-        "jacob": { "name": "雅各", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "我也與你同在。你無論往那裡去,我必保佑你,領你歸回這地,總不離棄你。" },
-        { "who": "jacob", "text": "耶和華真在這裡,我竟不知道!", "key": true }
-      ]
-    },
-    "出3": {
-      "era": "exodus", "type": "對話", "city": "sinai",
-      "title": "荊棘火中的呼召",
-      "quote": "我是自有永有的。",
-      "ref": "出埃及記 3:5,11,14",
-      "hook": "摩西在曠野牧羊,瞥見一叢荊棘著了火卻沒燒毀。他湊近去看,火焰中竟有聲音,叫出他的名字——",
-      "cast": {
-        "moses": { "name": "摩西", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "不要近前來。當把你腳上的鞋脫下來,因為你所站之地是聖地。" },
-        { "who": "moses", "text": "我是甚麼人,竟能去見法老,將以色列人從埃及領出來呢?" },
-        { "who": "耶和華", "text": "我是自有永有的。", "key": true }
-      ]
-    },
-    "出14": {
-      "era": "exodus", "type": "教導", "city": "yamsuph",
-      "title": "過紅海",
-      "quote": "不要懼怕,只管站住!看耶和華今天向你們所要施行的救恩。",
-      "ref": "出埃及記 14:13-14",
-      "hook": "紅海橫在前面,法老的鐵騎追在後面,以色列人走投無路,向摩西放聲哀號。摩西卻叫他們不要動——",
-      "cast": {
-        "moses": { "name": "摩西", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "moses", "text": "不要懼怕,只管站住!看耶和華今天向你們所要施行的救恩。", "key": true },
-        { "who": "moses", "text": "耶和華必為你們爭戰;你們只管靜默,不要作聲。" }
-      ]
-    },
-    "出20": {
-      "era": "exodus", "type": "教導", "city": "sinai",
-      "title": "西奈山頒十誡",
-      "quote": "除了我以外,你不可有別的神。",
-      "ref": "出埃及記 20:2-3",
-      "hook": "西奈山上雷轟、閃電、密雲、角聲,山頂冒煙,百姓嚇得遠遠站著。神親自開口,宣告十條誡命,第一條就定了根基——",
-      "cast": {},
-      "script": [
-        { "who": "耶和華", "text": "我是耶和華你的神,曾將你從埃及地為奴之家領出來。" },
-        { "who": "耶和華", "text": "除了我以外,你不可有別的神。", "key": true }
-      ]
-    },
-    "書1": {
-      "era": "conquest", "type": "教導", "city": "jericho",
-      "title": "剛強壯膽",
-      "quote": "你當剛強壯膽!不要懼怕,也不要驚惶。",
-      "ref": "約書亞記 1:9",
-      "hook": "摩西死了。接棒的約書亞要帶百姓過約旦河、進入應許之地。重擔壓肩之際,神一連三次對他說同一件事——",
-      "cast": {},
-      "script": [
-        { "who": "耶和華", "text": "你當剛強壯膽!不要懼怕,也不要驚惶;因為你無論往那裡去,耶和華你的神必與你同在。", "key": true }
-      ]
-    },
-    "書24": {
-      "era": "conquest", "type": "人物", "city": "shechem",
-      "title": "我和我家必事奉耶和華",
-      "quote": "至於我和我家,我們必定事奉耶和華。",
-      "ref": "約書亞記 24:15-16",
-      "hook": "約書亞年紀老邁,召聚以色列眾支派到示劍。在眾神之間,他要百姓當天就做出抉擇,自己先把話說定——",
-      "cast": {
-        "joshua": { "name": "約書亞", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#9b6fd1" } }
-      },
-      "script": [
-        { "who": "joshua", "text": "至於我和我家,我們必定事奉耶和華。", "key": true },
-        { "who": "旁白", "text": "百姓回答:我們斷不敢離棄耶和華去事奉別神!" }
-      ]
-    },
-    "士6": {
-      "era": "judges", "type": "對話", "city": "ophrah",
-      "title": "基甸蒙召",
-      "quote": "大能的勇士啊,耶和華與你同在!",
-      "ref": "士師記 6:12,15-16",
-      "hook": "米甸人連年劫掠,以色列人躲進山洞。基甸正偷偷在酒醡裡打麥子,怕被搶走。耶和華的使者忽然向這個膽怯的人顯現——",
-      "cast": {
-        "gideon": { "name": "基甸", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "大能的勇士啊,耶和華與你同在!", "key": true },
-        { "who": "gideon", "text": "主啊,我有何能拯救以色列人呢?我家在瑪拿西支派中是至貧窮的。" },
-        { "who": "耶和華", "text": "我與你同在,你就必擊打米甸人,如擊打一人一樣。" }
-      ]
-    },
-    "得1": {
-      "era": "judges", "type": "人物", "city": "bethlehem",
-      "title": "路得的選擇",
-      "quote": "你的國就是我的國,你的神就是我的神。",
-      "ref": "路得記 1:15-16",
-      "hook": "拿俄米在摩押失去丈夫和兩個兒子,決定獨自回伯利恆,勸兩個外邦媳婦留下改嫁。一個哭著走了,路得卻緊緊跟隨——",
-      "cast": {
-        "naomi": { "name": "拿俄米", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#888888", "robe": "#7a6845" } },
-        "ruth": { "name": "路得", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#a08850" } }
-      },
-      "script": [
-        { "who": "naomi", "text": "看哪,你嫂子已經回他本國和他所拜的神那裡去了,你也跟著你嫂子回去罷!" },
-        { "who": "ruth", "text": "你的國就是我的國,你的神就是我的神。", "key": true }
-      ]
-    },
-    "賽6": {
-      "era": "north_fall", "type": "對話", "city": "jerusalem",
-      "title": "以賽亞蒙召",
-      "quote": "我在這裡,請差遣我!",
-      "ref": "以賽亞書 6:3,8",
-      "hook": "烏西雅王崩的那年,以賽亞看見主坐在高高的寶座上,撒拉弗環繞呼喊聖哉,聖殿震動、煙雲瀰漫。他自覺嘴唇不潔、必死——",
-      "cast": {
-        "isaiah": { "name": "以賽亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "我可以差遣誰呢?誰肯為我們去呢?" },
-        { "who": "isaiah", "text": "我在這裡,請差遣我!", "key": true }
-      ]
-    },
-    "王下19": {
-      "era": "north_fall", "type": "禱告", "city": "jerusalem",
-      "title": "希西家展開的信",
-      "quote": "求你救我們脫離亞述王的手,使天下萬國都知道惟獨你耶和華是神!",
-      "ref": "列王紀下 19:19,35",
-      "hook": "亞述大軍壓境,使者當眾辱罵耶和華。希西家王沒有回罵,他把那封恐嚇的信拿到聖殿,在耶和華面前展開——",
-      "cast": {
-        "hezekiah": { "name": "希西家王", "faction": "south", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } }
-      },
-      "script": [
-        { "who": "hezekiah", "text": "求你救我們脫離亞述王的手,使天下萬國都知道惟獨你耶和華是神!", "key": true },
-        { "who": "旁白", "text": "當夜,耶和華的使者出去,在亞述營中殺了十八萬五千人。清早有人起來,看見都是死屍。" }
-      ]
-    },
-    "耶1": {
-      "era": "south_fall", "type": "對話", "city": "jerusalem",
-      "title": "耶利米蒙召",
-      "quote": "我未將你造在腹中,我已曉得你;你未出母胎,我已分別你為聖。",
-      "ref": "耶利米書 1:5-8",
-      "hook": "神揀選耶利米作列國的先知。少年耶利米自覺口拙、年幼,連連推辭。神卻說,早在他出生以前,這事就定了——",
-      "cast": {
-        "jeremiah": { "name": "耶利米", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "我未將你造在腹中,我已曉得你;你未出母胎,我已分別你為聖。", "key": true },
-        { "who": "jeremiah", "text": "主耶和華啊,我不知怎樣說,因為我是年幼的。" },
-        { "who": "耶和華", "text": "你不要懼怕他們,因為我與你同在,要拯救你。" }
-      ]
-    },
-    "哀3": {
-      "era": "south_fall", "type": "禱告", "city": "jerusalem",
-      "title": "每早晨都是新的",
-      "quote": "每早晨,這都是新的;你的誠實極其廣大!",
-      "ref": "耶利米哀歌 3:22-23",
-      "hook": "耶路撒冷淪陷、聖殿被焚,耶利米為廢墟日夜痛哭。哀歌寫到最深的黑暗,筆鋒卻忽然一轉——",
-      "cast": {
-        "jeremiah": { "name": "耶利米", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "jeremiah", "text": "我們不至消滅,是出於耶和華諸般的慈愛;是因他的憐憫不致斷絕。" },
-        { "who": "jeremiah", "text": "每早晨,這都是新的;你的誠實極其廣大!", "key": true }
-      ]
-    },
-    "尼8": {
-      "era": "return", "type": "教導", "city": "jerusalem",
-      "title": "喜樂是你們的力量",
-      "quote": "因靠耶和華而得的喜樂是你們的力量。",
-      "ref": "尼希米記 8:9-10",
-      "hook": "歸回的百姓聚集在水門前,文士以斯拉從清早到晌午宣讀律法書。眾人一聽,都哭了——這眼淚,該怎麼擦?",
-      "cast": {
-        "nehemiah": { "name": "省長尼希米", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#a08850" } }
-      },
-      "script": [
-        { "who": "nehemiah", "text": "今日是耶和華你們神的聖日,不要悲哀哭泣。" },
-        { "who": "nehemiah", "text": "你們不要憂愁,因靠耶和華而得的喜樂是你們的力量。", "key": true }
-      ]
-    },
-    "拉3": {
-      "era": "return", "type": "人物", "city": "jerusalem",
-      "title": "重立聖殿根基",
-      "quote": "他本為善,他向以色列人永發慈愛!",
-      "ref": "以斯拉記 3:11-13",
-      "hook": "被擄七十年後,殘存的百姓回到耶路撒冷,在聖殿的廢墟上重新立定根基。祭司吹號、利未人敲鈸,全城放聲——",
-      "cast": {
-        "people": { "name": "歸回的眾民", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#7a6a4a" } }
-      },
-      "script": [
-        { "who": "people", "text": "他本為善,他向以色列人永發慈愛!", "key": true },
-        { "who": "旁白", "text": "立殿根基時,許多見過舊殿的老年人放聲大哭,也有許多人歡呼;哭聲與歡呼聲,百姓竟分辨不出。" }
-      ]
-    },
-    "王上12": {
-      "era": "split", "type": "對話", "city": "shechem",
-      "title": "王國一分為二",
-      "quote": "我們與大衛有甚麼分兒呢?",
-      "ref": "列王紀上 12:14,16",
-      "hook": "所羅門死後,百姓到示劍求新王羅波安減輕父親加的重軛。羅波安不聽老臣的勸告,反聽少年人的話,把話說得更硬——",
-      "cast": {
-        "rehoboam": { "name": "羅波安王", "faction": "south", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } },
-        "people": { "name": "以色列眾民", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#7a6a4a" } }
-      },
-      "script": [
-        { "who": "rehoboam", "text": "我父親使你們負重軛,我必使你們負更重的軛!" },
-        { "who": "people", "text": "我們與大衛有甚麼分兒呢?與耶西的兒子並沒有關涉。以色列人哪,各回各家去罷!", "key": true }
-      ]
-    },
-    "創1": {
-      "era": "patriarchs", "type": "教導", "city": null,
-      "title": "起初神說要有光",
-      "quote": "神就照著自己的形像造人,乃是照著他的形像造男造女。",
-      "ref": "創世記 1:3,26-27",
-      "hook": "起初,地是空虛混沌,淵面黑暗。然後神開口說話,光就出現了。六天之內,他把天地萬物一一呼喚成形——最後,他要照自己的形像,造一個管理全地的生命。",
-      "cast": {},
-      "script": [
-        { "who": "旁白", "text": "起初,神創造天地。地是空虛混沌,淵面黑暗;神的靈運行在水面上。" },
-        { "who": "耶和華", "text": "要有光。" },
-        { "who": "旁白", "text": "就有了光。神看光是好的,就把光暗分開了。" },
-        { "who": "耶和華", "text": "我們要照著我們的形像、按著我們的樣式造人,使他們管理海裏的魚、空中的鳥、地上的牲畜。" },
-        { "who": "旁白", "text": "神就照著自己的形像造人,乃是照著他的形像造男造女。", "key": true }
-      ]
-    },
-    "創3": {
-      "era": "patriarchs", "type": "對話", "city": null,
-      "title": "蛇的謊言與應許",
-      "quote": "女人的後裔要傷你的頭;你要傷他的腳跟。",
-      "ref": "創世記 3:4-5,15",
-      "hook": "伊甸園中有一棵樹,神只說了一句不可吃。蛇的問題輕輕一轉,就讓人開始懷疑神的話。那一口果子下去改變了一切——但神的審判之言裏,竟埋著一個盼望。",
-      "cast": {
-        "adam": { "name": "亞當", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } },
-        "eve": { "name": "夏娃", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "那蛇對女人說:神豈是真說不許你們吃園中所有樹上的果子嗎?" },
-        { "who": "eve", "text": "惟有園當中那棵樹上的果子,神曾說:你們不可吃,也不可摸,免得你們死。" },
-        { "who": "旁白", "text": "蛇說:你們不一定死。女人見那果子好作食物,就摘下來吃了,又給她丈夫,他也吃了。" },
-        { "who": "adam", "text": "你所賜給我、與我同居的女人,他把那樹上的果子給我,我就吃了。" },
-        { "who": "耶和華", "text": "女人的後裔要傷你的頭;你要傷他的腳跟。", "key": true }
-      ]
-    },
-    "創4": {
-      "era": "patriarchs", "type": "對話", "city": null,
-      "title": "罪伏在門前",
-      "quote": "你若行得好,豈不蒙悅納?你若行得不好,罪就伏在門前。",
-      "ref": "創世記 4:6-7,9",
-      "hook": "同樣獻祭,神悅納了亞伯,卻看不中該隱。沒有人告訴他為何如此,憤怒已使他變了臉色。神親自來問他為甚麼發怒,然後給了一個至今震撼人心的警告。",
-      "cast": {
-        "cain": { "name": "該隱", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "亞伯獻羊群中頭生的,該隱獻地裏的出產;耶和華看中亞伯的,卻看不中該隱的。該隱就大大發怒。" },
-        { "who": "耶和華", "text": "你為甚麼發怒呢?你為甚麼變了臉色呢?" },
-        { "who": "耶和華", "text": "你若行得好,豈不蒙悅納?你若行得不好,罪就伏在門前。他必戀慕你,你卻要制伏他。", "key": true },
-        { "who": "旁白", "text": "該隱與兄弟亞伯在田間;該隱起來打他兄弟,把他殺了。" },
-        { "who": "耶和華", "text": "你兄弟亞伯在哪裏?" },
-        { "who": "cain", "text": "我不知道!我豈是看守我兄弟的嗎?" }
-      ]
-    },
-    "創6": {
-      "era": "patriarchs", "type": "人物", "city": null,
-      "title": "挪亞在眼前蒙恩",
-      "quote": "惟有挪亞在耶和華眼前蒙恩。",
-      "ref": "創世記 6:8,13-14",
-      "hook": "地上的人罪惡極大,終日所思盡都是惡。神心裏憂傷,後悔造人,定意要毀滅這世界——但在這片黑暗裏,有一個人的名字浮現了出來。",
-      "cast": {
-        "noah": { "name": "挪亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#a08850" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "耶和華見人在地上罪惡很大,終日所思想的盡都是惡,就心中憂傷,後悔造人在地上。" },
-        { "who": "旁白", "text": "惟有挪亞在耶和華眼前蒙恩。他是個義人,在當時的世代是個完全人,與神同行。", "key": true },
-        { "who": "耶和華", "text": "凡有血氣的人,他的盡頭已經來到我面前;我要把他們和地一併毀滅。" },
-        { "who": "耶和華", "text": "你要用歌斐木造一隻方舟,分一間一間地造,裏外抹上松香。" },
-        { "who": "旁白", "text": "挪亞就這樣行;凡神所吩咐的,他都照樣行了。" }
-      ]
-    },
-    "創9": {
-      "era": "patriarchs", "type": "教導", "city": null,
-      "title": "彩虹立約",
-      "quote": "我把虹放在雲彩中,這就可作我與地立約的記號了。",
-      "ref": "創世記 9:11-13",
-      "hook": "洪水退了,方舟停在山上,挪亞一家踏上一個幾乎歸零的世界。神對他們說話、賜福,並立下一個前所未有的約,以一道跨越天際的顏色為憑據。",
-      "cast": {
-        "noah": { "name": "挪亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#a08850" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "洪水退後,挪亞一家踏上乾地。神賜福給他們,說:你們要生養眾多,遍滿了地。" },
-        { "who": "耶和華", "text": "我與你們和你們這裏各樣的活物立約,我與地所立的約是有記號的。" },
-        { "who": "耶和華", "text": "我把虹放在雲彩中,這就可作我與地立約的記號了。", "key": true },
-        { "who": "旁白", "text": "日後雲彩蓋地、虹現雲中,神就記念這約,水不再氾濫毀滅凡有血肉的。" }
-      ]
-    },
-    "創11": {
-      "era": "patriarchs", "type": "對話", "city": "babylon",
-      "title": "巴別塔",
-      "quote": "我們要建造一座城和一座塔,塔頂通天,為要傳揚我們的名。",
-      "ref": "創世記 11:4,6-7",
-      "hook": "洪水之後,天下人的口音言語都一樣。他們遷到示拿平原,要同心做一件史無前例的大事:一座頂天的塔。這句話傳到了天上,神就降臨下來看——",
-      "cast": {
-        "builder": { "name": "建城的人", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "builder", "text": "來罷!我們要建造一座城和一座塔,塔頂通天,為要傳揚我們的名,免得我們分散在全地上。", "key": true },
-        { "who": "耶和華", "text": "看哪,他們成為一樣的人民,都是一樣的言語;如今既作起這事,以後就沒有不成就的了。" },
-        { "who": "耶和華", "text": "我們下去,在那裏變亂他們的口音,使他們的言語彼此不通。" },
-        { "who": "旁白", "text": "於是耶和華使他們分散在全地上,他們就停工,不造那城了。那城名叫巴別。" }
-      ]
-    },
-    "創18": {
-      "era": "patriarchs", "type": "對話", "city": "hebron",
-      "title": "耶和華豈有難成的事",
-      "quote": "耶和華豈有難成的事嗎?",
-      "ref": "創世記 18:14,25",
-      "hook": "烈日正午,三位陌生人站在亞伯拉罕帳幕前。款待之後,其中一位給了九十歲的撒拉一個承諾,帳幕後的她忍不住暗笑。隨後,訪客轉向了所多瑪——",
-      "cast": {
-        "abraham": { "name": "亞伯拉罕", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#a08850" } },
-        "sarah": { "name": "撒拉", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#cccccc", "robe": "#9a7a4a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "客人說:明年這時候,你妻子撒拉必生一個兒子。帳幕後的撒拉聽見,就暗暗發笑。" },
-        { "who": "sarah", "text": "我既已衰敗,我主也老邁,豈能有這喜事呢?" },
-        { "who": "耶和華", "text": "耶和華豈有難成的事嗎?到了日期,明年這時候,我必回到你這裏,撒拉必生一個兒子。", "key": true },
-        { "who": "旁白", "text": "二人起身向所多瑪去,亞伯拉罕卻仍站在耶和華面前,上前為城求情。" },
-        { "who": "abraham", "text": "審判全地的主豈不行公義嗎?" }
-      ]
-    },
-    "創32": {
-      "era": "patriarchs", "type": "對話", "city": null,
-      "title": "雅各與神摔跤",
-      "quote": "你的名不要再叫雅各,要叫以色列;因為你與神與人較力,都得了勝。",
-      "ref": "創世記 32:26-30",
-      "hook": "二十年後雅各回鄉,卻聽說以掃帶四百人來迎。他連夜把家人送過河,獨自留下。暗夜裏有一個人來與他摔跤,直到黎明,摸了他的大腿——他卻死死抓住不放。",
-      "cast": {
-        "jacob": { "name": "雅各", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "只剩雅各一人。有一個人來與他摔跤,直到黎明;那人勝不過他,就摸了他的大腿窩,他的腿就扭了。" },
-        { "who": "旁白", "text": "那人說:天黎明了,容我去罷!" },
-        { "who": "jacob", "text": "你不給我祝福,我就不容你去。" },
-        { "who": "耶和華", "text": "你的名不要再叫雅各,要叫以色列;因為你與神與人較力,都得了勝。", "key": true },
-        { "who": "jacob", "text": "我面對面見了神,我的性命仍得保全。" }
-      ]
-    },
-    "創39": {
-      "era": "patriarchs", "type": "人物", "city": "goshen",
-      "title": "約瑟拒絕試探",
-      "quote": "我怎能作這大惡,得罪神呢?",
-      "ref": "創世記 39:8-9",
-      "hook": "約瑟被賣為奴,卻在主人家一路升遷、凡事順利。主母日日引誘他,他每次都拒絕。直到那天,她抓住了他的衣裳——忠心的代價,竟是身陷囹圄。",
-      "cast": {
-        "joseph": { "name": "約瑟", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#a08850" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "耶和華與約瑟同在,他就百事順利,在主人眼前蒙恩。主母卻天天以目送情,要他同寢。" },
-        { "who": "joseph", "text": "他沒有留下一樣不交給我,只留下了你,因為你是他的妻子。我怎能作這大惡,得罪神呢?", "key": true },
-        { "who": "旁白", "text": "婦人拉住他的衣裳,他把衣裳一丟,跑到外邊去了。後來被下在監裏,但耶和華仍與他同在。" }
-      ]
-    },
-    "創45": {
-      "era": "patriarchs", "type": "對話", "city": "goshen",
-      "title": "約瑟與弟兄相認",
-      "quote": "神差我在你們以先來,為要給你們存留餘種在世上。",
-      "ref": "創世記 45:4-7",
-      "hook": "宰相屢次試探,弟兄們已精疲力竭、無路可退。就在這一刻,他屏退左右,只剩他們,然後放聲大哭,哭聲傳遍埃及。他轉過臉來——",
-      "cast": {
-        "joseph": { "name": "約瑟", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#a08850" } }
-      },
-      "script": [
-        { "who": "joseph", "text": "我是約瑟。我的父親還在嗎?" },
-        { "who": "旁白", "text": "他弟兄不能回答,因為在他面前都驚惶。" },
-        { "who": "joseph", "text": "我是你們的兄弟約瑟,就是你們所賣到埃及的。" },
-        { "who": "joseph", "text": "神差我在你們以先來,為要給你們存留餘種在世上,又要大施拯救,保全你們的生命。", "key": true }
-      ]
-    },
-    "創50": {
-      "era": "patriarchs", "type": "教導", "city": "goshen",
-      "title": "神的意思原是好的",
-      "quote": "從前你們的意思是要害我,但神的意思原是好的。",
-      "ref": "創世記 50:19-21",
-      "hook": "雅各死了,哥哥們心裏發毛:父親不在,約瑟會不會算舊帳報復?他們俯伏在他面前說「我們是你的僕人」。約瑟聽見,哭了,然後說出他一生顛沛背後的祕密。",
-      "cast": {
-        "joseph": { "name": "約瑟", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#a08850" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "哥哥們俯伏在約瑟面前說:我們是你的僕人。" },
-        { "who": "joseph", "text": "不要害怕,我豈能代替神呢?" },
-        { "who": "joseph", "text": "從前你們的意思是要害我,但神的意思原是好的,要保全許多人的性命,成就今日的光景。", "key": true },
-        { "who": "joseph", "text": "現在你們不要害怕,我必養活你們和你們的婦人孩子。" }
-      ]
-    },
-    "出4": {
-      "era": "exodus", "type": "對話", "city": null,
-      "title": "造口的主人",
-      "quote": "誰造人的口呢?豈不是我耶和華麼?",
-      "ref": "出埃及記 4:10-12",
-      "hook": "摩西剛從荊棘火中接受呼召,卻一再退縮——說自己口笨舌拙,甚至求神打發別人去。神沒有收回使命,反而用一個問題逼出答案。",
-      "cast": {
-        "moses": { "name": "摩西", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "moses", "text": "主阿,我素日不是能言的人,就是從你對僕人說話以後,也是這樣。我本是拙口笨舌的。" },
-        { "who": "耶和華", "text": "誰造人的口呢?誰使人口啞、耳聾、目明、眼瞎呢?豈不是我耶和華麼?", "key": true },
-        { "who": "耶和華", "text": "現在去罷,我必賜你口才,指教你所當說的話。" }
-      ]
-    },
-    "出12": {
-      "era": "exodus", "type": "教導", "city": "rameses",
-      "title": "血作記號的那夜",
-      "quote": "我一見這血,就越過你們去。",
-      "ref": "出埃及記 12:13,21",
-      "hook": "十災最後一夜,血塗在門框上的每個家庭都在屏息等待。死亡的使者即將掠過,而這扇有血記號的門,究竟能否真的隔開審判?",
-      "cast": {
-        "moses": { "name": "摩西", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "moses", "text": "你們要按著家口取出羊羔,把這逾越節的羊羔宰了。" },
-        { "who": "耶和華", "text": "這血要在你們所住的房屋上作記號;我一見這血,就越過你們去。", "key": true },
-        { "who": "耶和華", "text": "我擊殺埃及地頭生的時候,災殃必不臨到你們身上滅你們。" }
-      ]
-    },
-    "出16": {
-      "era": "exodus", "type": "教導", "city": null,
-      "title": "從天降下的糧",
-      "quote": "這就是耶和華給你們吃的食物。",
-      "ref": "出埃及記 16:4,15",
-      "hook": "離開埃及才六週,糧食耗盡,百姓向摩西發怨言:我們寧可死在埃及,那時至少坐在肉鍋旁。曠野的飢餓把人逼回舊奴隸的美夢,神卻預備了一場考驗。",
-      "cast": {
-        "moses": { "name": "摩西", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "出埃及後第二個月,糧食耗盡,全會眾在曠野向摩西、亞倫發怨言。" },
-        { "who": "耶和華", "text": "我要將糧食從天降給你們。百姓可以出去,每天收每天的分,我好試驗他們遵不遵我的法度。", "key": true },
-        { "who": "旁白", "text": "次日早晨,地面上有如白霜的小圓物。百姓彼此說:這是甚麼呢?" },
-        { "who": "moses", "text": "這就是耶和華給你們吃的食物。" }
-      ]
-    },
-    "出17": {
-      "era": "exodus", "type": "對話", "city": null,
-      "title": "擊打磐石出水",
-      "quote": "你要擊打磐石,從磐石裡必有水流出來,使百姓可以喝。",
-      "ref": "出埃及記 17:6",
-      "hook": "磐石前沒有泉眼、沒有水脈,口渴的百姓已快要拿石頭砸死摩西。一根杖舉起,一塊石頭被擊——水,怎麼可能從這裡來?",
-      "cast": {
-        "moses": { "name": "摩西", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "利非訂無水,百姓與摩西爭鬧。摩西呼求耶和華說:我向這百姓怎樣行呢?" },
-        { "who": "耶和華", "text": "你要擊打磐石,從磐石裡必有水流出來,使百姓可以喝。", "key": true },
-        { "who": "旁白", "text": "摩西就在以色列的長老眼前照樣行了。" }
-      ]
-    },
-    "出19": {
-      "era": "exodus", "type": "教導", "city": "sinai",
-      "title": "祭司國度的召命",
-      "quote": "我如鷹將你們背在翅膀上,帶來歸我。",
-      "ref": "出埃及記 19:4-6",
-      "hook": "三個月前還是埃及的奴隸,如今全營聚集在冒煙震動的西奈山腳。角聲漸高,雷轟閃電。神要親口說什麼,讓這群人從萬民中分別出來?",
-      "cast": {
-        "moses": { "name": "摩西", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "出埃及滿三個月,以色列人來到西奈的曠野,在山下安營。" },
-        { "who": "耶和華", "text": "我如鷹將你們背在翅膀上,帶來歸我。", "key": true },
-        { "who": "耶和華", "text": "如今你們若實在聽從我的話,遵守我的約,就要在萬民中作屬我的子民。" },
-        { "who": "耶和華", "text": "你們要歸我作祭司的國度,為聖潔的國民。" }
-      ]
-    },
-    "出32": {
-      "era": "exodus", "type": "禱告", "city": "sinai",
-      "title": "塗抹我的名",
-      "quote": "不然,求你從你所寫的冊上塗抹我的名。",
-      "ref": "出埃及記 32:31-33",
-      "hook": "摩西在山上四十晝夜未歸,山腳的百姓等不住了,把耳環熔鑄成牛犢,高呼:這是領我們出埃及的神!山上的神已經看見,兩塊法版正握在義怒的手中。",
-      "cast": {
-        "moses": { "name": "摩西", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "摩西下山,見金牛犢與跳舞,就把兩塊法版摔碎,次日上山為百姓懇求。" },
-        { "who": "moses", "text": "唉!這百姓犯了大罪,為自己做了金像。倘或你肯赦免他們的罪,……不然,求你從你所寫的冊上塗抹我的名。", "key": true },
-        { "who": "耶和華", "text": "誰得罪我,我就從我的冊上塗抹誰的名。" }
-      ]
-    },
-    "出33": {
-      "era": "exodus", "type": "禱告", "city": "sinai",
-      "title": "求你顯出榮耀",
-      "quote": "求你顯出你的榮耀給我看。",
-      "ref": "出埃及記 33:15,18,20",
-      "hook": "金牛犢之後,神說:我不親自上去,免得在路上把你們滅絕。沒有神同行的迦南,還值得要嗎?摩西只為這一件事懇求,其餘都可捨去。",
-      "cast": {
-        "moses": { "name": "摩西", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "moses", "text": "你若不親自和我同去,就不要把我們從這裡領上去。" },
-        { "who": "耶和華", "text": "我必親自和你同去,使你得安息。" },
-        { "who": "moses", "text": "求你顯出你的榮耀給我看。", "key": true },
-        { "who": "耶和華", "text": "你不能看見我的面,因為人見我的面不能存活。" }
-      ]
-    },
-    "出34": {
-      "era": "exodus", "type": "教導", "city": "sinai",
-      "title": "神宣告自己的名",
-      "quote": "耶和華,耶和華,是有憐憫有恩典的神,不輕易發怒。",
-      "ref": "出埃及記 34:6-7,9",
-      "hook": "摩西再上西奈山,帶著新鑿的石版。神沒有答應顯出面容,卻在他藏身磐石穴時從他面前經過,宣告了一個名字——那是整本聖經對神最完整的自我介紹。",
-      "cast": {
-        "moses": { "name": "摩西", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "耶和華在雲中降臨,與摩西一同站在那裡,從他面前經過,宣告自己的名。" },
-        { "who": "耶和華", "text": "耶和華,耶和華,是有憐憫有恩典的神,不輕易發怒,並有豐盛的慈愛和誠實。", "key": true },
-        { "who": "moses", "text": "主阿,我若在你眼前蒙恩,求你在我們中間同行,赦免我們的罪孽和罪惡,以我們為你的產業。" }
-      ]
-    },
-    "書2": {
-      "era": "conquest", "type": "人物", "city": "jericho",
-      "title": "朱紅線的應許",
-      "quote": "耶和華你們的神,本是上天下地的神。",
-      "ref": "約書亞記 2:9,11",
-      "hook": "探子藏在敵城妓女屋頂的麻稭裏;那女人卻比任何以色列人都更清楚神是誰,還把全家性命都押了上去。",
-      "cast": {
-        "rahab": { "name": "喇合", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#1a0a0a", "robe": "#a83a5a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "夜色掩護下,兩名探子潛入耶利哥,借宿在城牆上的妓女喇合家中。" },
-        { "who": "rahab", "text": "我知道耶和華已經把這地賜給你們;這地的一切居民在你們面前心都消化了。" },
-        { "who": "rahab", "text": "耶和華你們的神,本是上天下地的神。", "key": true },
-        { "who": "旁白", "text": "探子應允救她全家後,喇合把朱紅線繩繫在窗上,作了跨越族群的救恩記號。" }
-      ]
-    },
-    "書3": {
-      "era": "conquest", "type": "教導", "city": "jericho",
-      "title": "腳踏河水那一刻",
-      "quote": "普天下主的約櫃必在你們前頭過去,到約但河裏。",
-      "ref": "約書亞記 3:9,11,15-16",
-      "hook": "四十年曠野後的第一步:祭司要在漲水季節踏入翻騰的約但河。水還沒有分開,腳卻得先踏進去——信心先於神蹟。",
-      "cast": {
-        "joshua": { "name": "約書亞", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#9b6fd1" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "以色列人站在漲過兩岸的約但河前;抬約櫃的祭司要先邁出第一步。" },
-        { "who": "joshua", "text": "你們近前來,聽耶和華你們神的話。" },
-        { "who": "耶和華", "text": "普天下主的約櫃必在你們前頭過去,到約但河裏。", "key": true },
-        { "who": "旁白", "text": "祭司的腳一入水,上游的水便立起成壘;全民從乾地上過了約但河。" }
-      ]
-    },
-    "書6": {
-      "era": "conquest", "type": "對話", "city": "jericho",
-      "title": "城牆倒塌的呼喊",
-      "quote": "呼喊罷,因為耶和華已經把城交給你們了!",
-      "ref": "約書亞記 6:2,16,20",
-      "hook": "七天沉默繞城,第七天繞了七次,沒有攻城槌也沒有雲梯。神用最不像打仗的方式,打贏進迦南最關鍵的一役。",
-      "cast": {
-        "joshua": { "name": "約書亞", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#9b6fd1" } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "看哪,我已經把耶利哥和耶利哥的王,並大能的勇士,都交在你手中。" },
-        { "who": "旁白", "text": "六天,以色列軍默默繞城,一言不發;第七天清早起來,繞了七次。" },
-        { "who": "joshua", "text": "呼喊罷,因為耶和華已經把城交給你們了!", "key": true },
-        { "who": "旁白", "text": "百姓聽見角聲就大聲呼喊,城牆隨即塌陷,各人往前直上,將城奪取。" }
-      ]
-    },
-    "書7": {
-      "era": "conquest", "type": "對話", "city": "jericho",
-      "title": "藏在帳棚下的罪",
-      "quote": "我實在得罪了耶和華以色列的神。我所做的事如此如此。",
-      "ref": "約書亞記 7:11,19-20",
-      "hook": "大軍剛攻下耶利哥,小小的艾城卻使他們慘敗。一個人偷藏的當滅之物,讓全以色列在仇敵面前站立不住。",
-      "cast": {
-        "joshua": { "name": "約書亞", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#9b6fd1" } },
-        "achan": { "name": "亞干", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "艾城慘敗,約書亞俯伏在約櫃前,從早到晚。" },
-        { "who": "耶和華", "text": "以色列人犯了罪,違背了我所吩咐他們的約,取了當滅的物。" },
-        { "who": "joshua", "text": "我兒,我勸你將榮耀歸給耶和華以色列的神,在他面前認罪,將你所做的事告訴我。" },
-        { "who": "achan", "text": "我實在得罪了耶和華以色列的神。我所做的事如此如此。", "key": true }
-      ]
-    },
-    "書10": {
-      "era": "conquest", "type": "禱告", "city": null,
-      "title": "命令太陽停住",
-      "quote": "日頭啊,你要停在基遍;月亮啊,你要止在亞雅崙谷。",
-      "ref": "約書亞記 10:8,12-13",
-      "hook": "五王聯軍夜襲,約書亞整夜急行軍趕到。然後他做了一件史無前例的事——向太陽和月亮下令。",
-      "cast": {
-        "joshua": { "name": "約書亞", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#9b6fd1" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "五王聯軍壓境基遍;約書亞連夜急行,耶和華使仇敵在以色列人面前潰亂。" },
-        { "who": "耶和華", "text": "不要怕他們,因為我已將他們交在你手中;他們無一人能在你面前站立得住。" },
-        { "who": "joshua", "text": "日頭啊,你要停在基遍;月亮啊,你要止在亞雅崙谷。", "key": true },
-        { "who": "旁白", "text": "日頭停留,月亮止住,約有一日之久;在這日以前以後,沒有像這日的。" }
-      ]
-    },
-    "書14": {
-      "era": "conquest", "type": "人物", "city": "hebron",
-      "title": "八十五歲討山的老將",
-      "quote": "我今八十五歲了,我還是強壯,像摩西打發我去的那天一樣。",
-      "ref": "約書亞記 14:10-12",
-      "hook": "四十五年前領受應許,四十五年後他沒有忘。老將迦勒要的不是安享太平,而是最難打的那片山地。",
-      "cast": {
-        "caleb": { "name": "迦勒", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "分地的時候,八十五歲的迦勒走到約書亞面前,提起四十五年前的應許。" },
-        { "who": "caleb", "text": "我今八十五歲了,我還是強壯,像摩西打發我去的那天一樣。", "key": true },
-        { "who": "caleb", "text": "求你將耶和華那日應許我的這山地給我;或者耶和華照他所應許的與我同在,我就把他們趕出去。" }
-      ]
-    },
-    "士4": {
-      "era": "judges", "type": "對話", "city": "megiddo",
-      "title": "女先知的命令",
-      "quote": "你起來,今日就是耶和華將西西拉交在你手的日子。",
-      "ref": "士師記 4:8,14",
-      "hook": "鐵車九百輛壓制以色列二十年。女先知底波拉差人召來巴拉,他卻說:妳不去,我就不去。",
-      "cast": {
-        "deborah": { "name": "底波拉", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#1a0a0a", "robe": "#5a7a9a" } },
-        "barak": { "name": "巴拉", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "deborah", "text": "耶和華以色列的神吩咐你說:你要率領一萬人上他泊山去。" },
-        { "who": "barak", "text": "你若同我去,我就去;你若不同我去,我就不去。" },
-        { "who": "deborah", "text": "你起來,今日就是耶和華將西西拉交在你手的日子。", "key": true },
-        { "who": "旁白", "text": "耶和華使西西拉和他一切車輛全軍潰亂;西西拉下車步行逃跑。" }
-      ]
-    },
-    "士7": {
-      "era": "judges", "type": "教導", "city": "ophrah",
-      "title": "三百人的軍隊",
-      "quote": "我要用這舐水的三百人拯救你們,將米甸人交在你手中。",
-      "ref": "士師記 7:2,7",
-      "hook": "三萬二千人一再被裁退,最後只剩三百。神不讓以色列人自誇,要讓最不可能的數字說話。",
-      "cast": {
-        "gideon": { "name": "基甸", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "米甸大軍如同蝗蟲佈滿平原;基甸招聚了三萬二千人,耶和華卻說太多了。" },
-        { "who": "耶和華", "text": "跟隨你的人過多,我不能將米甸人交在他們手中,免得以色列人向我誇大。" },
-        { "who": "耶和華", "text": "我要用這舐水的三百人拯救你們,將米甸人交在你手中。", "key": true },
-        { "who": "gideon", "text": "起來罷!耶和華已將米甸的軍隊交在你們手中了。" }
-      ]
-    },
-    "士11": {
-      "era": "judges", "type": "人物", "city": null,
-      "title": "耶弗他的願",
-      "quote": "你既向耶和華開口許願,就當照你口中所說的向我行。",
-      "ref": "士師記 11:35-36",
-      "hook": "耶弗他用一個輕率的誓言換來了勝利;凱旋回家時,第一個出門迎接他的,卻是他最不願見到失去的人。",
-      "cast": {
-        "jephthah": { "name": "耶弗他", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } },
-        "daughter": { "name": "耶弗他的女兒", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "耶弗他曾許願:得勝歸來,頭一個出門迎接他的要歸耶和華。迎接他的,竟是獨生的女兒。" },
-        { "who": "jephthah", "text": "哀哉!我的女兒啊,你使我甚是愁苦,因為我已經向耶和華開口許願,不能挽回。" },
-        { "who": "daughter", "text": "你既向耶和華開口許願,就當照你口中所說的向我行。", "key": true }
-      ]
-    },
-    "士13": {
-      "era": "judges", "type": "人物", "city": null,
-      "title": "烈火中升天的使者",
-      "quote": "這孩子從出胎一直到死,必歸神作拿細耳人。",
-      "ref": "士師記 13:7,20,22",
-      "hook": "不孕的婦人在田間獨坐;神的使者帶來一個不可能的消息:將有一個從母胎就被分別出來的孩子。",
-      "cast": {
-        "manoah": { "name": "瑪挪亞", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "瑪挪亞的妻子不能生育;耶和華的使者向她顯現,帶來一個應許。" },
-        { "who": "耶和華", "text": "這孩子從出胎一直到死,必歸神作拿細耳人。", "key": true },
-        { "who": "旁白", "text": "瑪挪亞獻祭時,使者在壇上的火焰中升天而去。夫妻俯伏在地。" },
-        { "who": "manoah", "text": "我們必要死了,因為看見了神。" }
-      ]
-    },
-    "士16": {
-      "era": "judges", "type": "禱告", "city": null,
-      "title": "參孫最後的禱告",
-      "quote": "主耶和華啊,求你眷念我。神啊,求你賜我這一次的力量。",
-      "ref": "士師記 16:28-30",
-      "hook": "瞎眼、受辱、推磨的參孫,被帶到歡宴的人群前取樂。他摸到托房的兩根柱子,開口向神禱告。",
-      "cast": {
-        "samson": { "name": "參孫", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#1a0a0a", "robe": "#7a4a3a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "參孫被剃髮、剜眼,鎖在監裏推磨。非利士人的慶典上,他被帶出來戲耍。" },
-        { "who": "samson", "text": "主耶和華啊,求你眷念我。神啊,求你賜我這一次的力量,使我在非利士人身上報那剜我雙眼的仇。", "key": true },
-        { "who": "旁白", "text": "他抱住兩根柱子,盡力屈身,房子倒塌,壓住眾首領和滿屋的人。" }
-      ]
-    },
-    "得2": {
-      "era": "judges", "type": "對話", "city": "bethlehem",
-      "title": "翅膀下的庇護",
-      "quote": "你來投靠耶和華以色列神的翅膀下,願你滿得他的賞賜。",
-      "ref": "路得記 2:11-12",
-      "hook": "一個摩押寡婦在異鄉的田間彎腰拾穗,撿拾別人收割剩下的。田主忽然走過來,對她說了一句話,讓她抬起了頭。",
-      "cast": {
-        "boaz": { "name": "波阿斯", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } },
-        "ruth": { "name": "路得", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
-      },
-      "script": [
-        { "who": "boaz", "text": "自從你丈夫死後,凡你向婆婆所行的,並你離開父母和本地到素不認識之民中,這些事人全都告訴我了。" },
-        { "who": "boaz", "text": "你來投靠耶和華以色列神的翅膀下,願你滿得他的賞賜。", "key": true },
-        { "who": "ruth", "text": "我主啊,願在你眼前蒙恩;我雖不及你的一個使女,你還用慈愛的話安慰我的心。" }
-      ]
-    },
-    "撒上1": {
-      "era": "saul", "type": "禱告", "city": "shiloh",
-      "title": "哈拿的眼淚與誓願",
-      "quote": "你若垂顧婢女的苦情,賜我一個兒子,我必使他終身歸與耶和華。",
-      "ref": "撒母耳記上 1:10-11",
-      "hook": "年年上聖所,年年被對頭激動羞辱。她沒有出聲,只是嘴唇翕動地禱告。這沉默的眼淚,能傳到天上嗎?",
-      "cast": {
-        "hannah": { "name": "哈拿", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "以利加拿年年上示羅敬拜。妻哈拿不能生育,被對頭激動羞辱,哭泣不吃飯,獨自到殿前傾心吐意。" },
-        { "who": "hannah", "text": "萬軍之耶和華啊,你若垂顧婢女的苦情,眷念不忘婢女,賜我一個兒子,我必使他終身歸與耶和華。", "key": true },
-        { "who": "旁白", "text": "祭司以利以為她喝醉了;哈拿說:我是心裡愁苦的婦人,在耶和華面前傾心吐意。" }
-      ]
-    },
-    "撒上8": {
-      "era": "saul", "type": "對話", "city": "mizpah",
-      "title": "百姓求立王",
-      "quote": "他們不是厭棄你,乃是厭棄我,不要我作他們的王。",
-      "ref": "撒母耳記上 8:5-7",
-      "hook": "撒母耳年老,兒子不行正道。百姓望著列國都有王,向撒母耳提出一個改變整個民族命運的要求。",
-      "cast": {
-        "samuel": { "name": "撒母耳", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "以色列的長老聚集來見撒母耳,說:你年紀老邁,你兒子不行你的道;求你為我們立一個王,像列國一樣。" },
-        { "who": "旁白", "text": "撒母耳不喜悅這話,就禱告耶和華。" },
-        { "who": "耶和華", "text": "他們不是厭棄你,乃是厭棄我,不要我作他們的王。", "key": true }
-      ]
-    },
-    "撒上15": {
-      "era": "saul", "type": "教導", "city": null,
-      "title": "聽命勝於獻祭",
-      "quote": "聽命勝於獻祭;順從勝於公羊的脂油。",
-      "ref": "撒母耳記上 15:14,22",
-      "hook": "掃羅打了勝仗,留下最好的牛羊,說是要獻給神。撒母耳卻聽見營中有牛鳴羊叫——神真正要的,究竟是什麼?",
-      "cast": {
-        "samuel": { "name": "撒母耳", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } },
-        "saul": { "name": "掃羅王", "faction": "united", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#9b6fd1", "crown": true } }
-      },
-      "script": [
-        { "who": "saul", "text": "耶和華的命令我已遵守了,行了耶和華所差遣我行的路。" },
-        { "who": "samuel", "text": "這樣,我耳中聽見有羊叫、牛鳴,是從哪裡來的呢?" },
-        { "who": "samuel", "text": "聽命勝於獻祭;順從勝於公羊的脂油。", "key": true }
-      ]
-    },
-    "撒下1": {
-      "era": "david", "type": "人物", "city": null,
-      "title": "英雄何竟仆倒",
-      "quote": "掃羅和約拿單─活時相悅相愛,死時也不分離─他們比鷹更快,比獅子還強。",
-      "ref": "撒母耳記下 1:19,23",
-      "hook": "仇敵的死訊傳來,理當額手稱慶;大衛卻撕裂衣服、禁食哀哭。他為追殺自己的人,寫下了以色列最美的一首輓歌。",
-      "cast": {
-        "david": { "name": "大衛", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } }
-      },
-      "script": [
-        { "who": "旁白", "text": "有人來報:掃羅與約拿單都死在基利波山。大衛和跟隨他的人撕裂衣服,悲哀哭號,禁食到晚上。" },
-        { "who": "david", "text": "以色列啊,你尊榮者在山上被殺!大英雄何竟死亡!" },
-        { "who": "david", "text": "掃羅和約拿單─活時相悅相愛,死時也不分離─他們比鷹更快,比獅子還強。", "key": true }
-      ]
-    },
-    "撒下6": {
-      "era": "david", "type": "對話", "city": "jerusalem",
-      "title": "大衛在約櫃前跳舞",
-      "quote": "這是在耶和華面前;耶和華已揀選我,立我作以色列的君。",
-      "ref": "撒母耳記下 6:20-22",
-      "hook": "約櫃進城,舉國歡騰,大衛脫去王袍在街上極力跳舞——這一幕,讓掃羅的女兒米甲從窗裡看得心裡輕視。",
-      "cast": {
-        "david": { "name": "大衛", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } },
-        "michal": { "name": "米甲", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#7a4a6a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "約櫃抬入大衛城,大衛穿著細麻布的以弗得,在耶和華面前極力跳舞。米甲從窗裡看見,就輕視他。" },
-        { "who": "michal", "text": "以色列王今日在臣僕的婢女眼前露體,如同一個輕賤人無恥露體一樣,有好大的榮耀啊!" },
-        { "who": "david", "text": "這是在耶和華面前;耶和華已揀選我,廢了你父和你父的全家,立我作耶和華民以色列的君。", "key": true },
-        { "who": "david", "text": "我也必更加卑微,自己看為輕賤。你所說的那些婢女,她們倒要尊敬我。" }
-      ]
-    },
-    "撒下18": {
-      "era": "david", "type": "人物", "city": "mahanaim",
-      "title": "我兒押沙龍啊",
-      "quote": "我恨不得替你死,押沙龍啊,我兒!我兒!",
-      "ref": "撒母耳記下 18:5,33",
-      "hook": "父親出戰前再三叮囑眾將:要為我的緣故,寬待那少年人押沙龍。但戰場上發生了他最不願聽見的事,信使正往城門跑來——",
-      "cast": {
-        "david": { "name": "大衛", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } }
-      },
-      "script": [
-        { "who": "旁白", "text": "押沙龍叛變,大衛退到瑪哈念。大戰前,王囑咐眾將:要為我的緣故寬待那少年人押沙龍。" },
-        { "who": "旁白", "text": "押沙龍的頭髮被橡樹枝纏住,懸在空中;約押不顧王命,用短槍刺透他的心。信使跑來報信。" },
-        { "who": "david", "text": "我兒押沙龍啊!我兒,我兒押沙龍啊!我恨不得替你死,押沙龍啊,我兒!我兒!", "key": true }
-      ]
-    },
-    "撒下24": {
-      "era": "david", "type": "對話", "city": "jerusalem",
-      "title": "不獻白得之物",
-      "quote": "我不肯用白得之物作燔祭獻給耶和華─我的神。",
-      "ref": "撒母耳記下 24:23-25",
-      "hook": "大衛數點百姓觸怒了神,瘟疫殺了七萬人。先知奉命叫他在亞勞拿的禾場築壇。場主願意白白奉送,大衛卻拒絕了——",
-      "cast": {
-        "david": { "name": "大衛", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } },
-        "araunah": { "name": "亞勞拿", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#8a5a3a", "beard": "#8a5a3a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "araunah", "text": "王啊,這一切我亞勞拿都奉給你;願耶和華你的神悅納你。" },
-        { "who": "david", "text": "我不肯用白得之物作燔祭獻給耶和華─我的神。", "key": true },
-        { "who": "旁白", "text": "大衛用五十舍客勒銀子買了禾場與牛,在那裡築壇獻祭。瘟疫就在以色列人中止住了。" }
-      ]
-    },
-    "詩23": {
-      "era": "david", "type": "禱告", "city": null,
-      "title": "耶和華是我的牧者",
-      "quote": "耶和華是我的牧者,我必不致缺乏。",
-      "ref": "詩篇 23:1,4,6",
-      "hook": "牧羊人出身的大衛,用最簡單的比喻道出了最深的信靠:就算走過死蔭的幽谷,也不怕遭害。",
-      "cast": {
-        "david": { "name": "大衛", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } }
-      },
-      "script": [
-        { "who": "旁白", "text": "大衛從牧羊少年成為一國之君,走過曠野、逃亡與爭戰。這首詩道盡他一生對神的倚靠。" },
-        { "who": "david", "text": "耶和華是我的牧者,我必不致缺乏。", "key": true },
-        { "who": "david", "text": "我雖然行過死蔭的幽谷,也不怕遭害,因為你與我同在;你的杖,你的竿,都安慰我。" },
-        { "who": "david", "text": "我一生一世必有恩惠慈愛隨著我;我且要住在耶和華的殿中,直到永遠。" }
-      ]
-    },
-    "詩51": {
-      "era": "david", "type": "禱告", "city": null,
-      "title": "求你造我清潔的心",
-      "quote": "神啊,求你按你的慈愛憐恤我!按你豐盛的慈悲塗抹我的過犯!",
-      "ref": "詩篇 51:1,4,11",
-      "hook": "拿單先知來見大衛之後,他寫下了這首詩。一個犯了大罪、自知無可推諉的人,如何能再站到神面前?",
-      "cast": {
-        "david": { "name": "大衛", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } }
-      },
-      "script": [
-        { "who": "旁白", "text": "大衛與拔示巴犯罪、又借刀殺人之後,先知拿單用比喻揭穿他。他悔罪,寫下這首最深的懺悔詩。" },
-        { "who": "david", "text": "神啊,求你按你的慈愛憐恤我!按你豐盛的慈悲塗抹我的過犯!", "key": true },
-        { "who": "david", "text": "我向你犯罪,惟獨得罪了你;在你眼前行了這惡。" },
-        { "who": "david", "text": "不要丟棄我,使我離開你的面;不要從我收回你的聖靈。" }
-      ]
-    },
-    "詩139": {
-      "era": "david", "type": "禱告", "city": null,
-      "title": "你已鑒察我",
-      "quote": "耶和華啊,你已經鑒察我,認識我。",
-      "ref": "詩篇 139:1,7,23-24",
-      "hook": "無論逃到哪裡,神都在那裡——這到底是威脅,還是安慰?大衛的回答,給了這個問題一個出乎意料的方向。",
-      "cast": {
-        "david": { "name": "大衛", "faction": "united", "avatar": { "skin": "#d8a878", "hair": "#8a4a2a", "beard": "#8a4a2a", "robe": "#9b6fd1", "crown": true } }
-      },
-      "script": [
-        { "who": "旁白", "text": "大衛默想神的無所不知、無所不在。沒有一個角落能躲開祂;但他不是抱怨,而是在敬畏中稱謝。" },
-        { "who": "david", "text": "耶和華啊,你已經鑒察我,認識我。", "key": true },
-        { "who": "david", "text": "我往哪裡去躲避你的靈?我往哪裡逃、躲避你的面?" },
-        { "who": "david", "text": "神啊,求你鑒察我,知道我的心思,試煉我,知道我的意念,引導我走永生的道路。" }
-      ]
-    },
-    "路2": {
-      "era": "gospels", "type": "對話", "city": "jerusalem",
-      "title": "十二歲的耶穌在聖殿",
-      "quote": "豈不知我應當以我父的事為念麼?",
-      "ref": "路加福音 2:48-49",
-      "hook": "十二歲的耶穌獨留聖殿,父母遍尋三天,才在教師中間找到他——他卻給了一個讓人費解的回答。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "mary": { "name": "馬利亞", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "過了節期,父母回去,孩童耶穌仍留在耶路撒冷。他們找了三天,才在殿裏教師中間找到他。" },
-        { "who": "mary", "text": "我兒!為甚麼向我們這樣行呢?看哪,你父親和我傷心來找你!" },
-        { "who": "jesus", "text": "豈不知我應當以我父的事為念麼?", "key": true }
-      ]
-    },
-    "太4": {
-      "era": "gospels", "type": "對話", "city": null,
-      "title": "曠野的三重試探",
-      "quote": "當拜主你的神,單要事奉他。",
-      "ref": "馬太福音 4:4,7,10",
-      "hook": "禁食四十晝夜後,魔鬼接連端出三個誘惑:餅、神蹟、世上的萬國榮華。耶穌憑甚麼一一回絕?",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "耶穌被聖靈引到曠野,禁食四十晝夜後就餓了。魔鬼前來,說:你若是神的兒子,可以叫石頭變成食物。" },
-        { "who": "jesus", "text": "人活著,不是單靠食物,乃是靠神口裏所出的一切話。" },
-        { "who": "旁白", "text": "魔鬼又帶他上聖殿頂,說:你若是神的兒子,可以跳下去,因經上記著神必用使者托住你。" },
-        { "who": "jesus", "text": "經上又記著說:不可試探主你的神。" },
-        { "who": "旁白", "text": "魔鬼又指萬國的榮華說:你若俯伏拜我,我就把這一切都賜給你。" },
-        { "who": "jesus", "text": "撒但,退去罷!因為經上記著說:當拜主你的神,單要事奉他。", "key": true }
-      ]
-    },
-    "約4": {
-      "era": "gospels", "type": "對話", "city": null,
-      "title": "井旁的活水",
-      "quote": "人若喝我所賜的水就永遠不渴。",
-      "ref": "約翰福音 4:10,13-14,26",
-      "hook": "正午,一個撒馬利亞婦人獨自來到雅各井邊打水,遇見一位向她要水喝、卻看透她一切過往的旅人。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "woman": { "name": "撒馬利亞婦人", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "耶穌走路困乏,就坐在井旁,那時約有午正。一個撒馬利亞婦人來打水,耶穌向她要水喝。" },
-        { "who": "woman", "text": "你既是猶太人,怎麼向我一個撒馬利亞婦人要水喝呢?" },
-        { "who": "jesus", "text": "人若喝我所賜的水就永遠不渴。我所賜的水要在他裏頭成為泉源,直湧到永生。", "key": true },
-        { "who": "woman", "text": "先生,沒有打水的器具,井又深,你從哪裏得活水呢?" },
-        { "who": "jesus", "text": "這和你說話的就是他!" }
-      ]
-    },
-    "約8": {
-      "era": "gospels", "type": "對話", "city": "jerusalem",
-      "title": "誰是沒有罪的",
-      "quote": "我也不定你的罪。去罷,從此不要再犯罪了!",
-      "ref": "約翰福音 8:7,10-11",
-      "hook": "文士和法利賽人帶著一個行淫時被拿的婦人,要用她試探耶穌,眾人手裏已握著石頭——他卻彎下腰在地上畫字。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "woman": { "name": "被拿的婦人", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "他們帶來一個行淫時被拿的婦人,引摩西的律法逼問耶穌該不該用石頭打死她。" },
-        { "who": "jesus", "text": "你們中間誰是沒有罪的,誰就可以先拿石頭打他。" },
-        { "who": "旁白", "text": "他們聽見這話,從老到少一個一個都出去了,只剩下耶穌和那婦人。" },
-        { "who": "woman", "text": "主阿,沒有。" },
-        { "who": "jesus", "text": "我也不定你的罪。去罷,從此不要再犯罪了!", "key": true }
-      ]
-    },
-    "約9": {
-      "era": "gospels", "type": "對話", "city": "jerusalem",
-      "title": "生來瞎眼的得見",
-      "quote": "也不是這人犯了罪,是要在他身上顯出神的作為來。",
-      "ref": "約翰福音 9:2-3",
-      "hook": "門徒問:這人生來瞎眼,是誰犯了罪?耶穌的回答,從根本翻轉了世人對苦難與報應的假設。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "disciple": { "name": "門徒", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } },
-        "blind": { "name": "生來瞎眼的人", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "disciple", "text": "拉比,這人生來是瞎眼的,是誰犯了罪?是這人呢?是他父母呢?" },
-        { "who": "jesus", "text": "也不是這人犯了罪,也不是他父母犯了罪,是要在他身上顯出神的作為來。", "key": true },
-        { "who": "旁白", "text": "耶穌用唾沫和泥抹他的眼,叫他去西羅亞池子洗。他去一洗,回頭就看見了。" },
-        { "who": "blind", "text": "主阿,我信!" }
-      ]
-    },
-    "約10": {
-      "era": "gospels", "type": "教導", "city": "jerusalem",
-      "title": "好牧人為羊捨命",
-      "quote": "我是好牧人;好牧人為羊捨命。",
-      "ref": "約翰福音 10:11,28-30",
-      "hook": "賊來,無非要偷竊、殺害、毀壞;好牧人來,卻是為了另一件事。耶穌在聖殿廊下,說出一個永恆的自白。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "在耶路撒冷有修殿節,是冬天的時候;耶穌在殿裏所羅門的廊下行走。" },
-        { "who": "jesus", "text": "我是好牧人;好牧人為羊捨命。", "key": true },
-        { "who": "jesus", "text": "我又賜給他們永生;他們永不滅亡,誰也不能從我手裏把他們奪去。" },
-        { "who": "jesus", "text": "我與父原為一。" }
-      ]
-    },
-    "太14": {
-      "era": "gospels", "type": "對話", "city": "galilee",
-      "title": "海面上行走",
-      "quote": "你這小信的人哪,為甚麼疑惑呢?",
-      "ref": "馬太福音 14:27-31",
-      "hook": "四更天,門徒在浪中掙扎,忽見一個身影踏水而來。彼得竟開口:主,如果是你,請叫我也走到你那裏去。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "peter": { "name": "彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } }
-      },
-      "script": [
-        { "who": "jesus", "text": "你們放心!是我,不要怕!" },
-        { "who": "peter", "text": "主,如果是你,請叫我從水面上走到你那裏去。" },
-        { "who": "jesus", "text": "你來罷。" },
-        { "who": "旁白", "text": "彼得下了船,在水面上走;只因見風甚大,就害怕,將要沉下去,便喊:主阿,救我!" },
-        { "who": "jesus", "text": "你這小信的人哪,為甚麼疑惑呢?", "key": true }
-      ]
-    },
-    "太17": {
-      "era": "gospels", "type": "人物", "city": null,
-      "title": "登山變像",
-      "quote": "這是我的愛子,我所喜悅的。你們要聽他!",
-      "ref": "馬太福音 17:2,5",
-      "hook": "耶穌帶著三個門徒上了高山,忽然在他們面前變了形像,臉面明亮如日頭;摩西與以利亞同時顯現,雲彩裏更有聲音。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "peter": { "name": "彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "耶穌在高山上變了形像,臉面明亮如日頭,衣裳潔白如光;摩西、以利亞向他們顯現,同耶穌說話。" },
-        { "who": "peter", "text": "主阿,我們在這裏真好!你若願意,我就在這裏搭三座棚。" },
-        { "who": "耶和華", "text": "這是我的愛子,我所喜悅的。你們要聽他!", "key": true },
-        { "who": "旁白", "text": "門徒聽見就俯伏在地,極其害怕。耶穌進前來摸他們說:起來,不要害怕!" }
-      ]
-    },
-    "路19": {
-      "era": "gospels", "type": "對話", "city": "jericho",
-      "title": "撒該快下來",
-      "quote": "今天救恩到了這家,因為他也是亞伯拉罕的子孫。",
-      "ref": "路加福音 19:5,8-10",
-      "hook": "稅吏長撒該爬上桑樹,只想遠遠看耶穌一眼;耶穌卻抬頭點他的名,說要住進這個眾人唾棄的人家中。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "zacchaeus": { "name": "撒該", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "jesus", "text": "撒該,快下來!今天我必住在你家裏。" },
-        { "who": "旁白", "text": "他就急忙下來,歡歡喜喜地接待耶穌。眾人看見,都私下議論:他竟到罪人家裏去住宿。" },
-        { "who": "zacchaeus", "text": "主阿,我把所有的一半給窮人;我若訛詐了誰,就還他四倍。" },
-        { "who": "jesus", "text": "今天救恩到了這家,因為他也是亞伯拉罕的子孫。", "key": true }
-      ]
-    },
-    "約13": {
-      "era": "gospels", "type": "教導", "city": "jerusalem",
-      "title": "洗腳與新命令",
-      "quote": "我賜給你們一條新命令,乃是叫你們彼此相愛。",
-      "ref": "約翰福音 13:8,14,34",
-      "hook": "最後的晚餐,夜色已深,身為主的耶穌竟脫下外衣,蹲下去為門徒洗腳,然後留下一條他稱為「新」的命令。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "peter": { "name": "彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "晚餐時,耶穌離席,脫了衣服,拿手巾束腰,把水倒在盆裏,就洗門徒的腳。" },
-        { "who": "peter", "text": "主阿,你洗我的腳麼?" },
-        { "who": "jesus", "text": "我是你們的主,你們的夫子,尚且洗你們的腳,你們也當彼此洗腳。" },
-        { "who": "jesus", "text": "我賜給你們一條新命令,乃是叫你們彼此相愛;我怎樣愛你們,你們也要怎樣相愛。", "key": true }
-      ]
-    },
-    "路24": {
-      "era": "gospels", "type": "對話", "city": null,
-      "title": "以馬忤斯路上",
-      "quote": "基督這樣受害,又進入他的榮耀,豈不是應當的麼?",
-      "ref": "路加福音 24:17,26,30-31",
-      "hook": "兩個門徒垂頭喪氣走向以馬忤斯,一個陌生人加入同行,一路講解聖經;直到擘餅那一刻,他們才認出他來。",
-      "cast": {
-        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
-        "cleopas": { "name": "革流巴", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a6845" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "那日,兩個門徒往以馬忤斯去;耶穌親自就近他們同行,只是他們的眼睛迷糊了,不認得他。" },
-        { "who": "jesus", "text": "你們走路彼此談論的是甚麼事呢?" },
-        { "who": "cleopas", "text": "你在耶路撒冷作客,還不知道這幾天在那裏所出的事麼?" },
-        { "who": "jesus", "text": "基督這樣受害,又進入他的榮耀,豈不是應當的麼?", "key": true },
-        { "who": "旁白", "text": "坐席時,耶穌拿起餅來祝謝、擘開遞給他們,他們的眼睛就明亮了,這才認出他來。" }
-      ]
-    },
-    "賽40": {
-      "era": "exile", "type": "教導", "city": null,
-      "title": "如鷹展翅上騰",
-      "quote": "但那等候耶和華的必從新得力,他們必如鷹展翅上騰。",
-      "ref": "以賽亞書 40:1,8,31",
-      "hook": "被擄的子民以為神已沉默、已忘記他們。先知的聲音卻從荒野傳出:等候的人,將要換上鷹的翅膀。",
-      "cast": {
-        "isaiah": { "name": "以賽亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "耶和華", "text": "你們要安慰,安慰我的百姓。" },
-        { "who": "isaiah", "text": "草必枯乾,花必凋殘,惟有我們神的話必永遠立定。" },
-        { "who": "isaiah", "text": "但那等候耶和華的必從新得力。他們必如鷹展翅上騰;他們奔跑卻不困倦,行走卻不疲乏。", "key": true }
-      ]
-    },
-    "賽53": {
-      "era": "exile", "type": "教導", "city": null,
-      "title": "受苦的僕人",
-      "quote": "因他受的刑罰,我們得平安;因他受的鞭傷,我們得醫治。",
-      "ref": "以賽亞書 53:3,5-6",
-      "hook": "七百年前,先知就見到一個滿受輕視、為別人背負罪孽、被掩面不看的身影。這究竟說的是誰?",
-      "cast": {
-        "isaiah": { "name": "以賽亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "isaiah", "text": "他被藐視,被人厭棄;多受痛苦,常經憂患。他被藐視,好像被人掩面不看的一樣;我們也不尊重他。" },
-        { "who": "isaiah", "text": "哪知他為我們的過犯受害,為我們的罪孽壓傷。因他受的刑罰,我們得平安;因他受的鞭傷,我們得醫治。", "key": true },
-        { "who": "isaiah", "text": "我們都如羊走迷,各人偏行己路;耶和華使我們眾人的罪孽都歸在他身上。" }
-      ]
-    },
-    "結37": {
-      "era": "exile", "type": "教導", "city": "babylon",
-      "title": "枯骨復生",
-      "quote": "我必使氣息進入你們裏面,你們就要活了。",
-      "ref": "以西結書 37:3,5,14",
-      "hook": "枯骨鋪滿了整個平原,那是亡國後以色列僅存的盼望——已經死透了。神卻問以西結:這些骸骨能復活嗎?",
-      "cast": {
-        "ezekiel": { "name": "以西結", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "在迦巴魯河邊,以西結被神的靈帶到一片滿是枯骨的平原。" },
-        { "who": "耶和華", "text": "人子啊,這些骸骨能復活麼?" },
-        { "who": "ezekiel", "text": "主耶和華啊,你是知道的。" },
-        { "who": "耶和華", "text": "我必使氣息進入你們裏面,你們就要活了。", "key": true },
-        { "who": "旁白", "text": "以西結遵命說預言。有響聲、有地震,骨與骨彼此聯絡,筋長肉生、皮蓋其上,氣息也進入,他們就活了。" }
-      ]
-    },
-    "但7": {
-      "era": "exile", "type": "人物", "city": "babylon",
-      "title": "駕雲而來的人子",
-      "quote": "見有一位像人子的,駕著天雲而來,被領到亙古常在者面前。",
-      "ref": "但以理書 7:13-14",
-      "hook": "但以理見四個大獸從海中上來,吞噬踐踏;然後,一位像人子的駕著天雲而來——他將得到什麼?",
-      "cast": {
-        "daniel": { "name": "但以理", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "夜間的異象中,四個大獸先後從海中上來,最後一獸極其可怕。亙古常在者在火焰寶座上坐定。" },
-        { "who": "daniel", "text": "我在夜間的異象中觀看,見有一位像人子的,駕著天雲而來,被領到亙古常在者面前。", "key": true },
-        { "who": "daniel", "text": "得了權柄、榮耀、國度,使各方、各國、各族的人都事奉他;他的權柄是永遠的,他的國必不敗壞。" }
-      ]
-    },
-    "但4": {
-      "era": "exile", "type": "對話", "city": "babylon",
-      "title": "至高者在人國中掌權",
-      "quote": "至高者在人的國中掌權,要將國賜與誰就賜與誰。",
-      "ref": "但以理書 4:17,27",
-      "hook": "天下最強大的尼布甲尼撒做了一個讓他發抖的夢:一棵頂天的大樹被砍倒,只留樹樁。但以理解夢時,心意驚惶。",
-      "cast": {
-        "daniel": { "name": "但以理", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "robe": "#5a7a9a" } }
-      },
-      "script": [
-        { "who": "旁白", "text": "尼布甲尼撒夢見一棵頂天的大樹被守望的聖者下令砍倒,只留樹樁,用鐵圈銅圈箍住。全城哲士無人能解。" },
-        { "who": "daniel", "text": "至高者在人的國中掌權,要將國賜與誰就賜與誰,或立極卑微的人執掌國權。", "key": true },
-        { "who": "daniel", "text": "王啊,求你悅納我的諫言,以施行公義斷絕罪過,以憐憫窮人除掉罪孽,或者你的平安可以延長。" }
-      ]
+ "_comment": "章節導讀／關鍵時刻(RPG 對話)。key = daily-bread 書卷縮寫 + 章號(同 book_eras 規則,最長匹配優先)。欄位:era(時代 id)、type(對話/教導/禱告/人物)、city(選配;只能用該時代地圖既有 city key,無對應填 null)、title(場景標題)、quote(金句;和合本 CUV 原文,逐字核對)、ref(出處;半形標點,平行記載以 ; 並列)、hook(導讀旁白;鋪張力、不爆雷)、cast(出場人物;key→{name,faction,avatar})、script(對話腳本;每行 {who,text,key?})。who 可為 cast 的 key、或保留字「旁白」(無頭像敘述)、「耶和華」(無頭像金色聲音框,不以像素人像描繪神)。faction 用於名牌顏色:prophet/south/north/empire/folk。avatar 沿用 era people 的像素頭像格式 {skin,hair,beard,robe,crown}。規範:quote ≤ 60、hook 40–90、script 每行 text ≤ 80、半形標點、繁體字。",
+ "highlights": {
+  "代下15": {
+   "era": "divided",
+   "type": "教導",
+   "city": "jerusalem",
+   "title": "先知攔住凱旋的王",
+   "quote": "你們若尋求他,就必尋見;你們若離棄他,他必離棄你們。",
+   "ref": "歷代志下 15:2,7",
+   "hook": "亞撒剛以寡敵眾打了勝仗,凱旋途中卻被一位先知攔下。對方只給一句條件句:神與你的遠近,全看你往哪裡走。這位王聽得進去嗎?",
+   "cast": {
+    "azariah": {
+     "name": "先知亞撒利雅",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#aaaaaa",
+      "beard": "#aaaaaa",
+      "robe": "#5a7a9a"
+     }
+    },
+    "asa": {
+     "name": "亞撒王",
+     "faction": "south",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "beard": "#2a1a0a",
+      "robe": "#d9a441",
+      "crown": true
+     }
     }
+   },
+   "script": [
+    {
+     "who": "azariah",
+     "text": "亞撒和猶大、便雅憫眾人哪,要聽我說:"
+    },
+    {
+     "who": "azariah",
+     "text": "你們若尋求他,就必尋見;你們若離棄他,他必離棄你們。",
+     "key": true
+    },
+    {
+     "who": "azariah",
+     "text": "現在你們要剛強,不要手軟,因你們所行的必得賞賜。"
+    }
+   ]
+  },
+  "代下20": {
+   "era": "divided",
+   "type": "禱告",
+   "city": "jerusalem",
+   "title": "大軍壓境前的禱告",
+   "quote": "我們也不知道怎樣行,我們的眼目單仰望你。",
+   "ref": "歷代志下 20:12,15",
+   "hook": "大軍壓境,猶大王不點兵也不結盟,反而把全國老小帶到聖殿前。他坦承自己毫無辦法,只把結局交了出去。這一仗,究竟該怎麼打?",
+   "cast": {
+    "jehoshaphat": {
+     "name": "約沙法王",
+     "faction": "south",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "beard": "#2a1a0a",
+      "robe": "#d9a441",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "jehoshaphat",
+     "text": "我們的神啊,我們無力抵擋這來攻擊我們的大軍。"
+    },
+    {
+     "who": "jehoshaphat",
+     "text": "我們也不知道怎樣行,我們的眼目單仰望你。",
+     "key": true
+    },
+    {
+     "who": "耶和華",
+     "text": "不要因這大軍恐懼驚惶,因為勝敗不在乎你們,乃在乎神。"
+    }
+   ]
+  },
+  "王上18": {
+   "era": "divided",
+   "type": "對話",
+   "city": "carmel",
+   "title": "迦密山上的攤牌",
+   "quote": "你們心持兩意要到幾時呢?若耶和華是神,就當順從耶和華;若巴力是神,就當順從巴力。",
+   "ref": "列王紀上 18:21",
+   "hook": "全國在巴力與耶和華之間搖擺已久。以利亞獨自面對四百五十名先知,把選擇權丟回群眾:腳踏兩條船的日子,還要過多久?山上即將見真章。",
+   "cast": {
+    "elijah": {
+     "name": "先知以利亞",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "elijah",
+     "text": "你們心持兩意要到幾時呢?",
+     "key": true
+    },
+    {
+     "who": "elijah",
+     "text": "若耶和華是神,就當順從耶和華;若巴力是神,就當順從巴力。"
+    },
+    {
+     "who": "旁白",
+     "text": "眾民一言不答。"
+    }
+   ]
+  },
+  "王上19": {
+   "era": "divided",
+   "type": "對話",
+   "city": null,
+   "title": "火後的微小聲音",
+   "quote": "以利亞啊,你在這裡做甚麼?",
+   "ref": "列王紀上 19:10-13",
+   "hook": "剛在迦密山大獲全勝的先知,轉眼逃進曠野,躲進山洞,只求一死。神要怎麼面對一個心力交瘁、想放棄的人?",
+   "cast": {
+    "elijah": {
+     "name": "先知以利亞",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "elijah",
+     "text": "我為耶和華萬軍之神大發熱心;只剩下我一個人,他們還要尋索我的命。"
+    },
+    {
+     "who": "旁白",
+     "text": "烈風、地震、烈火接連經過,耶和華都不在其中。火後,有微小的聲音——"
+    },
+    {
+     "who": "耶和華",
+     "text": "以利亞啊,你在這裡做甚麼?",
+     "key": true
+    }
+   ]
+  },
+  "王上17": {
+   "era": "divided",
+   "type": "人物",
+   "city": "zarephath",
+   "title": "寡婦最後一把麵",
+   "quote": "罈內的麵必不減少,瓶裡的油必不缺短,直到耶和華使雨降在地上的日子。",
+   "ref": "列王紀上 17:12-14",
+   "hook": "大饑荒中,一個外邦寡婦正打算用最後一把麵,為自己和兒子做最後一餐等死。先知卻先向她要餅。她若先給出去,還會剩下什麼?",
+   "cast": {
+    "elijah": {
+     "name": "先知以利亞",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#5a7a9a"
+     }
+    },
+    "widow": {
+     "name": "撒勒法寡婦",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e0b890",
+      "hair": "#3a2a1a",
+      "robe": "#9a7a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "widow",
+     "text": "我罈內只有一把麵,瓶裡只有一點油;做好了我們吃了,死就死罷!"
+    },
+    {
+     "who": "elijah",
+     "text": "不要懼怕!只要先為我做一個小餅拿來給我,然後為你和你的兒子做。"
+    },
+    {
+     "who": "elijah",
+     "text": "罈內的麵必不減少,瓶裡的油必不缺短,直到耶和華使雨降在地上的日子。",
+     "key": true
+    }
+   ]
+  },
+  "王上21": {
+   "era": "divided",
+   "type": "人物",
+   "city": "samaria",
+   "title": "拿伯不賣的葡萄園",
+   "quote": "我敬畏耶和華,萬不敢將我先人留下的產業給你。",
+   "ref": "列王紀上 21:2-3",
+   "hook": "王看上一座葡萄園,出價也算公道,卻被園主一句話頂了回來:有些產業不是錢的問題。拿伯守住了祖業與底線——而這座王宮,並不習慣聽見一個不字。",
+   "cast": {
+    "ahab": {
+     "name": "亞哈王",
+     "faction": "north",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#1a0a0a",
+      "beard": "#1a0a0a",
+      "robe": "#3fa7a0",
+      "crown": true
+     }
+    },
+    "naboth": {
+     "name": "拿伯",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a8a5a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "ahab",
+     "text": "你將葡萄園給我作菜園罷,我用更好的換給你,或是給你價銀。"
+    },
+    {
+     "who": "naboth",
+     "text": "我敬畏耶和華,萬不敢將我先人留下的產業給你。",
+     "key": true
+    }
+   ]
+  },
+  "王下5": {
+   "era": "divided",
+   "type": "對話",
+   "city": "samaria",
+   "title": "小女僕指出的活路",
+   "quote": "巴不得我主人去見撒瑪利亞的先知,必能治好他的大痲瘋。",
+   "ref": "列王紀下 5:3",
+   "hook": "亞蘭元帥戰功彪炳,卻染上痲瘋。指出活路的,竟是他擄來的一個以色列小女僕。一句越過敵我界線的話,把大將軍引向一條他絕不願走的路。他肯走嗎?",
+   "cast": {
+    "naaman": {
+     "name": "亞蘭元帥乃縵",
+     "faction": "empire",
+     "avatar": {
+      "skin": "#c99060",
+      "hair": "#2a1a0a",
+      "beard": "#2a1a0a",
+      "robe": "#b04a4a"
+     }
+    },
+    "maid": {
+     "name": "以色列小女子",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e8c098",
+      "hair": "#5a3a1a",
+      "robe": "#b08850"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "亞蘭元帥乃縵戰功彪炳,卻長了大痲瘋。家中有個從以色列擄來的小女子。"
+    },
+    {
+     "who": "maid",
+     "text": "巴不得我主人去見撒瑪利亞的先知,必能治好他的大痲瘋。",
+     "key": true
+    }
+   ]
+  },
+  "王下6": {
+   "era": "divided",
+   "type": "教導",
+   "city": "dothan",
+   "title": "滿山的火車火馬",
+   "quote": "不要懼怕!與我們同在的比與他們同在的更多。",
+   "ref": "列王紀下 6:15-16",
+   "hook": "清晨醒來,僕人看見敵軍車馬把全城團團圍住,嚇得手足無措。先知卻說了一句完全不合眼前情勢的話,然後為他求一件事:讓他看見另一個現場。",
+   "cast": {
+    "elisha": {
+     "name": "先知以利沙",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#5a4a2a",
+      "beard": "#5a4a2a",
+      "robe": "#5a7a9a"
+     }
+    },
+    "servant": {
+     "name": "以利沙的僕人",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "robe": "#8a7a5a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "servant",
+     "text": "哀哉!我主啊,我們怎樣行才好呢?"
+    },
+    {
+     "who": "elisha",
+     "text": "不要懼怕!與我們同在的比與他們同在的更多。",
+     "key": true
+    }
+   ]
+  },
+  "摩5": {
+   "era": "divided",
+   "type": "教導",
+   "city": "bethel",
+   "title": "神要的不是祭物",
+   "quote": "惟願公平如大水滾滾,使公義如江河滔滔。",
+   "ref": "阿摩司書 5:21,24",
+   "hook": "節期照辦、獻祭照舊,北國表面一片虔誠。先知卻說神厭惡這些聚會。問題不在敬拜的形式,而在祭壇外那些被踐踏的窮人。神真正要的,究竟是什麼?",
+   "cast": {
+    "amos": {
+     "name": "先知阿摩司",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#cda06e",
+      "hair": "#6a4a2a",
+      "beard": "#6a4a2a",
+      "robe": "#7a6a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "amos",
+     "text": "我厭惡你們的節期,也不喜悅你們的嚴肅會。"
+    },
+    {
+     "who": "amos",
+     "text": "惟願公平如大水滾滾,使公義如江河滔滔。",
+     "key": true
+    }
+   ]
+  },
+  "何11": {
+   "era": "divided",
+   "type": "人物",
+   "city": null,
+   "title": "下不了手的父親",
+   "quote": "以法蓮哪,我怎能捨棄你?以色列啊,我怎能棄絕你?",
+   "ref": "何西阿書 11:8",
+   "hook": "北國背約拜偶像,審判本該毫無懸念。但先知筆下的神,卻像一個面對叛逆孩子下不了手的父親。公義與慈愛在祂心裡拉扯——這一章讓你看見神的為難。",
+   "cast": {},
+   "script": [
+    {
+     "who": "旁白",
+     "text": "北國背約、拜偶像,審判本該毫無懸念。但神開口了——"
+    },
+    {
+     "who": "耶和華",
+     "text": "以法蓮哪,我怎能捨棄你?以色列啊,我怎能棄絕你?",
+     "key": true
+    },
+    {
+     "who": "耶和華",
+     "text": "我回心轉意,我的憐愛大大發動。"
+    }
+   ]
+  },
+  "拿2": {
+   "era": "divided",
+   "type": "禱告",
+   "city": null,
+   "title": "海底最深處的禱告",
+   "quote": "我遭遇患難求告耶和華,你就應允我。",
+   "ref": "約拿書 2:2,9",
+   "hook": "一個抗命潛逃的先知,被大魚吞下,沉到海的最深處。就在生命的最底部,他開口禱告。人跌到最低點時,還能向誰呼求?",
+   "cast": {
+    "jonah": {
+     "name": "先知約拿",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#6a8a6a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "抗命潛逃的約拿被大魚吞下,沉到海的最深處。就在生命最底部,他開口——"
+    },
+    {
+     "who": "jonah",
+     "text": "我遭遇患難求告耶和華,你就應允我。",
+     "key": true
+    },
+    {
+     "who": "jonah",
+     "text": "救恩出於耶和華。"
+    }
+   ]
+  },
+  "拿4": {
+   "era": "divided",
+   "type": "對話",
+   "city": null,
+   "title": "一棵蓖麻與一個問題",
+   "quote": "你這樣發怒合乎理嗎?",
+   "ref": "約拿書 4:4,11",
+   "hook": "尼尼微全城悔改,先知非但不喜,反而氣到求死。神安排一棵蓖麻又使它枯乾,然後只問了一個問題。這本書沒有給答案,而是把問題留給了你。",
+   "cast": {
+    "jonah": {
+     "name": "先知約拿",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#6a8a6a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "你這樣發怒合乎理嗎?",
+     "key": true
+    },
+    {
+     "who": "jonah",
+     "text": "我發怒以至於死,都合乎理!"
+    },
+    {
+     "who": "耶和華",
+     "text": "這蓖麻你尚且愛惜;何況這尼尼微大城呢?"
+    }
+   ]
+  },
+  "約3": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "夜訪的官與重生",
+   "quote": "神愛世人,甚至將他的獨生子賜給他們,叫一切信他的,不至滅亡,反得永生。",
+   "ref": "約翰福音 3:2-3,16",
+   "hook": "一個猶太人的官,夜裡偷偷來找耶穌,想弄懂他到底是誰。耶穌沒談神蹟,反而把話題轉到一件他想不到的事:重新出生。一個老人,還能重生嗎?",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "nico": {
+     "name": "尼哥底母",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#6a6a6a",
+      "beard": "#6a6a6a",
+      "robe": "#7a5a8a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "nico",
+     "text": "拉比,我們知道你是由神那裡來作師傅的。"
+    },
+    {
+     "who": "jesus",
+     "text": "我實實在在地告訴你,人若不重生,就不能見神的國。"
+    },
+    {
+     "who": "jesus",
+     "text": "神愛世人,甚至將他的獨生子賜給他們,叫一切信他的,不至滅亡,反得永生。",
+     "key": true
+    }
+   ]
+  },
+  "太5": {
+   "era": "gospels",
+   "type": "教導",
+   "city": "capernaum",
+   "title": "山上的八福",
+   "quote": "虛心的人有福了!因為天國是他們的。",
+   "ref": "馬太福音 5:3-5",
+   "hook": "耶穌看見一大群人,就上了山坐下,開口教導。他一連說八個「有福了」,把世人對幸福的排序整個翻過來——誰才是真正蒙福的人?",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "jesus",
+     "text": "虛心的人有福了!因為天國是他們的。",
+     "key": true
+    },
+    {
+     "who": "jesus",
+     "text": "哀慟的人有福了!因為他們必得安慰。"
+    },
+    {
+     "who": "jesus",
+     "text": "溫柔的人有福了!因為他們必承受地土。"
+    }
+   ]
+  },
+  "約14": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "我就是道路真理生命",
+   "quote": "我就是道路、真理、生命;若不藉著我,沒有人能到父那裡去。",
+   "ref": "約翰福音 14:5-6",
+   "hook": "最後的晚餐桌上,耶穌說他要走了。門徒慌了:不知道你去哪,怎麼知道路?耶穌的回答,把「路」從一個地點,變成了一個人。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "thomas": {
+     "name": "多馬",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "thomas",
+     "text": "主阿,我們不知道你往那裡去,怎麼知道那條路呢?"
+    },
+    {
+     "who": "jesus",
+     "text": "我就是道路、真理、生命;若不藉著我,沒有人能到父那裡去。",
+     "key": true
+    }
+   ]
+  },
+  "太11": {
+   "era": "gospels",
+   "type": "教導",
+   "city": "capernaum",
+   "title": "勞苦者的安息之邀",
+   "quote": "凡勞苦擔重擔的人可以到我這裡來,我就使你們得安息。",
+   "ref": "馬太福音 11:28-29",
+   "hook": "宗教重擔壓得人喘不過氣,律法越守越累。耶穌向所有累垮的人發出一個邀請——不是再加一條規條,而是換一種軛。安息,究竟從哪裡來?",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "jesus",
+     "text": "凡勞苦擔重擔的人可以到我這裡來,我就使你們得安息。",
+     "key": true
+    },
+    {
+     "who": "jesus",
+     "text": "我心裡柔和謙卑,你們當負我的軛,學我的樣式;這樣,你們心裡就必得享安息。"
+    }
+   ]
+  },
+  "路15": {
+   "era": "gospels",
+   "type": "教導",
+   "city": null,
+   "title": "浪子與奔跑的父親",
+   "quote": "因為我這個兒子是死而復活,失而又得的。",
+   "ref": "路加福音 15:20,24",
+   "hook": "一個小兒子要光家產、遠走他鄉、把錢揮霍精光。耶穌講這故事時,法利賽人正嫌他和罪人吃飯。故事的重點,其實不在浪子,而在那位父親。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "兒子淪落到與豬搶食,終於醒悟,起來往父親那裡去——"
+    },
+    {
+     "who": "jesus",
+     "text": "相離還遠,他父親看見,就動了慈心,跑去抱著他的頸項,連連與他親嘴。"
+    },
+    {
+     "who": "jesus",
+     "text": "因為我這個兒子是死而復活,失而又得的。",
+     "key": true
+    }
+   ]
+  },
+  "太8": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "galilee",
+   "title": "平靜風浪",
+   "quote": "你們這小信的人哪,為甚麼膽怯呢?",
+   "ref": "馬太福音 8:25-27;馬可福音 4:38-41;路加福音 8:24-25",
+   "parallels": [
+    "可4",
+    "路8"
+   ],
+   "hook": "船在加利利海上遇到狂風,浪幾乎把船打翻,門徒嚇得喪膽——而耶穌竟在船尾睡著。他們搖醒他。一個人,能對風浪說話嗎?",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "disciples": {
+     "name": "門徒",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a4a3a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "disciples",
+     "text": "主阿,救我們,我們喪命啦!"
+    },
+    {
+     "who": "jesus",
+     "text": "你們這小信的人哪,為甚麼膽怯呢?",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "耶穌起來,斥責風和海,風和海就大大地平靜了。"
+    },
+    {
+     "who": "disciples",
+     "text": "這是怎樣的人?連風和海也聽從他了!"
+    }
+   ]
+  },
+  "太16": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "caesarea",
+   "title": "你說我是誰",
+   "quote": "你是基督,是永生神的兒子。",
+   "ref": "馬太福音 16:15-18;馬可福音 8:29;路加福音 9:20",
+   "parallels": [
+    "可8",
+    "路9"
+   ],
+   "hook": "走到該撒利亞腓立比,耶穌問門徒:別人說我是誰?眾說紛紜。然後他把問題轉向他們自己——你們說我是誰?彼得的回答,將定下教會的根基。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "peter": {
+     "name": "西門彼得",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a4a3a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "jesus",
+     "text": "你們說我是誰?"
+    },
+    {
+     "who": "peter",
+     "text": "你是基督,是永生神的兒子。",
+     "key": true
+    },
+    {
+     "who": "jesus",
+     "text": "你是彼得,我要把我的教會建造在這磐石上;陰間的權柄,不能勝過他。"
+    }
+   ]
+  },
+  "路10": {
+   "era": "gospels",
+   "type": "教導",
+   "city": null,
+   "title": "好撒馬利亞人",
+   "quote": "你去照樣行罷。",
+   "ref": "路加福音 10:29-37",
+   "hook": "一個律法師想為難耶穌:誰是我的鄰舍?耶穌沒給定義,反而講了個故事——被打個半死的人,身邊走過祭司、利未人,最後停下的卻是最不被待見的那種人。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "lawyer": {
+     "name": "律法師",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#6a6a8a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "祭司和利未人都從那受傷的人旁邊繞了過去,惟有一個被人看不起的撒瑪利亞人停下來,包紮、照顧他。耶穌問:這三人哪一個是鄰舍?"
+    },
+    {
+     "who": "lawyer",
+     "text": "是憐憫他的。"
+    },
+    {
+     "who": "jesus",
+     "text": "你去照樣行罷。",
+     "key": true
+    }
+   ]
+  },
+  "約11": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "bethany",
+   "title": "復活在我",
+   "quote": "復活在我,生命也在我。信我的人雖然死了,也必復活。",
+   "ref": "約翰福音 11:21-26",
+   "hook": "拉撒路死了四天,墳墓都封住了,耶穌才趕到。馬大迎上來,話裡有信、也有遺憾。面對親人的死,耶穌把自己擺在一個驚人的位置上。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "martha": {
+     "name": "馬大",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e0b890",
+      "hair": "#3a2a1a",
+      "robe": "#9a6a7a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "martha",
+     "text": "主阿,你若早在這裡,我兄弟必不死。"
+    },
+    {
+     "who": "jesus",
+     "text": "復活在我,生命也在我。信我的人雖然死了,也必復活。",
+     "key": true
+    },
+    {
+     "who": "jesus",
+     "text": "你信這話麼?"
+    }
+   ]
+  },
+  "路23": {
+   "era": "gospels",
+   "type": "禱告",
+   "city": "jerusalem",
+   "title": "十架上的赦免",
+   "quote": "父阿!赦免他們;因為他們所做的,他們不曉得。",
+   "ref": "路加福音 23:34;馬太福音 27:33-44;馬可福音 15:22-32;約翰福音 19:18",
+   "parallels": [
+    "太27",
+    "可15",
+    "約19"
+   ],
+   "hook": "兵丁把耶穌釘上十字架,在他衣服上拈鬮。眼前是嘲笑、是釘痕、是不公的死刑。受刑的人通常咒罵。耶穌開口的第一句,卻是為加害者向天父求情。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "到了髑髏地,他們把耶穌釘在十字架上,左右各釘一個犯人。兵丁拈鬮分他的衣服。"
+    },
+    {
+     "who": "jesus",
+     "text": "父阿!赦免他們;因為他們所做的,他們不曉得。",
+     "key": true
+    }
+   ]
+  },
+  "太28": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "空墳與大使命",
+   "quote": "我就常與你們同在,直到世界的末了。",
+   "ref": "馬太福音 28:6,18-20;馬可福音 16:6,15;路加福音 24:6",
+   "parallels": [
+    "可16"
+   ],
+   "hook": "七日的頭一日清晨,幾個婦女帶著香膏來到墳墓,要膏耶穌的身體。卻見石頭已經滾開,墳墓是空的。死亡,真的是故事的結局嗎?",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "angel": {
+     "name": "天使",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#f0e8d8",
+      "hair": "#e8e0d0",
+      "robe": "#f0e8d8"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "angel",
+     "text": "他不在這裡,照他所說的,已經復活了。"
+    },
+    {
+     "who": "旁白",
+     "text": "婦女又驚又喜跑去報信。十一個門徒上了加利利的山,耶穌向他們顯現——"
+    },
+    {
+     "who": "jesus",
+     "text": "天上地下所有的權柄都賜給我了。"
+    },
+    {
+     "who": "jesus",
+     "text": "所以,你們要去,使萬民作我的門徒,奉父、子、聖靈的名給他們施洗。"
+    },
+    {
+     "who": "jesus",
+     "text": "我就常與你們同在,直到世界的末了。",
+     "key": true
+    }
+   ]
+  },
+  "約20": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "多馬摸釘痕",
+   "quote": "那沒有看見就信的有福了。",
+   "ref": "約翰福音 20:27-29",
+   "hook": "多馬沒趕上復活的主顯現,放話:非親眼看見釘痕、親手探入肋旁,我總不信。八日後,門明明關著,耶穌卻站在他們當中。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "thomas": {
+     "name": "多馬",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "jesus",
+     "text": "伸過你的指頭來,摸我的手;伸出你的手來,探入我的肋旁。不要疑惑,總要信。"
+    },
+    {
+     "who": "thomas",
+     "text": "我的主!我的神!"
+    },
+    {
+     "who": "jesus",
+     "text": "你因看見了我才信;那沒有看見就信的有福了。",
+     "key": true
+    }
+   ]
+  },
+  "徒2": {
+   "era": "acts",
+   "type": "教導",
+   "city": "jerusalem",
+   "title": "五旬節的講道",
+   "quote": "你們釘在十字架上的這位耶穌,神已經立他為主,為基督了。",
+   "ref": "使徒行傳 2:36-38",
+   "hook": "五旬節,聖靈如火降臨,門徒忽然說起各國的鄉談,滿城驚訝議論。彼得站起來高聲講道,把矛頭指向一個眾人不願面對的事實。",
+   "cast": {
+    "peter": {
+     "name": "彼得",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#7a4a3a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "peter",
+     "text": "你們釘在十字架上的這位耶穌,神已經立他為主,為基督了。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "眾人聽了覺得扎心,就問:弟兄們,我們當怎樣行?"
+    },
+    {
+     "who": "peter",
+     "text": "你們各人要悔改,奉耶穌基督的名受洗,叫你們的罪得赦。"
+    }
+   ]
+  },
+  "徒3": {
+   "era": "acts",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "美門口的瘸腿者",
+   "quote": "金銀我都沒有,只把我所有的給你:我奉拿撒勒人耶穌基督的名,叫你起來行走!",
+   "ref": "使徒行傳 3:6-8",
+   "hook": "美門口有個生來瘸腿的人,天天被人抬來討飯。彼得、約翰上聖殿,他伸手求錢。彼得卻定睛看他,說沒有錢——然後給了他更想不到的東西。",
+   "cast": {
+    "peter": {
+     "name": "彼得",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#7a4a3a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "peter",
+     "text": "金銀我都沒有,只把我所有的給你:我奉拿撒勒人耶穌基督的名,叫你起來行走!",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "那人的腳和踝子骨立刻健壯,就跳起來站著,又行走、跳躍、讚美神。"
+    }
+   ]
+  },
+  "徒7": {
+   "era": "acts",
+   "type": "禱告",
+   "city": "jerusalem",
+   "title": "司提反殉道",
+   "quote": "主阿,不要將這罪歸於他們!",
+   "ref": "使徒行傳 7:56,59-60",
+   "hook": "司提反被誣告拉到公會,他不替自己脫罪,反而把以色列的歷史從頭講到底,句句扎心。眾人咬牙切齒,他卻定睛望天,看見了一幅景象。",
+   "cast": {
+    "stephen": {
+     "name": "司提反",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "robe": "#9a8a6a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "stephen",
+     "text": "我看見天開了,人子站在神的右邊。"
+    },
+    {
+     "who": "旁白",
+     "text": "眾人摀著耳朵,齊心擁上前,把他推到城外,用石頭打他。司提反跪下——"
+    },
+    {
+     "who": "stephen",
+     "text": "主阿,不要將這罪歸於他們!",
+     "key": true
+    }
+   ]
+  },
+  "徒16": {
+   "era": "acts",
+   "type": "對話",
+   "city": "philippi",
+   "title": "腓立比獄卒",
+   "quote": "當信主耶穌,你和你一家都必得救。",
+   "ref": "使徒行傳 16:30-31",
+   "hook": "保羅、西拉因趕鬼被打、下在內監,腳上了木狗。換作別人早該哀號,他們卻在半夜唱詩讚美神。然後,地動了。",
+   "cast": {
+    "paul": {
+     "name": "保羅",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "beard": "#2a1a0a",
+      "robe": "#5a7a9a"
+     }
+    },
+    "jailer": {
+     "name": "獄卒",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#6a5a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "半夜地大震動,監門全開、鎖鍊鬆脫。獄卒驚醒,以為囚犯都逃了,拔刀要自盡。保羅大喊:我們都在這裡!"
+    },
+    {
+     "who": "jailer",
+     "text": "二位先生,我當怎樣行才可以得救?"
+    },
+    {
+     "who": "paul",
+     "text": "當信主耶穌,你和你一家都必得救。",
+     "key": true
+    }
+   ]
+  },
+  "徒9": {
+   "era": "acts",
+   "type": "對話",
+   "city": "damascus",
+   "title": "大馬士革路上的光",
+   "quote": "掃羅!掃羅!你為甚麼逼迫我?",
+   "ref": "使徒行傳 9:3-5",
+   "hook": "掃羅一路追捕信耶穌的人,氣勢洶洶往大馬士革去,要把信徒綑綁帶回。將到城時,忽然從天上發光,四面照著他,他就仆倒在地——",
+   "cast": {
+    "jesus": {
+     "name": "主耶穌",
+     "faction": "messiah"
+    },
+    "saul": {
+     "name": "掃羅",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "beard": "#2a1a0a",
+      "robe": "#8a3a3a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "jesus",
+     "text": "掃羅!掃羅!你為甚麼逼迫我?",
+     "key": true
+    },
+    {
+     "who": "saul",
+     "text": "主阿!你是誰?"
+    },
+    {
+     "who": "jesus",
+     "text": "我就是你所逼迫的耶穌。"
+    },
+    {
+     "who": "旁白",
+     "text": "掃羅站起來,眼睛卻瞎了。那位他極力逼迫的耶穌,要如何翻轉這個逼迫者的一生?"
+    }
+   ]
+  },
+  "徒17": {
+   "era": "acts",
+   "type": "教導",
+   "city": "athens",
+   "title": "雅典的未識之神",
+   "quote": "我們生活、動作、存留,都在乎他。",
+   "ref": "使徒行傳 17:23-28",
+   "hook": "保羅獨自在雅典等候同工,看見滿城都是偶像,心裡著急。哲士們把他帶到亞略巴古,想聽聽這新鮮的道理。他卻指著一座祭壇開口——",
+   "cast": {
+    "paul": {
+     "name": "保羅",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "beard": "#2a1a0a",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "城裡有一座壇,上面寫著「未識之神」。保羅說:你們不認識卻敬拜的那位,我要告訴你們——"
+    },
+    {
+     "who": "paul",
+     "text": "創造宇宙和其中萬物的神,既是天地的主,就不住人手所造的殿。"
+    },
+    {
+     "who": "paul",
+     "text": "我們生活、動作、存留,都在乎他。",
+     "key": true
+    }
+   ]
+  },
+  "撒上3": {
+   "era": "saul",
+   "type": "對話",
+   "city": "shiloh",
+   "title": "撒母耳蒙召",
+   "quote": "請說,僕人敬聽!",
+   "ref": "撒母耳記上 3:4-10",
+   "hook": "那些日子,耶和華的言語稀少。少年撒母耳睡在聖殿裡,夜裡聽見有人呼喚他的名,一連三次。以利這才明白,是神在召喚這孩子——",
+   "cast": {
+    "samuel": {
+     "name": "童子撒母耳",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#e8c098",
+      "hair": "#3a2a1a",
+      "robe": "#cccccc"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "撒母耳啊!撒母耳啊!"
+    },
+    {
+     "who": "samuel",
+     "text": "請說,僕人敬聽!",
+     "key": true
+    }
+   ]
+  },
+  "撒上16": {
+   "era": "saul",
+   "type": "教導",
+   "city": "bethlehem",
+   "title": "膏立少年大衛",
+   "quote": "耶和華不像人看人:人是看外貌;耶和華是看內心。",
+   "ref": "撒母耳記上 16:7",
+   "hook": "撒母耳奉命到伯利恆膏立新王。耶西的兒子一個個經過,個個高大俊美。撒母耳看中了長子,神卻攔住他,把揀選的標準整個翻轉。",
+   "cast": {
+    "samuel": {
+     "name": "先知撒母耳",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "不要看他的外貌和他身材高大,我不揀選他。"
+    },
+    {
+     "who": "耶和華",
+     "text": "耶和華不像人看人:人是看外貌;耶和華是看內心。",
+     "key": true
+    }
+   ]
+  },
+  "撒上17": {
+   "era": "saul",
+   "type": "對話",
+   "city": "elah",
+   "title": "大衛與歌利亞",
+   "quote": "你來攻擊我,是靠著刀槍和銅戟;我來攻擊你,是靠著萬軍之耶和華的名。",
+   "ref": "撒母耳記上 17:43-45",
+   "hook": "非利士巨人歌利亞,身高六肘,披甲叫陣四十天,以色列全軍喪膽。沒有人敢應戰。一個來送飯的牧羊少年,卻撿起了五塊石子。",
+   "cast": {
+    "david": {
+     "name": "少年大衛",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a4a2a",
+      "robe": "#a08850"
+     }
+    },
+    "goliath": {
+     "name": "歌利亞",
+     "faction": "empire",
+     "avatar": {
+      "skin": "#b89060",
+      "hair": "#1a1a1a",
+      "beard": "#1a1a1a",
+      "robe": "#7a3a3a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "goliath",
+     "text": "你拿杖到我這裡來,我豈是狗呢?"
+    },
+    {
+     "who": "david",
+     "text": "你來攻擊我,是靠著刀槍和銅戟;我來攻擊你,是靠著萬軍之耶和華的名。",
+     "key": true
+    }
+   ]
+  },
+  "撒上24": {
+   "era": "saul",
+   "type": "人物",
+   "city": "engedi",
+   "title": "大衛饒了掃羅",
+   "quote": "我在耶和華面前萬不敢伸手害他,因他是耶和華的受膏者。",
+   "ref": "撒母耳記上 24:6,16",
+   "hook": "掃羅追殺大衛,偏偏進了大衛藏身的洞裡歇息。隨從低聲說:機會來了!大衛悄悄逼近,手裡有刀——他會動手嗎?",
+   "cast": {
+    "david": {
+     "name": "大衛",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a4a2a",
+      "beard": "#8a4a2a",
+      "robe": "#a08850"
+     }
+    },
+    "saul": {
+     "name": "掃羅王",
+     "faction": "united",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#9b6fd1",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "david",
+     "text": "我在耶和華面前萬不敢伸手害他,因他是耶和華的受膏者。",
+     "key": true
+    },
+    {
+     "who": "saul",
+     "text": "我兒大衛,這是你的聲音麼?"
+    }
+   ]
+  },
+  "撒下7": {
+   "era": "david",
+   "type": "教導",
+   "city": "jerusalem",
+   "title": "永遠堅立的家",
+   "quote": "你的家和你的國必在我面前永遠堅立。你的國位也必堅定,直到永遠。",
+   "ref": "撒母耳記下 7:16,18",
+   "hook": "大衛住進香柏木宮殿,過意不去,想為神建一座殿。神卻藉先知拿單回話:不是你為我建殿——是我要為你建立一個永不傾倒的家。",
+   "cast": {
+    "david": {
+     "name": "大衛王",
+     "faction": "united",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a4a2a",
+      "beard": "#8a4a2a",
+      "robe": "#9b6fd1",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "你的家和你的國必在我面前永遠堅立。你的國位也必堅定,直到永遠。",
+     "key": true
+    },
+    {
+     "who": "david",
+     "text": "主耶和華啊,我是誰?我的家算甚麼?你竟使我到這地步呢?"
+    }
+   ]
+  },
+  "撒下12": {
+   "era": "david",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "你就是那人",
+   "quote": "你就是那人!",
+   "ref": "撒母耳記下 12:7,13",
+   "hook": "大衛奪人之妻、借刀殺人,自以為遮掩得天衣無縫。先知拿單來見他,只講了一個富人搶窮人小羊羔的故事。大衛聽了拍案大怒——",
+   "cast": {
+    "nathan": {
+     "name": "先知拿單",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#5a7a9a"
+     }
+    },
+    "david": {
+     "name": "大衛王",
+     "faction": "united",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a4a2a",
+      "beard": "#8a4a2a",
+      "robe": "#9b6fd1",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "nathan",
+     "text": "你就是那人!",
+     "key": true
+    },
+    {
+     "who": "david",
+     "text": "我得罪耶和華了!"
+    }
+   ]
+  },
+  "王上3": {
+   "era": "solomon",
+   "type": "教導",
+   "city": "gibeon",
+   "title": "所羅門求智慧",
+   "quote": "求你賜我智慧,可以判斷你的民,能辨別是非。",
+   "ref": "列王紀上 3:5,9",
+   "hook": "神在夜間夢中向所羅門顯現,要把他所求的賜給他。一個年輕的王,大可求長壽、求財富、求勝過仇敵——他卻只求一樣。",
+   "cast": {
+    "solomon": {
+     "name": "所羅門王",
+     "faction": "united",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "beard": "#2a1a0a",
+      "robe": "#c9a24b",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "你願我賜你甚麼?你可以求。"
+    },
+    {
+     "who": "solomon",
+     "text": "求你賜我智慧,可以判斷你的民,能辨別是非。",
+     "key": true
+    }
+   ]
+  },
+  "王上10": {
+   "era": "solomon",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "示巴女王來訪",
+   "quote": "耶和華你的神是應當稱頌的!",
+   "ref": "列王紀上 10:7,9",
+   "hook": "示巴女王聽見所羅門的名聲,千里迢迢帶著難題來考問他。所羅門對答如流,宮室、筵席、智慧讓她詫異得神不守舍——",
+   "cast": {
+    "sheba": {
+     "name": "示巴女王",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#a87858",
+      "hair": "#1a0a0a",
+      "robe": "#a83a5a",
+      "crown": true
+     }
+    },
+    "solomon": {
+     "name": "所羅門王",
+     "faction": "united",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "beard": "#2a1a0a",
+      "robe": "#c9a24b",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "sheba",
+     "text": "我先不信那些話,及至我來親眼見了才知道,人所告訴我的還不到一半。"
+    },
+    {
+     "who": "sheba",
+     "text": "耶和華你的神是應當稱頌的!",
+     "key": true
+    }
+   ]
+  },
+  "但3": {
+   "era": "exile",
+   "type": "人物",
+   "city": "babylon",
+   "title": "烈火窯中第四人",
+   "quote": "即或不然,王啊,你當知道我們決不事奉你的神,也不敬拜你所立的金像。",
+   "ref": "但以理書 3:15,18,25",
+   "hook": "王立了金像,下令一聽見樂器聲,全國都要俯伏敬拜,不拜的立刻扔進烈火窯。三個被擄的猶大青年,偏偏不跪——",
+   "cast": {
+    "three": {
+     "name": "三個希伯來青年",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "robe": "#7a6a4a"
+     }
+    },
+    "neb": {
+     "name": "尼布甲尼撒王",
+     "faction": "empire",
+     "avatar": {
+      "skin": "#c89060",
+      "hair": "#1a1a1a",
+      "beard": "#1a1a1a",
+      "robe": "#7a3a3a",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "neb",
+     "text": "你們若不敬拜,必立時扔在烈火的窯中,有何神能救你們脫離我手呢?"
+    },
+    {
+     "who": "three",
+     "text": "即或不然,王啊,你當知道我們決不事奉你的神,也不敬拜你所立的金像。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "三人被扔進七倍猛烈的火裡。王卻驚見火中有四個人遊行,那第四個相貌好像神子。"
+    }
+   ]
+  },
+  "但5": {
+   "era": "exile",
+   "type": "對話",
+   "city": "babylon",
+   "title": "牆上的指頭",
+   "quote": "你被稱在天平裡,顯出你的虧欠。",
+   "ref": "但以理書 5:25,27",
+   "hook": "伯沙撒王設盛筵,竟用聖殿擄來的金器飲酒、讚美偶像。忽然,一隻手指在牆上寫字。王嚇得臉色發白、雙膝相碰,哲士無人能解。但以理被召來——",
+   "cast": {
+    "daniel": {
+     "name": "但以理",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "牆上寫著:彌尼,彌尼,提客勒,烏法珥新。但以理為王解明——"
+    },
+    {
+     "who": "daniel",
+     "text": "提客勒,就是你被稱在天平裡,顯出你的虧欠。",
+     "key": true
+    }
+   ]
+  },
+  "但6": {
+   "era": "exile",
+   "type": "人物",
+   "city": "babylon",
+   "title": "獅子坑中的但以理",
+   "quote": "我的神差遣使者,封住獅子的口,叫獅子不傷我。",
+   "ref": "但以理書 6:16,22",
+   "hook": "但以理位高權重,政敵設局:三十天內只准向王祈求,違者扔進獅子坑。但以理知道後,照常一日三次開窗向耶路撒冷禱告——",
+   "cast": {
+    "daniel": {
+     "name": "但以理",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "robe": "#5a7a9a"
+     }
+    },
+    "darius": {
+     "name": "大利烏王",
+     "faction": "empire",
+     "avatar": {
+      "skin": "#c89060",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#7a3a3a",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "darius",
+     "text": "你所常事奉的神,他必救你。"
+    },
+    {
+     "who": "旁白",
+     "text": "次日黎明,王禁食一夜,急忙跑到坑邊,哀聲呼叫但以理——"
+    },
+    {
+     "who": "daniel",
+     "text": "我的神差遣使者,封住獅子的口,叫獅子不傷我。",
+     "key": true
+    }
+   ]
+  },
+  "斯4": {
+   "era": "exile",
+   "type": "人物",
+   "city": "susa",
+   "title": "以斯帖的抉擇",
+   "quote": "我若死就死罷!",
+   "ref": "以斯帖記 4:14,16",
+   "hook": "滅族的詔令已下,書珊城的猶大人哀哭。末底改捎信給王后以斯帖,要她冒死進宮為同胞求情——擅入內院見王,是死罪。",
+   "cast": {
+    "mordecai": {
+     "name": "末底改",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#6a5a4a"
+     }
+    },
+    "esther": {
+     "name": "王后以斯帖",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#1a0a0a",
+      "robe": "#a83a5a",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "mordecai",
+     "text": "焉知你得了王后的位分不是為現今的機會麼?"
+    },
+    {
+     "who": "esther",
+     "text": "我若死就死罷!",
+     "key": true
+    }
+   ]
+  },
+  "創12": {
+   "era": "patriarchs",
+   "type": "教導",
+   "city": "haran",
+   "title": "亞伯蘭蒙召",
+   "quote": "你要離開本地、本族、父家,往我所要指示你的地去。",
+   "ref": "創世記 12:1-4",
+   "hook": "亞伯蘭住過繁華的吾珥,後來遷到哈蘭。七十五歲那年,神對他說了一句話,要他離開一切熟悉的,去一個還沒說明的地方。",
+   "cast": {},
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "你要離開本地、本族、父家,往我所要指示你的地去。",
+     "key": true
+    },
+    {
+     "who": "耶和華",
+     "text": "我必叫你成為大國,地上的萬族都要因你得福。"
+    },
+    {
+     "who": "旁白",
+     "text": "亞伯蘭就照著耶和華的吩咐去了。那年,他七十五歲。"
+    }
+   ]
+  },
+  "創22": {
+   "era": "patriarchs",
+   "type": "人物",
+   "city": null,
+   "title": "獻以撒",
+   "quote": "我兒,神必自己預備作燔祭的羊羔。",
+   "ref": "創世記 22:7-8",
+   "hook": "神要試驗亞伯拉罕,叫他把獨生、所愛的以撒獻為燔祭。父子默默上山,以撒背著柴,卻發現少了一樣東西——",
+   "cast": {
+    "abraham": {
+     "name": "亞伯拉罕",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#a08850"
+     }
+    },
+    "isaac": {
+     "name": "以撒",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "robe": "#a08850"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "isaac",
+     "text": "請看,火與柴都有了,但燔祭的羊羔在那裡呢?"
+    },
+    {
+     "who": "abraham",
+     "text": "我兒,神必自己預備作燔祭的羊羔。",
+     "key": true
+    }
+   ]
+  },
+  "創28": {
+   "era": "patriarchs",
+   "type": "對話",
+   "city": "bethel",
+   "title": "雅各的天梯",
+   "quote": "耶和華真在這裡,我竟不知道!",
+   "ref": "創世記 28:13-16",
+   "hook": "雅各騙了哥哥、逃離家門,露宿曠野,以石頭為枕。夜裡他夢見一個梯子立在地上、直通到天,神的使者在梯上上去下來——",
+   "cast": {
+    "jacob": {
+     "name": "雅各",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "我也與你同在。你無論往那裡去,我必保佑你,領你歸回這地,總不離棄你。"
+    },
+    {
+     "who": "jacob",
+     "text": "耶和華真在這裡,我竟不知道!",
+     "key": true
+    }
+   ]
+  },
+  "出3": {
+   "era": "exodus",
+   "type": "對話",
+   "city": "sinai",
+   "title": "荊棘火中的呼召",
+   "quote": "我是自有永有的。",
+   "ref": "出埃及記 3:5,11,14",
+   "hook": "摩西在曠野牧羊,瞥見一叢荊棘著了火卻沒燒毀。他湊近去看,火焰中竟有聲音,叫出他的名字——",
+   "cast": {
+    "moses": {
+     "name": "摩西",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "不要近前來。當把你腳上的鞋脫下來,因為你所站之地是聖地。"
+    },
+    {
+     "who": "moses",
+     "text": "我是甚麼人,竟能去見法老,將以色列人從埃及領出來呢?"
+    },
+    {
+     "who": "耶和華",
+     "text": "我是自有永有的。",
+     "key": true
+    }
+   ]
+  },
+  "出14": {
+   "era": "exodus",
+   "type": "教導",
+   "city": "yamsuph",
+   "title": "過紅海",
+   "quote": "不要懼怕,只管站住!看耶和華今天向你們所要施行的救恩。",
+   "ref": "出埃及記 14:13-14",
+   "hook": "紅海橫在前面,法老的鐵騎追在後面,以色列人走投無路,向摩西放聲哀號。摩西卻叫他們不要動——",
+   "cast": {
+    "moses": {
+     "name": "摩西",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "moses",
+     "text": "不要懼怕,只管站住!看耶和華今天向你們所要施行的救恩。",
+     "key": true
+    },
+    {
+     "who": "moses",
+     "text": "耶和華必為你們爭戰;你們只管靜默,不要作聲。"
+    }
+   ]
+  },
+  "出20": {
+   "era": "exodus",
+   "type": "教導",
+   "city": "sinai",
+   "title": "西奈山頒十誡",
+   "quote": "除了我以外,你不可有別的神。",
+   "ref": "出埃及記 20:2-3",
+   "hook": "西奈山上雷轟、閃電、密雲、角聲,山頂冒煙,百姓嚇得遠遠站著。神親自開口,宣告十條誡命,第一條就定了根基——",
+   "cast": {},
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "我是耶和華你的神,曾將你從埃及地為奴之家領出來。"
+    },
+    {
+     "who": "耶和華",
+     "text": "除了我以外,你不可有別的神。",
+     "key": true
+    }
+   ]
+  },
+  "書1": {
+   "era": "conquest",
+   "type": "教導",
+   "city": "jericho",
+   "title": "剛強壯膽",
+   "quote": "你當剛強壯膽!不要懼怕,也不要驚惶。",
+   "ref": "約書亞記 1:9",
+   "hook": "摩西死了。接棒的約書亞要帶百姓過約旦河、進入應許之地。重擔壓肩之際,神一連三次對他說同一件事——",
+   "cast": {},
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "你當剛強壯膽!不要懼怕,也不要驚惶;因為你無論往那裡去,耶和華你的神必與你同在。",
+     "key": true
+    }
+   ]
+  },
+  "書24": {
+   "era": "conquest",
+   "type": "人物",
+   "city": "shechem",
+   "title": "我和我家必事奉耶和華",
+   "quote": "至於我和我家,我們必定事奉耶和華。",
+   "ref": "約書亞記 24:15-16",
+   "hook": "約書亞年紀老邁,召聚以色列眾支派到示劍。在眾神之間,他要百姓當天就做出抉擇,自己先把話說定——",
+   "cast": {
+    "joshua": {
+     "name": "約書亞",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#9b6fd1"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "joshua",
+     "text": "至於我和我家,我們必定事奉耶和華。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "百姓回答:我們斷不敢離棄耶和華去事奉別神!"
+    }
+   ]
+  },
+  "士6": {
+   "era": "judges",
+   "type": "對話",
+   "city": "ophrah",
+   "title": "基甸蒙召",
+   "quote": "大能的勇士啊,耶和華與你同在!",
+   "ref": "士師記 6:12,15-16",
+   "hook": "米甸人連年劫掠,以色列人躲進山洞。基甸正偷偷在酒醡裡打麥子,怕被搶走。耶和華的使者忽然向這個膽怯的人顯現——",
+   "cast": {
+    "gideon": {
+     "name": "基甸",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "大能的勇士啊,耶和華與你同在!",
+     "key": true
+    },
+    {
+     "who": "gideon",
+     "text": "主啊,我有何能拯救以色列人呢?我家在瑪拿西支派中是至貧窮的。"
+    },
+    {
+     "who": "耶和華",
+     "text": "我與你同在,你就必擊打米甸人,如擊打一人一樣。"
+    }
+   ]
+  },
+  "得1": {
+   "era": "judges",
+   "type": "人物",
+   "city": "bethlehem",
+   "title": "路得的選擇",
+   "quote": "你的國就是我的國,你的神就是我的神。",
+   "ref": "路得記 1:15-16",
+   "hook": "拿俄米在摩押失去丈夫和兩個兒子,決定獨自回伯利恆,勸兩個外邦媳婦留下改嫁。一個哭著走了,路得卻緊緊跟隨——",
+   "cast": {
+    "naomi": {
+     "name": "拿俄米",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#888888",
+      "robe": "#7a6845"
+     }
+    },
+    "ruth": {
+     "name": "路得",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "robe": "#a08850"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "naomi",
+     "text": "看哪,你嫂子已經回他本國和他所拜的神那裡去了,你也跟著你嫂子回去罷!"
+    },
+    {
+     "who": "ruth",
+     "text": "你的國就是我的國,你的神就是我的神。",
+     "key": true
+    }
+   ]
+  },
+  "賽6": {
+   "era": "north_fall",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "以賽亞蒙召",
+   "quote": "我在這裡,請差遣我!",
+   "ref": "以賽亞書 6:3,8",
+   "hook": "烏西雅王崩的那年,以賽亞看見主坐在高高的寶座上,撒拉弗環繞呼喊聖哉,聖殿震動、煙雲瀰漫。他自覺嘴唇不潔、必死——",
+   "cast": {
+    "isaiah": {
+     "name": "以賽亞",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "我可以差遣誰呢?誰肯為我們去呢?"
+    },
+    {
+     "who": "isaiah",
+     "text": "我在這裡,請差遣我!",
+     "key": true
+    }
+   ]
+  },
+  "王下19": {
+   "era": "north_fall",
+   "type": "禱告",
+   "city": "jerusalem",
+   "title": "希西家展開的信",
+   "quote": "求你救我們脫離亞述王的手,使天下萬國都知道惟獨你耶和華是神!",
+   "ref": "列王紀下 19:19,35",
+   "hook": "亞述大軍壓境,使者當眾辱罵耶和華。希西家王沒有回罵,他把那封恐嚇的信拿到聖殿,在耶和華面前展開——",
+   "cast": {
+    "hezekiah": {
+     "name": "希西家王",
+     "faction": "south",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "beard": "#2a1a0a",
+      "robe": "#d9a441",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "hezekiah",
+     "text": "求你救我們脫離亞述王的手,使天下萬國都知道惟獨你耶和華是神!",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "當夜,耶和華的使者出去,在亞述營中殺了十八萬五千人。清早有人起來,看見都是死屍。"
+    }
+   ]
+  },
+  "耶1": {
+   "era": "south_fall",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "耶利米蒙召",
+   "quote": "我未將你造在腹中,我已曉得你;你未出母胎,我已分別你為聖。",
+   "ref": "耶利米書 1:5-8",
+   "hook": "神揀選耶利米作列國的先知。少年耶利米自覺口拙、年幼,連連推辭。神卻說,早在他出生以前,這事就定了——",
+   "cast": {
+    "jeremiah": {
+     "name": "耶利米",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "我未將你造在腹中,我已曉得你;你未出母胎,我已分別你為聖。",
+     "key": true
+    },
+    {
+     "who": "jeremiah",
+     "text": "主耶和華啊,我不知怎樣說,因為我是年幼的。"
+    },
+    {
+     "who": "耶和華",
+     "text": "你不要懼怕他們,因為我與你同在,要拯救你。"
+    }
+   ]
+  },
+  "哀3": {
+   "era": "south_fall",
+   "type": "禱告",
+   "city": "jerusalem",
+   "title": "每早晨都是新的",
+   "quote": "每早晨,這都是新的;你的誠實極其廣大!",
+   "ref": "耶利米哀歌 3:22-23",
+   "hook": "耶路撒冷淪陷、聖殿被焚,耶利米為廢墟日夜痛哭。哀歌寫到最深的黑暗,筆鋒卻忽然一轉——",
+   "cast": {
+    "jeremiah": {
+     "name": "耶利米",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "jeremiah",
+     "text": "我們不至消滅,是出於耶和華諸般的慈愛;是因他的憐憫不致斷絕。"
+    },
+    {
+     "who": "jeremiah",
+     "text": "每早晨,這都是新的;你的誠實極其廣大!",
+     "key": true
+    }
+   ]
+  },
+  "尼8": {
+   "era": "return",
+   "type": "教導",
+   "city": "jerusalem",
+   "title": "喜樂是你們的力量",
+   "quote": "因靠耶和華而得的喜樂是你們的力量。",
+   "ref": "尼希米記 8:9-10",
+   "hook": "歸回的百姓聚集在水門前,文士以斯拉從清早到晌午宣讀律法書。眾人一聽,都哭了——這眼淚,該怎麼擦?",
+   "cast": {
+    "nehemiah": {
+     "name": "省長尼希米",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#a08850"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "nehemiah",
+     "text": "今日是耶和華你們神的聖日,不要悲哀哭泣。"
+    },
+    {
+     "who": "nehemiah",
+     "text": "你們不要憂愁,因靠耶和華而得的喜樂是你們的力量。",
+     "key": true
+    }
+   ]
+  },
+  "拉3": {
+   "era": "return",
+   "type": "人物",
+   "city": "jerusalem",
+   "title": "重立聖殿根基",
+   "quote": "他本為善,他向以色列人永發慈愛!",
+   "ref": "以斯拉記 3:11-13",
+   "hook": "被擄七十年後,殘存的百姓回到耶路撒冷,在聖殿的廢墟上重新立定根基。祭司吹號、利未人敲鈸,全城放聲——",
+   "cast": {
+    "people": {
+     "name": "歸回的眾民",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "robe": "#7a6a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "people",
+     "text": "他本為善,他向以色列人永發慈愛!",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "立殿根基時,許多見過舊殿的老年人放聲大哭,也有許多人歡呼;哭聲與歡呼聲,百姓竟分辨不出。"
+    }
+   ]
+  },
+  "王上12": {
+   "era": "split",
+   "type": "對話",
+   "city": "shechem",
+   "title": "王國一分為二",
+   "quote": "我們與大衛有甚麼分兒呢?",
+   "ref": "列王紀上 12:14,16",
+   "hook": "所羅門死後,百姓到示劍求新王羅波安減輕父親加的重軛。羅波安不聽老臣的勸告,反聽少年人的話,把話說得更硬——",
+   "cast": {
+    "rehoboam": {
+     "name": "羅波安王",
+     "faction": "south",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "beard": "#2a1a0a",
+      "robe": "#d9a441",
+      "crown": true
+     }
+    },
+    "people": {
+     "name": "以色列眾民",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "robe": "#7a6a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "rehoboam",
+     "text": "我父親使你們負重軛,我必使你們負更重的軛!"
+    },
+    {
+     "who": "people",
+     "text": "我們與大衛有甚麼分兒呢?與耶西的兒子並沒有關涉。以色列人哪,各回各家去罷!",
+     "key": true
+    }
+   ]
+  },
+  "創1": {
+   "era": "creation",
+   "type": "教導",
+   "city": null,
+   "title": "起初神說要有光",
+   "quote": "神就照著自己的形像造人,乃是照著他的形像造男造女。",
+   "ref": "創世記 1:3,26-27",
+   "hook": "起初,地是空虛混沌,淵面黑暗。然後神開口說話,光就出現了。六天之內,他把天地萬物一一呼喚成形——最後,他要照自己的形像,造一個管理全地的生命。",
+   "cast": {},
+   "script": [
+    {
+     "who": "旁白",
+     "text": "起初,神創造天地。地是空虛混沌,淵面黑暗;神的靈運行在水面上。"
+    },
+    {
+     "who": "耶和華",
+     "text": "要有光。"
+    },
+    {
+     "who": "旁白",
+     "text": "就有了光。神看光是好的,就把光暗分開了。"
+    },
+    {
+     "who": "耶和華",
+     "text": "我們要照著我們的形像、按著我們的樣式造人,使他們管理海裏的魚、空中的鳥、地上的牲畜。"
+    },
+    {
+     "who": "旁白",
+     "text": "神就照著自己的形像造人,乃是照著他的形像造男造女。",
+     "key": true
+    }
+   ]
+  },
+  "創3": {
+   "era": "creation",
+   "type": "對話",
+   "city": null,
+   "title": "蛇的謊言與應許",
+   "quote": "女人的後裔要傷你的頭;你要傷他的腳跟。",
+   "ref": "創世記 3:4-5,15",
+   "hook": "伊甸園中有一棵樹,神只說了一句不可吃。蛇的問題輕輕一轉,就讓人開始懷疑神的話。那一口果子下去改變了一切——但神的審判之言裏,竟埋著一個盼望。",
+   "cast": {
+    "adam": {
+     "name": "亞當",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    },
+    "eve": {
+     "name": "夏娃",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e0b890",
+      "hair": "#3a2a1a",
+      "robe": "#9a7a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "那蛇對女人說:神豈是真說不許你們吃園中所有樹上的果子嗎?"
+    },
+    {
+     "who": "eve",
+     "text": "惟有園當中那棵樹上的果子,神曾說:你們不可吃,也不可摸,免得你們死。"
+    },
+    {
+     "who": "旁白",
+     "text": "蛇說:你們不一定死。女人見那果子好作食物,就摘下來吃了,又給她丈夫,他也吃了。"
+    },
+    {
+     "who": "adam",
+     "text": "你所賜給我、與我同居的女人,他把那樹上的果子給我,我就吃了。"
+    },
+    {
+     "who": "耶和華",
+     "text": "女人的後裔要傷你的頭;你要傷他的腳跟。",
+     "key": true
+    }
+   ]
+  },
+  "創4": {
+   "era": "creation",
+   "type": "對話",
+   "city": null,
+   "title": "罪伏在門前",
+   "quote": "你若行得好,豈不蒙悅納?你若行得不好,罪就伏在門前。",
+   "ref": "創世記 4:6-7,9",
+   "hook": "同樣獻祭,神悅納了亞伯,卻看不中該隱。沒有人告訴他為何如此,憤怒已使他變了臉色。神親自來問他為甚麼發怒,然後給了一個至今震撼人心的警告。",
+   "cast": {
+    "cain": {
+     "name": "該隱",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "亞伯獻羊群中頭生的,該隱獻地裏的出產;耶和華看中亞伯的,卻看不中該隱的。該隱就大大發怒。"
+    },
+    {
+     "who": "耶和華",
+     "text": "你為甚麼發怒呢?你為甚麼變了臉色呢?"
+    },
+    {
+     "who": "耶和華",
+     "text": "你若行得好,豈不蒙悅納?你若行得不好,罪就伏在門前。他必戀慕你,你卻要制伏他。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "該隱與兄弟亞伯在田間;該隱起來打他兄弟,把他殺了。"
+    },
+    {
+     "who": "耶和華",
+     "text": "你兄弟亞伯在哪裏?"
+    },
+    {
+     "who": "cain",
+     "text": "我不知道!我豈是看守我兄弟的嗎?"
+    }
+   ]
+  },
+  "創6": {
+   "era": "creation",
+   "type": "人物",
+   "city": null,
+   "title": "挪亞在眼前蒙恩",
+   "quote": "惟有挪亞在耶和華眼前蒙恩。",
+   "ref": "創世記 6:8,13-14",
+   "hook": "地上的人罪惡極大,終日所思盡都是惡。神心裏憂傷,後悔造人,定意要毀滅這世界——但在這片黑暗裏,有一個人的名字浮現了出來。",
+   "cast": {
+    "noah": {
+     "name": "挪亞",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#a08850"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "耶和華見人在地上罪惡很大,終日所思想的盡都是惡,就心中憂傷,後悔造人在地上。"
+    },
+    {
+     "who": "旁白",
+     "text": "惟有挪亞在耶和華眼前蒙恩。他是個義人,在當時的世代是個完全人,與神同行。",
+     "key": true
+    },
+    {
+     "who": "耶和華",
+     "text": "凡有血氣的人,他的盡頭已經來到我面前;我要把他們和地一併毀滅。"
+    },
+    {
+     "who": "耶和華",
+     "text": "你要用歌斐木造一隻方舟,分一間一間地造,裏外抹上松香。"
+    },
+    {
+     "who": "旁白",
+     "text": "挪亞就這樣行;凡神所吩咐的,他都照樣行了。"
+    }
+   ]
+  },
+  "創9": {
+   "era": "creation",
+   "type": "教導",
+   "city": "ararat",
+   "title": "彩虹立約",
+   "quote": "我把虹放在雲彩中,這就可作我與地立約的記號了。",
+   "ref": "創世記 9:11-13",
+   "hook": "洪水退了,方舟停在山上,挪亞一家踏上一個幾乎歸零的世界。神對他們說話、賜福,並立下一個前所未有的約,以一道跨越天際的顏色為憑據。",
+   "cast": {
+    "noah": {
+     "name": "挪亞",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#a08850"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "洪水退後,挪亞一家踏上乾地。神賜福給他們,說:你們要生養眾多,遍滿了地。"
+    },
+    {
+     "who": "耶和華",
+     "text": "我與你們和你們這裏各樣的活物立約,我與地所立的約是有記號的。"
+    },
+    {
+     "who": "耶和華",
+     "text": "我把虹放在雲彩中,這就可作我與地立約的記號了。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "日後雲彩蓋地、虹現雲中,神就記念這約,水不再氾濫毀滅凡有血肉的。"
+    }
+   ]
+  },
+  "創11": {
+   "era": "creation",
+   "type": "對話",
+   "city": "babylon",
+   "title": "巴別塔",
+   "quote": "我們要建造一座城和一座塔,塔頂通天,為要傳揚我們的名。",
+   "ref": "創世記 11:4,6-7",
+   "hook": "洪水之後,天下人的口音言語都一樣。他們遷到示拿平原,要同心做一件史無前例的大事:一座頂天的塔。這句話傳到了天上,神就降臨下來看——",
+   "cast": {
+    "builder": {
+     "name": "建城的人",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "builder",
+     "text": "來罷!我們要建造一座城和一座塔,塔頂通天,為要傳揚我們的名,免得我們分散在全地上。",
+     "key": true
+    },
+    {
+     "who": "耶和華",
+     "text": "看哪,他們成為一樣的人民,都是一樣的言語;如今既作起這事,以後就沒有不成就的了。"
+    },
+    {
+     "who": "耶和華",
+     "text": "我們下去,在那裏變亂他們的口音,使他們的言語彼此不通。"
+    },
+    {
+     "who": "旁白",
+     "text": "於是耶和華使他們分散在全地上,他們就停工,不造那城了。那城名叫巴別。"
+    }
+   ]
+  },
+  "創18": {
+   "era": "patriarchs",
+   "type": "對話",
+   "city": "hebron",
+   "title": "耶和華豈有難成的事",
+   "quote": "耶和華豈有難成的事嗎?",
+   "ref": "創世記 18:14,25",
+   "hook": "烈日正午,三位陌生人站在亞伯拉罕帳幕前。款待之後,其中一位給了九十歲的撒拉一個承諾,帳幕後的她忍不住暗笑。隨後,訪客轉向了所多瑪——",
+   "cast": {
+    "abraham": {
+     "name": "亞伯拉罕",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#a08850"
+     }
+    },
+    "sarah": {
+     "name": "撒拉",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e0b890",
+      "hair": "#cccccc",
+      "robe": "#9a7a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "客人說:明年這時候,你妻子撒拉必生一個兒子。帳幕後的撒拉聽見,就暗暗發笑。"
+    },
+    {
+     "who": "sarah",
+     "text": "我既已衰敗,我主也老邁,豈能有這喜事呢?"
+    },
+    {
+     "who": "耶和華",
+     "text": "耶和華豈有難成的事嗎?到了日期,明年這時候,我必回到你這裏,撒拉必生一個兒子。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "二人起身向所多瑪去,亞伯拉罕卻仍站在耶和華面前,上前為城求情。"
+    },
+    {
+     "who": "abraham",
+     "text": "審判全地的主豈不行公義嗎?"
+    }
+   ]
+  },
+  "創32": {
+   "era": "patriarchs",
+   "type": "對話",
+   "city": null,
+   "title": "雅各與神摔跤",
+   "quote": "你的名不要再叫雅各,要叫以色列;因為你與神與人較力,都得了勝。",
+   "ref": "創世記 32:26-30",
+   "hook": "二十年後雅各回鄉,卻聽說以掃帶四百人來迎。他連夜把家人送過河,獨自留下。暗夜裏有一個人來與他摔跤,直到黎明,摸了他的大腿——他卻死死抓住不放。",
+   "cast": {
+    "jacob": {
+     "name": "雅各",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "只剩雅各一人。有一個人來與他摔跤,直到黎明;那人勝不過他,就摸了他的大腿窩,他的腿就扭了。"
+    },
+    {
+     "who": "旁白",
+     "text": "那人說:天黎明了,容我去罷!"
+    },
+    {
+     "who": "jacob",
+     "text": "你不給我祝福,我就不容你去。"
+    },
+    {
+     "who": "耶和華",
+     "text": "你的名不要再叫雅各,要叫以色列;因為你與神與人較力,都得了勝。",
+     "key": true
+    },
+    {
+     "who": "jacob",
+     "text": "我面對面見了神,我的性命仍得保全。"
+    }
+   ]
+  },
+  "創39": {
+   "era": "patriarchs",
+   "type": "人物",
+   "city": "goshen",
+   "title": "約瑟拒絕試探",
+   "quote": "我怎能作這大惡,得罪神呢?",
+   "ref": "創世記 39:8-9",
+   "hook": "約瑟被賣為奴,卻在主人家一路升遷、凡事順利。主母日日引誘他,他每次都拒絕。直到那天,她抓住了他的衣裳——忠心的代價,竟是身陷囹圄。",
+   "cast": {
+    "joseph": {
+     "name": "約瑟",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "robe": "#a08850"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "耶和華與約瑟同在,他就百事順利,在主人眼前蒙恩。主母卻天天以目送情,要他同寢。"
+    },
+    {
+     "who": "joseph",
+     "text": "他沒有留下一樣不交給我,只留下了你,因為你是他的妻子。我怎能作這大惡,得罪神呢?",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "婦人拉住他的衣裳,他把衣裳一丟,跑到外邊去了。後來被下在監裏,但耶和華仍與他同在。"
+    }
+   ]
+  },
+  "創45": {
+   "era": "patriarchs",
+   "type": "對話",
+   "city": "goshen",
+   "title": "約瑟與弟兄相認",
+   "quote": "神差我在你們以先來,為要給你們存留餘種在世上。",
+   "ref": "創世記 45:4-7",
+   "hook": "宰相屢次試探,弟兄們已精疲力竭、無路可退。就在這一刻,他屏退左右,只剩他們,然後放聲大哭,哭聲傳遍埃及。他轉過臉來——",
+   "cast": {
+    "joseph": {
+     "name": "約瑟",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "robe": "#a08850"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "joseph",
+     "text": "我是約瑟。我的父親還在嗎?"
+    },
+    {
+     "who": "旁白",
+     "text": "他弟兄不能回答,因為在他面前都驚惶。"
+    },
+    {
+     "who": "joseph",
+     "text": "我是你們的兄弟約瑟,就是你們所賣到埃及的。"
+    },
+    {
+     "who": "joseph",
+     "text": "神差我在你們以先來,為要給你們存留餘種在世上,又要大施拯救,保全你們的生命。",
+     "key": true
+    }
+   ]
+  },
+  "創50": {
+   "era": "patriarchs",
+   "type": "教導",
+   "city": "goshen",
+   "title": "神的意思原是好的",
+   "quote": "從前你們的意思是要害我,但神的意思原是好的。",
+   "ref": "創世記 50:19-21",
+   "hook": "雅各死了,哥哥們心裏發毛:父親不在,約瑟會不會算舊帳報復?他們俯伏在他面前說「我們是你的僕人」。約瑟聽見,哭了,然後說出他一生顛沛背後的祕密。",
+   "cast": {
+    "joseph": {
+     "name": "約瑟",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "robe": "#a08850"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "哥哥們俯伏在約瑟面前說:我們是你的僕人。"
+    },
+    {
+     "who": "joseph",
+     "text": "不要害怕,我豈能代替神呢?"
+    },
+    {
+     "who": "joseph",
+     "text": "從前你們的意思是要害我,但神的意思原是好的,要保全許多人的性命,成就今日的光景。",
+     "key": true
+    },
+    {
+     "who": "joseph",
+     "text": "現在你們不要害怕,我必養活你們和你們的婦人孩子。"
+    }
+   ]
+  },
+  "出4": {
+   "era": "exodus",
+   "type": "對話",
+   "city": null,
+   "title": "造口的主人",
+   "quote": "誰造人的口呢?豈不是我耶和華麼?",
+   "ref": "出埃及記 4:10-12",
+   "hook": "摩西剛從荊棘火中接受呼召,卻一再退縮——說自己口笨舌拙,甚至求神打發別人去。神沒有收回使命,反而用一個問題逼出答案。",
+   "cast": {
+    "moses": {
+     "name": "摩西",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "moses",
+     "text": "主阿,我素日不是能言的人,就是從你對僕人說話以後,也是這樣。我本是拙口笨舌的。"
+    },
+    {
+     "who": "耶和華",
+     "text": "誰造人的口呢?誰使人口啞、耳聾、目明、眼瞎呢?豈不是我耶和華麼?",
+     "key": true
+    },
+    {
+     "who": "耶和華",
+     "text": "現在去罷,我必賜你口才,指教你所當說的話。"
+    }
+   ]
+  },
+  "出12": {
+   "era": "exodus",
+   "type": "教導",
+   "city": "rameses",
+   "title": "血作記號的那夜",
+   "quote": "我一見這血,就越過你們去。",
+   "ref": "出埃及記 12:13,21",
+   "hook": "十災最後一夜,血塗在門框上的每個家庭都在屏息等待。死亡的使者即將掠過,而這扇有血記號的門,究竟能否真的隔開審判?",
+   "cast": {
+    "moses": {
+     "name": "摩西",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "moses",
+     "text": "你們要按著家口取出羊羔,把這逾越節的羊羔宰了。"
+    },
+    {
+     "who": "耶和華",
+     "text": "這血要在你們所住的房屋上作記號;我一見這血,就越過你們去。",
+     "key": true
+    },
+    {
+     "who": "耶和華",
+     "text": "我擊殺埃及地頭生的時候,災殃必不臨到你們身上滅你們。"
+    }
+   ]
+  },
+  "出16": {
+   "era": "exodus",
+   "type": "教導",
+   "city": null,
+   "title": "從天降下的糧",
+   "quote": "這就是耶和華給你們吃的食物。",
+   "ref": "出埃及記 16:4,15",
+   "hook": "離開埃及才六週,糧食耗盡,百姓向摩西發怨言:我們寧可死在埃及,那時至少坐在肉鍋旁。曠野的飢餓把人逼回舊奴隸的美夢,神卻預備了一場考驗。",
+   "cast": {
+    "moses": {
+     "name": "摩西",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "出埃及後第二個月,糧食耗盡,全會眾在曠野向摩西、亞倫發怨言。"
+    },
+    {
+     "who": "耶和華",
+     "text": "我要將糧食從天降給你們。百姓可以出去,每天收每天的分,我好試驗他們遵不遵我的法度。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "次日早晨,地面上有如白霜的小圓物。百姓彼此說:這是甚麼呢?"
+    },
+    {
+     "who": "moses",
+     "text": "這就是耶和華給你們吃的食物。"
+    }
+   ]
+  },
+  "出17": {
+   "era": "exodus",
+   "type": "對話",
+   "city": null,
+   "title": "擊打磐石出水",
+   "quote": "你要擊打磐石,從磐石裡必有水流出來,使百姓可以喝。",
+   "ref": "出埃及記 17:6",
+   "hook": "磐石前沒有泉眼、沒有水脈,口渴的百姓已快要拿石頭砸死摩西。一根杖舉起,一塊石頭被擊——水,怎麼可能從這裡來?",
+   "cast": {
+    "moses": {
+     "name": "摩西",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "利非訂無水,百姓與摩西爭鬧。摩西呼求耶和華說:我向這百姓怎樣行呢?"
+    },
+    {
+     "who": "耶和華",
+     "text": "你要擊打磐石,從磐石裡必有水流出來,使百姓可以喝。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "摩西就在以色列的長老眼前照樣行了。"
+    }
+   ]
+  },
+  "出19": {
+   "era": "exodus",
+   "type": "教導",
+   "city": "sinai",
+   "title": "祭司國度的召命",
+   "quote": "我如鷹將你們背在翅膀上,帶來歸我。",
+   "ref": "出埃及記 19:4-6",
+   "hook": "三個月前還是埃及的奴隸,如今全營聚集在冒煙震動的西奈山腳。角聲漸高,雷轟閃電。神要親口說什麼,讓這群人從萬民中分別出來?",
+   "cast": {
+    "moses": {
+     "name": "摩西",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "出埃及滿三個月,以色列人來到西奈的曠野,在山下安營。"
+    },
+    {
+     "who": "耶和華",
+     "text": "我如鷹將你們背在翅膀上,帶來歸我。",
+     "key": true
+    },
+    {
+     "who": "耶和華",
+     "text": "如今你們若實在聽從我的話,遵守我的約,就要在萬民中作屬我的子民。"
+    },
+    {
+     "who": "耶和華",
+     "text": "你們要歸我作祭司的國度,為聖潔的國民。"
+    }
+   ]
+  },
+  "出32": {
+   "era": "exodus",
+   "type": "禱告",
+   "city": "sinai",
+   "title": "塗抹我的名",
+   "quote": "不然,求你從你所寫的冊上塗抹我的名。",
+   "ref": "出埃及記 32:31-33",
+   "hook": "摩西在山上四十晝夜未歸,山腳的百姓等不住了,把耳環熔鑄成牛犢,高呼:這是領我們出埃及的神!山上的神已經看見,兩塊法版正握在義怒的手中。",
+   "cast": {
+    "moses": {
+     "name": "摩西",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "摩西下山,見金牛犢與跳舞,就把兩塊法版摔碎,次日上山為百姓懇求。"
+    },
+    {
+     "who": "moses",
+     "text": "唉!這百姓犯了大罪,為自己做了金像。倘或你肯赦免他們的罪,……不然,求你從你所寫的冊上塗抹我的名。",
+     "key": true
+    },
+    {
+     "who": "耶和華",
+     "text": "誰得罪我,我就從我的冊上塗抹誰的名。"
+    }
+   ]
+  },
+  "出33": {
+   "era": "exodus",
+   "type": "禱告",
+   "city": "sinai",
+   "title": "求你顯出榮耀",
+   "quote": "求你顯出你的榮耀給我看。",
+   "ref": "出埃及記 33:15,18,20",
+   "hook": "金牛犢之後,神說:我不親自上去,免得在路上把你們滅絕。沒有神同行的迦南,還值得要嗎?摩西只為這一件事懇求,其餘都可捨去。",
+   "cast": {
+    "moses": {
+     "name": "摩西",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "moses",
+     "text": "你若不親自和我同去,就不要把我們從這裡領上去。"
+    },
+    {
+     "who": "耶和華",
+     "text": "我必親自和你同去,使你得安息。"
+    },
+    {
+     "who": "moses",
+     "text": "求你顯出你的榮耀給我看。",
+     "key": true
+    },
+    {
+     "who": "耶和華",
+     "text": "你不能看見我的面,因為人見我的面不能存活。"
+    }
+   ]
+  },
+  "出34": {
+   "era": "exodus",
+   "type": "教導",
+   "city": "sinai",
+   "title": "神宣告自己的名",
+   "quote": "耶和華,耶和華,是有憐憫有恩典的神,不輕易發怒。",
+   "ref": "出埃及記 34:6-7,9",
+   "hook": "摩西再上西奈山,帶著新鑿的石版。神沒有答應顯出面容,卻在他藏身磐石穴時從他面前經過,宣告了一個名字——那是整本聖經對神最完整的自我介紹。",
+   "cast": {
+    "moses": {
+     "name": "摩西",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "耶和華在雲中降臨,與摩西一同站在那裡,從他面前經過,宣告自己的名。"
+    },
+    {
+     "who": "耶和華",
+     "text": "耶和華,耶和華,是有憐憫有恩典的神,不輕易發怒,並有豐盛的慈愛和誠實。",
+     "key": true
+    },
+    {
+     "who": "moses",
+     "text": "主阿,我若在你眼前蒙恩,求你在我們中間同行,赦免我們的罪孽和罪惡,以我們為你的產業。"
+    }
+   ]
+  },
+  "書2": {
+   "era": "conquest",
+   "type": "人物",
+   "city": "jericho",
+   "title": "朱紅線的應許",
+   "quote": "耶和華你們的神,本是上天下地的神。",
+   "ref": "約書亞記 2:9,11",
+   "hook": "探子藏在敵城妓女屋頂的麻稭裏;那女人卻比任何以色列人都更清楚神是誰,還把全家性命都押了上去。",
+   "cast": {
+    "rahab": {
+     "name": "喇合",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#1a0a0a",
+      "robe": "#a83a5a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "夜色掩護下,兩名探子潛入耶利哥,借宿在城牆上的妓女喇合家中。"
+    },
+    {
+     "who": "rahab",
+     "text": "我知道耶和華已經把這地賜給你們;這地的一切居民在你們面前心都消化了。"
+    },
+    {
+     "who": "rahab",
+     "text": "耶和華你們的神,本是上天下地的神。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "探子應允救她全家後,喇合把朱紅線繩繫在窗上,作了跨越族群的救恩記號。"
+    }
+   ]
+  },
+  "書3": {
+   "era": "conquest",
+   "type": "教導",
+   "city": "jericho",
+   "title": "腳踏河水那一刻",
+   "quote": "普天下主的約櫃必在你們前頭過去,到約但河裏。",
+   "ref": "約書亞記 3:9,11,15-16",
+   "hook": "四十年曠野後的第一步:祭司要在漲水季節踏入翻騰的約但河。水還沒有分開,腳卻得先踏進去——信心先於神蹟。",
+   "cast": {
+    "joshua": {
+     "name": "約書亞",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#9b6fd1"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "以色列人站在漲過兩岸的約但河前;抬約櫃的祭司要先邁出第一步。"
+    },
+    {
+     "who": "joshua",
+     "text": "你們近前來,聽耶和華你們神的話。"
+    },
+    {
+     "who": "耶和華",
+     "text": "普天下主的約櫃必在你們前頭過去,到約但河裏。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "祭司的腳一入水,上游的水便立起成壘;全民從乾地上過了約但河。"
+    }
+   ]
+  },
+  "書6": {
+   "era": "conquest",
+   "type": "對話",
+   "city": "jericho",
+   "title": "城牆倒塌的呼喊",
+   "quote": "呼喊罷,因為耶和華已經把城交給你們了!",
+   "ref": "約書亞記 6:2,16,20",
+   "hook": "七天沉默繞城,第七天繞了七次,沒有攻城槌也沒有雲梯。神用最不像打仗的方式,打贏進迦南最關鍵的一役。",
+   "cast": {
+    "joshua": {
+     "name": "約書亞",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#9b6fd1"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "看哪,我已經把耶利哥和耶利哥的王,並大能的勇士,都交在你手中。"
+    },
+    {
+     "who": "旁白",
+     "text": "六天,以色列軍默默繞城,一言不發;第七天清早起來,繞了七次。"
+    },
+    {
+     "who": "joshua",
+     "text": "呼喊罷,因為耶和華已經把城交給你們了!",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "百姓聽見角聲就大聲呼喊,城牆隨即塌陷,各人往前直上,將城奪取。"
+    }
+   ]
+  },
+  "書7": {
+   "era": "conquest",
+   "type": "對話",
+   "city": "jericho",
+   "title": "藏在帳棚下的罪",
+   "quote": "我實在得罪了耶和華以色列的神。我所做的事如此如此。",
+   "ref": "約書亞記 7:11,19-20",
+   "hook": "大軍剛攻下耶利哥,小小的艾城卻使他們慘敗。一個人偷藏的當滅之物,讓全以色列在仇敵面前站立不住。",
+   "cast": {
+    "joshua": {
+     "name": "約書亞",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#9b6fd1"
+     }
+    },
+    "achan": {
+     "name": "亞干",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "艾城慘敗,約書亞俯伏在約櫃前,從早到晚。"
+    },
+    {
+     "who": "耶和華",
+     "text": "以色列人犯了罪,違背了我所吩咐他們的約,取了當滅的物。"
+    },
+    {
+     "who": "joshua",
+     "text": "我兒,我勸你將榮耀歸給耶和華以色列的神,在他面前認罪,將你所做的事告訴我。"
+    },
+    {
+     "who": "achan",
+     "text": "我實在得罪了耶和華以色列的神。我所做的事如此如此。",
+     "key": true
+    }
+   ]
+  },
+  "書10": {
+   "era": "conquest",
+   "type": "禱告",
+   "city": null,
+   "title": "命令太陽停住",
+   "quote": "日頭啊,你要停在基遍;月亮啊,你要止在亞雅崙谷。",
+   "ref": "約書亞記 10:8,12-13",
+   "hook": "五王聯軍夜襲,約書亞整夜急行軍趕到。然後他做了一件史無前例的事——向太陽和月亮下令。",
+   "cast": {
+    "joshua": {
+     "name": "約書亞",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#9b6fd1"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "五王聯軍壓境基遍;約書亞連夜急行,耶和華使仇敵在以色列人面前潰亂。"
+    },
+    {
+     "who": "耶和華",
+     "text": "不要怕他們,因為我已將他們交在你手中;他們無一人能在你面前站立得住。"
+    },
+    {
+     "who": "joshua",
+     "text": "日頭啊,你要停在基遍;月亮啊,你要止在亞雅崙谷。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "日頭停留,月亮止住,約有一日之久;在這日以前以後,沒有像這日的。"
+    }
+   ]
+  },
+  "書14": {
+   "era": "conquest",
+   "type": "人物",
+   "city": "hebron",
+   "title": "八十五歲討山的老將",
+   "quote": "我今八十五歲了,我還是強壯,像摩西打發我去的那天一樣。",
+   "ref": "約書亞記 14:10-12",
+   "hook": "四十五年前領受應許,四十五年後他沒有忘。老將迦勒要的不是安享太平,而是最難打的那片山地。",
+   "cast": {
+    "caleb": {
+     "name": "迦勒",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "分地的時候,八十五歲的迦勒走到約書亞面前,提起四十五年前的應許。"
+    },
+    {
+     "who": "caleb",
+     "text": "我今八十五歲了,我還是強壯,像摩西打發我去的那天一樣。",
+     "key": true
+    },
+    {
+     "who": "caleb",
+     "text": "求你將耶和華那日應許我的這山地給我;或者耶和華照他所應許的與我同在,我就把他們趕出去。"
+    }
+   ]
+  },
+  "士4": {
+   "era": "judges",
+   "type": "對話",
+   "city": "megiddo",
+   "title": "女先知的命令",
+   "quote": "你起來,今日就是耶和華將西西拉交在你手的日子。",
+   "ref": "士師記 4:8,14",
+   "hook": "鐵車九百輛壓制以色列二十年。女先知底波拉差人召來巴拉,他卻說:妳不去,我就不去。",
+   "cast": {
+    "deborah": {
+     "name": "底波拉",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#1a0a0a",
+      "robe": "#5a7a9a"
+     }
+    },
+    "barak": {
+     "name": "巴拉",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "deborah",
+     "text": "耶和華以色列的神吩咐你說:你要率領一萬人上他泊山去。"
+    },
+    {
+     "who": "barak",
+     "text": "你若同我去,我就去;你若不同我去,我就不去。"
+    },
+    {
+     "who": "deborah",
+     "text": "你起來,今日就是耶和華將西西拉交在你手的日子。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "耶和華使西西拉和他一切車輛全軍潰亂;西西拉下車步行逃跑。"
+    }
+   ]
+  },
+  "士7": {
+   "era": "judges",
+   "type": "教導",
+   "city": "ophrah",
+   "title": "三百人的軍隊",
+   "quote": "我要用這舐水的三百人拯救你們,將米甸人交在你手中。",
+   "ref": "士師記 7:2,7",
+   "hook": "三萬二千人一再被裁退,最後只剩三百。神不讓以色列人自誇,要讓最不可能的數字說話。",
+   "cast": {
+    "gideon": {
+     "name": "基甸",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "米甸大軍如同蝗蟲佈滿平原;基甸招聚了三萬二千人,耶和華卻說太多了。"
+    },
+    {
+     "who": "耶和華",
+     "text": "跟隨你的人過多,我不能將米甸人交在他們手中,免得以色列人向我誇大。"
+    },
+    {
+     "who": "耶和華",
+     "text": "我要用這舐水的三百人拯救你們,將米甸人交在你手中。",
+     "key": true
+    },
+    {
+     "who": "gideon",
+     "text": "起來罷!耶和華已將米甸的軍隊交在你們手中了。"
+    }
+   ]
+  },
+  "士11": {
+   "era": "judges",
+   "type": "人物",
+   "city": null,
+   "title": "耶弗他的願",
+   "quote": "你既向耶和華開口許願,就當照你口中所說的向我行。",
+   "ref": "士師記 11:35-36",
+   "hook": "耶弗他用一個輕率的誓言換來了勝利;凱旋回家時,第一個出門迎接他的,卻是他最不願見到失去的人。",
+   "cast": {
+    "jephthah": {
+     "name": "耶弗他",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    },
+    "daughter": {
+     "name": "耶弗他的女兒",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e0b890",
+      "hair": "#3a2a1a",
+      "robe": "#9a7a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "耶弗他曾許願:得勝歸來,頭一個出門迎接他的要歸耶和華。迎接他的,竟是獨生的女兒。"
+    },
+    {
+     "who": "jephthah",
+     "text": "哀哉!我的女兒啊,你使我甚是愁苦,因為我已經向耶和華開口許願,不能挽回。"
+    },
+    {
+     "who": "daughter",
+     "text": "你既向耶和華開口許願,就當照你口中所說的向我行。",
+     "key": true
+    }
+   ]
+  },
+  "士13": {
+   "era": "judges",
+   "type": "人物",
+   "city": null,
+   "title": "烈火中升天的使者",
+   "quote": "這孩子從出胎一直到死,必歸神作拿細耳人。",
+   "ref": "士師記 13:7,20,22",
+   "hook": "不孕的婦人在田間獨坐;神的使者帶來一個不可能的消息:將有一個從母胎就被分別出來的孩子。",
+   "cast": {
+    "manoah": {
+     "name": "瑪挪亞",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "瑪挪亞的妻子不能生育;耶和華的使者向她顯現,帶來一個應許。"
+    },
+    {
+     "who": "耶和華",
+     "text": "這孩子從出胎一直到死,必歸神作拿細耳人。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "瑪挪亞獻祭時,使者在壇上的火焰中升天而去。夫妻俯伏在地。"
+    },
+    {
+     "who": "manoah",
+     "text": "我們必要死了,因為看見了神。"
+    }
+   ]
+  },
+  "士16": {
+   "era": "judges",
+   "type": "禱告",
+   "city": null,
+   "title": "參孫最後的禱告",
+   "quote": "主耶和華啊,求你眷念我。神啊,求你賜我這一次的力量。",
+   "ref": "士師記 16:28-30",
+   "hook": "瞎眼、受辱、推磨的參孫,被帶到歡宴的人群前取樂。他摸到托房的兩根柱子,開口向神禱告。",
+   "cast": {
+    "samson": {
+     "name": "參孫",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#1a0a0a",
+      "robe": "#7a4a3a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "參孫被剃髮、剜眼,鎖在監裏推磨。非利士人的慶典上,他被帶出來戲耍。"
+    },
+    {
+     "who": "samson",
+     "text": "主耶和華啊,求你眷念我。神啊,求你賜我這一次的力量,使我在非利士人身上報那剜我雙眼的仇。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "他抱住兩根柱子,盡力屈身,房子倒塌,壓住眾首領和滿屋的人。"
+    }
+   ]
+  },
+  "得2": {
+   "era": "judges",
+   "type": "對話",
+   "city": "bethlehem",
+   "title": "翅膀下的庇護",
+   "quote": "你來投靠耶和華以色列神的翅膀下,願你滿得他的賞賜。",
+   "ref": "路得記 2:11-12",
+   "hook": "一個摩押寡婦在異鄉的田間彎腰拾穗,撿拾別人收割剩下的。田主忽然走過來,對她說了一句話,讓她抬起了頭。",
+   "cast": {
+    "boaz": {
+     "name": "波阿斯",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    },
+    "ruth": {
+     "name": "路得",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e0b890",
+      "hair": "#3a2a1a",
+      "robe": "#9a7a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "boaz",
+     "text": "自從你丈夫死後,凡你向婆婆所行的,並你離開父母和本地到素不認識之民中,這些事人全都告訴我了。"
+    },
+    {
+     "who": "boaz",
+     "text": "你來投靠耶和華以色列神的翅膀下,願你滿得他的賞賜。",
+     "key": true
+    },
+    {
+     "who": "ruth",
+     "text": "我主啊,願在你眼前蒙恩;我雖不及你的一個使女,你還用慈愛的話安慰我的心。"
+    }
+   ]
+  },
+  "撒上1": {
+   "era": "saul",
+   "type": "禱告",
+   "city": "shiloh",
+   "title": "哈拿的眼淚與誓願",
+   "quote": "你若垂顧婢女的苦情,賜我一個兒子,我必使他終身歸與耶和華。",
+   "ref": "撒母耳記上 1:10-11",
+   "hook": "年年上聖所,年年被對頭激動羞辱。她沒有出聲,只是嘴唇翕動地禱告。這沉默的眼淚,能傳到天上嗎?",
+   "cast": {
+    "hannah": {
+     "name": "哈拿",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e0b890",
+      "hair": "#3a2a1a",
+      "robe": "#9a7a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "以利加拿年年上示羅敬拜。妻哈拿不能生育,被對頭激動羞辱,哭泣不吃飯,獨自到殿前傾心吐意。"
+    },
+    {
+     "who": "hannah",
+     "text": "萬軍之耶和華啊,你若垂顧婢女的苦情,眷念不忘婢女,賜我一個兒子,我必使他終身歸與耶和華。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "祭司以利以為她喝醉了;哈拿說:我是心裡愁苦的婦人,在耶和華面前傾心吐意。"
+    }
+   ]
+  },
+  "撒上8": {
+   "era": "saul",
+   "type": "對話",
+   "city": "mizpah",
+   "title": "百姓求立王",
+   "quote": "他們不是厭棄你,乃是厭棄我,不要我作他們的王。",
+   "ref": "撒母耳記上 8:5-7",
+   "hook": "撒母耳年老,兒子不行正道。百姓望著列國都有王,向撒母耳提出一個改變整個民族命運的要求。",
+   "cast": {
+    "samuel": {
+     "name": "撒母耳",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "以色列的長老聚集來見撒母耳,說:你年紀老邁,你兒子不行你的道;求你為我們立一個王,像列國一樣。"
+    },
+    {
+     "who": "旁白",
+     "text": "撒母耳不喜悅這話,就禱告耶和華。"
+    },
+    {
+     "who": "耶和華",
+     "text": "他們不是厭棄你,乃是厭棄我,不要我作他們的王。",
+     "key": true
+    }
+   ]
+  },
+  "撒上15": {
+   "era": "saul",
+   "type": "教導",
+   "city": null,
+   "title": "聽命勝於獻祭",
+   "quote": "聽命勝於獻祭;順從勝於公羊的脂油。",
+   "ref": "撒母耳記上 15:14,22",
+   "hook": "掃羅打了勝仗,留下最好的牛羊,說是要獻給神。撒母耳卻聽見營中有牛鳴羊叫——神真正要的,究竟是什麼?",
+   "cast": {
+    "samuel": {
+     "name": "撒母耳",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#cccccc",
+      "beard": "#cccccc",
+      "robe": "#5a7a9a"
+     }
+    },
+    "saul": {
+     "name": "掃羅王",
+     "faction": "united",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#9b6fd1",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "saul",
+     "text": "耶和華的命令我已遵守了,行了耶和華所差遣我行的路。"
+    },
+    {
+     "who": "samuel",
+     "text": "這樣,我耳中聽見有羊叫、牛鳴,是從哪裡來的呢?"
+    },
+    {
+     "who": "samuel",
+     "text": "聽命勝於獻祭;順從勝於公羊的脂油。",
+     "key": true
+    }
+   ]
+  },
+  "撒下1": {
+   "era": "david",
+   "type": "人物",
+   "city": null,
+   "title": "英雄何竟仆倒",
+   "quote": "掃羅和約拿單─活時相悅相愛,死時也不分離─他們比鷹更快,比獅子還強。",
+   "ref": "撒母耳記下 1:19,23",
+   "hook": "仇敵的死訊傳來,理當額手稱慶;大衛卻撕裂衣服、禁食哀哭。他為追殺自己的人,寫下了以色列最美的一首輓歌。",
+   "cast": {
+    "david": {
+     "name": "大衛",
+     "faction": "united",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a4a2a",
+      "beard": "#8a4a2a",
+      "robe": "#9b6fd1",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "有人來報:掃羅與約拿單都死在基利波山。大衛和跟隨他的人撕裂衣服,悲哀哭號,禁食到晚上。"
+    },
+    {
+     "who": "david",
+     "text": "以色列啊,你尊榮者在山上被殺!大英雄何竟死亡!"
+    },
+    {
+     "who": "david",
+     "text": "掃羅和約拿單─活時相悅相愛,死時也不分離─他們比鷹更快,比獅子還強。",
+     "key": true
+    }
+   ]
+  },
+  "撒下6": {
+   "era": "david",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "大衛在約櫃前跳舞",
+   "quote": "這是在耶和華面前;耶和華已揀選我,立我作以色列的君。",
+   "ref": "撒母耳記下 6:20-22",
+   "hook": "約櫃進城,舉國歡騰,大衛脫去王袍在街上極力跳舞——這一幕,讓掃羅的女兒米甲從窗裡看得心裡輕視。",
+   "cast": {
+    "david": {
+     "name": "大衛",
+     "faction": "united",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a4a2a",
+      "beard": "#8a4a2a",
+      "robe": "#9b6fd1",
+      "crown": true
+     }
+    },
+    "michal": {
+     "name": "米甲",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e0b890",
+      "hair": "#3a2a1a",
+      "robe": "#7a4a6a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "約櫃抬入大衛城,大衛穿著細麻布的以弗得,在耶和華面前極力跳舞。米甲從窗裡看見,就輕視他。"
+    },
+    {
+     "who": "michal",
+     "text": "以色列王今日在臣僕的婢女眼前露體,如同一個輕賤人無恥露體一樣,有好大的榮耀啊!"
+    },
+    {
+     "who": "david",
+     "text": "這是在耶和華面前;耶和華已揀選我,廢了你父和你父的全家,立我作耶和華民以色列的君。",
+     "key": true
+    },
+    {
+     "who": "david",
+     "text": "我也必更加卑微,自己看為輕賤。你所說的那些婢女,她們倒要尊敬我。"
+    }
+   ]
+  },
+  "撒下18": {
+   "era": "david",
+   "type": "人物",
+   "city": "mahanaim",
+   "title": "我兒押沙龍啊",
+   "quote": "我恨不得替你死,押沙龍啊,我兒!我兒!",
+   "ref": "撒母耳記下 18:5,33",
+   "hook": "父親出戰前再三叮囑眾將:要為我的緣故,寬待那少年人押沙龍。但戰場上發生了他最不願聽見的事,信使正往城門跑來——",
+   "cast": {
+    "david": {
+     "name": "大衛",
+     "faction": "united",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a4a2a",
+      "beard": "#8a4a2a",
+      "robe": "#9b6fd1",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "押沙龍叛變,大衛退到瑪哈念。大戰前,王囑咐眾將:要為我的緣故寬待那少年人押沙龍。"
+    },
+    {
+     "who": "旁白",
+     "text": "押沙龍的頭髮被橡樹枝纏住,懸在空中;約押不顧王命,用短槍刺透他的心。信使跑來報信。"
+    },
+    {
+     "who": "david",
+     "text": "我兒押沙龍啊!我兒,我兒押沙龍啊!我恨不得替你死,押沙龍啊,我兒!我兒!",
+     "key": true
+    }
+   ]
+  },
+  "撒下24": {
+   "era": "david",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "不獻白得之物",
+   "quote": "我不肯用白得之物作燔祭獻給耶和華─我的神。",
+   "ref": "撒母耳記下 24:23-25",
+   "hook": "大衛數點百姓觸怒了神,瘟疫殺了七萬人。先知奉命叫他在亞勞拿的禾場築壇。場主願意白白奉送,大衛卻拒絕了——",
+   "cast": {
+    "david": {
+     "name": "大衛",
+     "faction": "united",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a4a2a",
+      "beard": "#8a4a2a",
+      "robe": "#9b6fd1",
+      "crown": true
+     }
+    },
+    "araunah": {
+     "name": "亞勞拿",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a5a3a",
+      "beard": "#8a5a3a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "araunah",
+     "text": "王啊,這一切我亞勞拿都奉給你;願耶和華你的神悅納你。"
+    },
+    {
+     "who": "david",
+     "text": "我不肯用白得之物作燔祭獻給耶和華─我的神。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "大衛用五十舍客勒銀子買了禾場與牛,在那裡築壇獻祭。瘟疫就在以色列人中止住了。"
+    }
+   ]
+  },
+  "詩23": {
+   "era": "david",
+   "type": "禱告",
+   "city": null,
+   "title": "耶和華是我的牧者",
+   "quote": "耶和華是我的牧者,我必不致缺乏。",
+   "ref": "詩篇 23:1,4,6",
+   "hook": "牧羊人出身的大衛,用最簡單的比喻道出了最深的信靠:就算走過死蔭的幽谷,也不怕遭害。",
+   "cast": {
+    "david": {
+     "name": "大衛",
+     "faction": "united",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a4a2a",
+      "beard": "#8a4a2a",
+      "robe": "#9b6fd1",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "大衛從牧羊少年成為一國之君,走過曠野、逃亡與爭戰。這首詩道盡他一生對神的倚靠。"
+    },
+    {
+     "who": "david",
+     "text": "耶和華是我的牧者,我必不致缺乏。",
+     "key": true
+    },
+    {
+     "who": "david",
+     "text": "我雖然行過死蔭的幽谷,也不怕遭害,因為你與我同在;你的杖,你的竿,都安慰我。"
+    },
+    {
+     "who": "david",
+     "text": "我一生一世必有恩惠慈愛隨著我;我且要住在耶和華的殿中,直到永遠。"
+    }
+   ]
+  },
+  "詩51": {
+   "era": "david",
+   "type": "禱告",
+   "city": null,
+   "title": "求你造我清潔的心",
+   "quote": "神啊,求你按你的慈愛憐恤我!按你豐盛的慈悲塗抹我的過犯!",
+   "ref": "詩篇 51:1,4,11",
+   "hook": "拿單先知來見大衛之後,他寫下了這首詩。一個犯了大罪、自知無可推諉的人,如何能再站到神面前?",
+   "cast": {
+    "david": {
+     "name": "大衛",
+     "faction": "united",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a4a2a",
+      "beard": "#8a4a2a",
+      "robe": "#9b6fd1",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "大衛與拔示巴犯罪、又借刀殺人之後,先知拿單用比喻揭穿他。他悔罪,寫下這首最深的懺悔詩。"
+    },
+    {
+     "who": "david",
+     "text": "神啊,求你按你的慈愛憐恤我!按你豐盛的慈悲塗抹我的過犯!",
+     "key": true
+    },
+    {
+     "who": "david",
+     "text": "我向你犯罪,惟獨得罪了你;在你眼前行了這惡。"
+    },
+    {
+     "who": "david",
+     "text": "不要丟棄我,使我離開你的面;不要從我收回你的聖靈。"
+    }
+   ]
+  },
+  "詩139": {
+   "era": "david",
+   "type": "禱告",
+   "city": null,
+   "title": "你已鑒察我",
+   "quote": "耶和華啊,你已經鑒察我,認識我。",
+   "ref": "詩篇 139:1,7,23-24",
+   "hook": "無論逃到哪裡,神都在那裡——這到底是威脅,還是安慰?大衛的回答,給了這個問題一個出乎意料的方向。",
+   "cast": {
+    "david": {
+     "name": "大衛",
+     "faction": "united",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#8a4a2a",
+      "beard": "#8a4a2a",
+      "robe": "#9b6fd1",
+      "crown": true
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "大衛默想神的無所不知、無所不在。沒有一個角落能躲開祂;但他不是抱怨,而是在敬畏中稱謝。"
+    },
+    {
+     "who": "david",
+     "text": "耶和華啊,你已經鑒察我,認識我。",
+     "key": true
+    },
+    {
+     "who": "david",
+     "text": "我往哪裡去躲避你的靈?我往哪裡逃、躲避你的面?"
+    },
+    {
+     "who": "david",
+     "text": "神啊,求你鑒察我,知道我的心思,試煉我,知道我的意念,引導我走永生的道路。"
+    }
+   ]
+  },
+  "路2": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "十二歲的耶穌在聖殿",
+   "quote": "豈不知我應當以我父的事為念麼?",
+   "ref": "路加福音 2:48-49",
+   "hook": "十二歲的耶穌獨留聖殿,父母遍尋三天,才在教師中間找到他——他卻給了一個讓人費解的回答。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "mary": {
+     "name": "馬利亞",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e0b890",
+      "hair": "#3a2a1a",
+      "robe": "#9a7a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "過了節期,父母回去,孩童耶穌仍留在耶路撒冷。他們找了三天,才在殿裏教師中間找到他。"
+    },
+    {
+     "who": "mary",
+     "text": "我兒!為甚麼向我們這樣行呢?看哪,你父親和我傷心來找你!"
+    },
+    {
+     "who": "jesus",
+     "text": "豈不知我應當以我父的事為念麼?",
+     "key": true
+    }
+   ]
+  },
+  "太4": {
+   "era": "gospels",
+   "type": "對話",
+   "city": null,
+   "title": "曠野的三重試探",
+   "quote": "當拜主你的神,單要事奉他。",
+   "ref": "馬太福音 4:4,7,10",
+   "hook": "禁食四十晝夜後,魔鬼接連端出三個誘惑:餅、神蹟、世上的萬國榮華。耶穌憑甚麼一一回絕?",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "耶穌被聖靈引到曠野,禁食四十晝夜後就餓了。魔鬼前來,說:你若是神的兒子,可以叫石頭變成食物。"
+    },
+    {
+     "who": "jesus",
+     "text": "人活著,不是單靠食物,乃是靠神口裏所出的一切話。"
+    },
+    {
+     "who": "旁白",
+     "text": "魔鬼又帶他上聖殿頂,說:你若是神的兒子,可以跳下去,因經上記著神必用使者托住你。"
+    },
+    {
+     "who": "jesus",
+     "text": "經上又記著說:不可試探主你的神。"
+    },
+    {
+     "who": "旁白",
+     "text": "魔鬼又指萬國的榮華說:你若俯伏拜我,我就把這一切都賜給你。"
+    },
+    {
+     "who": "jesus",
+     "text": "撒但,退去罷!因為經上記著說:當拜主你的神,單要事奉他。",
+     "key": true
+    }
+   ]
+  },
+  "約4": {
+   "era": "gospels",
+   "type": "對話",
+   "city": null,
+   "title": "井旁的活水",
+   "quote": "人若喝我所賜的水就永遠不渴。",
+   "ref": "約翰福音 4:10,13-14,26",
+   "hook": "正午,一個撒馬利亞婦人獨自來到雅各井邊打水,遇見一位向她要水喝、卻看透她一切過往的旅人。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "woman": {
+     "name": "撒馬利亞婦人",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e0b890",
+      "hair": "#3a2a1a",
+      "robe": "#9a7a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "耶穌走路困乏,就坐在井旁,那時約有午正。一個撒馬利亞婦人來打水,耶穌向她要水喝。"
+    },
+    {
+     "who": "woman",
+     "text": "你既是猶太人,怎麼向我一個撒馬利亞婦人要水喝呢?"
+    },
+    {
+     "who": "jesus",
+     "text": "人若喝我所賜的水就永遠不渴。我所賜的水要在他裏頭成為泉源,直湧到永生。",
+     "key": true
+    },
+    {
+     "who": "woman",
+     "text": "先生,沒有打水的器具,井又深,你從哪裏得活水呢?"
+    },
+    {
+     "who": "jesus",
+     "text": "這和你說話的就是他!"
+    }
+   ]
+  },
+  "約8": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "誰是沒有罪的",
+   "quote": "我也不定你的罪。去罷,從此不要再犯罪了!",
+   "ref": "約翰福音 8:7,10-11",
+   "hook": "文士和法利賽人帶著一個行淫時被拿的婦人,要用她試探耶穌,眾人手裏已握著石頭——他卻彎下腰在地上畫字。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "woman": {
+     "name": "被拿的婦人",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#e0b890",
+      "hair": "#3a2a1a",
+      "robe": "#9a7a4a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "他們帶來一個行淫時被拿的婦人,引摩西的律法逼問耶穌該不該用石頭打死她。"
+    },
+    {
+     "who": "jesus",
+     "text": "你們中間誰是沒有罪的,誰就可以先拿石頭打他。"
+    },
+    {
+     "who": "旁白",
+     "text": "他們聽見這話,從老到少一個一個都出去了,只剩下耶穌和那婦人。"
+    },
+    {
+     "who": "woman",
+     "text": "主阿,沒有。"
+    },
+    {
+     "who": "jesus",
+     "text": "我也不定你的罪。去罷,從此不要再犯罪了!",
+     "key": true
+    }
+   ]
+  },
+  "約9": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "jerusalem",
+   "title": "生來瞎眼的得見",
+   "quote": "也不是這人犯了罪,是要在他身上顯出神的作為來。",
+   "ref": "約翰福音 9:2-3",
+   "hook": "門徒問:這人生來瞎眼,是誰犯了罪?耶穌的回答,從根本翻轉了世人對苦難與報應的假設。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "disciple": {
+     "name": "門徒",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a4a3a"
+     }
+    },
+    "blind": {
+     "name": "生來瞎眼的人",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "disciple",
+     "text": "拉比,這人生來是瞎眼的,是誰犯了罪?是這人呢?是他父母呢?"
+    },
+    {
+     "who": "jesus",
+     "text": "也不是這人犯了罪,也不是他父母犯了罪,是要在他身上顯出神的作為來。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "耶穌用唾沫和泥抹他的眼,叫他去西羅亞池子洗。他去一洗,回頭就看見了。"
+    },
+    {
+     "who": "blind",
+     "text": "主阿,我信!"
+    }
+   ]
+  },
+  "約10": {
+   "era": "gospels",
+   "type": "教導",
+   "city": "jerusalem",
+   "title": "好牧人為羊捨命",
+   "quote": "我是好牧人;好牧人為羊捨命。",
+   "ref": "約翰福音 10:11,28-30",
+   "hook": "賊來,無非要偷竊、殺害、毀壞;好牧人來,卻是為了另一件事。耶穌在聖殿廊下,說出一個永恆的自白。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "在耶路撒冷有修殿節,是冬天的時候;耶穌在殿裏所羅門的廊下行走。"
+    },
+    {
+     "who": "jesus",
+     "text": "我是好牧人;好牧人為羊捨命。",
+     "key": true
+    },
+    {
+     "who": "jesus",
+     "text": "我又賜給他們永生;他們永不滅亡,誰也不能從我手裏把他們奪去。"
+    },
+    {
+     "who": "jesus",
+     "text": "我與父原為一。"
+    }
+   ]
+  },
+  "太14": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "galilee",
+   "title": "海面上行走",
+   "quote": "你這小信的人哪,為甚麼疑惑呢?",
+   "ref": "馬太福音 14:27-31",
+   "hook": "四更天,門徒在浪中掙扎,忽見一個身影踏水而來。彼得竟開口:主,如果是你,請叫我也走到你那裏去。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "peter": {
+     "name": "彼得",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a4a3a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "jesus",
+     "text": "你們放心!是我,不要怕!"
+    },
+    {
+     "who": "peter",
+     "text": "主,如果是你,請叫我從水面上走到你那裏去。"
+    },
+    {
+     "who": "jesus",
+     "text": "你來罷。"
+    },
+    {
+     "who": "旁白",
+     "text": "彼得下了船,在水面上走;只因見風甚大,就害怕,將要沉下去,便喊:主阿,救我!"
+    },
+    {
+     "who": "jesus",
+     "text": "你這小信的人哪,為甚麼疑惑呢?",
+     "key": true
+    }
+   ]
+  },
+  "太17": {
+   "era": "gospels",
+   "type": "人物",
+   "city": null,
+   "title": "登山變像",
+   "quote": "這是我的愛子,我所喜悅的。你們要聽他!",
+   "ref": "馬太福音 17:2,5",
+   "hook": "耶穌帶著三個門徒上了高山,忽然在他們面前變了形像,臉面明亮如日頭;摩西與以利亞同時顯現,雲彩裏更有聲音。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "peter": {
+     "name": "彼得",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a4a3a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "耶穌在高山上變了形像,臉面明亮如日頭,衣裳潔白如光;摩西、以利亞向他們顯現,同耶穌說話。"
+    },
+    {
+     "who": "peter",
+     "text": "主阿,我們在這裏真好!你若願意,我就在這裏搭三座棚。"
+    },
+    {
+     "who": "耶和華",
+     "text": "這是我的愛子,我所喜悅的。你們要聽他!",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "門徒聽見就俯伏在地,極其害怕。耶穌進前來摸他們說:起來,不要害怕!"
+    }
+   ]
+  },
+  "路19": {
+   "era": "gospels",
+   "type": "對話",
+   "city": "jericho",
+   "title": "撒該快下來",
+   "quote": "今天救恩到了這家,因為他也是亞伯拉罕的子孫。",
+   "ref": "路加福音 19:5,8-10",
+   "hook": "稅吏長撒該爬上桑樹,只想遠遠看耶穌一眼;耶穌卻抬頭點他的名,說要住進這個眾人唾棄的人家中。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "zacchaeus": {
+     "name": "撒該",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "jesus",
+     "text": "撒該,快下來!今天我必住在你家裏。"
+    },
+    {
+     "who": "旁白",
+     "text": "他就急忙下來,歡歡喜喜地接待耶穌。眾人看見,都私下議論:他竟到罪人家裏去住宿。"
+    },
+    {
+     "who": "zacchaeus",
+     "text": "主阿,我把所有的一半給窮人;我若訛詐了誰,就還他四倍。"
+    },
+    {
+     "who": "jesus",
+     "text": "今天救恩到了這家,因為他也是亞伯拉罕的子孫。",
+     "key": true
+    }
+   ]
+  },
+  "約13": {
+   "era": "gospels",
+   "type": "教導",
+   "city": "jerusalem",
+   "title": "洗腳與新命令",
+   "quote": "我賜給你們一條新命令,乃是叫你們彼此相愛。",
+   "ref": "約翰福音 13:8,14,34",
+   "hook": "最後的晚餐,夜色已深,身為主的耶穌竟脫下外衣,蹲下去為門徒洗腳,然後留下一條他稱為「新」的命令。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "peter": {
+     "name": "彼得",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#c89868",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a4a3a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "晚餐時,耶穌離席,脫了衣服,拿手巾束腰,把水倒在盆裏,就洗門徒的腳。"
+    },
+    {
+     "who": "peter",
+     "text": "主阿,你洗我的腳麼?"
+    },
+    {
+     "who": "jesus",
+     "text": "我是你們的主,你們的夫子,尚且洗你們的腳,你們也當彼此洗腳。"
+    },
+    {
+     "who": "jesus",
+     "text": "我賜給你們一條新命令,乃是叫你們彼此相愛;我怎樣愛你們,你們也要怎樣相愛。",
+     "key": true
+    }
+   ]
+  },
+  "路24": {
+   "era": "gospels",
+   "type": "對話",
+   "city": null,
+   "title": "以馬忤斯路上",
+   "quote": "基督這樣受害,又進入他的榮耀,豈不是應當的麼?",
+   "ref": "路加福音 24:17,26,30-31",
+   "hook": "兩個門徒垂頭喪氣走向以馬忤斯,一個陌生人加入同行,一路講解聖經;直到擘餅那一刻,他們才認出他來。",
+   "cast": {
+    "jesus": {
+     "name": "耶穌",
+     "faction": "messiah",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#f0e8d8"
+     }
+    },
+    "cleopas": {
+     "name": "革流巴",
+     "faction": "folk",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#7a6845"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "那日,兩個門徒往以馬忤斯去;耶穌親自就近他們同行,只是他們的眼睛迷糊了,不認得他。"
+    },
+    {
+     "who": "jesus",
+     "text": "你們走路彼此談論的是甚麼事呢?"
+    },
+    {
+     "who": "cleopas",
+     "text": "你在耶路撒冷作客,還不知道這幾天在那裏所出的事麼?"
+    },
+    {
+     "who": "jesus",
+     "text": "基督這樣受害,又進入他的榮耀,豈不是應當的麼?",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "坐席時,耶穌拿起餅來祝謝、擘開遞給他們,他們的眼睛就明亮了,這才認出他來。"
+    }
+   ]
+  },
+  "賽40": {
+   "era": "exile",
+   "type": "教導",
+   "city": null,
+   "title": "如鷹展翅上騰",
+   "quote": "但那等候耶和華的必從新得力,他們必如鷹展翅上騰。",
+   "ref": "以賽亞書 40:1,8,31",
+   "hook": "被擄的子民以為神已沉默、已忘記他們。先知的聲音卻從荒野傳出:等候的人,將要換上鷹的翅膀。",
+   "cast": {
+    "isaiah": {
+     "name": "以賽亞",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "耶和華",
+     "text": "你們要安慰,安慰我的百姓。"
+    },
+    {
+     "who": "isaiah",
+     "text": "草必枯乾,花必凋殘,惟有我們神的話必永遠立定。"
+    },
+    {
+     "who": "isaiah",
+     "text": "但那等候耶和華的必從新得力。他們必如鷹展翅上騰;他們奔跑卻不困倦,行走卻不疲乏。",
+     "key": true
+    }
+   ]
+  },
+  "賽53": {
+   "era": "exile",
+   "type": "教導",
+   "city": null,
+   "title": "受苦的僕人",
+   "quote": "因他受的刑罰,我們得平安;因他受的鞭傷,我們得醫治。",
+   "ref": "以賽亞書 53:3,5-6",
+   "hook": "七百年前,先知就見到一個滿受輕視、為別人背負罪孽、被掩面不看的身影。這究竟說的是誰?",
+   "cast": {
+    "isaiah": {
+     "name": "以賽亞",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#888888",
+      "beard": "#888888",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "isaiah",
+     "text": "他被藐視,被人厭棄;多受痛苦,常經憂患。他被藐視,好像被人掩面不看的一樣;我們也不尊重他。"
+    },
+    {
+     "who": "isaiah",
+     "text": "哪知他為我們的過犯受害,為我們的罪孽壓傷。因他受的刑罰,我們得平安;因他受的鞭傷,我們得醫治。",
+     "key": true
+    },
+    {
+     "who": "isaiah",
+     "text": "我們都如羊走迷,各人偏行己路;耶和華使我們眾人的罪孽都歸在他身上。"
+    }
+   ]
+  },
+  "結37": {
+   "era": "exile",
+   "type": "教導",
+   "city": "babylon",
+   "title": "枯骨復生",
+   "quote": "我必使氣息進入你們裏面,你們就要活了。",
+   "ref": "以西結書 37:3,5,14",
+   "hook": "枯骨鋪滿了整個平原,那是亡國後以色列僅存的盼望——已經死透了。神卻問以西結:這些骸骨能復活嗎?",
+   "cast": {
+    "ezekiel": {
+     "name": "以西結",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#3a2a1a",
+      "beard": "#3a2a1a",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "在迦巴魯河邊,以西結被神的靈帶到一片滿是枯骨的平原。"
+    },
+    {
+     "who": "耶和華",
+     "text": "人子啊,這些骸骨能復活麼?"
+    },
+    {
+     "who": "ezekiel",
+     "text": "主耶和華啊,你是知道的。"
+    },
+    {
+     "who": "耶和華",
+     "text": "我必使氣息進入你們裏面,你們就要活了。",
+     "key": true
+    },
+    {
+     "who": "旁白",
+     "text": "以西結遵命說預言。有響聲、有地震,骨與骨彼此聯絡,筋長肉生、皮蓋其上,氣息也進入,他們就活了。"
+    }
+   ]
+  },
+  "但7": {
+   "era": "exile",
+   "type": "人物",
+   "city": "babylon",
+   "title": "駕雲而來的人子",
+   "quote": "見有一位像人子的,駕著天雲而來,被領到亙古常在者面前。",
+   "ref": "但以理書 7:13-14",
+   "hook": "但以理見四個大獸從海中上來,吞噬踐踏;然後,一位像人子的駕著天雲而來——他將得到什麼?",
+   "cast": {
+    "daniel": {
+     "name": "但以理",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "夜間的異象中,四個大獸先後從海中上來,最後一獸極其可怕。亙古常在者在火焰寶座上坐定。"
+    },
+    {
+     "who": "daniel",
+     "text": "我在夜間的異象中觀看,見有一位像人子的,駕著天雲而來,被領到亙古常在者面前。",
+     "key": true
+    },
+    {
+     "who": "daniel",
+     "text": "得了權柄、榮耀、國度,使各方、各國、各族的人都事奉他;他的權柄是永遠的,他的國必不敗壞。"
+    }
+   ]
+  },
+  "但4": {
+   "era": "exile",
+   "type": "對話",
+   "city": "babylon",
+   "title": "至高者在人國中掌權",
+   "quote": "至高者在人的國中掌權,要將國賜與誰就賜與誰。",
+   "ref": "但以理書 4:17,27",
+   "hook": "天下最強大的尼布甲尼撒做了一個讓他發抖的夢:一棵頂天的大樹被砍倒,只留樹樁。但以理解夢時,心意驚惶。",
+   "cast": {
+    "daniel": {
+     "name": "但以理",
+     "faction": "prophet",
+     "avatar": {
+      "skin": "#d8a878",
+      "hair": "#2a1a0a",
+      "robe": "#5a7a9a"
+     }
+    }
+   },
+   "script": [
+    {
+     "who": "旁白",
+     "text": "尼布甲尼撒夢見一棵頂天的大樹被守望的聖者下令砍倒,只留樹樁,用鐵圈銅圈箍住。全城哲士無人能解。"
+    },
+    {
+     "who": "daniel",
+     "text": "至高者在人的國中掌權,要將國賜與誰就賜與誰,或立極卑微的人執掌國權。",
+     "key": true
+    },
+    {
+     "who": "daniel",
+     "text": "王啊,求你悅納我的諫言,以施行公義斷絕罪過,以憐憫窮人除掉罪孽,或者你的平安可以延長。"
+    }
+   ]
   }
+ }
 }

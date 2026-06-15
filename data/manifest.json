@@ -1,8 +1,12 @@
 {
-  "title": "以色列王國史・像素地圖",
+  "title": "聖經歷史・像素地圖",
   "subtitle": "以「時代」為座標的聖經歷史閱讀地圖 — 先有空間感,再讀故事",
   "defaultEra": "split",
   "eras": [
+    {
+      "id": "creation",
+      "file": "eras/creation.json"
+    },
     {
       "id": "patriarchs",
       "file": "eras/patriarchs.json"

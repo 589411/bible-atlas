@@ -807,13 +807,17 @@ function renderPanel(){
 }
 
 /* ═══════════ 關鍵時刻 RPG 對話 ═══════════ */
-const SPEAKER_COLOR={prophet:'#8fc3e8',south:'#d9a441',north:'#3fa7a0',empire:'#b04a4a',folk:'#e0c08a'};
+const SPEAKER_COLOR={united:'#b89bd9',prophet:'#8fc3e8',south:'#d9a441',north:'#3fa7a0',empire:'#b04a4a',folk:'#e0c08a'};
 let scene=null, sceneTimer=null;
 
 function renderHighlights(){
   const box=document.getElementById('moments'); if(!box) return;
   box.innerHTML='';
   const items=Object.entries(state.highlights||{}).filter(([k,h])=>h.era===state.current.id);
+  const bo=Object.keys((state.bookEras||{}).books||{});
+  const sbo=bo.slice().sort((a,b)=>b.length-a.length);
+  const rank=key=>{const n=sbo.find(x=>key.startsWith(x));const i=n?bo.indexOf(n):999;const m=n?key.slice(n.length).match(/\d+/):null;return i*1000+(m?parseInt(m[0],10):0);};
+  items.sort((a,b)=>rank(a[0])-rank(b[0]));
   const card=box.closest('.card'); if(card) card.hidden=(items.length===0);
   items.forEach(([key,h])=>{
     const btn=document.createElement('button'); btn.className='moment-btn';
