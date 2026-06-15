@@ -862,12 +862,13 @@ function sceneAdvance(){
     box.classList.add('voice'); textEl.classList.add('voice');
   } else {
     const actor=(h.cast||{})[line.who]||{name:line.who};
-    port.hidden=false; if(actor.avatar) drawAvatar(port,actor.avatar);
     nameEl.textContent=actor.name||line.who;
     if(actor.faction==='messiah'){          // 耶穌:沿用頭像+柔和光暈+紅字
-      port.classList.add('glow'); box.classList.add('holy');
-      nameEl.style.color='#e8c574'; textEl.classList.add('redletter');
+      box.classList.add('holy'); nameEl.style.color='#e8c574'; textEl.classList.add('redletter');
+      if(actor.avatar){ port.hidden=false; drawAvatar(port,actor.avatar); port.classList.add('glow'); }
+      else { port.hidden=true; }            // 從天上來的聲音(如大馬士革):無形像,只留紅字與光暈框
     } else {
+      port.hidden=false; if(actor.avatar) drawAvatar(port,actor.avatar);
       nameEl.style.color=SPEAKER_COLOR[actor.faction]||'var(--text)';
     }
   }

@@ -272,6 +272,197 @@
         { "who": "旁白", "text": "耶穌起來,斥責風和海,風和海就大大地平靜了。" },
         { "who": "disciples", "text": "這是怎樣的人?連風和海也聽從他了!" }
       ]
+    },
+    "太16": {
+      "era": "gospels", "type": "對話", "city": "caesarea",
+      "title": "你說我是誰",
+      "quote": "你是基督,是永生神的兒子。",
+      "ref": "馬太福音 16:15-18;馬可福音 8:29;路加福音 9:20",
+      "parallels": ["可8", "路9"],
+      "hook": "走到該撒利亞腓立比,耶穌問門徒:別人說我是誰?眾說紛紜。然後他把問題轉向他們自己——你們說我是誰?彼得的回答,將定下教會的根基。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "peter": { "name": "西門彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a4a3a" } }
+      },
+      "script": [
+        { "who": "jesus", "text": "你們說我是誰?" },
+        { "who": "peter", "text": "你是基督,是永生神的兒子。", "key": true },
+        { "who": "jesus", "text": "你是彼得,我要把我的教會建造在這磐石上;陰間的權柄,不能勝過他。" }
+      ]
+    },
+    "路10": {
+      "era": "gospels", "type": "教導", "city": null,
+      "title": "好撒馬利亞人",
+      "quote": "你去照樣行罷。",
+      "ref": "路加福音 10:29-37",
+      "hook": "一個律法師想為難耶穌:誰是我的鄰舍?耶穌沒給定義,反而講了個故事——被打個半死的人,身邊走過祭司、利未人,最後停下的卻是最不被待見的那種人。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "lawyer": { "name": "律法師", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#6a6a8a" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "祭司和利未人都從那受傷的人旁邊繞了過去,惟有一個被人看不起的撒瑪利亞人停下來,包紮、照顧他。耶穌問:這三人哪一個是鄰舍?" },
+        { "who": "lawyer", "text": "是憐憫他的。" },
+        { "who": "jesus", "text": "你去照樣行罷。", "key": true }
+      ]
+    },
+    "約11": {
+      "era": "gospels", "type": "對話", "city": null,
+      "title": "復活在我",
+      "quote": "復活在我,生命也在我。信我的人雖然死了,也必復活。",
+      "ref": "約翰福音 11:21-26",
+      "hook": "拉撒路死了四天,墳墓都封住了,耶穌才趕到。馬大迎上來,話裡有信、也有遺憾。面對親人的死,耶穌把自己擺在一個驚人的位置上。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "martha": { "name": "馬大", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a6a7a" } }
+      },
+      "script": [
+        { "who": "martha", "text": "主阿,你若早在這裡,我兄弟必不死。" },
+        { "who": "jesus", "text": "復活在我,生命也在我。信我的人雖然死了,也必復活。", "key": true },
+        { "who": "jesus", "text": "你信這話麼?" }
+      ]
+    },
+    "路23": {
+      "era": "gospels", "type": "禱告", "city": "jerusalem",
+      "title": "十架上的赦免",
+      "quote": "父阿!赦免他們;因為他們所做的,他們不曉得。",
+      "ref": "路加福音 23:34;馬太福音 27:33-44;馬可福音 15:22-32;約翰福音 19:18",
+      "parallels": ["太27", "可15", "約19"],
+      "hook": "兵丁把耶穌釘上十字架,在他衣服上拈鬮。眼前是嘲笑、是釘痕、是不公的死刑。受刑的人通常咒罵。耶穌開口的第一句,卻是為加害者向天父求情。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "到了髑髏地,他們把耶穌釘在十字架上,左右各釘一個犯人。兵丁拈鬮分他的衣服。" },
+        { "who": "jesus", "text": "父阿!赦免他們;因為他們所做的,他們不曉得。", "key": true }
+      ]
+    },
+    "太28": {
+      "era": "gospels", "type": "對話", "city": null,
+      "title": "空墳與大使命",
+      "quote": "我就常與你們同在,直到世界的末了。",
+      "ref": "馬太福音 28:6,18-20;馬可福音 16:6,15;路加福音 24:6",
+      "parallels": ["可16", "路24"],
+      "hook": "七日的頭一日清晨,幾個婦女帶著香膏來到墳墓,要膏耶穌的身體。卻見石頭已經滾開,墳墓是空的。死亡,真的是故事的結局嗎?",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "angel": { "name": "天使", "faction": "folk", "avatar": { "skin": "#f0e8d8", "hair": "#e8e0d0", "robe": "#f0e8d8" } }
+      },
+      "script": [
+        { "who": "angel", "text": "他不在這裡,照他所說的,已經復活了。" },
+        { "who": "旁白", "text": "婦女又驚又喜跑去報信。十一個門徒上了加利利的山,耶穌向他們顯現——" },
+        { "who": "jesus", "text": "天上地下所有的權柄都賜給我了。" },
+        { "who": "jesus", "text": "所以,你們要去,使萬民作我的門徒,奉父、子、聖靈的名給他們施洗。" },
+        { "who": "jesus", "text": "我就常與你們同在,直到世界的末了。", "key": true }
+      ]
+    },
+    "約20": {
+      "era": "gospels", "type": "對話", "city": "jerusalem",
+      "title": "多馬摸釘痕",
+      "quote": "那沒有看見就信的有福了。",
+      "ref": "約翰福音 20:27-29",
+      "hook": "多馬沒趕上復活的主顯現,放話:非親眼看見釘痕、親手探入肋旁,我總不信。八日後,門明明關著,耶穌卻站在他們當中。",
+      "cast": {
+        "jesus": { "name": "耶穌", "faction": "messiah", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#f0e8d8" } },
+        "thomas": { "name": "多馬", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#5a7a9a" } }
+      },
+      "script": [
+        { "who": "jesus", "text": "伸過你的指頭來,摸我的手;伸出你的手來,探入我的肋旁。不要疑惑,總要信。" },
+        { "who": "thomas", "text": "我的主!我的神!" },
+        { "who": "jesus", "text": "你因看見了我才信;那沒有看見就信的有福了。", "key": true }
+      ]
+    },
+    "徒2": {
+      "era": "acts", "type": "教導", "city": "jerusalem",
+      "title": "五旬節的講道",
+      "quote": "你們釘在十字架上的這位耶穌,神已經立他為主,為基督了。",
+      "ref": "使徒行傳 2:36-38",
+      "hook": "五旬節,聖靈如火降臨,門徒忽然說起各國的鄉談,滿城驚訝議論。彼得站起來高聲講道,把矛頭指向一個眾人不願面對的事實。",
+      "cast": {
+        "peter": { "name": "彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#888888", "beard": "#888888", "robe": "#7a4a3a" } }
+      },
+      "script": [
+        { "who": "peter", "text": "你們釘在十字架上的這位耶穌,神已經立他為主,為基督了。", "key": true },
+        { "who": "旁白", "text": "眾人聽了覺得扎心,就問:弟兄們,我們當怎樣行?" },
+        { "who": "peter", "text": "你們各人要悔改,奉耶穌基督的名受洗,叫你們的罪得赦。" }
+      ]
+    },
+    "徒3": {
+      "era": "acts", "type": "對話", "city": "jerusalem",
+      "title": "美門口的瘸腿者",
+      "quote": "金銀我都沒有,只把我所有的給你:我奉拿撒勒人耶穌基督的名,叫你起來行走!",
+      "ref": "使徒行傳 3:6-8",
+      "hook": "美門口有個生來瘸腿的人,天天被人抬來討飯。彼得、約翰上聖殿,他伸手求錢。彼得卻定睛看他,說沒有錢——然後給了他更想不到的東西。",
+      "cast": {
+        "peter": { "name": "彼得", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#888888", "beard": "#888888", "robe": "#7a4a3a" } }
+      },
+      "script": [
+        { "who": "peter", "text": "金銀我都沒有,只把我所有的給你:我奉拿撒勒人耶穌基督的名,叫你起來行走!", "key": true },
+        { "who": "旁白", "text": "那人的腳和踝子骨立刻健壯,就跳起來站著,又行走、跳躍、讚美神。" }
+      ]
+    },
+    "徒7": {
+      "era": "acts", "type": "禱告", "city": "jerusalem",
+      "title": "司提反殉道",
+      "quote": "主阿,不要將這罪歸於他們!",
+      "ref": "使徒行傳 7:56,59-60",
+      "hook": "司提反被誣告拉到公會,他不替自己脫罪,反而把以色列的歷史從頭講到底,句句扎心。眾人咬牙切齒,他卻定睛望天,看見了一幅景象。",
+      "cast": {
+        "stephen": { "name": "司提反", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#9a8a6a" } }
+      },
+      "script": [
+        { "who": "stephen", "text": "我看見天開了,人子站在神的右邊。" },
+        { "who": "旁白", "text": "眾人摀著耳朵,齊心擁上前,把他推到城外,用石頭打他。司提反跪下——" },
+        { "who": "stephen", "text": "主阿,不要將這罪歸於他們!", "key": true }
+      ]
+    },
+    "徒16": {
+      "era": "acts", "type": "對話", "city": "philippi",
+      "title": "腓立比獄卒",
+      "quote": "當信主耶穌,你和你一家都必得救。",
+      "ref": "使徒行傳 16:30-31",
+      "hook": "保羅、西拉因趕鬼被打、下在內監,腳上了木狗。換作別人早該哀號,他們卻在半夜唱詩讚美神。然後,地動了。",
+      "cast": {
+        "paul": { "name": "保羅", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#5a7a9a" } },
+        "jailer": { "name": "獄卒", "faction": "folk", "avatar": { "skin": "#c89868", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#6a5a4a" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "半夜地大震動,監門全開、鎖鍊鬆脫。獄卒驚醒,以為囚犯都逃了,拔刀要自盡。保羅大喊:我們都在這裡!" },
+        { "who": "jailer", "text": "二位先生,我當怎樣行才可以得救?" },
+        { "who": "paul", "text": "當信主耶穌,你和你一家都必得救。", "key": true }
+      ]
+    },
+    "徒9": {
+      "era": "acts", "type": "對話", "city": null,
+      "title": "大馬士革路上的光",
+      "quote": "掃羅!掃羅!你為甚麼逼迫我?",
+      "ref": "使徒行傳 9:3-5",
+      "hook": "掃羅一路追捕信耶穌的人,氣勢洶洶往大馬士革去,要把信徒綑綁帶回。將到城時,忽然從天上發光,四面照著他,他就仆倒在地——",
+      "cast": {
+        "jesus": { "name": "主耶穌", "faction": "messiah" },
+        "saul": { "name": "掃羅", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#8a3a3a" } }
+      },
+      "script": [
+        { "who": "jesus", "text": "掃羅!掃羅!你為甚麼逼迫我?", "key": true },
+        { "who": "saul", "text": "主阿!你是誰?" },
+        { "who": "jesus", "text": "我就是你所逼迫的耶穌。" },
+        { "who": "旁白", "text": "掃羅站起來,眼睛卻瞎了。那位他極力逼迫的耶穌,要如何翻轉這個逼迫者的一生?" }
+      ]
+    },
+    "徒17": {
+      "era": "acts", "type": "教導", "city": "athens",
+      "title": "雅典的未識之神",
+      "quote": "我們生活、動作、存留,都在乎他。",
+      "ref": "使徒行傳 17:23-28",
+      "hook": "保羅獨自在雅典等候同工,看見滿城都是偶像,心裡著急。哲士們把他帶到亞略巴古,想聽聽這新鮮的道理。他卻指著一座祭壇開口——",
+      "cast": {
+        "paul": { "name": "保羅", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#5a7a9a" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "城裡有一座壇,上面寫著「未識之神」。保羅說:你們不認識卻敬拜的那位,我要告訴你們——" },
+        { "who": "paul", "text": "創造宇宙和其中萬物的神,既是天地的主,就不住人手所造的殿。" },
+        { "who": "paul", "text": "我們生活、動作、存留,都在乎他。", "key": true }
+      ]
     }
   }
 }

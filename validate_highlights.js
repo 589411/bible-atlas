@@ -32,7 +32,10 @@ for (const [key, h] of Object.entries(H.highlights)) {
   for (const [ck, c] of Object.entries(h.cast || {})) {
     if (!c.name) fail(`cast.${ck} 缺 name`);
     if (!FACTIONS.has(c.faction)) fail(`cast.${ck} faction「${c.faction}」不合法`);
-    if (!c.avatar || !c.avatar.skin || !c.avatar.robe) fail(`cast.${ck} avatar 不完整`);
+    // messiah 可無頭像(從天上來的聲音);其餘必須有完整頭像
+    if (c.faction !== 'messiah' || c.avatar) {
+      if (!c.avatar || !c.avatar.skin || !c.avatar.robe) fail(`cast.${ck} avatar 不完整`);
+    }
   }
   if (!Array.isArray(h.script) || !h.script.length) fail('script 缺或空');
   let keyCount = 0;
