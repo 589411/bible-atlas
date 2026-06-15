@@ -5,7 +5,7 @@
   "intro": "聖靈降臨,福音從耶路撒冷衝破帝國邊界直抵羅馬。",
   "territory": [ { "faction": "empire", "rect": [0, 0, 43, 23] } ],
   "routes": [ { "name": "保羅宣教(綜合)", "color": "#e8c574", "points": ["jerusalem", "antioch", "salamis", "tarsus", "ephesus", "philippi", "athens", "corinth", "rome"] } ],
-  "cities": ["jerusalem", "antioch", "salamis", "ephesus", "philippi", "athens", "corinth", "rome"],
+  "cities": ["jerusalem", "antioch", "ephesus", "philippi", "athens", "corinth", "rome", "damascus"],
   "capitals": ["rome"],
   "people": [
     { "name": "保羅", "tag": "外邦使徒", "tagClass": "other", "desc": "大數人,原名掃羅(非掃羅王),外邦人的使徒", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#5a7a9a" } },

@@ -27,6 +27,7 @@
     "antioch":     { "name": "安提阿",   "c": 33, "r": 7 },
     "salamis":     { "name": "撒拉米(居比路)", "c": 29, "r": 12 },
     "caesarea":    { "name": "該撒利亞", "c": 34, "r": 12 },
-    "jerusalem":   { "name": "耶路撒冷", "c": 35, "r": 14 }
+    "jerusalem":   { "name": "耶路撒冷", "c": 35, "r": 14 },
+    "damascus":    { "name": "大馬士革", "c": 37, "r": 10 }
   }
 }

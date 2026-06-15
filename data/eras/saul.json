@@ -9,7 +9,7 @@
   "territory": [
     { "faction": "united", "rect": [6, 10, 17, 26] }
   ],
-  "cities": ["gibeah", "mizpah", "shiloh", "bethlehem", "elah", "gilboa"],
+  "cities": ["gibeah", "mizpah", "shiloh", "bethlehem", "elah", "gilboa", "engedi"],
   "capitals": ["gibeah"],
   "people": [
     { "name": "撒母耳", "tag": "先知", "tagClass": "prophet", "desc": "最後一位士師,膏立掃羅與大衛", "avatar": { "skin": "#d8a878", "hair": "#cccccc", "beard": "#cccccc", "robe": "#5a7a9a" } },

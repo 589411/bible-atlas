@@ -63,7 +63,7 @@
       ]
     },
     "王上17": {
-      "era": "divided", "type": "人物", "city": null,
+      "era": "divided", "type": "人物", "city": "zarephath",
       "title": "寡婦最後一把麵",
       "quote": "罈內的麵必不減少,瓶裡的油必不缺短,直到耶和華使雨降在地上的日子。",
       "ref": "列王紀上 17:12-14",
@@ -109,7 +109,7 @@
       ]
     },
     "王下6": {
-      "era": "divided", "type": "教導", "city": null,
+      "era": "divided", "type": "教導", "city": "dothan",
       "title": "滿山的火車火馬",
       "quote": "不要懼怕!與我們同在的比與他們同在的更多。",
       "ref": "列王紀下 6:15-16",
@@ -256,7 +256,7 @@
       ]
     },
     "太8": {
-      "era": "gospels", "type": "對話", "city": null,
+      "era": "gospels", "type": "對話", "city": "galilee",
       "title": "平靜風浪",
       "quote": "你們這小信的人哪,為甚麼膽怯呢?",
       "ref": "馬太福音 8:25-27;馬可福音 4:38-41;路加福音 8:24-25",
@@ -307,7 +307,7 @@
       ]
     },
     "約11": {
-      "era": "gospels", "type": "對話", "city": null,
+      "era": "gospels", "type": "對話", "city": "bethany",
       "title": "復活在我",
       "quote": "復活在我,生命也在我。信我的人雖然死了,也必復活。",
       "ref": "約翰福音 11:21-26",
@@ -338,7 +338,7 @@
       ]
     },
     "太28": {
-      "era": "gospels", "type": "對話", "city": null,
+      "era": "gospels", "type": "對話", "city": "jerusalem",
       "title": "空墳與大使命",
       "quote": "我就常與你們同在,直到世界的末了。",
       "ref": "馬太福音 28:6,18-20;馬可福音 16:6,15;路加福音 24:6",
@@ -433,7 +433,7 @@
       ]
     },
     "徒9": {
-      "era": "acts", "type": "對話", "city": null,
+      "era": "acts", "type": "對話", "city": "damascus",
       "title": "大馬士革路上的光",
       "quote": "掃羅!掃羅!你為甚麼逼迫我?",
       "ref": "使徒行傳 9:3-5",
@@ -508,7 +508,7 @@
       ]
     },
     "撒上24": {
-      "era": "saul", "type": "人物", "city": null,
+      "era": "saul", "type": "人物", "city": "engedi",
       "title": "大衛饒了掃羅",
       "quote": "我在耶和華面前萬不敢伸手害他,因他是耶和華的受膏者。",
       "ref": "撒母耳記上 24:6,16",
@@ -552,7 +552,7 @@
       ]
     },
     "王上3": {
-      "era": "solomon", "type": "教導", "city": null,
+      "era": "solomon", "type": "教導", "city": "gibeon",
       "title": "所羅門求智慧",
       "quote": "求你賜我智慧,可以判斷你的民,能辨別是非。",
       "ref": "列王紀上 3:5,9",
@@ -670,7 +670,7 @@
       ]
     },
     "創28": {
-      "era": "patriarchs", "type": "對話", "city": null,
+      "era": "patriarchs", "type": "對話", "city": "bethel",
       "title": "雅各的天梯",
       "quote": "耶和華真在這裡,我竟不知道!",
       "ref": "創世記 28:13-16",
@@ -725,7 +725,7 @@
       ]
     },
     "書1": {
-      "era": "conquest", "type": "教導", "city": null,
+      "era": "conquest", "type": "教導", "city": "jericho",
       "title": "剛強壯膽",
       "quote": "你當剛強壯膽!不要懼怕,也不要驚惶。",
       "ref": "約書亞記 1:9",
@@ -750,7 +750,7 @@
       ]
     },
     "士6": {
-      "era": "judges", "type": "對話", "city": null,
+      "era": "judges", "type": "對話", "city": "ophrah",
       "title": "基甸蒙召",
       "quote": "大能的勇士啊,耶和華與你同在!",
       "ref": "士師記 6:12,15-16",

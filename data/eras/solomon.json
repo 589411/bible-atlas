@@ -9,7 +9,7 @@
   "territory": [
     { "faction": "united", "rect": [5, 1, 25, 28] }
   ],
-  "cities": ["jerusalem", "megiddo", "hazor", "dan", "beersheba"],
+  "cities": ["jerusalem", "megiddo", "hazor", "dan", "beersheba", "gibeon"],
   "capitals": ["jerusalem"],
   "people": [
     { "name": "所羅門", "tag": "統一王國", "tagClass": "united", "desc": "以智慧著稱,建造耶路撒冷聖殿", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#c9a24b", "crown": true } },

@@ -33,6 +33,7 @@
     "shechem":   { "name": "示劍",     "c": 8,  "r": 12 },
     "jerusalem": { "name": "耶路撒冷", "c": 8,  "r": 15 },
     "hebron":    { "name": "希伯崙",   "c": 8,  "r": 17 },
-    "goshen":    { "name": "歌珊(埃及)", "c": 4, "r": 20 }
+    "goshen":    { "name": "歌珊(埃及)", "c": 4, "r": 20 },
+    "bethel":    { "name": "伯特利",   "c": 8,  "r": 14 }
   }
 }
