@@ -196,6 +196,57 @@
     background:#1d2a3a; border:1px solid #3f5a78; color:#a8c8e8;}
   .books-note{font-size:12px; color:var(--dim); margin-top:8px;}
 
+  /* 關鍵時刻清單 */
+  .moments{display:flex; flex-direction:column; gap:8px;}
+  .moment-btn{
+    text-align:left; background:var(--panel2); color:var(--text);
+    border:1px solid #4a3a5c; padding:8px 10px; cursor:pointer;
+    font-size:13.5px; font-family:inherit; line-height:1.5;
+  }
+  .moment-btn:hover{border-color:var(--gold); color:var(--gold-bright);}
+  .moment-btn:focus-visible{outline:2px solid var(--gold-bright); outline-offset:2px;}
+  .moment-btn b{font-size:14px; letter-spacing:1px;}
+  .moment-btn .mtype{display:inline-block; font-size:11px; margin-left:6px;
+    padding:0 6px; border:1px solid var(--gold); color:var(--gold-bright);}
+  .moment-btn .mref{display:block; color:var(--dim); font-size:12px; margin-top:3px;}
+
+  /* RPG 場景播放器 */
+  .scene-overlay{position:fixed; inset:0; background:rgba(8,6,12,.82);
+    display:flex; align-items:flex-end; justify-content:center; z-index:50; padding:16px;}
+  .scene-overlay[hidden]{display:none;}
+  .scene-box{width:100%; max-width:680px; background:#11202e;
+    border:3px solid var(--gold); box-shadow:6px 6px 0 #0d0a12; position:relative;
+    padding:18px 18px 14px;}
+  .scene-box::before{content:"▼ 關鍵時刻"; position:absolute; top:-14px; left:14px;
+    background:var(--gold); color:#181320; font-size:11px; padding:1px 8px; letter-spacing:2px;}
+  .scene-box.voice{border-color:var(--gold-bright);
+    box-shadow:0 0 0 2px rgba(232,197,116,.25), 6px 6px 0 #0d0a12;}
+  .scene-head{display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin-bottom:10px;}
+  .scene-title{font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
+    font-size:15px; color:var(--gold-bright); letter-spacing:1px;}
+  .scene-ref{font-size:12px; color:var(--gold-bright); white-space:nowrap;}
+  .scene-body{display:flex; gap:14px; align-items:flex-start; min-height:96px;}
+  .scene-portrait{flex:0 0 84px; width:84px; height:84px; image-rendering:pixelated;
+    border:2px solid #181320; background:#181320;}
+  .scene-portrait[hidden]{display:none;}
+  .scene-lines{flex:1; min-width:0;}
+  .scene-name{font-size:14px; letter-spacing:1px; margin-bottom:5px; font-weight:bold; min-height:18px;}
+  .scene-text{font-family:"DotGothic16","Microsoft JhengHei",sans-serif;
+    font-size:15px; line-height:1.85; color:#cfe3f0; min-height:54px;}
+  .scene-text.key{color:var(--gold-bright);}
+  .scene-text.narrator{color:#b8c6d2; font-style:italic;}
+  .scene-text.voice{color:var(--gold-bright);}
+  .scene-foot{display:flex; justify-content:space-between; align-items:center; margin-top:12px;}
+  .scene-dots{display:flex; gap:5px;}
+  .scene-dots i{width:7px; height:7px; background:#3f5a78; display:block;}
+  .scene-dots i.on{background:var(--gold-bright);}
+  .scene-actions{display:flex; gap:8px;}
+  .scene-actions button{background:var(--panel2); color:var(--gold-bright);
+    border:2px solid #3f5a78; padding:5px 12px; cursor:pointer;
+    font-family:inherit; font-size:13px; letter-spacing:1px;}
+  .scene-actions button:hover{border-color:var(--gold);}
+  .scene-actions button:focus-visible{outline:2px solid var(--gold-bright); outline-offset:2px;}
+
   .error-box{max-width:600px; margin:40px auto; padding:20px;
     border:2px solid var(--empire); background:var(--panel); font-size:14px;}
 
@@ -240,10 +291,36 @@
       <div class="era-years" id="eraYears"></div>
       <div class="era-desc" id="eraDesc"></div>
     </div>
+    <div class="card"><h2>關鍵時刻(點擊重現)</h2><div class="moments" id="moments"></div>
+      <div class="books-note">※ 取本章一個值得停下來的時刻;不是每章都有。</div>
+    </div>
     <div class="card"><h2>人物</h2><div class="people" id="people"></div></div>
     <div class="card"><h2>大事記(點擊定位)</h2><div class="events" id="events"></div></div>
     <div class="card"><h2>相關書卷</h2><div class="books" id="books"></div>
       <div class="books-note">※ 同一段歷史常由不同書卷平行記載,視角不同、重點不同。</div>
+    </div>
+  </div>
+</div>
+
+<div class="scene-overlay" id="sceneOverlay" hidden role="dialog" aria-modal="true" aria-label="關鍵時刻對話">
+  <div class="scene-box" id="sceneBox">
+    <div class="scene-head">
+      <span class="scene-title" id="sceneTitle"></span>
+      <span class="scene-ref" id="sceneRef"></span>
+    </div>
+    <div class="scene-body">
+      <canvas class="scene-portrait" id="scenePortrait" width="16" height="16" aria-hidden="true"></canvas>
+      <div class="scene-lines">
+        <div class="scene-name" id="sceneName"></div>
+        <div class="scene-text" id="sceneText" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="scene-foot">
+      <div class="scene-dots" id="sceneDots" aria-hidden="true"></div>
+      <div class="scene-actions">
+        <button type="button" id="sceneNext">▶ 繼續</button>
+        <button type="button" id="sceneClose">✕ 關閉</button>
+      </div>
     </div>
   </div>
 </div>
@@ -342,17 +419,28 @@ async function boot(){
     try{ state.bookEras=await loadJSON(DATA_BASE+'book_eras.json'); }
     catch(e){ state.bookEras=null; }
 
+    try{ const hi=await loadJSON(DATA_BASE+'highlights.json'); state.highlights=hi.highlights||{}; }
+    catch(e){ state.highlights={}; }
+
     document.getElementById('layout').hidden=false;
 
     // 深連結:?era=id、#era=id 或 ?ref=代下12(經文參照自動定位時代)
     const qp=new URLSearchParams(location.search);
     const hashEra=(location.hash.match(/era=([a-z_]+)/)||[])[1];
+    const refStr=qp.get('ref');
     let target=state.eras[qp.get('era')]||state.eras[hashEra]||null;
-    if(!target&&qp.get('ref')){
-      const id=resolveRef(qp.get('ref'));
+    if(!target&&refStr){
+      const id=resolveRef(refStr);
       if(id)target=state.eras[id];
     }
     setEra(target||state.eras[state.manifest.defaultEra]||eras[0]);
+
+    // 從 daily-bread 帶章節過來時(?ref=代下20),若該章有關鍵時刻,自動演出
+    if(refStr){
+      const hk=resolveHlKey(refStr);
+      const h=hk&&state.highlights&&state.highlights[hk];
+      if(h){ if(state.eras[h.era])setEra(state.eras[h.era]); openScene(h); }
+    }
 
     document.getElementById('prevEra').onclick=()=>stepEra(-1);
     document.getElementById('nextEra').onclick=()=>stepEra(1);
@@ -399,6 +487,20 @@ function resolveRef(str){
   const ch=m?parseInt(m[0],10):1;
   const rule=(be.books[key]||[]).find(r=>(r.from??1)<=ch&&ch<=(r.to??999));
   return rule?rule.era:null;
+}
+
+/* 解析經文參照 → highlights 的 key(縮寫+章,例:代下20)。與 daily-bread 的 ?ref 同格式 */
+function resolveHlKey(str){
+  if(!state.bookEras||!str)return null;
+  str=String(str).trim();
+  const be=state.bookEras;
+  const names=Object.keys(be.books).concat(Object.keys(be.aliases))
+    .sort((a,b)=>b.length-a.length);
+  const name=names.find(n=>str.startsWith(n));
+  if(!name)return null;
+  const key=be.books[name]?name:be.aliases[name];
+  const m=str.slice(name.length).match(/\d+/);
+  return key+(m?parseInt(m[0],10):1);
 }
 
 /* 今日讀經徽章:跨域讀取 daily-bread 的每日進度,定位到所屬時代 */
@@ -685,7 +787,86 @@ function renderPanel(){
     const s=document.createElement('span'); s.className='book'; s.textContent=b;
     bk.appendChild(s);
   });
+
+  renderHighlights();
 }
+
+/* ═══════════ 關鍵時刻 RPG 對話 ═══════════ */
+const SPEAKER_COLOR={prophet:'#8fc3e8',south:'#d9a441',north:'#3fa7a0',empire:'#b04a4a',folk:'#e0c08a'};
+let scene=null, sceneTimer=null;
+
+function renderHighlights(){
+  const box=document.getElementById('moments'); if(!box) return;
+  box.innerHTML='';
+  const items=Object.entries(state.highlights||{}).filter(([k,h])=>h.era===state.current.id);
+  const card=box.closest('.card'); if(card) card.hidden=(items.length===0);
+  items.forEach(([key,h])=>{
+    const btn=document.createElement('button'); btn.className='moment-btn';
+    const b=document.createElement('b'); b.textContent=h.title||key;
+    const t=document.createElement('span'); t.className='mtype'; t.textContent=h.type||'';
+    const r=document.createElement('span'); r.className='mref'; r.textContent='📖 '+h.ref;
+    btn.append(b,t,r);
+    btn.onclick=()=>openScene(h);
+    box.appendChild(btn);
+  });
+}
+
+function openScene(h){
+  const seq=[{who:'旁白',text:h.hook}].concat(h.script||[]);
+  scene={h,seq,i:-1};
+  const map=state.maps[state.current.mapId];
+  if(h.city && map && map.cities[h.city]){ state.highlight=h.city; drawMap(); }
+  document.getElementById('sceneTitle').textContent=h.title||'';
+  document.getElementById('sceneRef').textContent='📖 '+h.ref;
+  document.getElementById('sceneOverlay').hidden=false;
+  sceneAdvance();
+  document.getElementById('sceneNext').focus();
+}
+
+function renderDots(){
+  const d=document.getElementById('sceneDots'); d.innerHTML='';
+  scene.seq.forEach((_,idx)=>{const i=document.createElement('i');
+    if(idx<=scene.i)i.className='on'; d.appendChild(i);});
+}
+
+function sceneAdvance(){
+  if(!scene) return;
+  if(scene.i>=scene.seq.length-1){ closeScene(); return; }
+  scene.i++;
+  const line=scene.seq[scene.i], h=scene.h;
+  const box=document.getElementById('sceneBox');
+  const port=document.getElementById('scenePortrait');
+  const nameEl=document.getElementById('sceneName');
+  const textEl=document.getElementById('sceneText');
+  box.classList.remove('voice'); textEl.className='scene-text'; nameEl.style.color='';
+  if(line.who==='旁白'){
+    port.hidden=true; nameEl.textContent=''; textEl.classList.add('narrator');
+  } else if(line.who==='耶和華'){
+    port.hidden=true; nameEl.textContent='耶和華'; nameEl.style.color='var(--gold-bright)';
+    box.classList.add('voice'); textEl.classList.add('voice');
+  } else {
+    const actor=(h.cast||{})[line.who]||{name:line.who};
+    port.hidden=false; if(actor.avatar) drawAvatar(port,actor.avatar);
+    nameEl.textContent=actor.name||line.who;
+    nameEl.style.color=SPEAKER_COLOR[actor.faction]||'var(--text)';
+  }
+  if(line.key) textEl.classList.add('key');
+  renderDots();
+  document.getElementById('sceneNext').textContent=
+    (scene.i>=scene.seq.length-1)?'✓ 完成':'▶ 繼續';
+  typeInto(textEl,line.text);
+}
+
+function typeInto(el,text){
+  clearInterval(sceneTimer); el.innerHTML='';
+  if(reduceMotion){ el.textContent=text; return; }
+  const span=document.createElement('span'); el.appendChild(span);
+  let i=0; sceneTimer=setInterval(()=>{ span.textContent=text.slice(0,++i);
+    if(i>=text.length) clearInterval(sceneTimer); },24);
+}
+
+function closeScene(){ clearInterval(sceneTimer); scene=null;
+  document.getElementById('sceneOverlay').hidden=true; }
 
 function typewrite(text,ref){
   const d=document.getElementById('dialog');
@@ -700,6 +881,18 @@ function typewrite(text,ref){
     if(i>=text.length){clearInterval(typeTimer); addRef();}
   },28);
 }
+
+document.getElementById('sceneNext').onclick=sceneAdvance;
+document.getElementById('sceneClose').onclick=closeScene;
+document.getElementById('sceneBox').addEventListener('click',e=>{
+  if(e.target.closest('.scene-actions')) return; sceneAdvance(); });
+document.getElementById('sceneOverlay').addEventListener('click',e=>{
+  if(e.target.id==='sceneOverlay') closeScene(); });
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('sceneOverlay').hidden) return;
+  if(e.key==='Escape') closeScene();
+  else if(e.key==='Enter'||e.key===' '){ e.preventDefault(); sceneAdvance(); }
+});
 
 boot();
 

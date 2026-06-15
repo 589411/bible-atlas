@@ -1,0 +1,184 @@
+{
+  "_comment": "章節導讀／關鍵時刻(RPG 對話)。key = daily-bread 書卷縮寫 + 章號(同 book_eras 規則,最長匹配優先)。欄位:era(時代 id)、type(對話/教導/禱告/人物)、city(選配;只能用該時代地圖既有 city key,無對應填 null)、title(場景標題)、quote(金句;和合本 CUV 原文,逐字核對)、ref(出處;半形標點,平行記載以 ; 並列)、hook(導讀旁白;鋪張力、不爆雷)、cast(出場人物;key→{name,faction,avatar})、script(對話腳本;每行 {who,text,key?})。who 可為 cast 的 key、或保留字「旁白」(無頭像敘述)、「耶和華」(無頭像金色聲音框,不以像素人像描繪神)。faction 用於名牌顏色:prophet/south/north/empire/folk。avatar 沿用 era people 的像素頭像格式 {skin,hair,beard,robe,crown}。規範:quote ≤ 60、hook 40–90、script 每行 text ≤ 80、半形標點、繁體字。",
+  "highlights": {
+    "代下15": {
+      "era": "divided", "type": "教導", "city": "jerusalem",
+      "title": "先知攔住凱旋的王",
+      "quote": "你們若尋求他,就必尋見;你們若離棄他,他必離棄你們。",
+      "ref": "歷代志下 15:2,7",
+      "hook": "亞撒剛以寡敵眾打了勝仗,凱旋途中卻被一位先知攔下。對方只給一句條件句:神與你的遠近,全看你往哪裡走。這位王聽得進去嗎?",
+      "cast": {
+        "azariah": { "name": "先知亞撒利雅", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#aaaaaa", "beard": "#aaaaaa", "robe": "#5a7a9a" } },
+        "asa": { "name": "亞撒王", "faction": "south", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } }
+      },
+      "script": [
+        { "who": "azariah", "text": "亞撒和猶大、便雅憫眾人哪,要聽我說:" },
+        { "who": "azariah", "text": "你們若尋求他,就必尋見;你們若離棄他,他必離棄你們。", "key": true },
+        { "who": "azariah", "text": "現在你們要剛強,不要手軟,因你們所行的必得賞賜。" }
+      ]
+    },
+    "代下20": {
+      "era": "divided", "type": "禱告", "city": "jerusalem",
+      "title": "大軍壓境前的禱告",
+      "quote": "我們也不知道怎樣行,我們的眼目單仰望你。",
+      "ref": "歷代志下 20:12,15",
+      "hook": "大軍壓境,猶大王不點兵也不結盟,反而把全國老小帶到聖殿前。他坦承自己毫無辦法,只把結局交了出去。這一仗,究竟該怎麼打?",
+      "cast": {
+        "jehoshaphat": { "name": "約沙法王", "faction": "south", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#d9a441", "crown": true } }
+      },
+      "script": [
+        { "who": "jehoshaphat", "text": "我們的神啊,我們無力抵擋這來攻擊我們的大軍。" },
+        { "who": "jehoshaphat", "text": "我們也不知道怎樣行,我們的眼目單仰望你。", "key": true },
+        { "who": "耶和華", "text": "不要因這大軍恐懼驚惶,因為勝敗不在乎你們,乃在乎神。" }
+      ]
+    },
+    "王上18": {
+      "era": "divided", "type": "對話", "city": "carmel",
+      "title": "迦密山上的攤牌",
+      "quote": "你們心持兩意要到幾時呢?若耶和華是神,就當順從耶和華;若巴力是神,就當順從巴力。",
+      "ref": "列王紀上 18:21",
+      "hook": "全國在巴力與耶和華之間搖擺已久。以利亞獨自面對四百五十名先知,把選擇權丟回群眾:腳踏兩條船的日子,還要過多久?山上即將見真章。",
+      "cast": {
+        "elijah": { "name": "先知以利亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
+      },
+      "script": [
+        { "who": "elijah", "text": "你們心持兩意要到幾時呢?", "key": true },
+        { "who": "elijah", "text": "若耶和華是神,就當順從耶和華;若巴力是神,就當順從巴力。" },
+        { "who": "旁白", "text": "眾民一言不答。" }
+      ]
+    },
+    "王上19": {
+      "era": "divided", "type": "對話", "city": null,
+      "title": "火後的微小聲音",
+      "quote": "以利亞啊,你在這裡做甚麼?",
+      "ref": "列王紀上 19:10-13",
+      "hook": "剛在迦密山大獲全勝的先知,轉眼逃進曠野,躲進山洞,只求一死。神要怎麼面對一個心力交瘁、想放棄的人?",
+      "cast": {
+        "elijah": { "name": "先知以利亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } }
+      },
+      "script": [
+        { "who": "elijah", "text": "我為耶和華萬軍之神大發熱心;只剩下我一個人,他們還要尋索我的命。" },
+        { "who": "旁白", "text": "烈風、地震、烈火接連經過,耶和華都不在其中。火後,有微小的聲音——" },
+        { "who": "耶和華", "text": "以利亞啊,你在這裡做甚麼?", "key": true }
+      ]
+    },
+    "王上17": {
+      "era": "divided", "type": "人物", "city": null,
+      "title": "寡婦最後一把麵",
+      "quote": "罈內的麵必不減少,瓶裡的油必不缺短,直到耶和華使雨降在地上的日子。",
+      "ref": "列王紀上 17:12-14",
+      "hook": "大饑荒中,一個外邦寡婦正打算用最後一把麵,為自己和兒子做最後一餐等死。先知卻先向她要餅。她若先給出去,還會剩下什麼?",
+      "cast": {
+        "elijah": { "name": "先知以利亞", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#888888", "beard": "#888888", "robe": "#5a7a9a" } },
+        "widow": { "name": "撒勒法寡婦", "faction": "folk", "avatar": { "skin": "#e0b890", "hair": "#3a2a1a", "robe": "#9a7a4a" } }
+      },
+      "script": [
+        { "who": "widow", "text": "我罈內只有一把麵,瓶裡只有一點油;做好了我們吃了,死就死罷!" },
+        { "who": "elijah", "text": "不要懼怕!只要先為我做一個小餅拿來給我,然後為你和你的兒子做。" },
+        { "who": "elijah", "text": "罈內的麵必不減少,瓶裡的油必不缺短,直到耶和華使雨降在地上的日子。", "key": true }
+      ]
+    },
+    "王上21": {
+      "era": "divided", "type": "人物", "city": "samaria",
+      "title": "拿伯不賣的葡萄園",
+      "quote": "我敬畏耶和華,萬不敢將我先人留下的產業給你。",
+      "ref": "列王紀上 21:2-3",
+      "hook": "王看上一座葡萄園,出價也算公道,卻被園主一句話頂了回來:有些產業不是錢的問題。拿伯守住了祖業與底線——而這座王宮,並不習慣聽見一個不字。",
+      "cast": {
+        "ahab": { "name": "亞哈王", "faction": "north", "avatar": { "skin": "#c89868", "hair": "#1a0a0a", "beard": "#1a0a0a", "robe": "#3fa7a0", "crown": true } },
+        "naboth": { "name": "拿伯", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#7a8a5a" } }
+      },
+      "script": [
+        { "who": "ahab", "text": "你將葡萄園給我作菜園罷,我用更好的換給你,或是給你價銀。" },
+        { "who": "naboth", "text": "我敬畏耶和華,萬不敢將我先人留下的產業給你。", "key": true }
+      ]
+    },
+    "王下5": {
+      "era": "divided", "type": "對話", "city": "samaria",
+      "title": "小女僕指出的活路",
+      "quote": "巴不得我主人去見撒瑪利亞的先知,必能治好他的大痲瘋。",
+      "ref": "列王紀下 5:3",
+      "hook": "亞蘭元帥戰功彪炳,卻染上痲瘋。指出活路的,竟是他擄來的一個以色列小女僕。一句越過敵我界線的話,把大將軍引向一條他絕不願走的路。他肯走嗎?",
+      "cast": {
+        "naaman": { "name": "亞蘭元帥乃縵", "faction": "empire", "avatar": { "skin": "#c99060", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#b04a4a" } },
+        "maid": { "name": "以色列小女子", "faction": "folk", "avatar": { "skin": "#e8c098", "hair": "#5a3a1a", "robe": "#b08850" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "亞蘭元帥乃縵戰功彪炳,卻長了大痲瘋。家中有個從以色列擄來的小女子。" },
+        { "who": "maid", "text": "巴不得我主人去見撒瑪利亞的先知,必能治好他的大痲瘋。", "key": true }
+      ]
+    },
+    "王下6": {
+      "era": "divided", "type": "教導", "city": null,
+      "title": "滿山的火車火馬",
+      "quote": "不要懼怕!與我們同在的比與他們同在的更多。",
+      "ref": "列王紀下 6:15-16",
+      "hook": "清晨醒來,僕人看見敵軍車馬把全城團團圍住,嚇得手足無措。先知卻說了一句完全不合眼前情勢的話,然後為他求一件事:讓他看見另一個現場。",
+      "cast": {
+        "elisha": { "name": "先知以利沙", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#5a4a2a", "beard": "#5a4a2a", "robe": "#5a7a9a" } },
+        "servant": { "name": "以利沙的僕人", "faction": "folk", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#8a7a5a" } }
+      },
+      "script": [
+        { "who": "servant", "text": "哀哉!我主啊,我們怎樣行才好呢?" },
+        { "who": "elisha", "text": "不要懼怕!與我們同在的比與他們同在的更多。", "key": true }
+      ]
+    },
+    "摩5": {
+      "era": "divided", "type": "教導", "city": "bethel",
+      "title": "神要的不是祭物",
+      "quote": "惟願公平如大水滾滾,使公義如江河滔滔。",
+      "ref": "阿摩司書 5:21,24",
+      "hook": "節期照辦、獻祭照舊,北國表面一片虔誠。先知卻說神厭惡這些聚會。問題不在敬拜的形式,而在祭壇外那些被踐踏的窮人。神真正要的,究竟是什麼?",
+      "cast": {
+        "amos": { "name": "先知阿摩司", "faction": "prophet", "avatar": { "skin": "#cda06e", "hair": "#6a4a2a", "beard": "#6a4a2a", "robe": "#7a6a4a" } }
+      },
+      "script": [
+        { "who": "amos", "text": "我厭惡你們的節期,也不喜悅你們的嚴肅會。" },
+        { "who": "amos", "text": "惟願公平如大水滾滾,使公義如江河滔滔。", "key": true }
+      ]
+    },
+    "何11": {
+      "era": "divided", "type": "人物", "city": null,
+      "title": "下不了手的父親",
+      "quote": "以法蓮哪,我怎能捨棄你?以色列啊,我怎能棄絕你?",
+      "ref": "何西阿書 11:8",
+      "hook": "北國背約拜偶像,審判本該毫無懸念。但先知筆下的神,卻像一個面對叛逆孩子下不了手的父親。公義與慈愛在祂心裡拉扯——這一章讓你看見神的為難。",
+      "cast": {},
+      "script": [
+        { "who": "旁白", "text": "北國背約、拜偶像,審判本該毫無懸念。但神開口了——" },
+        { "who": "耶和華", "text": "以法蓮哪,我怎能捨棄你?以色列啊,我怎能棄絕你?", "key": true },
+        { "who": "耶和華", "text": "我回心轉意,我的憐愛大大發動。" }
+      ]
+    },
+    "拿2": {
+      "era": "divided", "type": "禱告", "city": null,
+      "title": "海底最深處的禱告",
+      "quote": "我遭遇患難求告耶和華,你就應允我。",
+      "ref": "約拿書 2:2,9",
+      "hook": "一個抗命潛逃的先知,被大魚吞下,沉到海的最深處。就在生命的最底部,他開口禱告。人跌到最低點時,還能向誰呼求?",
+      "cast": {
+        "jonah": { "name": "先知約拿", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#6a8a6a" } }
+      },
+      "script": [
+        { "who": "旁白", "text": "抗命潛逃的約拿被大魚吞下,沉到海的最深處。就在生命最底部,他開口——" },
+        { "who": "jonah", "text": "我遭遇患難求告耶和華,你就應允我。", "key": true },
+        { "who": "jonah", "text": "救恩出於耶和華。" }
+      ]
+    },
+    "拿4": {
+      "era": "divided", "type": "對話", "city": null,
+      "title": "一棵蓖麻與一個問題",
+      "quote": "你這樣發怒合乎理嗎?",
+      "ref": "約拿書 4:4,11",
+      "hook": "尼尼微全城悔改,先知非但不喜,反而氣到求死。神安排一棵蓖麻又使它枯乾,然後只問了一個問題。這本書沒有給答案,而是把問題留給了你。",
+      "cast": {
+        "jonah": { "name": "先知約拿", "faction": "prophet", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "beard": "#3a2a1a", "robe": "#6a8a6a" } }
+      },
+      "script": [
+        { "who": "耶和華", "text": "你這樣發怒合乎理嗎?", "key": true },
+        { "who": "jonah", "text": "我發怒以至於死,都合乎理!" },
+        { "who": "耶和華", "text": "這蓖麻你尚且愛惜;何況這尼尼微大城呢?" }
+      ]
+    }
+  }
+}
