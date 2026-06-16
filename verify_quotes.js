@@ -22,8 +22,12 @@ const FULLS = Object.keys(FULL).sort((a,b)=>b.length-a.length);
 
 const args = process.argv.slice(2);
 const NO_FETCH = args.includes('--no-fetch');
-const onlyArg = (args.find(a=>a.startsWith('--only'))||'').split('=')[1] || (args[args.indexOf('--only')+1]||'');
-const ONLY = onlyArg ? new Set(onlyArg.split(',').map(s=>s.trim())) : null;
+// 只在明確給 --only 時才啟用(避免 zsh 把行尾 # 註解當參數而誤關全部檢查)
+let ONLY = null;
+const _eq = args.find(a => a.startsWith('--only='));
+const _oi = args.indexOf('--only');
+const _onlyArg = _eq ? _eq.split('=')[1] : (_oi >= 0 ? (args[_oi+1] || '') : '');
+if (_onlyArg) ONLY = new Set(_onlyArg.split(',').map(s => s.trim()));
 
 // 異體字正規化(兩邊都套):和合本與我方用字差異不算錯
 // 和合本慣用字 → 正規化(兩邊都套):啊/阿、哪/那、裡/裏 等差異不算錯
