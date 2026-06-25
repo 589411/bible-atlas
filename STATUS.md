@@ -20,14 +20,13 @@
 （以上動到 engine/maps/eras 等架構區,皆於本次對話取得 Joseph 明確授權。）
 
 ## 卡在哪
-無。已視覺驗證:`?ref=加3`→落到「保羅書信」、地名聚焦、戰報播加拉太書導讀、大事記 5 筆、時代列顯示 3 段新約。`node scripts/validate.js` 通過（18 時代）。
+無。已 commit + push 到 main（`f5871f4`,2026-06-26）,atlas.launchdock.app 自動部署中。
+已視覺驗證:`?ref=加3`→落到「保羅書信」、地名聚焦、戰報播加拉太書導讀、大事記 5 筆、時代列顯示 3 段新約。`node scripts/validate.js` 通過（18 時代）。
 
 ## 下一個具體動作
-1. **等 Joseph 確認後 commit & push**（觸發 atlas.launchdock.app 部署,故未擅自推）。
-   未提交:engine/index.html、sw.js、data/maps/mediterranean.json、data/eras/acts.json、
-   data/book_eras.json、data/manifest.json、+ 新檔 data/book-places.json、data/eras/epistles_paul.json、
-   data/eras/epistles_general.json、STATUS.md;另有未追蹤 `.gitignore`（cuv_cache/,非本次任務）。
-2. 範圍外（待指示）:書信的「關鍵時刻」逐章導讀（highlights.json,無上限,真正的細讀層）。
+1. 部署後上線抽驗 `atlas.launchdock.app/engine/?ref=加3`、`?ref=雅1`（硬重載 Cmd+Shift+R 避開舊 SW）。
+2. 範圍外（待指示）:書信的「關鍵時刻」逐章導讀（highlights.json,無上限,真正的細讀層;羅8/林前13/弗6/來11/約一4/啟21…）。
+3. 未追蹤 `.gitignore`（cuv_cache/,非本次任務）仍待 Joseph 決定是否提交。
 
 ## 本地預覽
 `python3 -m http.server 8000` → `http://localhost:8000/engine/?ref=加3`（保羅書信）、`?ref=雅1`（使徒書信與啟示錄）
