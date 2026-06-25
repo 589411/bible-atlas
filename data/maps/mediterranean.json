@@ -28,6 +28,18 @@
     "salamis":     { "name": "撒拉米(居比路)", "c": 29, "r": 12 },
     "caesarea":    { "name": "該撒利亞", "c": 34, "r": 12 },
     "jerusalem":   { "name": "耶路撒冷", "c": 35, "r": 14 },
-    "damascus":    { "name": "大馬士革", "c": 37, "r": 10 }
+    "damascus":    { "name": "大馬士革", "c": 37, "r": 10 },
+    "colossae":    { "name": "歌羅西",   "c": 27, "r": 9 },
+    "laodicea":    { "name": "老底嘉",   "c": 24, "r": 9 },
+    "hierapolis":  { "name": "希拉波立", "c": 26, "r": 7 },
+    "galatia":     { "name": "加拉太",   "c": 27, "r": 4 },
+    "troas":       { "name": "特羅亞",   "c": 20, "r": 3 },
+    "miletus":     { "name": "米利都",   "c": 20, "r": 9 },
+    "crete":       { "name": "革哩底",   "c": 17, "r": 13 },
+    "cenchreae":   { "name": "堅革哩",   "c": 14, "r": 8 },
+    "nicopolis":   { "name": "尼哥波立", "c": 12, "r": 6 },
+    "illyricum":   { "name": "以利哩古", "c": 12, "r": 0 },
+    "spain":       { "name": "西班牙",   "c": 1,  "r": 5 },
+    "arabia":      { "name": "亞拉伯",   "c": 40, "r": 16 }
   }
 }

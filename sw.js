@@ -1,13 +1,16 @@
 /* 聖經像素地圖 service worker — network-first(更新即時生效,離線回退快取) */
-const CACHE = 'atlas-v3';
+const CACHE = 'atlas-v5';
 const SHELL = [
   "./",
   "./engine/index.html",
   "./manifest.webmanifest",
   "./data/manifest.json",
   "./data/book_eras.json",
+  "./data/book-places.json",
   "./data/highlights.json",
   "./data/eras/acts.json",
+  "./data/eras/epistles_paul.json",
+  "./data/eras/epistles_general.json",
   "./data/eras/creation.json",
   "./data/eras/conquest.json",
   "./data/eras/david.json",

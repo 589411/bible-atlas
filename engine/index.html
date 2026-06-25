@@ -128,6 +128,27 @@
     pointer-events:none; letter-spacing:1px;
   }
   .city-label.capital{color:var(--gold-bright); font-size:12px;}
+  .city-label.dim{opacity:.32;}
+  .city-label.below{transform:translate(-50%,30%);}   /* 相疊時改放點下方 */
+  .book-focus{
+    display:none; align-items:center; gap:8px; flex-wrap:wrap;
+    padding:7px 10px; font-size:12px; color:#f0e8d8;
+    background:#1a1430; border-top:2px solid #3a2a50;
+  }
+  .book-focus.on{display:flex;}
+  .book-focus .bf-title{color:var(--gold-bright); font-weight:bold; letter-spacing:1px;}
+  .book-focus .bf-city{
+    padding:1px 7px; border:1px solid #e8c574; border-radius:3px;
+    color:#e8c574; cursor:pointer; background:transparent;
+    font-family:inherit; font-size:12px;
+  }
+  .book-focus .bf-city:hover{background:#e8c574; color:#181320;}
+  .book-focus .bf-clear{
+    margin-left:auto; padding:1px 9px; cursor:pointer;
+    background:transparent; border:1px solid #6a5a80; border-radius:3px;
+    color:#cbd8e8; font-family:inherit; font-size:12px;
+  }
+  .book-focus .bf-clear:hover{border-color:#cbd8e8;}
   .legend{
     display:flex; gap:14px; flex-wrap:wrap; padding:8px 10px;
     font-size:12px; color:var(--dim);
@@ -287,6 +308,7 @@
     <div class="map-wrap" id="mapWrap">
       <canvas id="map"></canvas>
     </div>
+    <div class="book-focus" id="bookFocus"></div>
     <div class="legend" id="legend"></div>
     <div class="dialog" id="dialog" aria-live="polite"></div>
   </div>
@@ -395,7 +417,7 @@ const OVERVIEW = {
   anchor:{c:31,r:10}                         // 耶路撒冷:恆定錨點
 };
 
-const state = { manifest:null, maps:{}, eras:{}, current:null, highlight:null };
+const state = { manifest:null, maps:{}, eras:{}, current:null, highlight:null, bookPlaces:null, bookFocus:null };
 const cv=document.getElementById('map'), ctx=cv.getContext('2d');
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let typeTimer=null;
@@ -424,6 +446,9 @@ async function boot(){
     try{ state.bookEras=await loadJSON(DATA_BASE+'book_eras.json'); }
     catch(e){ state.bookEras=null; }
 
+    try{ const bp=await loadJSON(DATA_BASE+'book-places.json'); state.bookPlaces=bp.books||{}; }
+    catch(e){ state.bookPlaces={}; }
+
     try{ const hi=await loadJSON(DATA_BASE+'highlights.json'); state.highlights=hi.highlights||{}; }
     catch(e){ state.highlights={}; }
 
@@ -433,17 +458,28 @@ async function boot(){
     const qp=new URLSearchParams(location.search);
     const hashEra=(location.hash.match(/era=([a-z_]+)/)||[])[1];
     const refStr=qp.get('ref');
-    let target=state.eras[qp.get('era')]||state.eras[hashEra]||null;
+    // 優先序:?era= 明指 > ?ref= 經文 > #era= hash(避免殘留 hash 蓋過經文參照)
+    let target=state.eras[qp.get('era')]||null;
     if(!target&&refStr){
       const id=resolveRef(refStr);
       if(id)target=state.eras[id];
     }
+    if(!target&&hashEra)target=state.eras[hashEra];
     setEra(target||state.eras[state.manifest.defaultEra]||eras[0]);
+
+    // 逐卷地名聚焦:?ref=西1 進站時,落到該卷時代並只高亮本卷地名
+    if(refStr){
+      const bk=resolveBookKey(refStr), bp=bk&&state.bookPlaces?state.bookPlaces[bk]:null;
+      if(bp&&state.eras[bp.era]){
+        state.bookFocus={key:bk, ...bp};
+        setEra(state.eras[bp.era], true);
+      }
+    }
 
     // 從 daily-bread 帶章節過來時(?ref=代下20 或平行章如 ?ref=可4),若有對應關鍵時刻,自動演出
     if(refStr){
       const h=findHighlight(refStr);
-      if(h){ if(state.eras[h.era])setEra(state.eras[h.era]); openScene(h); }
+      if(h){ if(state.eras[h.era])setEra(state.eras[h.era], true); openScene(h); }
     }
 
     document.getElementById('prevEra').onclick=()=>stepEra(-1);
@@ -462,11 +498,13 @@ async function boot(){
   }
 }
 
-function setEra(era){
+function setEra(era,keepFocus){
   state.current=era; state.highlight=null;
+  if(!keepFocus) state.bookFocus=null;          // 手動切換時代即解除逐卷聚焦
   try{history.replaceState(null,'','#era='+era.id);}catch(e){}
   renderAll();
-  typewrite(era.intro);
+  const bf=bookFocusFor(era);                     // 聚焦某卷時,戰報改播本卷導讀
+  typewrite(bf&&bf.intro ? bf.intro : era.intro);
 }
 
 function eraList(){
@@ -505,6 +543,18 @@ function resolveHlKey(str){
   const key=be.books[name]?name:be.aliases[name];
   const m=str.slice(name.length).match(/\d+/);
   return key+(m?parseInt(m[0],10):1);
+}
+
+/* 解析經文參照 → 書卷縮寫 key(例:歌羅西書3 → 西)。供逐卷地名聚焦使用 */
+function resolveBookKey(str){
+  if(!state.bookEras||!str)return null;
+  str=String(str).trim();
+  const be=state.bookEras;
+  const names=Object.keys(be.books).concat(Object.keys(be.aliases))
+    .sort((a,b)=>b.length-a.length);
+  const name=names.find(n=>str.startsWith(n));
+  if(!name)return null;
+  return be.books[name]?name:be.aliases[name];
 }
 
 /* 由經文參照找關鍵時刻:先找本尊 key,找不到再比對各幕的 parallels(平行章) */
@@ -683,31 +733,85 @@ function drawMap(){
       ctx.fillRect(x-1,y-5,2,2); ctx.fillRect(x-3,y-3,6,2); ctx.fillRect(x-1,y-1,2,2);
     }
   });
-  era.cities.forEach(k=>{
+  const focus=bookFocusFor(era);                 // 逐卷聚焦(僅本卷時代生效)
+  const focusSet=focus?new Set(focus.cities.filter(k=>map.cities[k])):null;
+  const cityKeys=focus
+    ?[...new Set([...era.cities,...focus.cities])].filter(k=>map.cities[k])
+    :era.cities;
+  cityKeys.forEach(k=>{
     const ct=map.cities[k]; if(!ct)return;
     const x=ct.c*T,y=ct.r*T;
+    const isFocus=focusSet?focusSet.has(k):true;
+    ctx.globalAlpha=(focus&&!isFocus)?0.28:1;     // 非本卷地名淡顯為背景
     ctx.fillStyle='#000'; ctx.fillRect(x+2,y+2,8,8);
     ctx.fillStyle = era.capitals.includes(k) ? '#ffd866' : '#f0e8d8';
     ctx.fillRect(x+3,y+3,6,6);
+    ctx.globalAlpha=1;
+    if(focus&&isFocus){ctx.strokeStyle='#e8c574';ctx.lineWidth=2;
+      ctx.strokeRect(x,y,12,12);}                 // 本卷地名:金框
     if(state.highlight===k){ctx.strokeStyle='#ff5544';ctx.lineWidth=2;
       ctx.strokeRect(x-1,y-1,14,14);}
   });
+}
+
+/* 目前生效的逐卷聚焦(僅當聚焦的 era 等於傳入 era 時回傳,否則 null) */
+function bookFocusFor(era){
+  return (state.bookFocus&&state.bookFocus.era===era.id)?state.bookFocus:null;
 }
 
 function renderLabels(){
   const era=state.current, map=state.maps[era.mapId];
   const wrap=document.getElementById('mapWrap');
   wrap.querySelectorAll('.city-label').forEach(n=>n.remove());
-  era.cities.forEach(k=>{
+  const focus=bookFocusFor(era);
+  const focusSet=focus?new Set(focus.cities.filter(k=>map.cities[k])):null;
+  // 聚焦時本卷地名優先排版,先取得「上方」位置
+  const cityKeys=focus
+    ?[...focus.cities.filter(k=>map.cities[k]),
+      ...era.cities.filter(k=>map.cities[k]&&!focusSet.has(k))]
+    :era.cities;
+  const placed=[];                                 // 防疊字:已放置標籤的中心/寬度
+  cityKeys.forEach(k=>{
     const ct=map.cities[k]; if(!ct)return;
-    const div=document.createElement('div');
     const isCap=era.capitals.includes(k);
-    div.className='city-label'+(isCap?' capital':'');
-    div.textContent=(isCap?'★':'')+ct.name;
+    const isFocus=focusSet?focusSet.has(k):true;
+    const text=(isCap?'★':'')+ct.name, w=text.length+0.5;
+    const vc=b=>b?ct.r+1:ct.r-1;                    // 標籤垂直中心(上方/下方,以格計)
+    const hit=v=>placed.some(p=>Math.abs(p.v-v)<1.1&&Math.abs(p.c-ct.c)<(p.w+w)/2);
+    let below=false;                               // 預設上方;與已放置者相疊則改下方
+    if(hit(vc(false))) below=!hit(vc(true));
+    placed.push({c:ct.c, v:vc(below), w});
+    const div=document.createElement('div');
+    div.className='city-label'+(isCap?' capital':'')
+      +((focus&&!isFocus)?' dim':'')+(below?' below':'');
+    div.textContent=text;
     div.style.left=((ct.c+0.5)/map.cols*100)+'%';
     div.style.top=((ct.r+0.5)/map.rows*100)+'%';
     wrap.appendChild(div);
   });
+  renderBookFocusBar();
+}
+
+/* 逐卷地名聚焦條:列出本卷地名 chips(點擊定位)＋解除按鈕 */
+function renderBookFocusBar(){
+  const bar=document.getElementById('bookFocus'); if(!bar)return;
+  const focus=bookFocusFor(state.current), map=state.maps[state.current.mapId];
+  bar.innerHTML='';
+  if(!focus){ bar.classList.remove('on'); return; }
+  bar.classList.add('on');
+  const t=document.createElement('span'); t.className='bf-title';
+  t.textContent='📖 '+(focus.title||focus.key)+'・本卷地名'; bar.appendChild(t);
+  focus.cities.filter(k=>map.cities[k]).forEach(k=>{
+    const b=document.createElement('button'); b.className='bf-city';
+    b.textContent=map.cities[k].name;
+    b.onclick=()=>{ state.highlight=k; drawMap();
+      typewrite(map.cities[k].name+' — '+(focus.title||focus.key)+'提到的地名'); };
+    bar.appendChild(b);
+  });
+  const clr=document.createElement('button'); clr.className='bf-clear';
+  clr.textContent='✕ 看全部地圖';
+  clr.onclick=()=>setEra(state.current);          // keepFocus 省略 → 解除聚焦
+  bar.appendChild(clr);
 }
 
 function renderLegend(){

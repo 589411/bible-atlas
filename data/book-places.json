@@ -1,0 +1,147 @@
+{
+  "_comment": "逐卷地名圖層。key 為 daily-bread 書卷縮寫(同 book_eras.json);cities 只能用該卷 era 所掛地圖的既有 city key。深連結 ?ref=西1 進站時,engine 落到 era 並只高亮本卷地名,時代其他城市淡顯為背景;intro 為聚焦時播放的戰報導讀(≤60字)。",
+  "books": {
+    "羅": {
+      "title": "羅馬書",
+      "era": "epistles_paul",
+      "intro": "自哥林多致信帝都,系統陳明因信稱義,劍指羅馬、遠眺西班牙。",
+      "cities": [
+        "rome",
+        "corinth",
+        "cenchreae",
+        "jerusalem",
+        "illyricum",
+        "spain"
+      ]
+    },
+    "林前": {
+      "title": "哥林多前書",
+      "era": "epistles_paul",
+      "intro": "致亂象叢生的港都哥林多,以十架與愛重整教會的秩序。",
+      "cities": [
+        "corinth",
+        "ephesus",
+        "galatia",
+        "philippi"
+      ]
+    },
+    "林後": {
+      "title": "哥林多後書",
+      "era": "epistles_paul",
+      "intro": "為使徒職分辯護,在馬其頓的眼淚裡顯出軟弱中的剛強。",
+      "cities": [
+        "corinth",
+        "philippi",
+        "athens",
+        "troas",
+        "ephesus",
+        "damascus"
+      ]
+    },
+    "加": {
+      "title": "加拉太書",
+      "era": "epistles_paul",
+      "intro": "致加拉太眾教會的怒書:因信稱義,不可再回律法的軛。",
+      "cities": [
+        "galatia",
+        "jerusalem",
+        "antioch",
+        "damascus",
+        "arabia",
+        "tarsus"
+      ]
+    },
+    "弗": {
+      "title": "以弗所書",
+      "era": "epistles_paul",
+      "intro": "獄中書信,從以弗所放眼普世,高舉基督裡合一的奧祕。",
+      "cities": [
+        "ephesus",
+        "rome"
+      ]
+    },
+    "腓": {
+      "title": "腓立比書",
+      "era": "epistles_paul",
+      "intro": "在羅馬囚中寄向腓立比,患難中仍以喜樂與知足為旗。",
+      "cities": [
+        "philippi",
+        "rome",
+        "thessalonica"
+      ]
+    },
+    "西": {
+      "title": "歌羅西書",
+      "era": "epistles_paul",
+      "intro": "保羅在獄中遙寄歌羅西一帶教會,駁斥虛空哲理,高舉基督的全備與超越。",
+      "cities": [
+        "colossae",
+        "laodicea",
+        "hierapolis",
+        "ephesus",
+        "rome"
+      ]
+    },
+    "帖前": {
+      "title": "帖撒羅尼迦前書",
+      "era": "epistles_paul",
+      "intro": "致初信的帖撒羅尼迦人,以盼望迎接主的再來。",
+      "cities": [
+        "thessalonica",
+        "athens",
+        "philippi",
+        "corinth"
+      ]
+    },
+    "帖後": {
+      "title": "帖撒羅尼迦後書",
+      "era": "epistles_paul",
+      "intro": "再致帖城,釐清主日的次序,儆醒卻不可停工。",
+      "cities": [
+        "thessalonica",
+        "corinth"
+      ]
+    },
+    "提前": {
+      "title": "提摩太前書",
+      "era": "epistles_paul",
+      "intro": "自馬其頓囑以弗所的提摩太,立純正教義與教會規範。",
+      "cities": [
+        "ephesus",
+        "philippi"
+      ]
+    },
+    "提後": {
+      "title": "提摩太後書",
+      "era": "epistles_paul",
+      "intro": "殉道前最後手書,從羅馬獄中囑「打過美好的仗」。",
+      "cities": [
+        "rome",
+        "ephesus",
+        "troas",
+        "miletus",
+        "corinth",
+        "thessalonica",
+        "galatia"
+      ]
+    },
+    "多": {
+      "title": "提多書",
+      "era": "epistles_paul",
+      "intro": "託提多在革哩底建立教會秩序,以善行妝飾真道。",
+      "cities": [
+        "crete",
+        "nicopolis"
+      ]
+    },
+    "門": {
+      "title": "腓利門書",
+      "era": "epistles_paul",
+      "intro": "為逃奴阿尼西母求情,以弟兄之愛化解主僕的隔閡。",
+      "cities": [
+        "colossae",
+        "rome"
+      ]
+    }
+  }
+}

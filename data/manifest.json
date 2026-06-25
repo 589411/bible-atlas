@@ -66,6 +66,14 @@
     {
       "id": "acts",
       "file": "eras/acts.json"
+    },
+    {
+      "id": "epistles_paul",
+      "file": "eras/epistles_paul.json"
+    },
+    {
+      "id": "epistles_general",
+      "file": "eras/epistles_general.json"
     }
   ]
 }

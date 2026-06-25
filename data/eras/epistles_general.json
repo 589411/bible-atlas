@@ -1,0 +1,22 @@
+{
+  "id": "epistles_general", "mapId": "mediterranean", "order": 160,
+  "title": "使徒書信與啟示錄", "years": "約主後 45–96 年",
+  "desc": "福音的第二代:當第一批使徒逐漸凋零、逼迫四起,希伯來書、雅各書、彼得與約翰書信勉勵散居各地的信徒持守真道、在患難中堅忍。最後,年邁的約翰在拔摩島得見異象,向亞細亞七教會揭開歷史的結局——羔羊已經得勝,基督必要再來。",
+  "intro": "使徒凋零、逼迫四起,書信勉人堅忍,啟示錄揭開羔羊得勝的結局。",
+  "territory": [ { "faction": "empire", "rect": [0, 0, 43, 23] } ],
+  "cities": ["jerusalem", "antioch", "ephesus", "laodicea", "rome"],
+  "capitals": ["rome"],
+  "people": [
+    { "name": "雅各", "tag": "教會柱石", "tagClass": "other", "desc": "主的兄弟,耶路撒冷教會領袖,論信心與行為", "avatar": { "skin": "#c89868", "hair": "#5a4a3a", "beard": "#5a4a3a", "robe": "#7a6a4a" } },
+    { "name": "彼得", "tag": "使徒", "tagClass": "other", "desc": "為受逼迫的散居信徒寫下活潑的盼望", "avatar": { "skin": "#c89868", "hair": "#888888", "beard": "#888888", "robe": "#7a4a3a" } },
+    { "name": "約翰", "tag": "拔摩先見", "tagClass": "other", "desc": "年邁使徒在拔摩島得啟示,見證基督終極得勝", "avatar": { "skin": "#c89868", "hair": "#cccccc", "beard": "#cccccc", "robe": "#9a5a5a" } }
+  ],
+  "events": [
+    { "city": "jerusalem", "text": "希伯來書勉受逼迫的猶太信徒緊緊仰望耶穌,不可退後離棄真道。", "ref": "希伯來書 12:1-3;10:35-39" },
+    { "city": "jerusalem", "text": "雅各致信散居的十二支派:信心若沒有行為,就是死的。", "ref": "雅各書 2:14-26" },
+    { "city": "rome", "text": "彼得自稱『巴比倫』的羅馬,勉勵受逼迫的信徒存活潑的盼望。", "ref": "彼得前書 1:3-7;5:13" },
+    { "city": "ephesus", "text": "約翰致亞細亞眾教會,辨明真道與假先知,命門徒彼此相愛。", "ref": "約翰一書 4:1-12" },
+    { "city": "laodicea", "text": "復活的基督責備不冷不熱的老底嘉,叩門等候人開門回轉。", "ref": "啟示錄 3:14-22" }
+  ],
+  "books": ["希伯來書", "雅各書", "彼得前後書", "約翰一二三書", "猶大書", "啟示錄"]
+}

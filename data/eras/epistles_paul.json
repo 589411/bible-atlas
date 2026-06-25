@@ -1,0 +1,23 @@
+{
+  "id": "epistles_paul", "mapId": "mediterranean", "order": 155,
+  "title": "保羅書信", "years": "約主後 48–67 年",
+  "desc": "保羅在三次宣教旅程之間與被囚期間,以書信牧養他親手建立的眾教會。從加拉太到羅馬,他為因信稱義辯護、整頓教會秩序、駁斥異端,並在獄中高舉基督的超越與信徒的合一。這些書信不隨使徒的腳蹤遠行,卻把福音的真理釘成教會往後千年的根基。",
+  "intro": "保羅以筆代步,從獄中與旅途把福音真理寫成教會的根基。",
+  "territory": [ { "faction": "empire", "rect": [0, 0, 43, 23] } ],
+  "routes": [ { "name": "書信流向(綜合)", "color": "#9a86c4", "points": ["galatia", "ephesus", "colossae", "corinth", "philippi", "thessalonica", "rome"] } ],
+  "cities": ["ephesus", "corinth", "philippi", "thessalonica", "galatia", "colossae", "crete", "rome"],
+  "capitals": ["rome"],
+  "people": [
+    { "name": "保羅", "tag": "外邦使徒", "tagClass": "other", "desc": "外邦人的使徒,從監牢與旅途寫信牧養眾教會", "avatar": { "skin": "#d8a878", "hair": "#2a1a0a", "beard": "#2a1a0a", "robe": "#5a7a9a" } },
+    { "name": "提摩太", "tag": "青年牧者", "tagClass": "other", "desc": "保羅屬靈之子,受託牧養以弗所教會", "avatar": { "skin": "#d8a878", "hair": "#3a2a1a", "robe": "#6a8a5a" } },
+    { "name": "提多", "tag": "監督", "tagClass": "other", "desc": "保羅同工,受託在革哩底各城設立眾長老", "avatar": { "skin": "#c89868", "hair": "#4a3a2a", "beard": "#4a3a2a", "robe": "#8a7a4a" } }
+  ],
+  "events": [
+    { "city": "rome", "text": "自哥林多致信未曾謀面的羅馬教會,系統陳明因信稱義的福音。", "ref": "羅馬書 1:16-17;3:21-28" },
+    { "city": "corinth", "text": "保羅自以弗所致信哥林多,以十字架與愛平息結黨、亂象與紛爭。", "ref": "哥林多前書 1:10-13;13:1-13" },
+    { "city": "ephesus", "text": "獄中書信遙寄亞細亞,高舉基督裡猶太人與外邦同歸於一的奧祕。", "ref": "以弗所書 2:14-22" },
+    { "city": "philippi", "text": "在羅馬囚中寄向腓立比,患難中仍以喜樂與知足靠主剛強。", "ref": "腓立比書 4:4-13" },
+    { "city": "crete", "text": "託提多在革哩底各城設立長老,以純正教義整頓教會的秩序。", "ref": "提多書 1:5-9" }
+  ],
+  "books": ["羅馬書", "哥林多前後書", "加拉太書", "以弗所書", "腓立比書", "歌羅西書", "帖撒羅尼迦前後書", "教牧書信", "腓利門書"]
+}
